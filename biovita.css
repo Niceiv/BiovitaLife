@@ -291,6 +291,10 @@ h3{
 h5{
 	font-size:3.27em;
 }
+h6{
+  color: rgb(2, 2, 2);
+  font: 1.2em Candara;
+}
 section{
 position:relative;
 margin-left:100px;
@@ -308,4 +312,13 @@ p {
     -webkit-border-radius: 10px; /* safari, chrome */
     position: relative;
     margin-right: 170px;
+}
+
+div.products{
+  padding: 100px;
+  background-color: #00b300;
+}
+
+products img{
+  height: 10%;
 }
