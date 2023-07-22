@@ -109,6 +109,11 @@ div.content {
   padding: 1px 16px;
   height: 1000px;
 }
+div.content1 {
+  margin-left: 170px;
+  padding: 1px 16px;
+  height: 1800px;
+}
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
 @media screen and (max-width: 700px) {
@@ -285,6 +290,11 @@ tr:nth-child(even) {
 h4{
 	font-size:1.67em;
 }
+h4.uno{
+  text-align: center;
+  margin-left: 50px;
+  font: 1.97em Optima;
+}
 h3{
 	font-size:2.57em;
 }
@@ -314,11 +324,8 @@ p {
     margin-right: 170px;
 }
 
-div.products{
-  padding: 100px;
-  background-color: #00b300;
-}
-
-products img{
-  height: 10%;
+.products{
+  padding: 130px;
+  border: solid;
+  border-width: 1px;
 }
