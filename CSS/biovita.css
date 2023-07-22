@@ -284,6 +284,11 @@ tr:nth-child(even) {
 }
 h4{
 	font-size:1.67em;
+  h4.uno{
+    text-align: center;
+    margin-left: 50px;
+    font: 1.97em Optima;
+  }
 }
 h3{
 	font-size:2.57em;
@@ -314,11 +319,8 @@ p {
     margin-right: 170px;
 }
 
-div.products{
-  padding: 100px;
-  background-color: #00b300;
-}
-
-products img{
-  height: 10%;
+.products{
+  padding: 130px;
+  border: solid;
+  border-width: 1px;
 }
