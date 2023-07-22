@@ -1,0 +1,324 @@
+		/* Add a black background color to the top navigation */
+		.topnav {
+		  background-color: #333;
+		  overflow: hidden;
+			position:relative;
+			top:0px;
+			left:0px;
+			margin-left:200px;
+			height:68px
+		}
+
+		/* Style the links inside the navigation bar */
+		.topnav a {
+		  float: left;
+		  display: block;
+		  color: #f2f2f2;
+		  text-align: center;
+		  padding: 21px 16px;
+		  text-decoration: none;
+		  font-size: 19px;
+		}
+
+		/* Change the color of links on hover */
+		.topnav a:hover {
+		  background-color: #ddd;
+		  color: black;
+		}
+
+		/* Add an active class to highlight the current page */
+		.topnav a.active {
+		  background-color: #46b446;
+		  color: white;
+		}
+
+		/* Hide the link that should open and close the topnav on small screens */
+		.topnav.icon {
+		  display: none;
+		}
+		.topnav a.taco {
+		position:absolute;
+		right:0;	
+		}
+
+.Titolo {
+	background-color:white;
+	margin-top:90px;
+	margin-left:50px; /* Same as the width of the sidenav */
+	padding: 0px 10px 10px;
+	height: 120px;
+	text-align:center;
+	font-family:Brush Script MT;
+	font-size:60px;
+}
+
+.top {
+	
+	background-color:white;
+	
+}
+
+
+.top img {
+ height: 100px;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  overflow-x: hidden;
+  padding-top: 0;
+	 
+	                                /*CSS SIDEBAR*/
+}
+/* The side navigation menu */
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 170px;
+  background-color: plum;
+  position: relative;
+  height: calc(100%-100px);
+  overflow: auto;
+  top:100px;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: plum;
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 170px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 80%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+*{
+	margin-bottom:0;
+	margin-left:0;
+	margin-right:0;
+	margin-top:0;
+}
+                                /*CSS GALLERIA IMMAGINI*/
+div.gallery {
+  position:relative;
+  margin-left: 0px;
+  margin-top: 50px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+  border-radius: 50%;
+}
+
+div.gallery:hover {
+  border: 5.1px solid #333333;
+}
+
+div.gallery img {
+  width: 100%;
+  border-radius:50%;
+  height: 250px;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.image-container {
+  position: relative; /* Needed to position the cutout text in the middle of the image */
+  height: 50px; /* Some height */
+}
+
+.image-containers {
+  position: relative; /* Needed to position the cutout text in the middle of the image */
+  height: 50px; /* Some height */
+}
+.text {
+  background-color: gray;
+  color: white;
+  font-size: 3vw; /* Responsive font size */
+  font-weight: bold;
+  padding: 0px;
+  width: 100%;
+  text-align: center; /* Center text */
+  position: absolute; /* Position text */
+  height:100%;
+  top: 49%; /* Position text in the middle */
+  left: 50%; /* Position text in the middle */
+  transform: translate(-50%, -50%); /* Position text in the middle */
+  mix-blend-mode: screen; /* This makes the cutout text possible */
+}
+
+/* Style the table */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 70%;
+  border: 1px solid #ddd;
+  position:relative;
+  top:300px;
+  left:125px;
+}
+
+/* Style table headers and table data */
+th, td {
+  text-align: center;
+  padding: 16px;
+  margin-right:4px
+}
+
+th:first-child, td:first-child {
+  text-align: left;
+}
+
+/* Zebra-striped table rows */
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
+.fa-check {
+  color: green;
+}
+
+.fa-remove {
+  color: red;
+}
+
+.Thumb {
+	width:100px;
+	height:100px;
+	 
+	margin-top:10px;
+}
+
+
+
+.Thumb:hover {
+  border: 5px solid #4d4d4d;
+}
+
+
+.Big {
+	width:100%;
+}
+.closebtn{
+	position: absolute;
+	top: 5px;
+	right: 25px;
+	color:red;
+	font-size: 15px;
+	cursor:pointer;
+}
+.textDescLeft{
+	text-align:left;
+}
+.textDescCenter{
+	text-align:center;
+}
+.textDescRight{
+	text-align:right;
+}
+h4{
+	font-size:1.67em;
+}
+h3{
+	font-size:2.57em;
+}
+h5{
+	font-size:3.27em;
+}
+h6{
+  color: rgb(2, 2, 2);
+  font: 1.2em Candara;
+}
+section{
+position:relative;
+margin-left:100px;
+margin-top:100px;
+}
+hr {
+  border: 0;
+  height: 2px;
+  background: #333;
+  background-image: linear-gradient(to right, #b3ffb3, #00b300, #b3ffb3);
+}
+p {
+    border-radius: 10px;
+    -moz-border-radius: 10px; /* firefox */
+    -webkit-border-radius: 10px; /* safari, chrome */
+    position: relative;
+    margin-right: 170px;
+}
+
+div.products{
+  padding: 100px;
+  background-color: #00b300;
+}
+
+products img{
+  height: 10%;
+}
