@@ -1,0 +1,79 @@
+<?xml version=1.0 encoding=UTF-8?>
+<Creme>
+		    <crema> 
+		        <id>1</id> 
+		        <tabName01>one</tabName01> 
+		        <tabName02>two</tabName02> 
+		        <tabName03>three</tabName03> 
+		        <nome_prodotto>DERMOJOY Plus UNIVERSALE </nome_prodotto> 
+				 <img>image/prodotti/Creme/cda.jpg</img> 
+		        <descrizione>DERMOJOY Plus UNIVERSALE con Tea Tree Oil (Melaleuca Alternifolia) da Agricoltura Biologica è un prodotto certificato Eco Bio Cosmesi ALL’ORIGINE e come tale contiene ingredienti da agricoltura biologica, rispetta il protocollo Eco – Bio  non utilizzando sostanze vietate perché ritenute a rischio per la persona e dannose per l’ambiente,non utilizza ingredienti da OGM, è  dermatologicamente testato, ed è controllato per la presenza di Nichel, Cromo a Cobalto .</descrizione> 
+		        <ingredienti></ingredienti>
+				<tabIngredienti>si<tabIngredienti>
+				<scheda> 
+		            <riga> 
+		                <liv>1</liv> 
+		                <desc>aaa</desc> 
+		                <prop>nota aaaa</prop> 
+		            </riga> 
+		             <riga> 
+		                <liv>2</liv> 
+		                <desc>bbb</desc> 
+		                <prop>nota bbb</prop> 
+		            </riga> 
+		             <riga> 
+		                <liv>3</liv> 
+		                <desc>ccc</desc> 
+		                <prop>nota ccc</prop> 
+		            </riga> 
+		             <riga> 
+		                <liv>4</liv> 
+		                <desc>ddd</desc> 
+		                <prop>nota ddd</prop> 
+		            </riga> 
+		        </scheda> 
+		        <utilizzo>mettilo in tasca</utilizzo> 
+		        <prezzo>€ 3,00</prezzo> 
+		    </crema> 
+		    <crema> 
+		        <id>2</id> 
+		        <tabName01>four</tabName01> 
+		        <tabName02>five</tabName02> 
+		        <tabName03>six</tabName03> 
+		        <nome_prodotto>Crema due</nome_prodotto> 
+				<img>image/prodotti/Creme/oda.jpg</img> 
+		        <descrizione>Crema due - descrizione</descrizione> 
+		        <ingredienti></ingredienti>
+				<tabIngredienti>no<tabIngredienti>
+		        <utilizzo>Prodotto per capelli chiari</utilizzo> 
+		        <prezzo>€ 2,50</prezzo> 
+		    </crema> 
+		    <crema> 
+		        <id>3</id> 
+		        <tabName01>seven</tabName01> 
+		        <tabName02>eight</tabName02> 
+		        <tabName03>nine</tabName03> 
+		        <nome_prodotto>Crema tre</nome_prodotto> 
+				 <img>image/prodotti/Creme/odm.jpg</img> 
+		        <descrizione>Crema tre - descrizione</descrizione> 
+		        <ingredienti></ingredienti>
+				<tabIngredienti>no<tabIngredienti>
+		        <utilizzo>mcreama spalmabile alla nutella</utilizzo> 
+		        <prezzo>€ 3,30</prezzo> 
+		    </crema>
+  			
+			   <crema> 
+			   
+		        <id>4</id> 
+		        <tabName01>seven</tabName01> 
+		        <tabName02>eight</tabName02> 
+		        <tabName03>nine</tabName03> 
+		        <nome_prodotto>Crema tre</nome_prodotto> 
+				<img>image/prodotti/Creme/odm.jpg</img> 
+		        <descrizione>Crema tre - descrizione</descrizione> 
+		        <ingredienti></ingredienti>
+				<tabIngredienti>no<tabIngredienti>
+		        <utilizzo>mcreama spalmabile alla nutella</utilizzo> 
+		        <prezzo>€ 3,30</prezzo> 
+		    </crema> 
+</Creme>

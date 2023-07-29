@@ -38,7 +38,6 @@
 <script>
 	var text, parser, xmlDoc, idStart;
 
-
 	text = "<Creme>" +
 		"    <crema>" +
 		"        <id>1</id>" +
@@ -51,23 +50,28 @@
 		"        <scheda>" +
 		"            <riga>" +
 		"                <liv>1</liv>" +
-		"                <desc>aaa</desc>" +
-		"                <prop>nota aaaa</prop>" +
+		"                <desc>AQUA SOLVENTE SORBITOL</desc>" +
+		"                <prop>umettante</prop>" +
 		"            </riga>" +
 		"             <riga>" +
 		"                <liv>2</liv>" +
-		"                <desc>bbb</desc>" +
-		"                <prop>nota bbb</prop>" +
+		"                <desc>COCAMIDOPROPYL HYDROXYSULTAINE</desc>" +
+		"                <prop>tensioattivo</prop>" +
 		"            </riga>" +
 		"             <riga>" +
 		"                <liv>3</liv>" +
-		"                <desc>ccc</desc>" +
-		"                <prop>nota ccc</prop>" +
+		"                <desc>SODIUM LAUROYL SARCOSINATE</desc>" +
+		"                <prop>antistatico/tensioattivo/viscosizzante</prop>" +
 		"            </riga>" +
 		"             <riga>" +
 		"                <liv>4</liv>" +
-		"                <desc>ddd</desc>" +
-		"                <prop>nota ddd</prop>" +
+		"                <desc>CAPRYLYL/CAPRYL GLUCOSIDE</desc>" +
+		"                <prop>tensioattivo</prop>" +
+		"            </riga>" +
+		"			<riga>" +
+		"                <liv>4</liv>" +
+		"                <desc>ALOE BARBADENSIS GEL</desc>" +
+		"                <prop>emolliente</prop>" +
 		"            </riga>" +
 		"        </scheda>" +
 		"        <utilizzo>mettilo in tasca</utilizzo>" +
@@ -175,7 +179,7 @@
 
 			righeTabScheda=righeTabScheda + "<TR  style=' height:5px;'>"
 			righeTabScheda=righeTabScheda + "<td  style='width:5%;height:5px;'>" + liv[0].textContent.toString() + "</td>"
-			righeTabScheda=righeTabScheda + "<td>" + desc[0].textContent.toString() + "</td>"
+			righeTabScheda=righeTabScheda + "<td><strong>" + desc[0].textContent.toString() + "</strong></td>"
 			righeTabScheda=righeTabScheda + "<td>" + prop[0].textContent.toString() + "</td></tr>" 
 		}
 
@@ -190,7 +194,7 @@
 
 			"		<div class='tabs'>" +
 			"			<label class='tab' id='" + tabName01[0].textContent.toString() + "-tab' for='" + tabName01[0].textContent.toString() + "'>Descrizione</label>" +
-			"			<label class='tab' id='" + tabName02[0].textContent.toString() + "-tab' for='" + tabName02[0].textContent.toString() + "'>Ingredienti</label>" +
+			"			<label class='tab' id='" + tabName02[0].textContent.toString() + "-tab' for='" + tabName02[0].textContent.toString() + "'>Proprietà</label>" +
 			"			<label class='tab' id='" + tabName03[0].textContent.toString() + "-tab' for='" + tabName03[0].textContent.toString() + "'>Modalità d'uso</label>" +
 			"		</div>" +
 			"		<div class='panels'>" +
@@ -199,8 +203,8 @@
 			"			</div>" +
 			"			<div class='panel' id='" + tabName02[0].textContent.toString() + "-panel'>" +
 			//"				<p class='due'><i class='fa-sharp fa-solid fa-circle fa-beat fa-sm' style='color: #08e105;'></i>" +
-			"					<TABLE style='relative:absolute; top:5; left:5;width: 100%;  border-bottom: 1px solid #ddd; font-size:10'>	" +
-			"						<TR style=' height:5px;'><th style='width:5%;height:5px;'>liv</th><th >desc</th><th width=25%>prop</th></tr>" +
+			"					<TABLE style='relative:absolute; top:5; left:5;width: 100%;  border-bottom: 1px solid #ddd; font-size:15'>	" +
+			"						<TR style=' height:5px;'><th style='width:5%;height:5px;'>liv</th><th >desc</th><th width=35%>prop</th></tr>" +
 									righeTabScheda +
 			"					</TABLE>" + 
 			"				</p>" +
