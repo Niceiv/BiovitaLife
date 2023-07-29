@@ -109,6 +109,11 @@ div.content {
   padding: 1px 16px;
   height: 1000px;
 }
+div.content1 {
+  margin-left: 170px;
+  padding: 1px 16px;
+  height: 3900px;
+}
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
 @media screen and (max-width: 700px) {
@@ -282,14 +287,11 @@ tr:nth-child(even) {
 .textDescRight{
 	text-align:right;
 }
+
 h4{
 	font-size:1.67em;
-  h4.uno{
-    text-align: center;
-    margin-left: 50px;
-    font: 1.97em Optima;
-  }
 }
+
 h3{
 	font-size:2.57em;
 }
@@ -317,10 +319,94 @@ p {
     -webkit-border-radius: 10px; /* safari, chrome */
     position: relative;
     margin-right: 170px;
+    border-width: medium
+}
+p.uno{
+  font: 1.1em Helvetica;
+  margin-right: 0%;
+}
+.icon-green{
+  color: green;
 }
 
 .products{
   padding: 130px;
   border: solid;
   border-width: 1px;
+  margin-left: 190px;
+  
+}
+
+.warpper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+}
+
+.tab {
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 0px 2px;
+  background: #46b446;
+  display: inline-block;
+  color: #fff;
+  border-radius: 3px 3px 0px 0px;
+  box-shadow: 0 0.5rem 0.8rem #00000080;
+}
+
+.panels {
+  background: #fff;
+  box-shadow: 0 2rem 2rem #00000080;
+  min-height: 200px;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 3px;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.panel {
+  display: none;
+  animation: fadein 0.8s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.radio {
+  display: none;
+}
+
+#one:checked ~ .panels #one-panel,
+#two:checked ~ .panels #two-panel,
+#three:checked ~ .panels #three-panel {
+  display: block;
+}
+
+#one:checked ~ .tabs #one-tab,
+#two:checked ~ .tabs #two-tab,
+#three:checked ~ .tabs #three-tab {
+  background: #fff;
+  color: #000;
+  border-top: 3px solid #46b446;
+}
+#four:checked ~ .panels #four-panel,
+#five:checked ~ .panels #five-panel,
+#six:checked ~ .panels #six-panel {
+  display: block;
+}
+
+#four:checked ~ .tabs #four-tab,
+#five:checked ~ .tabs #five-tab,
+#six:checked ~ .tabs #six-tab {
+  background: #fff;
+  color: #000;
+  border-top: 3px solid #46b446;
 }
