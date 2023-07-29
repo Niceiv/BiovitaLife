@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<HTML>
+	<HEAD>
+		<TITLE>Articoli</TITLE>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+		<link rel="icon" type="image/vnd.icon" href="image\LogoSfondi\Logo.ico"> 
+
+		<link rel="stylesheet" href="CSS/biovita.css">
+		<link rel="stylesheet" href="CSS/footer.css">
+		
+		<script src="JS/MyFooter.js"></script>
+		<script src="JS/articoli.js"></script>
+	</HEAD>
+	 
+	<BODY>
+		<DIV class="top" >
+			<a href="INDEX.HTML"> <img src="image\LogoSfondi\Logo.PNG"></a>
+		</DIV>
+		
+		<div class="topnav" id="myTopnav">
+		  <a href="INDEX.HTML" class="active">Home</a>
+		  <a href="Naturali.html">Naturali</a>
+		  <a href="Mogano.html">Mogani e Rossi</a>
+		  <a href="Biondi.html">Biondi</a>
+		  <a href="javascript:void(0);" class="icon" onclick="OpenP()">
+			<i class="fa fa-bars"></i>
+		  </a>
+		</div>
+
+		<div style="text-align:center">
+			<h2>Naturali</h2>
+			<p>omeoTINTS - GEL CREMA COLORANTE</p>
+		</div>
+		<div class="row" >
+			<div class="col-md-2"></div>
+			<div class="col-md-2">
+				<img class="Thumb" src="image\Thumbnail\1N.jpg" onmouseover="myFuncionDyspalyyText('image/Big/1N.jpg','Ciocche','1N Castano Chiaro');" >
+			</div>
+			 
+			<div class="col-md-2">
+				<img class="Thumb" src="image\Thumbnail\N1_Foto2.png" onmouseover="myFuncionDyspalyyText('image/Big/N1_Foto2.png','Ciocche', '2N Castano Ramato');" >
+			</div>
+			 
+			<div class="col-md-2"> 
+				<img class="Thumb" src="image\Thumbnail\N1_Foto3.png" onmouseover="myFuncionDyspalyyText('image/Big/N1_Foto3.png','Ciocche','3N Castano');"  >
+			</div>
+			 
+			<div class="col-md-2"> 
+				<img class="Thumb" src="image\Thumbnail\N1_Foto4.png" onmouseover="myFuncionDyspalyyText('image/Big/N1_Foto4.png','Ciocche', '4N Castano Scuro');" >
+			</div>
+			</div>
+		</div>
+		<br/>
+		<div class="row" >
+			<div class="col-md-2">
+				<div >
+					<img class="Thumb" src="image\Thumbnail\N1_Foto1.png" onmouseover="myFuncionDyspalyyText('image/Big/N1_Foto1.png','Testo01','');" >
+				</div>
+				 
+				<div >
+					<img class="Thumb" src="image\Thumbnail\N1_Foto2.png" onmouseover="myFuncionDyspalyyText('image/Big/N1_Foto2.png','Testo02', '');" >
+				</div>
+				 
+				<div >
+					<img class="Thumb" src="image\Thumbnail\N1_Foto3.png" onmouseover="myFuncionDyspalyyText('image/Big/N1_Foto3.png','Testo03','');"  >
+				</div>
+				 
+				<div >
+					<img class="Thumb" src="image\Thumbnail\N1_Foto4.png" onmouseover="myFuncionDyspalyyText('image/Big/N1_Foto4.png','Testo04', '');" >
+				</div>
+			</div>
+			
+			<div class="col-md-4">
+				
+				<!--Immagine ingrandita -->
+				<div >
+				
+					<!-- qui mostro per prima la prima immagine poi sarà il Java script che fa il resto -->
+					<!--Expanded image -->
+					<img id="expandedImg" class="Big" src="image/Big/N1_Foto1.png">
+					
+				
+				</div>
+			</div>
+			
+			 
+			<div class="col-md-6">
+					<!-- qui nota che ho messo il display a block solo sul primo in questo modo mi preparo a mostrare la prima immagine come preselezionata -->
+					<div>
+						<div id="Testo01" style="display:block" >
+							<p style="display:block">spiegazione immagine 01</p>
+							<hr> <!-- mette una linea -->
+							<p>Lorem ipsum dolor sit amet, consectetur adipisci elit, 
+							sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+							Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, 
+							nisi ut aliquid ex ea commodi consequatur.</p>
+						</div>
+						<div  id="Testo02" style="display:none">
+							<p >spiegazione immagine 02</p>
+							<hr> <!-- mette una linea -->
+							<p>Lorem ipsum dolor sit amet, consectetur adipisci elit, 
+							sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+							Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, 
+							nisi ut aliquid ex ea commodi consequatur.</p>
+						</div>
+						<div id="Testo03"  style="display:none">
+							<p >spiegazione immagine 03</p>
+							<hr> <!-- mette una linea -->
+							<p>Lorem ipsum dolor sit amet, consectetur adipisci elit, 
+							sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+							Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, 
+							nisi ut aliquid ex ea commodi consequatur.</p>						
+						</div>
+						<div id="Testo04"  style="display:none">
+							<p  >spiegazione immagine 04</p>
+							<hr> <!-- mette una linea -->
+							<p>Lorem ipsum dolor sit amet, consectetur adipisci elit, 
+							sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+							Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, 
+							nisi ut aliquid ex ea commodi consequatur.</p>					
+						</div>
+							
+						<!-- Testo ciocche -->
+						<div id="Ciocche"  style="display:none">
+							<p  id="CodiceColore" >1N</p>
+							<hr> <!-- mette una linea -->
+							<p  >spiegazione delle ciocche</p>
+							<hr> <!-- mette una linea -->
+							<p>Lorem ipsum dolor sit amet, consectetur adipisci elit, 
+							sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+							Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, 
+							nisi ut aliquid ex ea commodi consequatur.</p>					
+						</div>
+							
+					</div>
+				<!-- Image text -->
+					<div id="imgTeext" class="textDescCenter"></div>
+					 
+			</div>
+		
+		</div>
+		 
+	</BODY>
+	<script language="javaScript">
+		document.write(myFooter);
+	</script>
+
+	<noscript>
+		<strong>Per visualizzare correttamente questa pagina c necessario avere javascript abilitato.</strong>
+	</noscript>
+</HTML>

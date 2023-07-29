@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Creme>
+    <crema>
+        <id>1</id>
+        <nome_prodotto>DERMOJOY Plus UNIVERSALE </nome_prodotto>
+        <descrizione>DERMOJOY Plus UNIVERSALE con Tea Tree Oil (Melaleuca Alternifolia) da Agricoltura Biologica è un prodotto certificato Eco Bio Cosmesi ALL’ORIGINE e come tale contiene ingredienti da agricoltura biologica, rispetta il protocollo Eco – Bio  non utilizzando sostanze vietate perché ritenute a rischio per la persona e dannose per l’ambiente,non utilizza ingredienti da OGM, è  dermatologicamente testato, ed è controllato per la presenza di Nichel, Cromo a Cobalto .</descrizione>
+        <scheda>
+            <riga>
+                <uso>aaa</uso>
+                <nota>nota aaaa</nota>
+            </riga>
+             <riga>
+                <uso>bbb</uso>
+                <nota>nota bbbb</nota>
+            </riga>
+             <riga>
+                <uso>ccc</uso>
+                <nota>nota ccc</nota>
+            </riga>
+             <riga>
+                <uso>ddd</uso>
+                <nota>nota dd</nota>
+            </riga>
+        </scheda>
+        <utilizzo>mettilo in tasca</utilizzo>
+        <prezzo>2500</prezzo>
+    </crema>
+    <crema>
+        <id>2</id>
+        <nome_prodotto>Crema due</nome_prodotto>
+        <descrizione>Crema due - descrizione</descrizione>
+        <scheda>
+            <riga>
+                <uso>aaa</uso>
+                <nota>nota aaaa</nota>
+            </riga>
+             <riga>
+                <uso>bbb</uso>
+                <nota>nota bbbb</nota>
+            </riga>
+             <riga>
+                <uso>ccc</uso>
+                <nota>nota ccc</nota>
+            </riga>
+             <riga>
+                <uso>ddd</uso>
+                <nota>nota dd</nota>
+            </riga>
+        </scheda>
+        <utilizzo>mettilo in tasca</utilizzo>
+        <prezzo>2500</prezzo>
+    </crema>
+    <crema>
+        <id>3</id>
+        <nome_prodotto>Crema tre</nome_prodotto>
+        <descrizione>Crema tre - descrizione</descrizione>
+        <scheda>
+            <riga>
+                <uso>aaa</uso>
+                <nota>nota aaaa</nota>
+            </riga>
+             <riga>
+                <uso>bbb</uso>
+                <nota>nota bbbb</nota>
+            </riga>
+             <riga>
+                <uso>ccc</uso>
+                <nota>nota ccc</nota>
+            </riga>
+             <riga>
+                <uso>ddd</uso>
+                <nota>nota dd</nota>
+            </riga>
+        </scheda>
+        <utilizzo>mettilo in tasca</utilizzo>
+        <prezzo>2500</prezzo>
+    </crema>
+</Creme>
