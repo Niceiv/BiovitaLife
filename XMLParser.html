@@ -173,7 +173,8 @@
 			var desc = riga.getElementsByTagName("desc");
 			var prop = riga.getElementsByTagName("prop");
 
-			righeTabScheda=righeTabScheda + "<TR  style=' height:5px;'><td>" + liv[0].textContent.toString() + "</td>"
+			righeTabScheda=righeTabScheda + "<TR  style=' height:5px;'>"
+			righeTabScheda=righeTabScheda + "<td  style='width:5%;height:5px;'>" + liv[0].textContent.toString() + "</td>"
 			righeTabScheda=righeTabScheda + "<td>" + desc[0].textContent.toString() + "</td>"
 			righeTabScheda=righeTabScheda + "<td>" + prop[0].textContent.toString() + "</td></tr>" 
 		}
@@ -197,9 +198,9 @@
 			"				<p class='uno'>" + descrizione[0].textContent.toString() + "</p>" +
 			"			</div>" +
 			"			<div class='panel' id='" + tabName02[0].textContent.toString() + "-panel'>" +
-			"				<p class='due'><i class='fa-sharp fa-solid fa-circle fa-beat fa-sm' style='color: #08e105;'></i>" +
-			"					<TABLE style='position:absolute; top:10; left:10;width: 460px;  border: 1px solid #555;'>	" +
-			"						<TR style=' height:5px;'><th width=5%>liv</th><th >desc</th><th width=25%>prop</th></tr>" +
+			//"				<p class='due'><i class='fa-sharp fa-solid fa-circle fa-beat fa-sm' style='color: #08e105;'></i>" +
+			"					<TABLE style='relative:absolute; top:5; left:5;width: 100%;  border-bottom: 1px solid #ddd; font-size:10'>	" +
+			"						<TR style=' height:5px;'><th style='width:5%;height:5px;'>liv</th><th >desc</th><th width=25%>prop</th></tr>" +
 									righeTabScheda +
 			"					</TABLE>" + 
 			"				</p>" +
