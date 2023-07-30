@@ -47,6 +47,8 @@
 		"        <nome_prodotto>DERMOJOY Plus UNIVERSALE </nome_prodotto>" +
 		"		 <img>image/prodotti/Creme/cda.jpg</img>" +
 		"        <descrizione>DERMOJOY Plus UNIVERSALE con Tea Tree Oil (Melaleuca Alternifolia) da Agricoltura Biologica è un prodotto certificato Eco Bio Cosmesi ALL’ORIGINE e come tale contiene ingredienti da agricoltura biologica, rispetta il protocollo Eco – Bio  non utilizzando sostanze vietate perché ritenute a rischio per la persona e dannose per l’ambiente,non utilizza ingredienti da OGM, è  dermatologicamente testato, ed è controllato per la presenza di Nichel, Cromo a Cobalto .</descrizione>" +
+		"        <ingredienti></ingredienti>" +
+		"		 <tabIngredienti>SI</tabIngredienti>" +
 		"        <scheda>" +
 		"            <riga>" +
 		"                <liv>1</liv>" +
@@ -64,12 +66,12 @@
 		"                <prop>antistatico/tensioattivo/viscosizzante</prop>" +
 		"            </riga>" +
 		"             <riga>" +
-		"                <liv>4</liv>" +
+		"                <liv>1</liv>" +
 		"                <desc>CAPRYLYL/CAPRYL GLUCOSIDE</desc>" +
 		"                <prop>tensioattivo</prop>" +
 		"            </riga>" +
 		"			<riga>" +
-		"                <liv>4</liv>" +
+		"                <liv>2</liv>" +
 		"                <desc>ALOE BARBADENSIS GEL</desc>" +
 		"                <prop>emolliente</prop>" +
 		"            </riga>" +
@@ -85,28 +87,9 @@
 		"        <nome_prodotto>Crema due</nome_prodotto>" +
 		"		 <img>image/prodotti/Creme/oda.jpg</img>" +
 		"        <descrizione>Crema due - descrizione</descrizione>" +
-		"        <scheda>" +
-		"            <riga>" +
-		"                <liv>1</liv>" +
-		"                <desc>aaa</desc>" +
-		"                <prop>nota aaaa</prop>" +
-		"            </riga>" +
-		"             <riga>" +
-		"                <liv>2</liv>" +
-		"                <desc>bbb</desc>" +
-		"                <prop>nota bbb</prop>" +
-		"            </riga>" +
-		"             <riga>" +
-		"                <liv>3</liv>" +
-		"                <desc>ccc</desc>" +
-		"                <prop>nota ccc</prop>" +
-		"            </riga>" +
-		"             <riga>" +
-		"                <liv>4</liv>" +
-		"                <desc>ddd</desc>" +
-		"                <prop>nota ddd</prop>" +
-		"            </riga>" +
-		"        </scheda>" +
+		"        <ingredienti>Ingredienti: mele, pere, banane e succo di frutta</ingredienti>" +
+		"		 <tabIngredienti>NO</tabIngredienti>" +
+		"        <scheda></scheda>" +
 		"        <utilizzo>Prodotto per capelli chiari</utilizzo>" +
 		"        <prezzo>€ 2,50</prezzo>" +
 		"    </crema>" +
@@ -118,28 +101,9 @@
 		"        <nome_prodotto>Crema tre</nome_prodotto>" +
 		"		 <img>image/prodotti/Creme/odm.jpg</img>" +
 		"        <descrizione>Crema tre - descrizione</descrizione>" +
-		"        <scheda>" +
-		"            <riga>" +
-		"                <liv>1</liv>" +
-		"                <desc>aaa</desc>" +
-		"                <prop>nota aaaa</prop>" +
-		"            </riga>" +
-		"             <riga>" +
-		"                <liv>2</liv>" +
-		"                <desc>bbb</desc>" +
-		"                <prop>nota bbb</prop>" +
-		"            </riga>" +
-		"             <riga>" +
-		"                <liv>3</liv>" +
-		"                <desc>ccc</desc>" +
-		"                <prop>nota ccc</prop>" +
-		"            </riga>" +
-		"             <riga>" +
-		"                <liv>4</liv>" +
-		"                <desc>ddd</desc>" +
-		"                <prop>nota ddd</prop>" +
-		"            </riga>" +
-		"        </scheda>" +
+		"        <ingredienti>Ingredienti: acciaio, manganesio e zinco</ingredienti>" +
+		"		 <tabIngredienti>NO</tabIngredienti>" +
+		"        <scheda></scheda>" +
 		"        <utilizzo>mcreama spalmabile alla nutella</utilizzo>" +
 		"        <prezzo>€ 3,30</prezzo>" +
 		"    </crema>" +
@@ -156,33 +120,63 @@
 	for (var i = 0; i < cremas.children.length; i++) {
 		var crema = cremas.children[i];
 
+		var tabName01 = crema.getElementsByTagName("tabName01");
+		var tabName02 = crema.getElementsByTagName("tabName02");
+		var tabName03 = crema.getElementsByTagName("tabName03");
+		
 		var nome_prodotto = crema.getElementsByTagName("nome_prodotto");
 		var descrizione = crema.getElementsByTagName("descrizione");
 		var utilizzo = crema.getElementsByTagName("utilizzo");
 		var prezzo = crema.getElementsByTagName("prezzo");
 		var img = crema.getElementsByTagName("img");
 
-		var tabName01 = crema.getElementsByTagName("tabName01");
-		var tabName02 = crema.getElementsByTagName("tabName02");
-		var tabName03 = crema.getElementsByTagName("tabName03");
 
+		var tabIngredienti = crema.getElementsByTagName("tabIngredienti");
 		var scheda = crema.getElementsByTagName("scheda");
-		scheda = scheda[0];
+		var ingredienti = crema.getElementsByTagName("ingredienti");
+
 		var righeTabScheda="";
-		for(var k=0; k< scheda.children.length; k++) {
 
-			var riga = scheda.children[k];
+		if (tabIngredienti[0].textContent.toString()=="SI") {
+			
+			scheda = scheda[0];
+			
+			righeTabScheda=righeTabScheda + "<TABLE style='relative:absolute; top:5; left:5;width: 560px;  border-bottom: 1px solid #ddd; font-size:15'>	";
+			righeTabScheda=righeTabScheda + "	<TR style=' height:5px;'><th style='width:5%;height:5px;'>liv</th><th >desc</th><th width=35%>prop</th></tr>";
+							
+			for(var k=0; k< scheda.children.length; k++) {
 
-			var liv = riga.getElementsByTagName("liv");
-			var desc = riga.getElementsByTagName("desc");
-			var prop = riga.getElementsByTagName("prop");
+				var riga = scheda.children[k];
 
-			righeTabScheda=righeTabScheda + "<TR  style=' height:5px;'>"
-			righeTabScheda=righeTabScheda + "<td  style='width:5%;height:5px;'>" + liv[0].textContent.toString() + "</td>"
-			righeTabScheda=righeTabScheda + "<td><strong>" + desc[0].textContent.toString() + "</strong></td>"
-			righeTabScheda=righeTabScheda + "<td>" + prop[0].textContent.toString() + "</td></tr>" 
+				var liv = riga.getElementsByTagName("liv");
+				var desc = riga.getElementsByTagName("desc");
+				var prop = riga.getElementsByTagName("prop");
+				righeTabScheda=righeTabScheda + "	<TR  style=' height:5px;'>";
+				righeTabScheda=righeTabScheda + "	<td  style='width:5%;height:5px;'>";
+
+				var imgName="";
+				switch(liv[0].textContent.toString()) {
+					case "1":
+						imgName="image/LogoSfondi/CerchioRosso.png"
+						break;
+					case "2":
+						imgName="image/LogoSfondi/CerchioVerde.png"
+						break;
+					default:
+						imgName="image/LogoSfondi/DueCerchioverde.png"
+					} 
+				righeTabScheda=righeTabScheda + " 		<img src='" + imgName +"' alt=''/>"
+				righeTabScheda=righeTabScheda + "	</td>";
+				righeTabScheda=righeTabScheda + "	<td><strong>" + desc[0].textContent.toString() + "</strong></td>";
+				righeTabScheda=righeTabScheda + "	<td>" + prop[0].textContent.toString() + "</td> ";
+				righeTabScheda=righeTabScheda + "	</tr>"; 
+	 
+			}
+			righeTabScheda=righeTabScheda + "</TABLE>"; 
+		} else {
+			
+			righeTabScheda=ingredienti[0].textContent.toString();
 		}
-
 		var sect = "" +
 			"<section>" +
 			"	<h2><strong>" + nome_prodotto[0].textContent.toString() + "</strong></h2>" +
@@ -201,12 +195,8 @@
 			"			<div class='panel' id='" + tabName01[0].textContent.toString() + "-panel'>" +
 			"				<p class='uno'>" + descrizione[0].textContent.toString() + "</p>" +
 			"			</div>" +
-			"			<div class='panel' id='" + tabName02[0].textContent.toString() + "-panel'>" +
-			//"				<p class='due'><i class='fa-sharp fa-solid fa-circle fa-beat fa-sm' style='color: #08e105;'></i>" +
-			"					<TABLE style='relative:absolute; top:5; left:5;width: 100%;  border-bottom: 1px solid #ddd; font-size:15'>	" +
-			"						<TR style=' height:5px;'><th style='width:5%;height:5px;'>liv</th><th >desc</th><th width=35%>prop</th></tr>" +
-									righeTabScheda +
-			"					</TABLE>" + 
+			"			<div class='panel' id='" + tabName02[0].textContent.toString() + "-panel'><p>" +
+							righeTabScheda +
 			"				</p>" +
 			"			</div>" +
 			"			<div class='panel' id='" + tabName03[0].textContent.toString() + "-panel'>" +
