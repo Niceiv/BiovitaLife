@@ -2,9 +2,9 @@
 <Creme>
 		    <crema> 
 		        <id>1</id> 
-		        <tabName01>one</tabName01> 
-		        <tabName02>two</tabName02> 
-		        <tabName03>three</tabName03> 
+		        <tabName01>tab01</tabName01> 
+		        <tabName02>tab02</tabName02> 
+		        <tabName03>tab03</tabName03> 
 		        <nome_prodotto>DERMOJOY Plus UNIVERSALE </nome_prodotto> 
 				 <img>image/prodotti/Creme/cda.jpg</img> 
 		        <descrizione>DERMOJOY Plus UNIVERSALE con Tea Tree Oil (Melaleuca Alternifolia) da Agricoltura Biologica è un prodotto certificato Eco Bio Cosmesi ALL’ORIGINE e come tale contiene ingredienti da agricoltura biologica, rispetta il protocollo Eco – Bio  non utilizzando sostanze vietate perché ritenute a rischio per la persona e dannose per l’ambiente,non utilizza ingredienti da OGM, è  dermatologicamente testato, ed è controllato per la presenza di Nichel, Cromo a Cobalto .</descrizione> 
@@ -12,24 +12,69 @@
 				<tabIngredienti>si<tabIngredienti>
 				<scheda> 
 		            <riga> 
-		                <liv>1</liv> 
-		                <desc>aaa</desc> 
-		                <prop>nota aaaa</prop> 
+		                <liv>3</liv> 
+		                <desc>AQUA SOLVENTE</desc> 
+		                <prop></prop> 
 		            </riga> 
 		             <riga> 
 		                <liv>2</liv> 
-		                <desc>bbb</desc> 
-		                <prop>nota bbb</prop> 
+		                <desc>SORBITOL</desc> 
+		                <prop>umettante</prop> 
 		            </riga> 
 		             <riga> 
+		                <liv>1</liv> 
+		                <desc>COCAMIDOPROPYL HYDROXYSULTAINE</desc> 
+		                <prop>tensioattivo</prop> 
+		            </riga> 
+		             <riga> 
+		                <liv>2</liv> 
+		                <desc>SODIUM LAUROYL SARCOSINATE</desc> 
+		                <prop>tensioattivo</prop> 
+		            </riga> 
+					<riga> 
 		                <liv>3</liv> 
-		                <desc>ccc</desc> 
-		                <prop>nota ccc</prop> 
+		                <desc>CAPRYLYL CAPRYL GLUCOSIDE</desc> 
+		                <prop>antistatico\tensioattivo\viscosizzante</prop> 
 		            </riga> 
-		             <riga> 
-		                <liv>4</liv> 
-		                <desc>ddd</desc> 
-		                <prop>nota ddd</prop> 
+					 <riga> 
+		                <liv>3</liv> 
+		                <desc>ALOE BARBADENSIS GEL</desc> 
+		                <prop>emolliente</prop> 
+		            </riga> 
+					 <riga> 
+		                <liv>3</liv> 
+		                <desc>MELALEUCA ALTERNIFOLIA LEAF OIL</desc> 
+		                <prop>antibatterico</prop> 
+		            </riga> 
+					 <riga> 
+		                <liv>3</liv> 
+		                <desc>LAVANDA HYBRIDA OIL</desc> 
+		                <prop>emolliente</prop> 
+		            </riga> 
+					 <riga> 
+		                <liv>2</liv> 
+		                <desc>CITRUS AURANTIUM DULCIS OIL</desc> 
+		                <prop>profumante</prop> 
+		            </riga> 
+					 <riga> 
+		                <liv>3</liv> 
+		                <desc>SODIUM PCA</desc> 
+		                <prop>antistatico\umettante</prop> 
+		            </riga> 
+					 <riga> 
+		                <liv>3</liv> 
+		                <desc>LACTIC ACID</desc> 
+		                <prop>agente tampone\umettante</prop> 
+		            </riga> 
+					 <riga> 
+		                <liv>1</liv> 
+		                <desc>LIMONENE</desc> 
+		                <prop>profumo naturale da OE</prop> 
+		            </riga> 
+					 <riga> 
+		                <liv>1</liv> 
+		                <desc>LINALOOL</desc> 
+		                <prop>profumo naturale da OE</prop> 
 		            </riga> 
 		        </scheda> 
 		        <utilizzo>mettilo in tasca</utilizzo> 
@@ -37,37 +82,121 @@
 		    </crema> 
 		    <crema> 
 		        <id>2</id> 
-		        <tabName01>four</tabName01> 
-		        <tabName02>five</tabName02> 
-		        <tabName03>six</tabName03> 
-		        <nome_prodotto>Crema due</nome_prodotto> 
-				<img>image/prodotti/Creme/oda.jpg</img> 
-		        <descrizione>Crema due - descrizione</descrizione> 
-		        <ingredienti></ingredienti>
+		        <tabName01>tab04</tabName01> 
+		        <tabName02>tab05</tabName02> 
+		        <tabName03>tab06</tabName03> 
+		        <nome_prodotto>Siero Di Lino (50ml)</nome_prodotto> 
+				<img>image/prodotti/Creme/sdl.jpg</img> 
+		        <descrizione>Usato regolarmente il SIERO DI LINO cementa le rotture nei capelli tanto da guadagnarsi il titolo di “riparacapelli”. Fluido concentrato ristrutturante d’urto indicato per donare nuova vita ai capelli crespi, secchi, sfibrati e con doppie punte. Dona ai capelli una grande luminosità. Non unge e non lascia residui. Compatibile co qualsiasi colore naturale o tinto. Il LINO, fin dall’antichità è sempre stato un punto di riferimento per la manutenzione dei capelli. Insieme agli Oli organici contenuti svolge un’azione ristrutturante, filmogena e protettiva. Praticamente si posiziona all’interno della “rottura” e la ripara creando un ponte. Quindi il capello diventa di nuovo liscio.</descrizione> 
+		        <ingredienti>I principi attivi principali sono: SIERO DI LINO che ripara, illumina e protegge. OLI ORGANICI che aiutano l’azione riparatrice e protettiva senza ungere OLI essenziali di Iris e Caprifoglio ad azione conservante e deodorante. Senza coloranti, né conservanti, no ingredienti animali o prove. Bio-eco compatibile</ingredienti>
 				<tabIngredienti>no<tabIngredienti>
-		        <utilizzo>Prodotto per capelli chiari</utilizzo> 
+		        <utilizzo>Spargere alcune gocce nel palmo della mano con l’apposito dosatore. Applicare sui capelli bagnati dopo shampoo e crema ed asciugare. Applicato sui capelli asciutti il giorno dopo aiuta a mantenerli a posto, ben pettinati e luminosi. Per uso frequente anche giornaliero; dopo la tinta, permanente, decolorazione o trattamenti invasivi. Dopo sole, mare, lampade,piscina ed attività sportive. Per evitare che si accumuli troppo appesantendo i capelli, si consiglia di lavarsi i capelli con lo Shampoo Dolcevita seguito dalla Crema degli Angeli ogni terzo giorno.</utilizzo> 
 		        <prezzo>€ 2,50</prezzo> 
 		    </crema> 
 		    <crema> 
 		        <id>3</id> 
-		        <tabName01>seven</tabName01> 
-		        <tabName02>eight</tabName02> 
-		        <tabName03>nine</tabName03> 
-		        <nome_prodotto>Crema tre</nome_prodotto> 
-				 <img>image/prodotti/Creme/odm.jpg</img> 
-		        <descrizione>Crema tre - descrizione</descrizione> 
-		        <ingredienti></ingredienti>
+		        <tabName01>tab07</tabName01> 
+		        <tabName02>tab08</tabName02> 
+		        <tabName03>tab09</tabName03> 
+		        <nome_prodotto>Crema Degli Angeli (250ml)</nome_prodotto> 
+				 <img>image/prodotti/Creme/cda.jpg</img> 
+		        <descrizione>Crema densofluida vegetale per capelli ad azione idratante e riparatrice. Protezione UV e capelli tinti. Ottimo districante. A PH acido 3.5 controllato produce effetto balsamo senza appesantire i capelli. Totalmente idrosolubile, non lascia residui. Una difesa costante per i capelli contro le aggressioni e danni a causa di età e stress, ambientali e meccanici. Contiene PROTAGEN una saggia e potente combinazione vegetale di proteine, vitamine,resine ed oli essenziali che nutrono e riparano i capelli. Contiene C.E.F.P. (Color Endurance Factor Pool) specifico per proteggere il pigmento dei capelli tinti o naturali, super idratandoli ed esaltandone quindi la luminosità e la salute. La Crema degli Angeli è stata concepita come prodotto cosmetico ad alto rendimento e qualità per capelli ultra sensibili di qualsiasi tipo</descrizione> 
+		        <ingredienti>I principi attivi principali sono: PROTAGEN COMPLESSO PROTEINICO VEGETALE : con estratti di Achillea, Aloe, Calendula, Timo, Bardana Amamelide che nell’insieme svolgono un’azione protettiva, lenitiva,idratante, tonificante ed antisettica. MINERALI : zinco, manganese, magnesio e rame ad azione rigenerante antistress C.E.F.P. antiossidante del colore con Vit. C, Vit. E. Arginina e Octyl Cinnamate OLI essenziali di Pompelmo e Rosa Gallica ad azione conservante</ingredienti>
 				<tabIngredienti>no<tabIngredienti>
-		        <utilizzo>mcreama spalmabile alla nutella</utilizzo> 
+		        <utilizzo>Dopo lo shampoo a capelli puliti e bagnati applicarne una piccola quantità massaggiandola bene nei capelli. Lasciare in posa da 1 a 5 minuti (il tempo di completare la doccia) e sciacquare. Se si lascia più a lungo (durante un bagno?)Fà solo più bene ai capelli. Dopo lo shampoo per uso frequente anche giornaliero; dopo la tinta, permanente, decolorazione o trattamenti invasivi. Dopo sole, mare, lampade,piscina ed attività sportive</utilizzo> 
 		        <prezzo>€ 3,30</prezzo> 
 		    </crema>
   			
 			   <crema> 
 			   
 		        <id>4</id> 
-		        <tabName01>seven</tabName01> 
-		        <tabName02>eight</tabName02> 
-		        <tabName03>nine</tabName03> 
+		        <tabName01>tab10</tabName01> 
+		        <tabName02>tab11</tabName02> 
+		        <tabName03>tab12</tabName03> 
+		        <nome_prodotto>PAPUA HerbaGel (150ml)</nome_prodotto> 
+				<img>image/prodotti/Creme/odm.jpg</img> 
+		        <descrizione>PAPUA HerbaGel è un fantastico gel crema che fissa tutti i tipi di capelli, naturali o tinti, secchi o grassi, lisci o ricci, uomo o donna. E' ideale per l'effetto bagnato o l'asciugatura con il phon, al sole o messa in piega. Con estratti di erbe dolci, non unge, non sporca i capeli o la cute e si sciaqua facilmente. ph 5.5</descrizione> 
+		        <ingredienti>Ingredienti: aqua,peg-20,glyceryl laurate, vegetable glycerin,carbomer hydroxythil cellulose, triethonalamine, propylene glycol, hidrolydinylurea, methylparaben, ethoxydiglycol, benzophenone-4, panthenol, echinacea angustiflia, malva silvestris, urtica dioica, calendula officinalis, viola tricolor, betula alba, cholorophyllin, rosa gallica.</ingredienti>
+				<tabIngredienti>no<tabIngredienti>
+		        <utilizzo>mcreama spalmabile alla nutella</utilizzo> 
+		        <prezzo>€ 3,30</prezzo> 
+		    </crema> 
+			<crema> 
+			   
+		        <id>5</id> 
+		        <tabName01>tab13</tabName01> 
+		        <tabName02>tab14</tabName02> 
+		        <tabName03>tab15</tabName03> 
+		        <nome_prodotto>Crema tre</nome_prodotto> 
+				<img>image/prodotti/Creme/odm.jpg</img> 
+		        <descrizione>Crema tre - descrizione</descrizione> 
+		        <ingredienti></ingredienti>
+				<tabIngredienti>no<tabIngredienti>
+		        <utilizzo>mcreama spalmabile alla nutella</utilizzo> 
+		        <prezzo>€ 3,30</prezzo> 
+		    </crema> 
+			<crema> 
+			   
+		        <id>6</id> 
+		        <tabName01>tab16</tabName01> 
+		        <tabName02>tab17</tabName02> 
+		        <tabName03>tab18</tabName03> 
+		        <nome_prodotto>Crema tre</nome_prodotto> 
+				<img>image/prodotti/Creme/odm.jpg</img> 
+		        <descrizione>Crema tre - descrizione</descrizione> 
+		        <ingredienti></ingredienti>
+				<tabIngredienti>no<tabIngredienti>
+		        <utilizzo>mcreama spalmabile alla nutella</utilizzo> 
+		        <prezzo>€ 3,30</prezzo> 
+		    </crema> 
+			<crema> 
+			   
+		        <id>7</id> 
+		        <tabName01>tab19</tabName01> 
+		        <tabName02>tab20</tabName02> 
+		        <tabName03>tab21</tabName03> 
+		        <nome_prodotto>Crema tre</nome_prodotto> 
+				<img>image/prodotti/Creme/odm.jpg</img> 
+		        <descrizione>Crema tre - descrizione</descrizione> 
+		        <ingredienti></ingredienti>
+				<tabIngredienti>no<tabIngredienti>
+		        <utilizzo>mcreama spalmabile alla nutella</utilizzo> 
+		        <prezzo>€ 3,30</prezzo> 
+		    </crema> 
+			<crema> 
+			   
+		        <id>8</id> 
+		        <tabName01>tab22</tabName01> 
+		        <tabName02>tab23</tabName02> 
+		        <tabName03>tab24</tabName03> 
+		        <nome_prodotto>Crema tre</nome_prodotto> 
+				<img>image/prodotti/Creme/odm.jpg</img> 
+		        <descrizione>Crema tre - descrizione</descrizione> 
+		        <ingredienti></ingredienti>
+				<tabIngredienti>no<tabIngredienti>
+		        <utilizzo>mcreama spalmabile alla nutella</utilizzo> 
+		        <prezzo>€ 3,30</prezzo> 
+		    </crema> 
+			<crema> 
+			   
+		        <id>9</id> 
+		        <tabName01>tab25</tabName01> 
+		        <tabName02>tab26</tabName02> 
+		        <tabName03>tab27</tabName03> 
+		        <nome_prodotto>Crema tre</nome_prodotto> 
+				<img>image/prodotti/Creme/odm.jpg</img> 
+		        <descrizione>Crema tre - descrizione</descrizione> 
+		        <ingredienti></ingredienti>
+				<tabIngredienti>no<tabIngredienti>
+		        <utilizzo>mcreama spalmabile alla nutella</utilizzo> 
+		        <prezzo>€ 3,30</prezzo> 
+		    </crema> 
+			<crema> 
+			   
+		        <id>10</id> 
+		        <tabName01>tab28</tabName01> 
+		        <tabName02>tab29</tabName02> 
+		        <tabName03>tab30</tabName03> 
 		        <nome_prodotto>Crema tre</nome_prodotto> 
 				<img>image/prodotti/Creme/odm.jpg</img> 
 		        <descrizione>Crema tre - descrizione</descrizione> 

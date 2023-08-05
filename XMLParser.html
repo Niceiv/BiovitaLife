@@ -41,9 +41,9 @@
 	text = "<Creme>" +
 		"    <crema>" +
 		"        <id>1</id>" +
-		"        <tabName01>one</tabName01>" +
-		"        <tabName02>two</tabName02>" +
-		"        <tabName03>three</tabName03>" +
+		"        <tabName01>tab01</tabName01>" +
+		"        <tabName02>tab02</tabName02>" +
+		"        <tabName03>tab03</tabName03>" +
 		"        <nome_prodotto>DERMOJOY Plus UNIVERSALE </nome_prodotto>" +
 		"		 <img>image/prodotti/Creme/cda.jpg</img>" +
 		"        <descrizione>DERMOJOY Plus UNIVERSALE con Tea Tree Oil (Melaleuca Alternifolia) da Agricoltura Biologica è un prodotto certificato Eco Bio Cosmesi ALL’ORIGINE e come tale contiene ingredienti da agricoltura biologica, rispetta il protocollo Eco – Bio  non utilizzando sostanze vietate perché ritenute a rischio per la persona e dannose per l’ambiente,non utilizza ingredienti da OGM, è  dermatologicamente testato, ed è controllato per la presenza di Nichel, Cromo a Cobalto .</descrizione>" +
@@ -81,9 +81,9 @@
 		"    </crema>" +
 		"    <crema>" +
 		"        <id>2</id>" +
-		"        <tabName01>four</tabName01>" +
-		"        <tabName02>five</tabName02>" +
-		"        <tabName03>six</tabName03>" +
+		"        <tabName01>tab04</tabName01>" +
+		"        <tabName02>tab05</tabName02>" +
+		"        <tabName03>tab06</tabName03>" +
 		"        <nome_prodotto>Crema due</nome_prodotto>" +
 		"		 <img>image/prodotti/Creme/oda.jpg</img>" +
 		"        <descrizione>Crema due - descrizione</descrizione>" +
@@ -95,9 +95,9 @@
 		"    </crema>" +
 		"    <crema>" +
 		"        <id>3</id>" +
-		"        <tabName01>seven</tabName01>" +
-		"        <tabName02>eight</tabName02>" +
-		"        <tabName03>nine</tabName03>" +
+		"        <tabName01>tab07</tabName01>" +
+		"        <tabName02>tab08</tabName02>" +
+		"        <tabName03>tab09</tabName03>" +
 		"        <nome_prodotto>Crema tre</nome_prodotto>" +
 		"		 <img>image/prodotti/Creme/odm.jpg</img>" +
 		"        <descrizione>Crema tre - descrizione</descrizione>" +
@@ -142,7 +142,7 @@
 			scheda = scheda[0];
 			
 			righeTabScheda=righeTabScheda + "<TABLE style='relative:absolute; top:5; left:5;width: 560px;  border-bottom: 1px solid #ddd; font-size:15'>	";
-			righeTabScheda=righeTabScheda + "	<TR style=' height:5px;'><th style='width:5%;height:5px;'>liv</th><th >desc</th><th width=35%>prop</th></tr>";
+			righeTabScheda=righeTabScheda + "	<TR style=' height:5px;'><th style='width:5%;height:5px;'>INCI</th><th >ingredienti</th><th width=35%>funzione</th></tr>";
 							
 			for(var k=0; k< scheda.children.length; k++) {
 
@@ -206,7 +206,7 @@
 			"	</div>" +
 			"	<aside>" +
 			"		<h2>" + prezzo[0].textContent.toString() + "</h2>" +
-			"		<button class='carrello'>Aggiungi al carrello</button>" +
+			"		<button>Aggiungi al carrello</button>" +
 			"	</aside>" +
 			"</section>";
 

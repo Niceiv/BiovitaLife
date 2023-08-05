@@ -381,46 +381,137 @@ p.uno{
   display: none;
 }
 
-#one:checked ~ .panels #one-panel,
-#two:checked ~ .panels #two-panel,
-#three:checked ~ .panels #three-panel {
-  display: block;
+#tab01:checked ~ .panels #tab01-panel,
+#tab02:checked ~ .panels #tab02-panel,
+#tab03:checked ~ .panels #tab03-panel {
+  display: block; 
 }
-#one:checked ~ .tabs #one-tab,
-#two:checked ~ .tabs #two-tab,
-#three:checked ~ .tabs #three-tab {
+#tab01:checked ~ .tabs #tab01-tab,
+#tab02:checked ~ .tabs #tab02-tab,
+#tab03:checked ~ .tabs #tab03-tab {
   background: #fff;
   color: #000;
   border-top: 3px solid #46b446;
 }
 
 
-#four:checked ~ .panels #four-panel,
-#five:checked ~ .panels #five-panel,
-#six:checked ~ .panels #six-panel {
+#tab04:checked ~ .panels #tab04-panel,
+#tab05:checked ~ .panels #tab05-panel,
+#tab06:checked ~ .panels #tab06-panel {
   display: block;
 }
-#four:checked ~ .tabs #four-tab,
-#five:checked ~ .tabs #five-tab,
-#six:checked ~ .tabs #six-tab {
+#tab04:checked ~ .tabs #tab04-tab,
+#tab05:checked ~ .tabs #tab05-tab,
+#tab06:checked ~ .tabs #tab06-tab {
   background: #fff;
   color: #000;
   border-top: 3px solid #46b446;
 }
 
-#seven:checked ~ .panels #seven-panel,
-#eight:checked ~ .panels #eight-panel,
-#nine:checked ~ .panels #nine-panel {
+#tab07:checked ~ .panels #tab07-panel,
+#tab08:checked ~ .panels #tab08-panel,
+#tab09:checked ~ .panels #tab09-panel {
   display: block;
 }
-#seven:checked ~ .tabs #seven-tab,
-#eight:checked ~ .tabs #eight-tab,
-#nine:checked ~ .tabs #nine-tab {
+#tab07:checked ~ .tabs #tab07-tab,
+#tab08:checked ~ .tabs #tab08-tab,
+#tab09:checked ~ .tabs #tab09-tab {
   background: #fff;
   color: #000;
   border-top: 3px solid #46b446;
 }
-button.carrello{
-font-size:x-large;
+#tab10:checked ~ .panels #tab10-panel,
+#tab11:checked ~ .panels #tab11-panel,
+#tab12:checked ~ .panels #tab12-panel {
+  display: block;
+}
+#tab10:checked ~ .tabs #tab10-tab,
+#tab11:checked ~ .tabs #tab11-tab,
+#tab12:checked ~ .tabs #tab12-tab {
+  background: #fff;
+  color: #000;
+  border-top: 3px solid #46b446;
+}
+#tab13:checked ~ .panels #tab13-panel,
+#tab14:checked ~ .panels #tab14-panel,
+#tab15:checked ~ .panels #tab15-panel {
+  display: block;
+}
+#tab13:checked ~ .tabs #tab13-tab,
+#tab14:checked ~ .tabs #tab14-tab,
+#tab15:checked ~ .tabs #tab15-tab {
+  background: #fff;
+  color: #000;
+  border-top: 3px solid #46b446;
+}
+#tab16:checked ~ .panels #tab16-panel,
+#tab17:checked ~ .panels #tab17-panel,
+#tab18:checked ~ .panels #tab18-panel {
+  display: block;
+}
+#tab16:checked ~ .tabs #tab16-tab,
+#tab17:checked ~ .tabs #tab17-tab,
+#tab18:checked ~ .tabs #tab18-tab {
+  background: #fff;
+  color: #000;
+  border-top: 3px solid #46b446;
+}
+#tab19:checked ~ .panels #tab19-panel,
+#tab20:checked ~ .panels #tab20-panel,
+#tab21:checked ~ .panels #tab21-panel {
+  display: block;
+}
+#tab19:checked ~ .tabs #tab19-tab,
+#tab20:checked ~ .tabs #tab20-tab,
+#tab21:checked ~ .tabs #tab21-tab {
+  background: #fff;
+  color: #000;
+  border-top: 3px solid #46b446;
+}
+#tab22:checked ~ .panels #tab22-panel,
+#tab23:checked ~ .panels #tab23-panel,
+#tab24:checked ~ .panels #tab24-panel {
+  display: block;
+}
+#tab22:checked ~ .tabs #tab22-tab,
+#tab23:checked ~ .tabs #tab23-tab,
+#tab24:checked ~ .tabs #tab24-tab {
+  background: #fff;
+  color: #000;
+  border-top: 3px solid #46b446;
+}
+#tab25:checked ~ .panels #tab25-panel,
+#tab26:checked ~ .panels #tab26-panel,
+#tab27:checked ~ .panels #tab27-panel {
+  display: block;
+}
+#tab25:checked ~ .tabs #tab25-tab,
+#tab26:checked ~ .tabs #tab26-tab,
+#tab27:checked ~ .tabs #tab27-tab {
+  background: #fff;
+  color: #000;
+  border-top: 3px solid #46b446;
+}
+#tab28:checked ~ .panels #tab28-panel,
+#tab29:checked ~ .panels #tab29-panel,
+#tab30:checked ~ .panels #tab30-panel {
+  display: block;
+}
+#tab28:checked ~ .tabs #tab28-tab,
+#tab29:checked ~ .tabs #tab29-tab,
+#tab30:checked ~ .tabs #tab30-tab {
+  background: #fff;
+  color: #000;
+  border-top: 3px solid #46b446;
+}
+button{
+  color: #fff;
+  padding: 8px 22px;
+  border-radius: 6px;
+  background: green;
+  transition: all 0,2 ease;
 
+}
+button:active{
+  transform: scale (0.96);
 }
