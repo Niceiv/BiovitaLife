@@ -11,7 +11,9 @@ myTopnav = myTopnav + "    <a href='contatti.html'>Contact</a>";
 myTopnav = myTopnav + "    <a href='Vantaggi.html'>Vantaggi</a>";
 myTopnav = myTopnav + "    <a href='contatti.html'>Distribuzione</a>";
 myTopnav = myTopnav + "    <a href='contatti.html'>Promozioni</a>";
-myTopnav = myTopnav + "    <a href='ProvaPagamento/Login.html' class='taco'>";
-myTopnav = myTopnav + "    <i class='fa fa-bars'></i>";
+myTopnav = myTopnav + "    <a href='faq.html'>FAQ</a>";
+myTopnav = myTopnav + "    <a href='#' class='taco glyphicon glyphicon-user'>";
+myTopnav = myTopnav + "    <i class='fa fa-bars '></i>";
 myTopnav = myTopnav + "    </a>";
 myTopnav = myTopnav + "</div>";
+
