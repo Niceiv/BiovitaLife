@@ -1,85 +1,68 @@
-* {
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
 
-body {
-  background-color: white;
-  font-size: 1.3rem;
-  font-weight: 700;
-}
 
-.head {
-  font-size: 2rem;
-  margin-top: 1rem;
-  text-align: center;
+body{
+    font-family: 'Work Sans', sans-serif;
 }
+.faq-heading{
+    border-bottom: #777;
+    padding: 20px 60px;
+}
+.faq-container{
+display: flex;
+justify-content: center;
+flex-direction: column;
 
-.container10  {
+}
+.hr-line{
   width: 60%;
-  margin: 2rem auto 0;
+  margin: auto;
+}
+/* Style the buttons that are used to open and close the faq-page body */
+.faq-page {
+    /* background-color: #eee; */
+    color: #444;
+    cursor: pointer;
+    padding: 30px 20px;
+    width: 60%;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin: auto;
+
+}
+.faq-body{
+    margin: auto;
+    /* text-align: center; */
+   width: 50%; 
+   padding: auto;
+
 }
 
-.faq {
-  background-color: transparent;
-  border: 1px solid #000;
-  border-radius: 10px;
-  margin: 20px 0;
-  padding: 30px;
-  position: relative;
-  overflow: hidden;
-  transition: 0.3s ease;
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.faq-page:hover {
+    background-color: #F9F9F9;
 }
 
-.title {
-  margin: 0 35px 0 0;
+/* Style the faq-page panel. Note: hidden by default */
+.faq-body {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
 }
 
-.text {
-  display: none;
-  margin: 30px 0 0;
+.faq-page:after {
+    content: '\02795';
+    /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
 }
 
-.toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  cursor: pointer;
-  border-radius: 50%;
-  border: none;
-  font-size: 1.1rem;
-  position: absolute;
-  top: 1.9rem;
-  right: 1.9rem;
-  height: 2rem;
-  width: 2rem;
-  background-color: #008000;
-  color: #fff;
-}
-
-.toggle .fa-times {
-  display: none;
-}
-
-.active .toggle .fa-times {
-  color: #fff;
-  display: block;
-}
-
-.active .toggle .fa-chevron-down {
-  display: none;
-}
-
-.active .text {
-  display: block;
-}
-
-.active .toggle {
-  background-color: #ff0000;
-}
-
-.active {
-  background-color: #ffff00;
+.active:after {
+    content: "\2796";
+    /* Unicode character for "minus" sign (-) */
 }
