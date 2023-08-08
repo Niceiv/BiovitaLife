@@ -9,7 +9,7 @@ myFooter = myFooter + "			<a href='INDEX.HTML' class='link-1'>Home</a>";
 myFooter = myFooter + "			<a href='Mappadelsito.html'>Mappa Sito</a>";
 myFooter = myFooter + "			<a href='#'>Pricing</a>";
 myFooter = myFooter + "			<a href='#'>About</a>";
-myFooter = myFooter + "			<a href='#'>Faq</a>";
+myFooter = myFooter + "			<a href='faq.html'>FAQ</a>";
 myFooter = myFooter + "			<a href='#'>Contact</a>";
 myFooter = myFooter + "		</p>";
 myFooter = myFooter + "		<p class='footer-company-name'>Biovita Life © 2015</p>";
