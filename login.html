@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="CSS/login.css">
+
+
+
+    <title>Document</title>
+</head>
+<body >
+   
+
+	<h2>Weekly Coding Challenge #1: Sign in/up Form</h2>
+	<div class="container" id="container">
+		<div class="form-container sign-up-container">
+			<form action="#">
+				<h1>Crea un Account</h1>
+				<div class="social-container">
+					<a href="#" class="social"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+					<a href="#" class="social"><i class="fa fa-google-plus-official" aria-hidden="true"></i></a>
+					<a href="#" class="social"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+				</div>
+				<span>o usa l'email per la registrazione</span>
+				<input type="text" placeholder="Name" />
+				<input type="email" placeholder="Email" />
+				<input type="password" placeholder="Password" />
+				<button>Registrati</button>
+			</form>
+		</div>
+		<div class="form-container sign-in-container">
+			<form action="#">
+				<h1>Accedi</h1>
+				<div class="social-container">
+					<a href="#" class="social"><i class="fa fa-facebook"></i></a>
+					<a href="#" class="social"><i class="fa fa-google"></i></a>
+					<a href="#" class="social"><i class="fa fa-twitter"></i></a>
+				</div>
+				<span>o usa un account</span>
+				<input type="email" placeholder="Email" />
+				<input type="password" placeholder="Password" />
+				<a href="#">Hai dimenticato la password?</a>
+				<button>Accedi</button>
+			</form>
+		</div>
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-left">
+					<h1>Bentornato!</h1>
+					<p>Per rimanere in contatto con noi inserisci le tue informazioni personali</p>
+					<button class="ghost" id="signIn">Accedi</button>
+				</div>
+				<div class="overlay-panel overlay-right">
+					<h1>Ciao, amico!</h1>
+					<p>Inserisci i tuoi dettagli personali per rimanere connesso con noi</p>
+					<button class="ghost" id="signUp">Registrati</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+<script>
+	
+	const signUpButton = document.getElementById('signUp');
+	const signInButton = document.getElementById('signIn');
+	const container = document.getElementById('container');
+	
+	
+	signUpButton.addEventListener('click', () => {
+		container.classList.add("right-panel-active");
+	});
+	console.log('cisono')
+	signInButton.addEventListener('click', () => {
+		container.classList.remove("right-panel-active");
+	});
+	
+	</script>
+</html>

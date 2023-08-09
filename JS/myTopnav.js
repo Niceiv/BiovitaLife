@@ -2,18 +2,28 @@ var myTopnav="";
 
 
 myTopnav = myTopnav + "<DIV class='top' >";
-myTopnav = myTopnav + "    <a href='INDEX.HTML'> <img src='image/LogoSfondi/Logo.PNG'></a>";
+myTopnav = myTopnav + "    <a href='INDEX.HTML'> <img src='image/LogoSfondi/logo.jpeg'></a>";
 myTopnav = myTopnav + "</DIV>";
 myTopnav = myTopnav + "<div class='topnav' id='myTopnav' >";
-myTopnav = myTopnav + "    <a href='INDEX.HTML' class='active'>Home</a>";
+myTopnav = myTopnav + "    <a href='INDEX.HTML' class='active1'>Home</a>";
 myTopnav = myTopnav + "    <a href='news.html'>News</a>";
-myTopnav = myTopnav + "    <a href='contatti.html'>Contact</a>";
+myTopnav = myTopnav + "    <a href='account.html'>Account</a>";
 myTopnav = myTopnav + "    <a href='Vantaggi.html'>Vantaggi</a>";
-myTopnav = myTopnav + "    <a href='contatti.html'>Distribuzione</a>";
-myTopnav = myTopnav + "    <a href='contatti.html'>Promozioni</a>";
+myTopnav = myTopnav + "    <a href='login.html'>Login</a>";
+myTopnav = myTopnav + "    <a href='linee.html'>Linee</a>";
 myTopnav = myTopnav + "    <a href='faq.html'>FAQ</a>";
-myTopnav = myTopnav + "    <a href='#' class='taco glyphicon glyphicon-user'>";
-myTopnav = myTopnav + "    <i class='fa fa-bars '></i>";
+myTopnav = myTopnav + "    <a href='#' class='taco'>";
+myTopnav = myTopnav + "    <i class='fa fa-user-circle' aria-hidden='true'></i>";
 myTopnav = myTopnav + "    </a>";
 myTopnav = myTopnav + "</div>";
 
+
+//<ul class="dropdown-menu">
+//<li class="dropdown-header">Account</li>
+//<li><a href="#">HTML</a></li>
+//<li><a href="#">CSS</a></li>
+//<li><a href="#">JavaScript</a></li>
+//<li class="divider"></li>
+//<li class="dropdown-header">Ordini</li>
+//<li><a href="#">About Us</a></li>
+//</ul> 

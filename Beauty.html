@@ -3,8 +3,10 @@
 	<HEAD>
 		<TITLE>BEAUTYANDNATURA</TITLE>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		
 		<link rel="icon" type="image/vnd.icon" href="image/LogoSfondi/Logo.ico">
 		
@@ -19,12 +21,27 @@
 			<a href="INDEX.HTML"> <img src="image\LogoSfondi\Logo.PNG"></a>
 		</DIV>
 		<div class="topnav" id="myTopnav">
-		  <a href="INDEX.HTML" class="active">Home</a>
-		  <a href="news.html">News</a>
-		  <a href="contatti.html">Contact</a>
-		  <a href="about.html">About</a>
-		  </a>
-		</div>
+			<ul style="display: flex; flex-direction: row;" >
+		  <li><a href="INDEX.HTML" class="active1">Home</a></li>
+		  <li><a href="news.html">News</a></li>
+		  <li><a href="contatti.html">Contact</a></li>
+		  <li><a href="faq.html">FAQ</a></li>
+			
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1
+				<span class="caret"></span></a>
+			<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="menu1">
+			  <li role="presentation" class="dropdown-header">Dropdown header 1</li>
+			  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+			  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+			  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
+			  <li role="presentation" class="divider"></li>
+			  <li role="presentation" class="dropdown-header">Dropdown header 2</li>
+			  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
+			</ul>
+		</ul>
+			</div>
+		</DIV>
 
  
 		<DIV class="Titolo" style="height: 100px;" >

@@ -1,0 +1,114 @@
+IDEA DATABASE
+
+
+
+
+ dati sui tuoi prodotti, come il nome, il prezzo, la categoria, la descrizione, il codice a barre
+ dati sui tuoi clienti, come il nome, il cognome, l’indirizzo, il numero di telefono, l’email
+  dati sui tuoi ordini, come il numero d’ordine, la data, il cliente, i prodotti acquistati, il totale, lo stato
+  
+ Alcune colonne che potresti usare per la tabella PRODOTTI sono:
+
+IDProdotto (chiave primaria, numerazione automatica): per identificare in modo univoco ogni prodotto.
+NomeProdotto (testo): per sapere il nome del prodotto.
+PrezzoProdotto (numero): per sapere il prezzo del prodotto.
+CategoriaProdotto (testo): per sapere a quale categoria appartiene il prodotto.
+DescrizioneProdotto (testo): per sapere le caratteristiche e le funzioni del prodotto.
+CodiceBarreProdotto (testo): per sapere il codice a barre del prodotto.
+Queste sono le colonne principali che ti servono per la tabella prodotti. Puoi anche aggiungere altre colonne, come ad esempio la marca, il modello, il colore, la dimensione, la disponibilità, l’immagine  
+
+
+
+
+
+
+
+Se vuoi creare una tabella CLIENTI, potresti avere le seguenti colonne:
+
+IDCliente (chiave primaria, numerazione automatica)
+NomeCliente (testo)
+CognomeCliente (testo)
+IndirizzoCliente (testo)
+TelefonoCliente (testo)
+EmailCliente (testo)
+
+
+VA AGGIUNTO RECAPITI E VARI DATI DEI CLIENTI
+
+
+
+
+Se vuoi creare una tabella ORDINI, potresti avere le seguenti colonne:
+
+IDOrdine (chiave primaria, numerazione automatica)
+DataOrdine (data)
+IDCliente (chiave esterna che fa riferimento alla tabella Clienti)
+TotaleOrdine (numero)
+StatoOrdine (testo)
+
+Alcune colonne che potresti usare per la tabella ORDINI sono:
+
+IDOrdine (chiave primaria, numerazione automatica): per identificare in modo univoco ogni ordine.
+DataOrdine (data): per sapere quando è stato effettuato l’ordine.
+IDCliente (chiave esterna che fa riferimento alla tabella Clienti): per sapere chi ha fatto l’ordine.
+TotaleOrdine (numero): per sapere quanto ha speso il cliente.
+StatoOrdine (testo): per sapere se l’ordine è in elaborazione, in spedizione, consegnato, annullato, ecc. (VA DIVISO A PARTE IN UN'ALTRA TABELLA)
+Queste sono le colonne principali che ti servono per la tabella ordine. Puoi anche aggiungere altre colonne, come ad esempio il metodo di pagamento, il codice di tracciamento, la nota del cliente, ecc. Inoltre, devi creare una tabella aggiuntiva per memorizzare i dettagli dei prodotti acquistati in ogni ordine, come ad esempio:
+
+Alcune colonne che potresti usare per la tabella DETTAGLIO ORDINE sono:
+
+IDDettaglioOrdine (chiave primaria, numerazione automatica): per identificare in modo univoco ogni riga della tabella.
+IDOrdine (chiave esterna che fa riferimento alla tabella Ordini): per sapere a quale ordine appartiene il dettaglio.
+IDProdotto (chiave esterna che fa riferimento alla tabella Prodotti): per sapere quale prodotto è stato acquistato.
+QuantitàProdotto (numero): per sapere quante unità del prodotto sono state acquistate.
+PrezzoProdotto (numero): per sapere il prezzo unitario del prodotto al momento dell’acquisto.
+
+
+Alcune colonne che potresti usare per la tabella RECENSIONI sono:
+
+IDRecensione (chiave primaria, numerazione automatica): per identificare in modo univoco ogni recensione.
+IDCliente (chiave esterna che fa riferimento alla tabella Clienti): per sapere chi ha scritto la recensione.
+IDProdotto (chiave esterna che fa riferimento alla tabella Prodotti): per sapere quale prodotto è stato recensito.
+DataRecensione (data): per sapere quando è stata scritta la recensione.
+VotoRecensione (numero): per sapere il voto assegnato al prodotto da 1 a 5 stelle.
+TestoRecensione (testo): per sapere il commento del cliente sul prodotto.
+Queste sono le colonne principali che ti servono per la tabella recensioni. Puoi anche aggiungere altre colonne, come ad esempio il titolo della recensione, il numero di persone che hanno trovato utile la recensione
+
+Alcune colonne che potresti usare per la tabella AZIENDA sono:
+
+IDAzienda (chiave primaria, numerazione automatica):
+NomeAzienda (testo): per sapere il nome dell'azienda.
+IndirizzoAzienda (testo): per sapere l’indirizzo dell'azienda.
+TelefonoAzienda (testo): per sapere il numero di telefono dell'azienda.
+EmailAzienda (testo): per sapere l’email dell'azienda.
+ResponsabileAzienda (testo): per sapere il nome del responsabile dell'azienda.
+Queste sono le colonne principali che ti servono per la tabella azienda. Puoi anche aggiungere altre colonne, come ad esempio il numero di dipendenti, il fatturato, la superficie
+
+Alcune colonne che potresti usare per la tabella VENDITE sono:
+
+IDVendita (chiave primaria, numerazione automatica): per identificare in modo univoco ogni vendita.
+IDOrdine (chiave esterna che fa riferimento alla tabella Ordini): per sapere a quale ordine appartiene la vendita.
+IDPoloVendita (chiave esterna che fa riferimento alla tabella Polo Vendita): per sapere da quale polo vendita è stata effettuata la vendita.
+DataVendita (data): per sapere quando è stata effettuata la vendita.
+TotaleVendita (numero): per sapere quanto è stato incassato dalla vendita.
+MetodoPagamentoVendita (testo): per sapere il metodo di pagamento usato dal cliente.
+Queste sono le colonne principali che ti servono per la tabella vendite. Puoi anche aggiungere altre colonne, come ad esempio il codice fiscale del cliente, la ricevuta fiscale, il numero di scontrino
+
+Alcune colonne che potresti usare per la tabella REGISTRAZIONE ACCOUNT sono:
+
+IDAccount (chiave primaria, numerazione automatica): per identificare in modo univoco ogni account.
+NomeUtente (testo): per sapere il nome utente scelto dal cliente.
+Password (testo): per sapere la password scelta dal cliente.
+Email (testo): per sapere l’email del cliente.
+DataRegistrazione (data): per sapere quando il cliente si è registrato.
+TipoAccount (testo): per sapere se il cliente ha un account normale o premium.
+Queste sono le colonne principali che ti servono per la tabella registrazione account. Puoi anche aggiungere altre colonne, come ad esempio il nome, il cognome, il sesso, la data di nascita, il numero di telefono, l’indirizzo
+
+Alcune colonne che potresti usare per la tabella BRANDS sono:
+
+IDBrand (chiave primaria, numerazione automatica): per identificare in modo univoco ogni brand.
+NomeBrand (testo): per sapere il nome del brand.
+LogoBrand (testo): per sapere il logo del brand.
+DescrizioneBrand (testo): per sapere la descrizione del brand.
+CategoriaBrand (testo): per sapere a quale categoria appartiene il brand.
+Queste sono le colonne principali che ti servono per la tabella brands. Puoi anche aggiungere altre colonne, come ad esempio il sito web, i social media, il numero di prodotti, il fatturato, la reputazione

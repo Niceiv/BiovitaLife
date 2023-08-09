@@ -9,3 +9,6 @@ accessibilità
 privacy
 GDPR
 certificato lucchetto
+account/ ordini/ messaggi/ notifiche/ pagamenti/ preferiti/ impostazioni/ esci (profilo)
+
+Carrello
