@@ -1,38 +1,69 @@
 <FAQS>
-	<FAQ>
-		<ID></ID>
-		<DOMANDA></DOMANDA>
-		<RISPOSTA></RISPOSTA>
-		<Visibile></Visibile>
-	</FAQ>
-	<FAQ>
-		<ID></ID>
-		<DOMANDA></DOMANDA>
-		<RISPOSTA></RISPOSTA>
-		<Visibile></Visibile>
-	</FAQ>
-	<FAQ>
-		<ID></ID>
-		<DOMANDA></DOMANDA>
-		<RISPOSTA></RISPOSTA>
-		<Visibile></Visibile>
-	</FAQ>
-	<FAQ>
-		<ID></ID>
-		<DOMANDA></DOMANDA>
-		<RISPOSTA></RISPOSTA>
-		<Visibile></Visibile>
-	</FAQ>
-	<FAQ>
-		<ID></ID>
-		<DOMANDA></DOMANDA>
-		<RISPOSTA></RISPOSTA>
-		<Visibile></Visibile>
-	</FAQ>
-	<FAQ>
-		<ID></ID>
-		<DOMANDA></DOMANDA>
-		<RISPOSTA></RISPOSTA>
-		<Visibile></Visibile>
-	</FAQ>
+	<GRUPPO>
+		<GRP_NOME>Spedizione</GRP_NOME>
+		<DOMANDE>
+			<FAQ>
+				<ID>faq-one</ID>
+				<DOMANDA>Come faccio a sapere se il mio ordine è stato spedito?</DOMANDA>
+				<RISPOSTA>Puoi controllare lo stato del tuo ordine <a href="#">qui</a>.
+				</RISPOSTA>
+				<Visibile>si</Visibile>
+			</FAQ>
+			<FAQ>
+				<ID>faq-two</ID>
+				<DOMANDA>Con quale corriere spedisce l'azienda BiovitaLife?</DOMANDA>
+				<RISPOSTA>La nostra azienda utilizza il servizio di spedizione di IoInvio.</RISPOSTA>
+				<Visibile>si</Visibile>
+			</FAQ>
+			<FAQ>
+				<ID>faq-three</ID>
+				<DOMANDA>Quali sono le vostre politiche di spedizione?</DOMANDA>
+				<RISPOSTA>La spedizione è gratis per gli ordini superiori a tot.</RISPOSTA>
+				<Visibile>si</Visibile>
+			</FAQ>
+		</DOMANDE>
+	</GRUPPO>
+	<GRUPPO>
+		<GRP_NOME>Pagamenti</GRP_NOME>
+		<DOMANDE>
+			<FAQ>
+				<ID>faq-one</ID>
+				<DOMANDA>La tua carta non viene accettata per i pagamenti?</DOMANDA>
+				<RISPOSTA>Le carte che verranno accettate per i pagamenti online sono Paypal, MasterCard, ... </RISPOSTA>
+				<Visibile>si</Visibile>
+			</FAQ>
+			<FAQ>
+				<ID>faq-two</ID>
+				<DOMANDA>Why do you need an FAQ page?</DOMANDA>
+				<RISPOSTA>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit saepe sequi, illum facere
+            necessitatibus cum aliquam id illo omnis maxime, totam soluta voluptate amet ut sit ipsum
+            aperiam.
+            Perspiciatis, porro!</RISPOSTA>
+				<Visibile>si</Visibile>
+			</FAQ>
+		</DOMANDE>
+	</GRUPPO>
+	<GRUPPO>
+		<GRP_NOME>Colorazione</GRP_NOME>
+		<DOMANDE>
+			<FAQ>
+				<ID>faq-one</ID>
+				<DOMANDA>Why do you need an FAQ page?</DOMANDA>
+				<RISPOSTA>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit saepe sequi, illum facere
+            necessitatibus cum aliquam id illo omnis maxime, totam soluta voluptate amet ut sit ipsum
+            aperiam.
+            Perspiciatis, porro!</RISPOSTA>
+				<Visibile>si</Visibile>
+			</FAQ>
+			<FAQ>
+				<ID>faq-two</ID>
+				<DOMANDA>Why do you need an FAQ page?</DOMANDA>
+				<RISPOSTA>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit saepe sequi, illum facere
+            necessitatibus cum aliquam id illo omnis maxime, totam soluta voluptate amet ut sit ipsum
+            aperiam.
+            Perspiciatis, porro!</RISPOSTA>
+				<Visibile>si</Visibile>
+			</FAQ>
+		</DOMANDE>
+	</GRUPPO>
 </FAQS>
