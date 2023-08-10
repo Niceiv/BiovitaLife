@@ -43,7 +43,7 @@
 		  display: none;
 		}
 		.topnav a.taco {
-		position:absolute;
+		position:relative;
 		right:0;	
 		}
 
@@ -68,7 +68,7 @@
 .top img {
  height: 100px;
   width: 200px;
-  position: absolute;
+  position: relative;
   z-index: 1;
   top: 0px;
   left: 0px;
@@ -216,7 +216,7 @@ div.desc {
   padding: 0px;
   width: 100%;
   text-align: center; /* Center text */
-  position: absolute; /* Position text */
+  position: relative; /* Position text */
   height:100%;
   top: 49%; /* Position text in the middle */
   left: 50%; /* Position text in the middle */
@@ -292,7 +292,7 @@ tr:nth-child(even) {
   height: 350px;
 }
 .closebtn{
-	position: absolute;
+	position: relative;
 	top: 5px;
 	right: 25px;
 	color:red;
@@ -330,7 +330,7 @@ margin-top:100px;
 }
 aside{
 float: right;
-position: absolute;
+position: relative;
 right: 10px;
 top: 100px;
 }
