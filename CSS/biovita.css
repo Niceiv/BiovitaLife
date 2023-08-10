@@ -2,50 +2,26 @@
       width: 100%;
       height: 200px;
     }
+    .nav{
+      padding-left: 38px;
+    }
+
+    .navbar {
+      min-height: 70px; 
+    }
+    .navbar-nav>li>a{
+      line-height: 38px;
+    }
+    .nav>li>a{
+      padding: 18px;
+    }
+   
     
-    /* Add a black background color to the top navigation */
-		.topnav {
-		  background-color: #333;
-		  overflow: hidden;
-			position:relative;
-			top:0px;
-			left:0px;
-			margin-left:200px;
-      margin-right: 0;
-			height:68px
-		}
-
-		/* Style the links inside the navigation bar */
-		.topnav a {
-		  float: left;
-		  display: block;
-		  color: #f2f2f2;
-		  text-align: center;
-		  padding: 21px 16px;
-		  text-decoration: none;
-		  font-size: 19px;
-		}
-
-		/* Change the color of links on hover */
-		.topnav a:hover {
-		  background-color: #ddd;
-		  color: black;
-		}
-
-		/* Add an active class to highlight the current page */
-		.topnav a.active1 {
-		  background-color: #46b446;
-		  color: white;
-		}
-
-		/* Hide the link that should open and close the topnav on small screens */
-		.topnav.icon {
-		  display: none;
-		}
-		.topnav a.taco {
-		position:relative;
-		right:0;	
-		}
+.navbar-brand img{
+  left: 0;
+width: 200%;
+height: 200%;
+}
 
 .Titolo {
 	background-color:white;
@@ -58,62 +34,12 @@
 	font-size:60px;
 }
 
-.top {
-	
-	background-color:white;
-	
-}
-
-
-.top img {
- height: 100px;
-  width: 200px;
-  position: relative;
-  z-index: 1;
-  top: 0px;
-  left: 0px;
-  overflow-x: hidden;
-  padding-top: 0;
-	 
-	                                /*CSS SIDEBAR*/
-}
-/* The side navigation menu */
-.sidebar {
-  margin: 0;
-  padding: 0;
-  width: 170px;
-  background-color: plum;
-  position: relative;
-  height: calc(100%-100px);
-  overflow: auto;
-  top:100px;
-}
-
-/* Sidebar links */
-.sidebar a {
-  display: block;
-  color: black;
-  padding: 16px;
-  text-decoration: none;
-}
-
-/* Active/current link */
-.sidebar a.active {
-  background-color: plum;
-  color: white;
-}
-
-/* Links on mouse-over */
-.sidebar a:hover:not(.active) {
-  background-color: #555;
-  color: white;
-}
 
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
 div.content {
-  margin-left: 170px;
+  margin-left: 1%;
   padding: 1px 16px;
-  height: 1500px;
+  height: 1000px;
 }
 div.content1 {
   margin-left: 170px;
@@ -121,24 +47,7 @@ div.content1 {
   height: 3900px;
 }
 
-/* On screens that are less than 700px wide, make the sidebar into a topbar */
-@media screen and (max-width: 700px) {
-  .sidebar {
-    width: 80%;
-    height: auto;
-    position: relative;
-  }
-  .sidebar a {float: left;}
-  div.content {margin-left: 0;}
-}
 
-/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-@media screen and (max-width: 400px) {
-  .sidebar a {
-    text-align: center;
-    float: none;
-  }
-}
 *{
 	margin-bottom:0;
 	margin-left:0;
