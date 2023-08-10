@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<HTML>
+<html>
 	<HEAD>
 		<TITLE>BEAUTYANDNATURA</TITLE>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 		
 		<link rel="icon" type="image/vnd.icon" href="image/LogoSfondi/Logo.ico">
 		
@@ -17,318 +14,348 @@
 		<script src="JS/index.js"></script>
 		<script src="JS/MyFooter.js"></script>
  </HEAD>
-	<BODY>
-		<DIV class="top" >
-			<a href="INDEX.HTML"> <img src="image\LogoSfondi\Logo.PNG"></a>
-		</DIV>
-		<div class="topnav" id="myTopnav">
-			<ul style="display: flex; flex-direction: row;" >
-		  <li><a href="INDEX.HTML" class="active1">Home</a></li>
-		  <li><a href="news.html">News</a></li>
-		  <li><a href="contatti.html">Contact</a></li>
-		  <li><a href="faq.html">FAQ</a></li>
+<body>
+	<DIV class="top" >
+		<a href="INDEX.HTML"> <img src="image\LogoSfondi\Logo.PNG"></a>
+	</DIV>
+	<div class="topnav" id="myTopnav">
+	  <a href="INDEX.HTML" class="active">Home</a>
+	  <a href="news.html">News</a>
+	  <a href="contatti.html">Contact</a>
+	  <a href="about.html">About</a>
+	  </a>
+	</div>
+
+
+	<DIV class="Titolo" style="height: 100px;" >
+		<h6>Beauty Is Nature</h6>
+	</div>
+	<div class="content1">
+		 
+		<h4 style="margin-left: 165px; "><span style="color: red;">PERSONAL LINE CARE</span> - Azione antiage per pelle e
+			capelli</h4>
+		<hr>
+		 
+<script>
+	var text, parser, xmlDoc, idStart;
+
+	text = "<Creme>" +
+"		    <crema> " +
+"		        <id>1</id> " +
+"		        <tabName01>tab01</tabName01> " +
+"		        <tabName02>tab02</tabName02> " +
+"		        <tabName03>tab03</tabName03> " +
+"		        <nome_prodotto>DERMOJOY Plus UNIVERSALE (500ml)</nome_prodotto> " +
+"				 <img>image/prodotti/Creme/cda.jpg</img> " +
+"		        <descrizione>DERMOJOY Plus UNIVERSALE con Tea Tree Oil (Melaleuca Alternifolia) da Agricoltura Biologica è un prodotto certificato Eco Bio Cosmesi ALL’ORIGINE e come tale contiene ingredienti da agricoltura biologica, rispetta il protocollo Eco – Bio  non utilizzando sostanze vietate perché ritenute a rischio per la persona e dannose per l’ambiente,non utilizza ingredienti da OGM, è  dermatologicamente testato, ed è controllato per la presenza di Nichel, Cromo a Cobalto .</descrizione> " +
+"		        <ingredienti></ingredienti>" +
+"				<tabIngredienti>SI</tabIngredienti>" +
+"				<scheda> " +
+"		            <riga> " +
+"		                <liv>3</liv> " +
+"		                <desc>AQUA SOLVENTE</desc> " +
+"		                <prop></prop> " +
+"		            </riga> " +
+"		             <riga> " +
+"		                <liv>2</liv> " +
+"		                <desc>SORBITOL</desc> " +
+"		                <prop>umettante</prop> " +
+"		            </riga> " +
+"		             <riga> " +
+"		                <liv>1</liv> " +
+"		                <desc>COCAMIDOPROPYL HYDROXYSULTAINE</desc> " +
+"		                <prop>tensioattivo</prop> " +
+"		            </riga> " +
+"		             <riga> " +
+"		                <liv>2</liv> " +
+"		                <desc>SODIUM LAUROYL SARCOSINATE</desc> " +
+"		                <prop>tensioattivo</prop> " +
+"		            </riga> " +
+"					<riga> " +
+"		                <liv>3</liv> " +
+"		                <desc>CAPRYLYL CAPRYL GLUCOSIDE</desc> " +
+"		                <prop>antistatico-tensioattivo-viscosizzante</prop> " +
+"		            </riga> " +
+"					 <riga> " +
+"		                <liv>3</liv> " +
+"		                <desc>ALOE BARBADENSIS GEL</desc> " +
+"		                <prop>emolliente</prop> " +
+"		            </riga> " +
+"					 <riga> " +
+"		                <liv>3</liv> " +
+"		                <desc>MELALEUCA ALTERNIFOLIA LEAF OIL</desc> " +
+"		                <prop>antibatterico</prop> " +
+"		            </riga> " +
+"					 <riga> " +
+"		                <liv>3</liv> " +
+"		                <desc>LAVANDA HYBRIDA OIL</desc> " +
+"		                <prop>emolliente</prop> " +
+"		            </riga> " +
+"					 <riga> " +
+"		                <liv>2</liv> " +
+"		                <desc>CITRUS AURANTIUM DULCIS OIL</desc> " +
+"		                <prop>profumante</prop> " +
+"		            </riga> " +
+"					 <riga> " +
+"		                <liv>3</liv> " +
+"		                <desc>SODIUM PCA</desc> " +
+"		                <prop>antistatico-umettante</prop> " +
+"		            </riga> " +
+"					 <riga> " +
+"		                <liv>3</liv> " +
+"		                <desc>LACTIC ACID</desc> " +
+"		                <prop>agente tampone-umettante</prop> " +
+"		            </riga> " +
+"					 <riga> " +
+"		                <liv>1</liv> " +
+"		                <desc>LIMONENE</desc> " +
+"		                <prop>profumo naturale da OE</prop> " +
+"		            </riga> " +
+"					 <riga> " +
+"		                <liv>1</liv> " +
+"		                <desc>LINALOOL</desc> " +
+"		                <prop>profumo naturale da OE</prop> " +
+"		            </riga> " +
+"		        </scheda> " +
+"		        <utilizzo>mettilo in tasca</utilizzo> " +
+"		        <prezzo>€ 3,00</prezzo> " +
+"		    </crema> " +
+"		    <crema> " +
+"		        <id>2</id> " +
+"		        <tabName01>tab04</tabName01> " +
+"		        <tabName02>tab05</tabName02> " +
+"		        <tabName03>tab06</tabName03> " +
+"		        <nome_prodotto>Siero Di Lino (50ml)</nome_prodotto> " +
+"				<img>image/prodotti/Creme/sdl.jpg</img> " +
+"		        <descrizione>Usato regolarmente il SIERO DI LINO cementa le rotture nei capelli tanto da guadagnarsi il titolo di “riparacapelli”. Fluido concentrato ristrutturante d’urto indicato per donare nuova vita ai capelli crespi, secchi, sfibrati e con doppie punte. Dona ai capelli una grande luminosità. Non unge e non lascia residui. Compatibile co qualsiasi colore naturale o tinto. Il LINO, fin dall’antichità è sempre stato un punto di riferimento per la manutenzione dei capelli. Insieme agli Oli organici contenuti svolge un’azione ristrutturante, filmogena e protettiva. Praticamente si posiziona all’interno della “rottura” e la ripara creando un ponte. Quindi il capello diventa di nuovo liscio.</descrizione> " +
+"		        <ingredienti>I principi attivi principali sono: SIERO DI LINO che ripara, illumina e protegge. OLI ORGANICI che aiutano l’azione riparatrice e protettiva senza ungere OLI essenziali di Iris e Caprifoglio ad azione conservante e deodorante. Senza coloranti, né conservanti, no ingredienti animali o prove. Bio-eco compatibile</ingredienti>" +
+"				<tabIngredienti>NO</tabIngredienti>" +
+"		        <utilizzo>Spargere alcune gocce nel palmo della mano con l’apposito dosatore. Applicare sui capelli bagnati dopo shampoo e crema ed asciugare. Applicato sui capelli asciutti il giorno dopo aiuta a mantenerli a posto, ben pettinati e luminosi. Per uso frequente anche giornaliero; dopo la tinta, permanente, decolorazione o trattamenti invasivi. Dopo sole, mare, lampade,piscina ed attività sportive. Per evitare che si accumuli troppo appesantendo i capelli, si consiglia di lavarsi i capelli con lo Shampoo Dolcevita seguito dalla Crema degli Angeli ogni terzo giorno.</utilizzo> " +
+"		        <prezzo>€ 2,50</prezzo> " +
+"		    </crema> " +
+"		    <crema> " +
+"		        <id>3</id> " +
+"		        <tabName01>tab07</tabName01> " +
+"		        <tabName02>tab08</tabName02> " +
+"		        <tabName03>tab09</tabName03> " +
+"		        <nome_prodotto>Crema Degli Angeli (250ml)</nome_prodotto> " +
+"				 <img>image/prodotti/Creme/cda.jpg</img> " +
+"		        <descrizione>Crema densofluida vegetale per capelli ad azione idratante e riparatrice. Protezione UV e capelli tinti. Ottimo districante. A PH acido 3.5 controllato produce effetto balsamo senza appesantire i capelli. Totalmente idrosolubile, non lascia residui. Una difesa costante per i capelli contro le aggressioni e danni a causa di età e stress, ambientali e meccanici. Contiene PROTAGEN una saggia e potente combinazione vegetale di proteine, vitamine,resine ed oli essenziali che nutrono e riparano i capelli. Contiene C.E.F.P. (Color Endurance Factor Pool) specifico per proteggere il pigmento dei capelli tinti o naturali, super idratandoli ed esaltandone quindi la luminosità e la salute. La Crema degli Angeli è stata concepita come prodotto cosmetico ad alto rendimento e qualità per capelli ultra sensibili di qualsiasi tipo</descrizione> " +
+"		        <ingredienti>I principi attivi principali sono: PROTAGEN COMPLESSO PROTEINICO VEGETALE : con estratti di Achillea, Aloe, Calendula, Timo, Bardana Amamelide che nell’insieme svolgono un’azione protettiva, lenitiva,idratante, tonificante ed antisettica. MINERALI : zinco, manganese, magnesio e rame ad azione rigenerante antistress C.E.F.P. antiossidante del colore con Vit. C, Vit. E. Arginina e Octyl Cinnamate OLI essenziali di Pompelmo e Rosa Gallica ad azione conservante</ingredienti>" +
+"				<tabIngredienti>NO</tabIngredienti>" +
+"		        <utilizzo>Dopo lo shampoo a capelli puliti e bagnati applicarne una piccola quantità massaggiandola bene nei capelli. Lasciare in posa da 1 a 5 minuti (il tempo di completare la doccia) e sciacquare. Se si lascia più a lungo (durante un bagno?)Fà solo più bene ai capelli. Dopo lo shampoo per uso frequente anche giornaliero; dopo la tinta, permanente, decolorazione o trattamenti invasivi. Dopo sole, mare, lampade,piscina ed attività sportive</utilizzo> " +
+"		        <prezzo>€ 3,30</prezzo> " +
+"		    </crema>" +
+"  			" +
+"			   <crema> " +
+"			   " +
+"		        <id>4</id> " +
+"		        <tabName01>tab10</tabName01> " +
+"		        <tabName02>tab11</tabName02> " +
+"		        <tabName03>tab12</tabName03> " +
+"		        <nome_prodotto>PAPUA HerbaGel (150ml)</nome_prodotto> " +
+"				<img>image/prodotti/Creme/odm.jpg</img> " +
+"		        <descrizione>PAPUA HerbaGel è un fantastico gel crema che fissa tutti i tipi di capelli, naturali o tinti, secchi o grassi, lisci o ricci, uomo o donna. E' ideale per l'effetto bagnato o l'asciugatura con il phon, al sole o messa in piega. Con estratti di erbe dolci, non unge, non sporca i capeli o la cute e si sciaqua facilmente. ph 5.5</descrizione> " +
+"		        <ingredienti>Ingredienti: aqua,peg-20,glyceryl laurate, vegetable glycerin,carbomer hydroxythil cellulose, triethonalamine, propylene glycol, hidrolydinylurea, methylparaben, ethoxydiglycol, benzophenone-4, panthenol, echinacea angustiflia, malva silvestris, urtica dioica, calendula officinalis, viola tricolor, betula alba, cholorophyllin, rosa gallica.</ingredienti>" +
+"				<tabIngredienti>NO</tabIngredienti>" +
+"		        <utilizzo>mcreama spalmabile alla nutella</utilizzo> " +
+"		        <prezzo>€ 3,30</prezzo> " +
+"		    </crema> " +
+"			<crema> " +
+"			   " +
+"		        <id>5</id> " +
+"		        <tabName01>tab13</tabName01> " +
+"		        <tabName02>tab14</tabName02> " +
+"		        <tabName03>tab15</tabName03> " +
+"		        <nome_prodotto>Crema tre</nome_prodotto> " +
+"				<img>image/prodotti/Creme/odm.jpg</img> " +
+"		        <descrizione>Crema tre - descrizione</descrizione> " +
+"		        <ingredienti></ingredienti>" +
+"				<tabIngredienti>NO</tabIngredienti>" +
+"		        <utilizzo>mcreama spalmabile alla nutella</utilizzo> " +
+"		        <prezzo>€ 3,30</prezzo> " +
+"		    </crema> " +
+"			<crema> " +
+"			   " +
+"		        <id>6</id> " +
+"		        <tabName01>tab16</tabName01> " +
+"		        <tabName02>tab17</tabName02> " +
+"		        <tabName03>tab18</tabName03> " +
+"		        <nome_prodotto>Crema tre</nome_prodotto> " +
+"				<img>image/prodotti/Creme/odm.jpg</img> " +
+"		        <descrizione>Crema tre - descrizione</descrizione> " +
+"		        <ingredienti></ingredienti>" +
+"				<tabIngredienti>NO</tabIngredienti>" +
+"		        <utilizzo>mcreama spalmabile alla nutella</utilizzo> " +
+"		        <prezzo>€ 3,30</prezzo> " +
+"		    </crema> " +
+"			<crema> " +
+"			   " +
+"		        <id>7</id> " +
+"		        <tabName01>tab19</tabName01> " +
+"		        <tabName02>tab20</tabName02> " +
+"		        <tabName03>tab21</tabName03> " +
+"		        <nome_prodotto>Crema tre</nome_prodotto> " +
+"				<img>image/prodotti/Creme/odm.jpg</img> " +
+"		        <descrizione>Crema tre - descrizione</descrizione> " +
+"		        <ingredienti></ingredienti>" +
+"				<tabIngredienti>NO</tabIngredienti>" +
+"		        <utilizzo>mcreama spalmabile alla nutella</utilizzo> " +
+"		        <prezzo>€ 3,30</prezzo> " +
+"		    </crema> " +
+"			<crema> " +
+"			   " +
+"		        <id>8</id> " +
+"		        <tabName01>tab22</tabName01> " +
+"		        <tabName02>tab23</tabName02> " +
+"		        <tabName03>tab24</tabName03> " +
+"		        <nome_prodotto>Crema tre</nome_prodotto> " +
+"				<img>image/prodotti/Creme/odm.jpg</img> " +
+"		        <descrizione>Crema tre - descrizione</descrizione> " +
+"		        <ingredienti></ingredienti>" +
+"				<tabIngredienti>NO</tabIngredienti>" +
+"		        <utilizzo>mcreama spalmabile alla nutella</utilizzo> " +
+"		        <prezzo>€ 3,30</prezzo> " +
+"		    </crema> " +
+"			<crema> " +
+"			   " +
+"		        <id>9</id> " +
+"		        <tabName01>tab25</tabName01> " +
+"		        <tabName02>tab26</tabName02> " +
+"		        <tabName03>tab27</tabName03> " +
+"		        <nome_prodotto>Crema tre</nome_prodotto> " +
+"				<img>image/prodotti/Creme/odm.jpg</img> " +
+"		        <descrizione>Crema tre - descrizione</descrizione> " +
+"		        <ingredienti></ingredienti>" +
+"				<tabIngredienti>NO</tabIngredienti>" +
+"		        <utilizzo>mcreama spalmabile alla nutella</utilizzo> " +
+"		        <prezzo>€ 3,30</prezzo> " +
+"		    </crema> " +
+"			<crema> " +
+"			   " +
+"		        <id>10</id> " +
+"		        <tabName01>tab28</tabName01> " +
+"		        <tabName02>tab29</tabName02> " +
+"		        <tabName03>tab30</tabName03> " +
+"		        <nome_prodotto>Crema tre</nome_prodotto> " +
+"				<img>image/prodotti/Creme/odm.jpg</img> " +
+"		        <descrizione>Crema tre - descrizione</descrizione> " +
+"		        <ingredienti></ingredienti>" +
+"				<tabIngredienti>NO</tabIngredienti>" +
+"		        <utilizzo>mcreama spalmabile alla nutella</utilizzo> " +
+"		        <prezzo>€ 3,30</prezzo> " +
+"		    </crema> " +
+"</Creme>";
+
+	parser = new DOMParser();
+	xmlDoc = parser.parseFromString(text, "text/xml");
+
+	console.log(xmlDoc);
+
+	cremas = xmlDoc.childNodes[0];
+
+
+	for (var i = 0; i < cremas.children.length; i++) {
+		var crema = cremas.children[i];
+
+		var tabName01 = crema.getElementsByTagName("tabName01");
+		var tabName02 = crema.getElementsByTagName("tabName02");
+		var tabName03 = crema.getElementsByTagName("tabName03");
+		
+		var nome_prodotto = crema.getElementsByTagName("nome_prodotto");
+		var descrizione = crema.getElementsByTagName("descrizione");
+		var utilizzo = crema.getElementsByTagName("utilizzo");
+		var prezzo = crema.getElementsByTagName("prezzo");
+		var img = crema.getElementsByTagName("img");
+
+
+		var tabIngredienti = crema.getElementsByTagName("tabIngredienti");
+		var scheda = crema.getElementsByTagName("scheda");
+		var ingredienti = crema.getElementsByTagName("ingredienti");
+
+		var righeTabScheda="";
+
+		if (tabIngredienti[0].textContent.toString()=="SI") {
 			
-			<li class="dropdown">
-				<a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1
-				<span class="caret"></span></a>
-			<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="menu1">
-			  <li role="presentation" class="dropdown-header">Dropdown header 1</li>
-			  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
-			  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
-			  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
-			  <li role="presentation" class="divider"></li>
-			  <li role="presentation" class="dropdown-header">Dropdown header 2</li>
-			  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
-			</ul>
-		</ul>
-			</div>
-		</DIV>
+			scheda = scheda[0];
+			
+			righeTabScheda=righeTabScheda + "<TABLE style='relative:absolute; top:5; left:5;width: 560px;  border-bottom: 1px solid #ddd; font-size:15'>	";
+			righeTabScheda=righeTabScheda + "	<TR style=' height:5px;'><th style='width:5%;height:5px;'>INCI</th><th >ingredienti</th><th width=35%>funzione</th></tr>";
+							
+			for(var k=0; k< scheda.children.length; k++) {
 
- 
-		<DIV class="Titolo" style="height: 100px;" >
-			<h6>Beauty Is Nature</h6>
-		</div>
-		<div class="content1">
-			<h4 style="margin-left: 165px; "><span style="color: red;">PERSONAL LINE CARE</span> - Azione antiage per pelle e
-				capelli</h4>
-			<hr>
-			<section>
-				<h2><strong>Dermojoy plus</strong></h2>
-				<img src="image\prodotti\Creme\cda.jpg" style="position:absolute ">
-				<div class="warpper">
-					<input class="radio" id="one" name="group" type="radio" checked>
-					<input class="radio" id="two" name="group" type="radio">
-					<input class="radio" id="three" name="group" type="radio">
-		
-					<div class="tabs">
-						<label class="tab" id="one-tab" for="one">Descrizione</label>
-						<label class="tab" id="two-tab" for="two">Ingredienti</label>
-						<label class="tab" id="three-tab" for="three">Modalità d'uso</label>
-					</div>
-		
-					<div class="panels">
-						<div class="panel" id="one-panel">
-							<p class="uno">DERMOJOY Plus UNIVERSALE con Tea Tree Oil (Melaleuca Alternifolia) da Agricoltura
-								Biologica è un prodotto certificato Eco Bio Cosmesi ALL’ORIGINE e come tale contiene ingredienti
-								da
-								agricoltura biologica, rispetta il protocollo Eco – Bio non utilizzando sostanze vietate perché
-								ritenute a rischio per la persona e dannose per l’ambiente,non utilizza ingredienti da OGM, è
-								dermatologicamente testato, ed è controllato per la presenza di Nichel, Cromo a Cobalto .</p>
-						</div>
-						<div class="panel" id="two-panel">
-							<p><i class="fa-sharp fa-solid fa-circle fa-beat fa-sm" style="color: #08e105;"></i></p>
-						</div>
-						<div class="panel" id="three-panel">
-							<p></p>
-						</div>
-					</div>
-				</div>
-				<aside>
-					<h2>5,50€</h2>
-					<button class="carrello">Aggiungi al carrello</button>
-				</aside>
-			</section>
-			<section>
-				<img src="image\prodotti\Creme\cda.jpg" style="position:absolute ">
-				<div class="warpper">
-					<input class="radio" id="four" name="group" type="radio" checked>
-					<input class="radio" id="five" name="group" type="radio">
-					<input class="radio" id="six" name="group" type="radio">
-		
-					<div class="tabs">
-						<label class="tab" id="four-tab" for="four">Descrizione</label>
-						<label class="tab" id="five-tab" for="five">Ingredienti</label>
-						<label class="tab" id="six-tab" for="six">Modalità d'uso</label>
-					</div>
-		
-					<div class="panels">
-						<div class="panel" id="four-panel">
-							<p>Content1</p>
-						</div>
-						<div class="panel" id="five-panel">
-							<p>Content2</p>
-						</div>
-						<div class="panel" id="six-panel">
-							<p>Content3</p>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section>
-				<img src="image\prodotti\Creme\cda.jpg" style="position:absolute ">
-				<div class="warpper">
-					<input class="radio" id="four" name="group" type="radio" checked>
-					<input class="radio" id="five" name="group" type="radio">
-					<input class="radio" id="six" name="group" type="radio">
-		
-					<div class="tabs">
-						<label class="tab" id="four-tab" for="four">Descrizione</label>
-						<label class="tab" id="five-tab" for="five">Ingredienti</label>
-						<label class="tab" id="six-tab" for="six">Modalità d'uso</label>
-					</div>
-		
-					<div class="panels">
-						<div class="panel" id="four-panel">
-							<p>Content1</p>
-						</div>
-						<div class="panel" id="five-panel">
-							<p>Content2</p>
-						</div>
-						<div class="panel" id="six-panel">
-							<p>Content3</p>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section>
-				<img src="image\prodotti\Creme\cda.jpg" style="position:absolute ">
-				<div class="warpper">
-					<input class="radio" id="four" name="group" type="radio" checked>
-					<input class="radio" id="five" name="group" type="radio">
-					<input class="radio" id="six" name="group" type="radio">
-		
-					<div class="tabs">
-						<label class="tab" id="four-tab" for="four">Descrizione</label>
-						<label class="tab" id="five-tab" for="five">Ingredienti</label>
-						<label class="tab" id="six-tab" for="six">Modalità d'uso</label>
-					</div>
-		
-					<div class="panels">
-						<div class="panel" id="four-panel">
-							<p>Content1</p>
-						</div>
-						<div class="panel" id="five-panel">
-							<p>Content2</p>
-						</div>
-						<div class="panel" id="six-panel">
-							<p>Content3</p>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section>
-				<img src="image\prodotti\Creme\cda.jpg" style="position:absolute ">
-				<div class="warpper">
-					<input class="radio" id="four" name="group" type="radio" checked>
-					<input class="radio" id="five" name="group" type="radio">
-					<input class="radio" id="six" name="group" type="radio">
-		
-					<div class="tabs">
-						<label class="tab" id="four-tab" for="four">Descrizione</label>
-						<label class="tab" id="five-tab" for="five">Ingredienti</label>
-						<label class="tab" id="six-tab" for="six">Modalità d'uso</label>
-					</div>
-		
-					<div class="panels">
-						<div class="panel" id="four-panel">
-							<p>Content1</p>
-						</div>
-						<div class="panel" id="five-panel">
-							<p>Content2</p>
-						</div>
-						<div class="panel" id="six-panel">
-							<p>Content3</p>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section>
-				<img src="image\prodotti\Creme\cda.jpg" style="position:absolute ">
-				<div class="warpper">
-					<input class="radio" id="four" name="group" type="radio" checked>
-					<input class="radio" id="five" name="group" type="radio">
-					<input class="radio" id="six" name="group" type="radio">
-		
-					<div class="tabs">
-						<label class="tab" id="four-tab" for="four">Descrizione</label>
-						<label class="tab" id="five-tab" for="five">Ingredienti</label>
-						<label class="tab" id="six-tab" for="six">Modalità d'uso</label>
-					</div>
-		
-					<div class="panels">
-						<div class="panel" id="four-panel">
-							<p>Content1</p>
-						</div>
-						<div class="panel" id="five-panel">
-							<p>Content2</p>
-						</div>
-						<div class="panel" id="six-panel">
-							<p>Content3</p>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section>
-				<img src="image\prodotti\Creme\cda.jpg" style="position:absolute ">
-				<div class="warpper">
-					<input class="radio" id="four" name="group" type="radio" checked>
-					<input class="radio" id="five" name="group" type="radio">
-					<input class="radio" id="six" name="group" type="radio">
-		
-					<div class="tabs">
-						<label class="tab" id="four-tab" for="four">Descrizione</label>
-						<label class="tab" id="five-tab" for="five">Ingredienti</label>
-						<label class="tab" id="six-tab" for="six">Modalità d'uso</label>
-					</div>
-		
-					<div class="panels">
-						<div class="panel" id="four-panel">
-							<p>Content1</p>
-						</div>
-						<div class="panel" id="five-panel">
-							<p>Content2</p>
-						</div>
-						<div class="panel" id="six-panel">
-							<p>Content3</p>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section>
-				<img src="image\prodotti\Creme\cda.jpg" style="position:absolute ">
-				<div class="warpper">
-					<input class="radio" id="four" name="group" type="radio" checked>
-					<input class="radio" id="five" name="group" type="radio">
-					<input class="radio" id="six" name="group" type="radio">
-		
-					<div class="tabs">
-						<label class="tab" id="four-tab" for="four">Descrizione</label>
-						<label class="tab" id="five-tab" for="five">Ingredienti</label>
-						<label class="tab" id="six-tab" for="six">Modalità d'uso</label>
-					</div>
-		
-					<div class="panels">
-						<div class="panel" id="four-panel">
-							<p>Content1</p>
-						</div>
-						<div class="panel" id="five-panel">
-							<p>Content2</p>
-						</div>
-						<div class="panel" id="six-panel">
-							<p>Content3</p>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section>
-				<img src="image\prodotti\Creme\cda.jpg" style="position:absolute ">
-				<div class="warpper">
-					<input class="radio" id="four" name="group" type="radio" checked>
-					<input class="radio" id="five" name="group" type="radio">
-					<input class="radio" id="six" name="group" type="radio">
-		
-					<div class="tabs">
-						<label class="tab" id="four-tab" for="four">Descrizione</label>
-						<label class="tab" id="five-tab" for="five">Ingredienti</label>
-						<label class="tab" id="six-tab" for="six">Modalità d'uso</label>
-					</div>
-		
-					<div class="panels">
-						<div class="panel" id="four-panel">
-							<p>Content1</p>
-						</div>
-						<div class="panel" id="five-panel">
-							<p>Content2</p>
-						</div>
-						<div class="panel" id="six-panel">
-							<p>Content3</p>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section>
-				<img src="image\prodotti\Creme\cda.jpg" style="position:absolute ">
-				<div class="warpper">
-					<input class="radio" id="four" name="group" type="radio" checked>
-					<input class="radio" id="five" name="group" type="radio">
-					<input class="radio" id="six" name="group" type="radio">
-		
-					<div class="tabs">
-						<label class="tab" id="four-tab" for="four">Descrizione</label>
-						<label class="tab" id="five-tab" for="five">Ingredienti</label>
-						<label class="tab" id="six-tab" for="six">Modalità d'uso</label>
-					</div>
-		
-					<div class="panels">
-						<div class="panel" id="four-panel">
-							<p>Content1</p>
-						</div>
-						<div class="panel" id="five-panel">
-							<p>Content2</p>
-						</div>
-						<div class="panel" id="six-panel">
-							<p>Content3</p>
-						</div>
-					</div>
-				</div>
-			</section>
-		</div>
-	</BODY>
-	<script language="javaScript">
-		document.write(myFooter);
-	</script>
+				var riga = scheda.children[k];
 
-	<noscript>
-		<strong>Per visualizzare correttamente questa pagina c necessario avere javascript abilitato.</strong>
-	</noscript>
-</HTML>
+				var liv = riga.getElementsByTagName("liv");
+				var desc = riga.getElementsByTagName("desc");
+				var prop = riga.getElementsByTagName("prop");
+				righeTabScheda=righeTabScheda + "	<TR  style=' height:5px;'>";
+				righeTabScheda=righeTabScheda + "	<td  style='width:5%;height:5px;'>";
+
+				var imgName="";
+				switch(liv[0].textContent.toString()) {
+					case "1":
+						imgName="image/LogoSfondi/CerchioRosso.png"
+						break;
+					case "2":
+						imgName="image/LogoSfondi/CerchioVerde.png"
+						break;
+					default:
+						imgName="image/LogoSfondi/DueCerchioverde.png"
+					} 
+				righeTabScheda=righeTabScheda + " 		<img src='" + imgName +"' alt=''/>"
+				righeTabScheda=righeTabScheda + "	</td>";
+				righeTabScheda=righeTabScheda + "	<td><strong>" + desc[0].textContent.toString() + "</strong></td>";
+				righeTabScheda=righeTabScheda + "	<td>" + prop[0].textContent.toString() + "</td> ";
+				righeTabScheda=righeTabScheda + "	</tr>"; 
+	 
+			}
+			righeTabScheda=righeTabScheda + "</TABLE>"; 
+		} else {
+			
+			righeTabScheda=ingredienti[0].textContent.toString();
+		}
+		var sect = "" +
+			"<section>" +
+			"	<h2><strong>" + nome_prodotto[0].textContent.toString() + "</strong></h2>" +
+			"	<img src='" + img[0].textContent.toString() + "' alt='' style='position:absolute;  border: 5px solid #555;'>" +
+			"	<div class='warpper'>" +
+			"		<input class='radio' id='" + tabName01[0].textContent.toString() + "' name='group' type='radio' checked>" +
+			"		<input class='radio' id='" + tabName02[0].textContent.toString() + "' name='group' type='radio'>" +
+			"		<input class='radio' id='" + tabName03[0].textContent.toString() + "' name='group' type='radio'>" +
+
+			"		<div class='tabs'>" +
+			"			<label class='tab' id='" + tabName01[0].textContent.toString() + "-tab' for='" + tabName01[0].textContent.toString() + "'>Descrizione</label>" +
+			"			<label class='tab' id='" + tabName02[0].textContent.toString() + "-tab' for='" + tabName02[0].textContent.toString() + "'>Proprietà</label>" +
+			"			<label class='tab' id='" + tabName03[0].textContent.toString() + "-tab' for='" + tabName03[0].textContent.toString() + "'>Modalità d'uso</label>" +
+			"		</div>" +
+			"		<div class='panels'>" +
+			"			<div class='panel' id='" + tabName01[0].textContent.toString() + "-panel'>" +
+			"				<p class='uno'>" + descrizione[0].textContent.toString() + "</p>" +
+			"			</div>" +
+			"			<div class='panel' id='" + tabName02[0].textContent.toString() + "-panel'><p>" +
+							righeTabScheda +
+			"				</p>" +
+			"			</div>" +
+			"			<div class='panel' id='" + tabName03[0].textContent.toString() + "-panel'>" +
+			"				<p class='tre'>" + utilizzo[0].textContent.toString() + "</p>" +
+			"			</div>" +
+			"		</div>" +
+			"	</div>" +
+			"	<aside>" +
+			"		<h2>" + prezzo[0].textContent.toString() + "</h2>" +
+			"		<button>Aggiungi al carrello</button>" +
+			"	</aside>" +
+			"</section>";
+
+		document.write(sect);
+	}
+
+
+</script>
+
+
+
+</div>
+</body>
+</html>
