@@ -346,6 +346,9 @@ p.due {
     -webkit-border-radius: 10px; /* safari, chrome */
     position: relative;
     margin-right: 170px;
+    text-align:center; 
+    font: 1.3em georgia; 
+
 }
 p.uno{
   font: 1.1em Helvetica;
