@@ -18,12 +18,3 @@ myTopnav = myTopnav + "    </a>";
 myTopnav = myTopnav + "</div>";
 
 
-//<ul class="dropdown-menu">
-//<li class="dropdown-header">Account</li>
-//<li><a href="#">HTML</a></li>
-//<li><a href="#">CSS</a></li>
-//<li><a href="#">JavaScript</a></li>
-//<li class="divider"></li>
-//<li class="dropdown-header">Ordini</li>
-//<li><a href="#">About Us</a></li>
-//</ul> 
