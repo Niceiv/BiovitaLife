@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="CSS/biovita.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/faq.css">
+
+
+    <script src="JS/index.js"></script>
+    <script src="JS/MyFooter.js"></script>
+    <script src="JS/myTopnav.js"></script>
+
+
+    <title>FAQ</title>
+</head>
+
+<body onload="FaqLoadAction()">
+    <script language="javaScript">
+        document.write(myTopnav);
+    </script>
+
+    <main style="height: 4500px;">
+
+
+        <h1 class="faq-heading" style="text-align: center;">DOMANDE FREQUENTI XML-Assistenza clienti</h1>
+
+
+        <script>
+            var xmlhttp, xmlDoc;
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET", "XML/FAQ.xml", false);
+            xmlhttp.send();
+            xmlDoc = xmlhttp.responseXML;
+
+            gruppi = xmlDoc.childNodes[0];
+            var desc = '';
+            for (var i = 0; i < gruppi.children.length; i++) {
+                var gruppo = gruppi.children[i];
+                for (var k = 0; k < gruppo.children.length; k++) {
+
+                    if (k == 0) {
+                        nome = gruppo.children[k];
+                        desc += "<section class='faq-container'>";
+                        desc += "   <div class='faq-one'>";
+                        desc += "       <h1 class='faq-heading' style='text-align: left;'>" + nome.textContent.toString() + "</h1>";
+
+
+                    } else {
+                        domande = gruppo.children[k];
+                        for (var z = 0; z < domande.children.length; z++) {
+
+                            domanda = domande.children[z];
+                            desc += "<div class='" + domanda.children[0].textContent.toString() + "''>";
+                            desc += "   <H2 class='faq-page' >" + domanda.children[1].textContent.toString() + "</H2>";
+                           
+                            desc += "   <div class='faq-body'>";
+                            desc += "       <p>" + domanda.children[2].textContent.toString() + "</p>";
+                            desc += "   </div>";
+                            desc += "</div>";
+                            desc += "<hr class='hr-line'>";
+
+
+                        }
+                    }
+                    desc += "</div>";
+                }
+
+            }
+            document.write(desc);
+        </script>
+
+    </main>
+
+
+</body>
+<script language="javaScript">
+    document.write(myFooter);
+</script>
+
+<noscript>
+    <strong>Per visualizzare correttamente questa pagina c necessario avere javascript abilitato.</strong>
+</noscript>
+
+</html>
