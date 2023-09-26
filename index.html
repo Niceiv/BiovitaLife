@@ -4,7 +4,8 @@
 <head>
   <title>Homepage-BiovitaLife</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -19,6 +20,7 @@
   <script src="JS/index.js"></script>
   <script src="JS/myTopnav.js"></script>
 
+
 </head>
 
 <body>
@@ -28,16 +30,16 @@
   </script>
 
 
-  <DIV class="Titolo">
-    <h2 style="font-size: 70px">Benvenuti nel mondo di Biovita<span style="color:#00b300">Life</span></h2>
+  <DIV class="container Titolo">
+    <h2 style="font-size: 50px;">Benvenuti nel mondo di Biovita<span style="color:#00b300">Life</span></h2>
   </div>
 
-  <div class="content" style="margin-top: 150px; ">
+  <div class="container-fluid" style="margin-top: 150px; ">
 
     <div class="container-fluid text-center">
       <div class="row">
-        <div class="col-sm-3 well">
-          <div class="well well-lg">
+        <div class="col-sm-3 home">
+          <div class="home ombra">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
               <!-- Indicators -->
               <ol class="carousel-indicators">
@@ -48,24 +50,24 @@
 
               <!-- Wrapper for slides -->
               <div class="carousel-inner">
-                <div class="item active">
-                  <img src="image/Prodotti/Creme/odm.jpg" alt="Astuccio">
+                <div class="item active" id="1">
+                  <img src="image/foto/IMG_5468.JPG" alt="Astuccio">
+                </div>
+
+                <div class="item" id="2">
+                  <img src="image/foto/IMG_5450.JPG" alt="Crema degli Angeli">
                 </div>
 
                 <div class="item">
-                  <img src="image/Prodotti/Creme/cda.jpg" alt="Crema degli Angeli">
+                  <img src="image/foto/IMG_5492.JPG" alt="Olio di Ricino">
                 </div>
 
                 <div class="item">
-                  <img src="image/Prodotti/Creme/odr.jpg" alt="Olio di Ricino">
+                  <img src="image/foto/IMG_5463.JPG" alt="Contenuto Astuccio">
                 </div>
 
                 <div class="item">
-                  <img src="image/Thumbnail/fix.jpg" alt="Contenuto Astuccio">
-                </div>
-
-                <div class="item">
-                  <img src="image/Prodotti/Creme/oda.jpg" alt="Olio di Argan< ">
+                  <img src="image/foto/IMG_5466.JPG" alt="Olio di Argan< ">
                 </div>
               </div>
 
@@ -80,9 +82,12 @@
               </a>
             </div>
           </div>
-          <div class="well">
+          <div class="home">
 
-            <p><a href="#">Proprietà</a></p>
+
+            <!--<p><a href="#">Proprietà</a></p>-->
+            <button style="background-color: #308d30;" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModal">Proprietà</button>
+
             <p>
               <span class="label label-success">Paperino</span>
               <span class="label label-success">Pippo</span>
@@ -91,31 +96,56 @@
               <span class="label label-success">Anti-age</span>
               <span class="label label-success">Delicato</span>
             </p>
+              <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
           </div>
           <div class="alert alert-success fade in">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
             <p><strong>Ciao!</strong></p>
             Per risposte immediate alle tue domande sulla nostra filosofia, prodotti e impegno ambientale, visita le
-            nostre <a href="faq"> FAQ</a>. Siamo qui per soddisfare la tua curiosità e guidarti verso una bellezza più
+            nostre <a href="faq">FAQ</a>. Siamo qui per soddisfare la tua curiosità e guidarti verso una bellezza più
             naturale e sostenibile.
           </div>
-          <p><a href="#">Oli Essenziali & Naturali</a></p>
-          <p><a href="#">Creme Per Capelli</a></p>
-          <p><a href="#">Henné</a></p>
+          <p><a href="#" class="links ombra ">Oli Essenziali & Naturali</a></p>
+          <p><a href="#" class="links ombra ">Creme Beauty & Natura</a></p>
+          <p><a href="#" class="links ombra ">Henné</a></p>
         </div>
         <div class="col-sm-7">
 
+<div class="row">
 
+  <h3 style="	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;;
+  ">Scopri la linea omeoTINTS: </h3>
+</div>
 
           <div class="row">
             <div class="col-sm-3">
-              <div class="well">
-                <p>Naturali</p>
-                <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+              <div class="home">
+                <a href="Naturali.html"><p class="tre"><b>Naturali</b></p>
+                <img src="image/foto/IMG_5426.JPG" class="img-circle" height="55" width="55" alt="Ciocca Naturali"></a>
               </div>
             </div>
             <div class="col-sm-9">
-              <div class="well">
+              <div class="home">
                 <p class="tre">Just Forgot that I had to mention something about someone to someone about how I forgot
                   something,
                   but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
@@ -124,71 +154,71 @@
           </div>
           <div class="row">
             <div class="col-sm-3">
-              <div class="well">
-                <p>Biondi</p>
-                <img src="bandmember.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+              <div class="home">
+                <a href="Biondi.html"><p class="tre"><b>Biondi</b></p>
+                <img src="image/foto/IMG_5432.JPG" class="img-circle" height="55" width="55" alt="Avatar"></a>
               </div>
             </div>
             <div class="col-sm-9">
-              <div class="well">
-                <p>Just Forgot that I had to mention something about someone to someone about how I forgot something,
+              <div class="home">
+                <p class="tre">Just Forgot that I had to mention something about someone to someone about how I forgot something,
                   but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-sm-3">
-              <div class="well">
-                <p>Rossi</p>
-                <img src="bandmember.jpg" class="img-circle" height="55" width="55" alt="Avatar">
+              <div class="home">
+                <a href="Mogano.html"><p class="tre"><b>Rossi-Mogano</b></p>
+                <img src="image/foto/IMG_5440.JPG" class="img-circle" height="55" width="55" alt="Avatar"></a>
               </div>
             </div>
             <div class="col-sm-9">
-              <div class="well">
-                <p>Just Forgot that I had to mention something about someone to someone about how I forgot something,
+              <div class="home">
+                <p class="tre">Just Forgot that I had to mention something about someone to someone about how I forgot something,
                   but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-sm-3">
-              <div class="well">
-                <p>Mogano</p>
-                <img src="bird.jpg" class="img-circle" height="55" width="55" alt="Avatar">
-              </div>
-            </div>
-            <div class="col-sm-9">
-              <div class="well">
-                <p>Just Forgot that I had to mention something about someone to someone about how I forgot something,
-                  but now I forgot it. Ahh, forget it! Or wait. I remember.... no I don't.</p>
-              </div>
-            </div>
-          </div>
+          
         </div>
-        
 
 
 
-        <div class="col-sm-2 well">
-          <div class="thumbnail">
+
+        <div class="col-sm-2 home">
+          <div class="thumbnail ombra">
             <p>Offerta del mese</p>
-            <img src="image/Thumbnail/10N.jpg" alt="Offerta" width="400" height="300">
+            <img src="image/foto/IMG_5429.JPG" alt="Offerta" width="400" height="300">
             <p>Fri. 27 November 2015</p>
             <button class="btn btn-success">Scopri di più</button>
           </div>
-          <div class="well">
-            <a>omeoTINTS-Naturali</a>
+          <div class="home ombra">
+            <a class="links" href="#">omeoTINTS-Naturali</a>
           </div>
-          <div class="well">
-            <a>omeoTINTS-Biondi</a>
+          <div class="home ombra">
+            <a class="links" href="#">omeoTINTS-Biondi</a>
           </div>
-          <div class="well">
-            <a>omeoTINTS-Mogano & Rossi</a>
+          <div class="home ombra">
+            <a class="links" href="#">omeoTINTS-Mogano & Rossi</a>
           </div>
         </div>
       </div>
-      
+
     </div>
+
+<div class="row home">
+  <div class="col-md-6">
+  <video class="video" AutoPlay loop muted>
+    <source src="video/Naturale.mp4" type="video/mp4">
+    <source src="video/Naturale.ogg" type="video/ogg">
+
+  Your browser does not support the video tag.
+  </video>
+</div>
+</div>
+
+
   </div>
 
 </body>

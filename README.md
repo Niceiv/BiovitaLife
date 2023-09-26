@@ -14,5 +14,4 @@ certificato lucchetto
 account/ ordini/ messaggi/ notifiche/ pagamenti/ preferiti/ impostazioni/ esci (profilo)
 Carrello
 
-Idea per app (insta generator)
-recensione pc amazon
+Idea per app (insta BIO generator)
