@@ -24,7 +24,7 @@
 	<h2>Weekly Coding Challenge #1: Sign in/up Form</h2>
 	<div class="container" id="container">
 		<div class="form-container sign-up-container">
-			<form action="#">
+			<form name="login_reg" action="login_reg.php" method="post">
 				<h1>Crea un Account</h1>
 				<div class="social-container">
 					<a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -32,14 +32,14 @@
 					<a href="#" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
 				</div>
 				<span>o usa l'email per la registrazione</span>
-				<input type="text" placeholder="Name" />
-				<input type="email" placeholder="Email" />
-				<input type="password" placeholder="Password" />
-				<button>Registrati</button>
+				<input type="text" id="name_reg" name="name_reg" placeholder="Name" />
+				<input type="email"  id="email_reg" name="email_reg" placeholder="Email" />
+				<input type="password"  id="password_reg" name="password_reg" placeholder="Password" />
+				<button onclick="Registra()">Registrati</button>
 			</form>
 		</div>
 		<div class="form-container sign-in-container">
-			<form action="#">
+			<form  name="login_log" action="login_log.php" method="post">
 				<h1>Accedi</h1>
 				<div class="social-container">
 					<a href="#" class="social"><i class="fa fa-facebook"></i></a>
@@ -47,10 +47,10 @@
 					<a href="#" class="social"><i class="fa fa-twitter"></i></a>
 				</div>
 				<span>o usa un account</span>
-				<input type="email" placeholder="Email" />
-				<input type="password" placeholder="Password" />
+				<input type="text" id="name_log" name="name_log" placeholder="Name" />
+				<input type="password"  id="password_log" name="password_log" placeholder="Password" />
 				<a href="#">Hai dimenticato la password?</a>
-				<button>Accedi</button>
+				<button onclick="Accedi()">Accedi</button>
 			</form>
 		</div>
 		<div class="overlay-container">
@@ -71,7 +71,6 @@
 	
 </body>
 <script>
-	
 	const signUpButton = document.getElementById('signUp');
 	const signInButton = document.getElementById('signIn');
 	const container = document.getElementById('container');
@@ -84,6 +83,14 @@
 	signInButton.addEventListener('click', () => {
 		container.classList.remove("right-panel-active");
 	});
+
+	function Registra(){
+		document.login_reg.submit();
+	}
+
 	
+	function Accedi(){
+		document.login_log.submit();
+	}
 	</script>
 </html>
