@@ -1,190 +1,189 @@
 <!DOCTYPE html>
 <HTML>
+	<HEAD>
+		<TITLE>Articoli </TITLE>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+		<link rel="icon" type="image/vnd.icon" href="image\LogoSfondi\Logo.ico"> 
 
-<HEAD>
-	<TITLE>Articoli</TITLE>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="CSS/biovita.css">
+		<link rel="stylesheet" href="CSS/footer.css">
 
-	<link rel="icon" type="image/vnd.icon" href="image\LogoSfondi\Logo.ico">
+		<script src="JS/MyFooter.js"></script>
+		<script src="JS/articoli.js"></script>
+		<script src="JS/myTopnav.js"></script>
+	</HEAD>
+	 
+	<BODY>
+		<script language="javaScript">
+			document.write(myTopnav);
+		  </script>
+		    <div class="container-fluid text-center" style="margin-top: 80px; ">
 
-	<link rel="stylesheet" href="CSS/biovita.css">
-	<link rel="stylesheet" href="CSS/footer.css">
 
-	<script src="JS/articoli.js"></script>
-	<script src="JS/MyFooter.js"></script>
-	<script src="JS/myTopnav.js"></script>
+		<div >
+			<h5 class="serieTinte"style="float: left;">Rossi & Mogano</h5>
+			<p style="float:right"><b>omeoTINTS</b> - <span style="color: red;">GEL CREMA COLORANTE</span></p>
+		</div>
+		<div class="clearfix"></div>
+		<br/>
+		<div class="row" >
+			<div class="col-md-2">
+				<div>
+					<img class="Thumb" src="image\foto/astuccio.JPG"
+						onmouseover="myFuncionDyspalyyText('image/foto/astuccio.JPG','Testo01','');">
+				</div>
+	
+				<div>
+					<img class="Thumb" src="image\Thumbnail\fix.jpg"
+						onmouseover="myFuncionDyspalyyText('image/Big/fix.jpg','Testo02', '');">
+				</div>
+	
+				<div>
+					<img class="Thumb" src="image\Thumbnail\10N.jpg"
+						onmouseover="myFuncionDyspalyyText('image/Big/10N.jpg','Testo03','');">
+				</div>
+	
+				<div>
+					<img class="Thumb" src="image\Thumbnail\7R.jpg"
+						onmouseover="myFuncionDyspalyyText('image/Big/7R.jpg','Testo04', '');">
+				</div>
+			</div>
+			
+			<div class="col-md-4">
+				
+				<!--Immagine ingrandita -->
+				<div >
+				
+					<!-- qui mostro per prima la prima immagine poi sarà il Java script che fa il resto -->
+					<!--Expanded image -->
+					<img id="expandedImg" class="Big" src="image/foto/astuccio.JPG">
+					
+				
+				</div>
 
-</HEAD>
+				<div>
+					<div id="Testo01" style="display:block" >
+						<p style="display:block">Astuccio Tinte</p>
+						<hr> <!-- mette una linea -->
+						<p>GODI DEL FASCINO NATURALE DI CAPELLI SANI E BELLI </BR>
+							NATURITAL OmeoTINTS possiede una formula esclusiva e rivoluzionaria che combina
+							la garanzia di una tintura permanente con i benefici degli ingredienti vegetali
+							attivi. Il processo di colorazione è stato perfezionato con l’incorporazione di un
+							complesso vegetale di Vit. E, Aloe Vera, Vit. C, Olii Vegetali Bio, nuovi alleati
+							tecnologici dei capelli che permettono di mantenere un colore brillante e pieno di
+							luminosità fino a 5 settimane.</p>
+					</div>
+					<div  id="Testo02" style="display:none">
+						<p >Colorfix da 140 ml</p>
+						<hr> <!-- mette una linea -->
+						<p>Tubetto di tinta </p>
+					</div>
+					<div id="Testo03"  style="display:none">
+						<p >Guanti Monouso</p>
+						<hr> <!-- mette una linea -->
+						<p>Foglio illustrativo</p>						
+					</div>
+					<div id="Testo04"  style="display:none">
+						<p  >Campioncino di Shampoo</p>
+						<hr> <!-- mette una linea -->
+						<p>Campioncino di Crema degli Angeli</p>					
+					</div>
+						
+				</div>
+			</div>
+			
+			 
+			<div class="col-md-6">
+					<!-- qui nota che ho messo il display a block solo sul primo in questo modo mi preparo a mostrare la prima immagine come preselezionata -->
+					<div>
+						
+						<!-- Testo ciocche -->
+						<div id="Ciocche"  style="display:block">
+							<p  id="CodiceColore" >1N</p>
+							<div  >
+								+ QUANTITà-	<button> Carrello</button> 17.50€
+								</div>
+							
+							<hr> <!-- mette una linea -->
 
-<BODY>
+							<div class="row">
+				 
+								<div class="col-md-3">
+									<img class="ThumbCiocche" src="image\Prodotti\Ciocche\1N.png"
+										onmouseover="myFuncionDyspalyyText('image/Prodotti/Ciocche/1N.png','CioccheBionde','1N Castano Chiaro');">
+								</div>
+								<div class="col-md-3">
+									<img class="ThumbCiocche" src="image\Prodotti\Ciocche\2N.png"
+										onmouseover="myFuncionDyspalyyText('image/Prodotti/Ciocche/2N.png','CioccheBionde','2N Castano Chiaro');">
+								</div>
+				
+								<div class="col-md-3">
+									<img class="ThumbCiocche" src="image\Prodotti\Ciocche\7RR.png"
+										onmouseover="myFuncionDyspalyyText('image/Prodotti/Ciocche/7RR.png','CioccheBionde','3N Castano Chiaro');">
+								</div>
+				
+								<div class="col-md-3">
+									<img class="ThumbCiocche" src="image\Prodotti\Ciocche\8D.png"
+										onmouseover="myFuncionDyspalyyText('image/Prodotti/Ciocche/8D.png','CioccheBionde','4N Castano Chiaro');">
+								</div>
+				
+							</div>
+							<div class="row">
+								 
+								<div class="col-md-3">
+									<img class="ThumbCiocche" src="image\Thumbnail\1N.png"
+										onmouseover="myFuncionDyspalyyText('image/Big/1N.png','CioccheBionde','5N Castano Chiaro');">
+								</div>
+								<div class="col-md-3">
+									<img class="ThumbCiocche" src="image\Thumbnail\1N.png"
+										onmouseover="myFuncionDyspalyyText('image/Big/1N.png','CioccheBionde','6N Castano Chiaro');">
+								</div>
+								<div class="col-md-3">
+									<img class="ThumbCiocche" src="image\Thumbnail\1N.png"
+										onmouseover="myFuncionDyspalyyText('image/Big/1N.png','CioccheBionde','7N Castano Chiaro');">
+								</div>
+								<div class="col-md-3">
+									<img class="ThumbCiocche" src="image\Thumbnail\1N.png"
+										onmouseover="myFuncionDyspalyyText('image/Big/1N.png','CioccheBionde','9N Castano Chiaro');">
+								</div>
+							</div>
+				
+				
+							<hr> <!-- mette una linea -->
+							<p  >GODI DEL FASCINO NATURALE DI CAPELLI SANI E BELLI </BR>
+								NATURITAL OmeoTINTS possiede una formula esclusiva e rivoluzionaria che combina
+								la garanzia di una tintura permanente con i benefici degli ingredienti vegetali
+								attivi. Il processo di colorazione è stato perfezionato con l’incorporazione di un
+								complesso vegetale di Vit. E, Aloe Vera, Vit. C, Olii Vegetali Bio (rinforzanti e protettivi per i capelli), nuovi alleati
+								tecnologici dei capelli che permettono di mantenere un colore brillante e pieno di
+								luminosità fino a 5 settimane.</p>
+							<hr> <!-- mette una linea -->
+							<p><b>Nota bene:</b> i colori della serie scelta (Dorato, Mogano, Ramato e Rosso Ramato) danno molto colore ma una copertura non completa sui capelli bianchi, per cui se si sceglie di fare uno di questi colori bisogna miscelarli con i colori Naturali (della stessa tonalità)in proporzione alla quantità di capelli bianchi.</p>					
+						</div>
+							
+					</div>
+				<!-- Image text -->
+					<div id="imgTeext" class="textDescCenter"></div>
+					
+					
+					 
+			</div>
+		
+		</div>
+		 
+	</div>
+	</BODY>
 	<script language="javaScript">
-		document.write(myTopnav);
+		document.write(myFooter);
 	</script>
 
-
-	<div style="text-align:center">
-		<h2>Mogano e Rossi</h2>
-		<p>omeoTINTS - GEL CREMA COLORANTE</p>
-	</div>
-
-	<div class="row">
-		<div class="col-md-2">
-			<div>
-				<img class="Thumb" src="image\Thumbnail\Astuccio.jpg"
-					onmouseover="myFuncionDyspalyyText('image/Big/Astuccio.jpg','Testo01','');">
-			</div>
-
-			<div>
-				<img class="Thumb" src="image\Thumbnail\fix.jpg"
-					onmouseover="myFuncionDyspalyyText('image/Big/fix.jpg','Testo02', '');">
-			</div>
-
-			<div>
-				<img class="Thumb" src="image\Thumbnail\10N.jpg"
-					onmouseover="myFuncionDyspalyyText('image/Big/10N.jpg','Testo03','');">
-			</div>
-
-			<div>
-				<img class="Thumb" src="image\Thumbnail\7R.jpg"
-					onmouseover="myFuncionDyspalyyText('image/Big/7R.jpg','Testo04', '');">
-			</div>
-		</div>
-
-
-
-		<div class="col-md-3">
-
-			<!--Immagine ingrandita -->
-			<div>
-
-				<!-- qui mostro per prima la prima immagine poi sarà il Java script che fa il resto -->
-				<!--Expanded image -->
-				<img id="expandedImg" class="Big" src="image/Big/Astuccio.jpg">
-
-			</div>
-
-
-			<div class="row">
-
-				<div class="col-md-3">
-					<img class="ThumbCiocche" src="image\Thumbnail\1N.jpg"
-						onmouseover="myFuncionDyspalyyText('image/Big/1N.jpg','Ciocche','1N Castano Chiaro');">
-				</div>
-				<div class="col-md-3">
-					<img class="ThumbCiocche" src="image\Thumbnail\2N.jpg"
-						onmouseover="myFuncionDyspalyyText('image/Big/2N.jpg','Ciocche','2N Castano Chiaro');">
-				</div>
-
-				<div class="col-md-3">
-					<img class="ThumbCiocche" src="image\Thumbnail\3N.jpg"
-						onmouseover="myFuncionDyspalyyText('image/Big/3N.jpg','Ciocche','2N Castano Chiaro');">
-				</div>
-
-				<div class="col-md-3">
-					<img class="ThumbCiocche" src="image\Thumbnail\4N.jpg"
-						onmouseover="myFuncionDyspalyyText('image/Big/4N.jpg','Ciocche','2N Castano Chiaro');">
-				</div>
-
-			</div>
-			<div class="row">
-
-				<div class="col-md-3">
-					<img class="ThumbCiocche" src="image\Thumbnail\5N.jpg"
-						onmouseover="myFuncionDyspalyyText('image/Big/5N.jpg','Ciocche','2N Castano Chiaro');">
-				</div>
-				<div class="col-md-3">
-					<img class="ThumbCiocche" src="image\Thumbnail\5d.jpg"
-						onmouseover="myFuncionDyspalyyText('image/Big/5d.jpg','Ciocche','2N Castano Chiaro');">
-				</div>
-				<div class="col-md-3">
-					<img class="ThumbCiocche" src="image\Thumbnail\6RR.jpg"
-						onmouseover="myFuncionDyspalyyText('image/Big/6RR.jpg','Ciocche','2N Castano Chiaro');">
-				</div>
-				<div class="col-md-3">
-					<img class="ThumbCiocche" src="image\Thumbnail\7RR.jpg"
-						onmouseover="myFuncionDyspalyyText('image/Big/7RR.jpg','Ciocche','2N Castano Chiaro');">
-				</div>
-			</div>
-
-
-
-		</div>
-
-
-		<div class="col-md-7" style="text-align: center;">
-			<!-- qui nota che ho messo il display a block solo sul primo in questo modo mi preparo a mostrare la prima immagine come preselezionata -->
-			<div>
-				<div id="Testo01" style="display:block">
-					<p style="display:block">Astuccio Tinte</p>
-					<hr> <!-- mette una linea -->
-					<p>GODI DEL FASCINO NATURALE DI CAPELLI SANI E BELLI </BR>
-						NATURITAL OmeoTINTS possiede una formula esclusiva e rivoluzionaria che combina
-						la garanzia di una tintura permanente con i benefici degli ingredienti vegetali
-						attivi. Il processo di colorazione è stato perfezionato con l’incorporazione di un
-						complesso vegetale di Vit. E, Aloe Vera, Vit. C, Olii Vegetali Bio, nuovi alleati
-						tecnologici dei capelli che permettono di mantenere un colore brillante e pieno di
-						luminosità fino a 5 settimane.</p>
-				</div>
-				<div id="Testo02" style="display:none">
-					<p>Colorfix da 140 ml</p>
-					<hr> <!-- mette una linea -->
-					<p>Tubetto di tinta </p>
-				</div>
-				<div id="Testo03" style="display:none">
-					<p>Guanti Monouso</p>
-					<hr> <!-- mette una linea -->
-					<p>Foglio illustrativo</p>
-				</div>
-				<div id="Testo04" style="display:none">
-					<p>Campioncino di Shampoo</p>
-					<hr> <!-- mette una linea -->
-					<p>Campioncino di Crema degli Angeli</p>
-				</div>
-
-				<!-- Testo ciocche -->
-				<div id="Ciocche" style="display:none">
-					<p id="CodiceColore">1N</p>
-					<div>
-						+ QUANTITà- <button> Carrello</button> 17.50€
-					</div>
-
-					<hr> <!-- mette una linea -->
-					<p>Si adopera per colorare, scurire o schiarire dando una tonalità
-						naturale ai capelli. Dall’1N all’8N copertura dei bianchi al 100%. 9N e 10N schiariscono e
-						coprono i bianchi più in trasparenza miscelandoli ai biondi esistenti.</p>
-					<hr> <!-- mette una linea -->
-					<p>GODI DEL FASCINO NATURALE DI CAPELLI SANI E BELLI </BR>
-						NATURITAL OmeoTINTS possiede una formula esclusiva e rivoluzionaria che combina
-						la garanzia di una tintura permanente con i benefici degli ingredienti vegetali
-						attivi. Il processo di colorazione è stato perfezionato con l’incorporazione di un
-						complesso vegetale di Vit. E, Aloe Vera, Vit. C, Olii Vegetali Bio, nuovi alleati
-						tecnologici dei capelli che permettono di mantenere un colore brillante e pieno di
-						luminosità fino a 5 settimane.</p>
-				</div>
-
-			</div>
-			<!-- Image text -->
-			<div id="imgTeext" class="textDescCenter"></div>
-
-
-
-		</div>
-
-	</div>
-
-	</div>
-</BODY>
-<script language="javaScript">
-	document.write(myFooter);
-</script>
-
-<noscript>
-	<strong>Per visualizzare correttamente questa pagina c necessario avere javascript abilitato.</strong>
-</noscript>
-
+	<noscript>
+		<strong>Per visualizzare correttamente questa pagina c necessario avere javascript abilitato.</strong>
+	</noscript>
 </HTML>
