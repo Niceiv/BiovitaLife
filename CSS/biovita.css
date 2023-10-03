@@ -526,13 +526,9 @@ button {
 	padding: 8px 22px;
 	border-radius: 6px;
 	background: green;
-	transition: all 0, 2 ease;
 
 }
 
-button:active {
-	transform: scale (0.96);
-}
 
 div.mio {
 	border: solid;
