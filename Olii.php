@@ -178,9 +178,7 @@
 
 
 </body>
-<script language="javaScript">
-    document.write(myFooter);
-</script>
+ 
 
 <noscript>
     <strong>Per visualizzare correttamente questa pagina c necessario avere javascript abilitato.</strong>
