@@ -22,7 +22,7 @@
 	<script language="javaScript">
 		document.write(myTopnav);
 	  </script>
-<div class="container-fluid" style="margin-top: 100px; ">
+<div class="container-fluid" style="margin-top: 80px; ">
 
 	<DIV class="Titolo" style="height: 50px;" >
 		<h1>Beauty Is Nature</h1>
@@ -313,10 +313,10 @@
 			righeTabScheda=ingredienti[0].textContent.toString();
 		}
 		var sect = "" +
-			"<section>" +
+			"<section class='container-fluid row '>" +
 			"	<h2><strong>" + nome_prodotto[0].textContent.toString() + "</strong></h2>" +
-			"	<img src='" + img[0].textContent.toString() + "' alt='' style='position:absolute;  border: 5px solid #555;'>" +
-			"	<div class='warpper'>" +
+			"	<img src='" + img[0].textContent.toString() + "' alt=''  class='col-sm-3' >" +
+			"	<div class='warpper col-sm-6'>" +
 			"		<input class='radio' id='" + tabName01[0].textContent.toString() + "' name='group' type='radio' checked>" +
 			"		<input class='radio' id='" + tabName02[0].textContent.toString() + "' name='group' type='radio'>" +
 			"		<input class='radio' id='" + tabName03[0].textContent.toString() + "' name='group' type='radio'>" +
@@ -326,20 +326,20 @@
 			"			<label class='tab' id='" + tabName02[0].textContent.toString() + "-tab' for='" + tabName02[0].textContent.toString() + "'>Proprietà</label>" +
 			"			<label class='tab' id='" + tabName03[0].textContent.toString() + "-tab' for='" + tabName03[0].textContent.toString() + "'>Modalità d'uso</label>" +
 			"		</div>" +
-			"		<div class='panels'>" +
-			"			<div class='panel' id='" + tabName01[0].textContent.toString() + "-panel'>" +
+			"		<div class='pannelli'>" +
+			"			<div class='pannello' id='" + tabName01[0].textContent.toString() + "-pannello'>" +
 			"				<p class='uno'>" + descrizione[0].textContent.toString() + "</p>" +
 			"			</div>" +
-			"			<div class='panel' id='" + tabName02[0].textContent.toString() + "-panel'><p>" +
+			"			<div class='pannello' id='" + tabName02[0].textContent.toString() + "-pannello'><p>" +
 							righeTabScheda +
 			"				</p>" +
 			"			</div>" +
-			"			<div class='panel' id='" + tabName03[0].textContent.toString() + "-panel'>" +
+			"			<div class='pannello' id='" + tabName03[0].textContent.toString() + "-pannello'>" +
 			"				<p class='tre'>" + utilizzo[0].textContent.toString() + "</p>" +
 			"			</div>" +
 			"		</div>" +
 			"	</div>" +
-			"	<aside>" +
+			"	<aside class='col-sm-3'>" +
 			"		<h2>" + prezzo[0].textContent.toString() + "</h2>" +
 			"		<button>Aggiungi al carrello</button>" +
 			"	</aside>" +
@@ -356,4 +356,11 @@
 </div>
 </div>
 </body>
+<script language="javaScript">
+    document.write(myFooter);
+  </script>
+  
+  <noscript>
+    <strong>Per visualizzare correttamente questa pagina c necessario avere javascript abilitato.</strong>
+  </noscript>
 </html>

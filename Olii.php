@@ -145,7 +145,7 @@
                     echo "          <h3>" . $row_nome['nome'] . "</h3>";
                     echo "          <p>" . $row_olii_desc['Descrizione'] . "</p>";
                     echo '          <br><button style="width:100%;" onclick="mostra(' . $idOlii . ')" class="btn btn-success btn-lg"/>
-                    <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</button>';
+                    <span class="glyphicon glyphicon-shopping-cart"></span> Aggiungi al Carrello</button>';
                     echo "      </div>";
                     echo "  </div>";
                     echo "</div>";
