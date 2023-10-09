@@ -19,7 +19,7 @@ myTopnav += "        <li class='dropdown'>";
 myTopnav += "          <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true'";
 myTopnav += "            aria-expanded='false'>Prodotti <span class='caret'></span></a>";
 myTopnav += "          <ul class='dropdown-menu'>";
-myTopnav += "            <li><a href='Beauty.php'>Creme</a></li>";
+myTopnav += "            <li><a href='Beauty.php'>CREME</a></li>";
 myTopnav += "            <li><a href='Olii.php'>Olii</a></li>";
 myTopnav += "            <li><a href='prodotti.html'>Tinte</a></li>";
 myTopnav += "            <li role='separator' class='divider'></li>";
