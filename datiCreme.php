@@ -7,14 +7,14 @@ error_reporting(E_ERROR | E_PARSE);
 require 'SQL_command.php';
 
 
-$sql_nome = "SELECT * FROM Prodotti where idProdotto=$idDati";
+$sql_nome = "SELECT * FROM vw_Prodotti where idProdotto=$idDati";
 $res_nome = GetData($sql_nome);
 if ($res_nome->num_rows > 0) {
     while ($row_nome = $res_nome->fetch_assoc()) {
 
 
         $idProdotto = $row_nome['idProdotto'];
-        echo '<H4>' . $row_nome['Prodotto'] . '</H4>';
+        echo '<H4>' . $row_nome['DescProd'] . '</H4>';
 
         $Img = $row_nome['IMG'];
 
