@@ -139,7 +139,7 @@
                 echo "      </div>";
                 echo "      <div class='service-content'>";
                 echo "          <strong>" . $row_nome['Prodotto'] . ": </strong>";
-                echo "          <p>" . $row_nome['Descrizione'] . "</p>";
+                echo "          <p>" . substr($row_nome['Descrizione'],0,300) . "...</p>";
                 echo '          <br><button style="width:100%;" onclick="mostra(' . $idProdotto . ')" class="btn btn-success btn-lg"/>
                 <span class="glyphicon glyphicon-shopping-cart"></span> Aggiungi al Carrello</button>';
                 echo "      </div>";
