@@ -16,7 +16,9 @@ if ($res_nome->num_rows > 0) {
         $idProdotto = $row_nome['idProdotto'];
         echo '<H4>' . $row_nome['DescProd'] . '</H4>';
 
-        $Img = $row_nome['IMG'];
+
+        echo "<img src='" . $row_nome['img'] . "'alt='" . $row_nome['DescProd'] . "' style='width:250px;height:250px;'>";
+        echo "<br/>"  ;    
 
         echo '<h5><b>Proprietà</b></h5>';
         echo '<p>' . $row_nome['Descrizione'] . '</p>';
