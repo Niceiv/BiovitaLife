@@ -76,7 +76,7 @@
         }
 
         body {
-            background-image: url(image/LogoSfondi/sfondoIndex2.png);
+            background-image: url(image/LogoSfondi/sfondoCreme.png);
             color: black;
             background-repeat: no-repeat;
             background-position: top center;
@@ -134,13 +134,13 @@
                 echo "      <div class='service-icon yellow'>";
                 echo "          <div class='front-content'>";
                 echo "              <h4>" . $row_nome['Prodotto'] . "</h4>";
-                echo "              <img src='" . $row_nome['img'] . "'alt='" . $row_nome['Prodotto'] . "' style='width:150px;height:150px;'>";
+                echo "              <img src='" . $row_nome['img'] . "'alt='" . $row_nome['Prodotto'] . "' style='width:200px;height:150px;'>";
                 echo "          </div>";
                 echo "      </div>";
                 echo "      <div class='service-content'>";
                 echo "          <strong>" . $row_nome['Prodotto'] . ": </strong>";
-                echo "          <p>" . substr($row_nome['Descrizione'],0,300) . "...</p>";
-                echo '          <br><button style="width:100%;" onclick="mostra(' . $idProdotto . ')" class="btn btn-success btn-lg"/>
+                echo "          <p>" . substr($row_nome['Descrizione'], 0, 300) . "...</p>";
+                echo '          <br><button style="width:100%; " onclick="mostra(' . $idProdotto . ')" class="btn btn-success btn-lg"/>
                 <span class="glyphicon glyphicon-shopping-cart"></span> Aggiungi al Carrello</button>';
                 echo "      </div>";
                 echo "  </div>";
