@@ -24,7 +24,7 @@
     <script src="JS/MyFooter.js"></script>
     <script src="JS/index.js"></script>
     <script src="JS/myTopnav.js"></script>
-    <title>Document</title>
+    <title>BeautyNatura | BiovitaLife</title>
 
     <style>
         /* The Modal (background) */

@@ -21,7 +21,7 @@ myTopnav += "            aria-expanded='false'>I Nostri Prodotti <span class='ca
 myTopnav += "          <ul class='dropdown-menu'>";
 myTopnav += "            <li><a href='Beauty.php'>Cura dei capelli</a></li>";
 myTopnav += "            <li><a href='Olii.php'>Oli Essenziali</a></li>";
-myTopnav += "            <li><a href='henne.html'>Henné</a></li>";
+myTopnav += "            <li><a href='Henne.php'>Hennè</a></li>";
 myTopnav += "            <li role='separator' class='divider'></li>";
 myTopnav += "            <li class='dropdown-header'>omeoTINTS</li>";
 myTopnav += "            <li><a href='Naturali.html'>Serie Naturali</a></li>";
