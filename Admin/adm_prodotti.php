@@ -146,6 +146,11 @@
                 document.myform.submit();
             }
 
+            function SelGrp() {
+                //var idgrp = document.getElementById('idgruppo');
+                document.myform.submit();
+            }
+
         </script>
         <?php
 
@@ -194,6 +199,8 @@
         $id_sel = $_POST['idSel'];
         $act_prod = $_POST['act_prod'];
 
+        $grpSel = $_POST['idgruppo'];
+
         //DETAIL
         $id_dati_sel = $_POST['idDati'];
         $act_dati = $_POST['act_dati'];
@@ -232,12 +239,19 @@
             //echo "<h2>inserimento</h2>";
         
 
-            $prodotto = htmlspecialchars($_POST['Prodotto_ins']);
-            $prezzo = htmlspecialchars($_POST['Prezzo_ins']);
+            $prodotto = $_POST['Prodotto_ins'];
+
+            $desc = $_POST['Descrizione_ins'];
+            $ingr = $_POST['Ingredienti_ins'];
+            $util = $_POST['Utilizzo_ins'];
+            $qta = $_POST['Qta_ins'];
+
+            $prezzo = $_POST['Prezzo_ins'];
+
             $id_um = $_POST['id_um_ins'];
 
             $prezzo = str_replace(',', '.', $prezzo);
-
+            $qta = str_replace(',', '.', $qta);
             /*
             echo "<br><br>prodotto: [$prodotto]";
             echo "<br><br>prezzo: [$prezzo]";
@@ -246,10 +260,15 @@
 
             if (strlen(trim($prodotto)) > 0) {
 
-                $sql_ins = "INSERT INTO prodotti  (prodotto, prezzo,id_um) VALUES (";
-                $sql_ins .= " '" . convert_smart_quotes($prodotto) . "',";
+                $sql_ins = "INSERT INTO prodotti  (prodotto, Descrizione, ingredienti, utilizzo, prezzo,qta, id_um, idgruppo) VALUES (";
+                $sql_ins .= " '" . convert_smart_quotes($prodotto) . "'";
+                $sql_ins .= " ,'" . convert_smart_quotes($desc) . "'";
+                $sql_ins .= " ,'" . convert_smart_quotes($ingr) . "'";
+                $sql_ins .= " ,'" . convert_smart_quotes($util) . "'";
                 $sql_ins .= " , $prezzo ";
+                $sql_ins .= " , $qta ";
                 $sql_ins .= " , $id_um ";
+                $sql_ins .= " , $grpSel ";
                 $sql_ins .= ")";
 
 
@@ -277,11 +296,18 @@
         
 
 
-            $prodotto = htmlspecialchars($_POST['Prodotto']);
-            $prezzo = htmlspecialchars($_POST['Prezzo']);
-            $id_um = htmlspecialchars($_POST['id_um']);
+            $prodotto = $_POST['Prodotto'];
+
+            $desc = $_POST['Descrizione'];
+            $ingr = $_POST['Ingredienti'];
+            $util = $_POST['Utilizzo'];
+            $qta = $_POST['Qta'];
+
+            $prezzo = $_POST['Prezzo'];
+            $id_um = $_POST['id_um'];
 
             $prezzo = str_replace(',', '.', $prezzo);
+            $qta = str_replace(',', '.', $qta);
 
             /*
             echo "<br><br>ID Selezionato: [$id_sel]";
@@ -292,8 +318,12 @@
 
             if (strlen(trim($prodotto)) > 0) {
                 $sql_upd = "UPDATE prodotti ";
-                $sql_upd .= " SET prodotto='" . convert_smart_quotes($prodotto) . "',";
+                $sql_upd .= " SET prodotto='" . convert_smart_quotes($prodotto) . "'";
+                $sql_upd .= " , Descrizione='" . convert_smart_quotes($desc) . "'";
+                $sql_upd .= " , ingredienti='" . convert_smart_quotes($ingr) . "'";
+                $sql_upd .= " , utilizzo='" . convert_smart_quotes($util) . "'";
                 $sql_upd .= " , prezzo=$prezzo ";
+                $sql_upd .= " , qta=$qta ";
                 $sql_upd .= " , id_um=$id_um ";
                 $sql_upd .= " WHERE idProdotto=$id_sel ";
                 //echo "<br>$sql_upd";
@@ -364,7 +394,7 @@
 
             if ((strlen(trim($chiave)) > 0) && (strlen(trim($valore)) > 0)) {
 
-                $sql_INS = "INSERT INTO prodotti_dati (idprodotto, chiave, valore) VALUES ( $id_sel, '$chiave','$valore') ";
+                $sql_INS = "INSERT INTO prodotti_dati (idprodotto, desc, prop) VALUES ( $id_sel, '$chiave','$valore') ";
                 //echo "<br>$sql_INS";
         
                 $Step = 'Inserimento Daeti Prodotti';
@@ -402,7 +432,7 @@
 
             if ((strlen(trim($chiave)) > 0) && (strlen(trim($valore)) > 0)) {
 
-                $sql_upd = "UPDATE prodotti_dati SET chiave='$chiave', valore='$valore' WHERE idprodotti_dati=$id_dati_sel ";
+                $sql_upd = "UPDATE prodotti_dati SET desc='$chiave', prop='$valore' WHERE idprodotti_dati=$id_dati_sel ";
                 //echo "<br>$sql_upd";
         
                 $Step = 'Aggiornamento Daeti Prodotti';
@@ -455,6 +485,22 @@
         }
 
 
+
+        echo "<br><label for='cboGruppo'>Gruppo:</label>";
+        echo "          <select id='idgruppo' name='idgruppo' onChange='SelGrp()' >";
+        echo "          <option value='0' >---</option>";
+        $sql_grp = "select * FROM gruppi";
+        $res_grp = GetData($sql_grp);
+        while ($row_grp = $res_grp->fetch_assoc()) {
+            if ($row_grp['idgruppo'] == $grpSel) {
+                echo "      <option value='" . $row_grp['idgruppo'] . "' selected>" . $row_grp['gruppo'] . "</option>";
+            } else {
+                echo "      <option value='" . $row_grp['idgruppo'] . "'>" . $row_grp['gruppo'] . "</option>";
+            }
+        }
+        ;
+        echo "          </select>";
+
         echo " <h2>Elenco prodotti</h2>";
         //MASTER
         echo "<input type='hidden' id='idSel'           name='idSel' placeholder='id'> ";
@@ -463,14 +509,19 @@
         echo "<input type='hidden' id='idDati'          name='idDati' placeholder='idDati'> ";
         echo "<input type='hidden' id='act_dati'        name='act_dati' >";
 
-
-        $sql_prod = 'SELECT * FROM vw_prodotti_um ORDER BY Prodotto';
+        if ($grpSel != '') {
+            $sql_prod = 'SELECT * FROM vw_prodotti where idgruppo=' . $grpSel . ' ORDER BY Prodotto';
+        } else {
+            $sql_prod = 'SELECT * FROM vw_prodotti idgruppo=99 ORDER BY Prodotto';
+        }
+        //echo "<br>SQL:$sql_prod";
+        
         $res_prod = GetData($sql_prod);
-        echo "<table>";
+        echo "<table style='border:1px solid;width:100%;'>";
         echo "<thead><tr>";
         echo "<th>Prodotto</th>";
         echo "<th>Prezzo</th>";
-        echo "<th>Un.Mis.</th>";
+        echo "<th>Qta</th>";
         echo "<th colspan='3'>Azioni</th>";
         echo "</tr></thead>";
         if ($res_prod->num_rows > 0) {
@@ -480,6 +531,7 @@
                     echo "  <tr>";
                     echo "      <td>" . $row['Prodotto'] . "</td>";
                     echo "      <td>" . $row['Prezzo'] . "</td>";
+                    echo "      <td>" . $row['qta'] . "</td>";
                     echo "      <td>" . $row['unita_misura'] . "</td>";
 
                     //MM20230906 
@@ -494,9 +546,20 @@
                     echo "  </tr>";
                 } else {
                     $prodTmp = $row['Prodotto'];
+                    $descTmp = $row['Descrizione'];
+                    $ingrTmp = $row['ingredienti'];
+                    $utilTmp = $row['utilizzo'];
                     echo "  <tr>";
-                    echo "      <td><input type='text' required  id='Prodotto' name='Prodotto' value=\"$prodTmp\"></td>";
+                    echo "      <td>";
+                    echo "          <table style='border:1px solid;width:100%;'>";
+                    echo "              <tr><td>Prodotto</td><td><input type='text' required  id='Prodotto' name='Prodotto' value=\"$prodTmp\" style='width:100%;'></td></tr>";
+                    echo "              <tr><td>Descrizione</td><td><input type='text'   id='Descrizione' name='Descrizione' value=\"$descTmp\"  style='width:100%;'></td></tr>";
+                    echo "              <tr><td>Ingredienti</td><td><input type='text'   id='Ingredienti' name='Ingredienti' value=\"$ingrTmp\"  style='width:100%;'></td></tr>";
+                    echo "              <tr><td>Uilizzo</td><td><input type='text'   id='Uilizzo' name='Utilizzo' value=\"$utilTmp\"  style='width:100%;'></td></tr>";
+                    echo "          </table>";
+                    echo "      </td>";
                     echo "      <td><input type='number' min='0' max='999' step='.01' id='Prezzo' name='Prezzo' value=" . $row['Prezzo'] . "></td>";
+                    echo "      <td><input type='number' min='0' max='999' step='.01' id='Qta' name='Qta' value=" . $row['qta'] . "></td>";
                     echo "      <td>";
 
 
@@ -519,9 +582,9 @@
 
 
                     echo "      <td></td>";
-                    echo "      <td><input type='submit' id='btnAggiornaProd' value='aggiornaProd' onclick='AggiornaProd(" . $row['idProdotto'] . ")' ></td>";
-                    echo "      <td><input type='submit' id='btmAnnullaProd' value='annullaProd' onclick='AnnullaProd(" . $row['idProdotto'] . ")' ></td>";
-                    echo "      <td><input type='submit' id='btnEliminaProd' value='eliminaProd' onclick='EliminaProd(" . $row['idProdotto'] . ")'  ></td>";
+                    echo "      <td><input type='submit' id='btnAggiornaProd' value='aggiornaProd' onclick='AggiornaProd(" . $row['idProdotto'] . ")' >";
+                    echo "      <br><input type='submit' id='btmAnnullaProd' value='annullaProd' onclick='AnnullaProd(" . $row['idProdotto'] . ")' >";
+                    echo "      <br><input type='submit' id='btnEliminaProd' value='eliminaProd' onclick='EliminaProd(" . $row['idProdotto'] . ")'  ></td>";
                     echo "      <td></td>";
                     echo "  </tr>";
                 }
@@ -543,13 +606,19 @@
 
 
         echo "<hr><b>Nuovo prodotto</b><br/>";
-        echo "<label id='lbl_Prodotto_ins'  name='lbl_Prodotto_ins' for='Prodotto_ins'>Prodotto:</label>";
-        echo "<input type='text'    id='Prodotto_ins' name='Prodotto_ins' value=''> ";
+        echo "<table style='border:1px solid;width:100%;'>";
+        // echo "   <thead><tr><td>Desc</td><td>valore</td></tr></thead>";
+        //echo "              <tbody>";
+        echo "              <tr><td>Prodotto</td><td><input type='text' required  id='Prodotto_ins' name='Prodotto_ins' value='' style='width:100%;'></td></tr>";
+        echo "              <tr><td>Descrizione</td><td><input type='text'   id='Descrizione_ins' name='Descrizione_ins' value=''  style='width:100%;'></td></tr>";
+        echo "              <tr><td>Ingredienti</td><td><input type='text'   id='Ingredienti_ins' name='Ingredienti_ins' value='' style='width:100%;'></td></tr>";
+        echo "              <tr><td>Uilizzo</td><td><input type='text'   id='Utilizzo_ins' name='Utilizzo_ins' value=''  style='width:100%;'></td></tr>";
+        //echo "          </tbody>";
+        echo "         </table>";
         echo "<label id='lbl_Prezzo_ins'  name='lbl_Prezzo_ins' for='Prezzo_ins'>Prezzo:</label>";
         echo "<input type='number' min='0' max='999' step='.01' id='Prezzo_ins' name='Prezzo_ins' value=''> ";
-        echo "<label id='lbl_id_um_ins'  name='lbl_id_um_ins' for='id_um_ins'>Unità di misura:</label>";
-
-
+        echo "<label id='lbl_id_um_ins'  name='lbl_id_um_ins' for='id_um_ins'>Qta:</label>";
+        echo "<input type='number' min='0' max='999' step='.01' id='Qta_ins' name='Qta_ins' value=''> ";
         echo "<select id='id_um_ins' name='id_um_ins' >";
         echo "  <option value='0' >---</option>";
         $sql_um = "select * FROM unita_misura";
@@ -579,8 +648,8 @@
 
                 echo "<table>";
                 echo "<thead><tr>";
-                echo "<th>Chiave</th>";
-                echo "<th>Valore</th>";
+                echo "<th>Descrizione</th>";
+                echo "<th>Proprietà</th>";
                 echo "<th colspan='3'>Azioni</th>";
                 echo "</tr></thead>";
                 while ($row_dati = $res_prod_dati->fetch_assoc()) {
@@ -588,8 +657,8 @@
                     if ($id_dati_sel != $row_dati['idprodotti_dati']) {
 
                         echo "  <tr>";
-                        echo "      <td>" . $row_dati['chiave'] . "</td>";
-                        echo "      <td>" . $row_dati['valore'] . "</td>";
+                        echo "      <td>" . $row_dati['desc'] . "</td>";
+                        echo "      <td>" . $row_dati['prop'] . "</td>";
                         echo "      <td></td>";
 
                         //MM20230906 
@@ -607,8 +676,8 @@
                         echo "      <td></td>";
                         echo "  </tr>";
                     } else {
-                        $chiaveTmp = $row_dati['chiave'];
-                        $valoreTmp = $row_dati['valore'];
+                        $chiaveTmp = $row_dati['desc'];
+                        $valoreTmp = $row_dati['prop'];
                         echo "  <tr>";
                         echo "      <td><input type='text' id='chiave' name='chiave' value=\"$chiaveTmp\"></td>";
                         echo "      <td> ";
