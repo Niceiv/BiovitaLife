@@ -33,7 +33,7 @@ function ExecuteSQL($sql)
     global $SQL_error;
 
 
-    //echo "<BR>SQL: $sql";
+    echo "<BR>SQL: $sql";
     OpenCnn();
     try {
         if ($conn->query($sql) === TRUE) {
@@ -61,7 +61,7 @@ function InserData($sql)
 {
     global $conn;
     OpenCnn();
-    //echo '<BR>SQL:' .  $sql;
+    //echo '<BR>SQL:' . $sql;
     if ($conn->query($sql) === TRUE) {
         //echo "<br>New record created";
     } else {

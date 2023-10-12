@@ -155,6 +155,31 @@
 
         require '..\Config\SQL_Command.php';
 
+        function convert_smart_quotes($string)
+        {
+            $search = array(
+                chr(145),
+                chr(146),
+                chr(147),
+                chr(148),
+                chr(151),
+                '’',
+                '\''
+            );
+
+            $replace = array(
+                "'",
+                "'",
+                '"',
+                '"',
+                '-',
+                '\'\'',
+                '\'\''
+            );
+
+            return str_replace($search, $replace, $string);
+        }
+
 
 
         global $PageName;
@@ -222,8 +247,8 @@
             if (strlen(trim($prodotto)) > 0) {
 
                 $sql_ins = "INSERT INTO prodotti  (prodotto, prezzo,id_um) VALUES (";
-                $sql_ins .= " '$prodotto' ";
-                $sql_ins .= " , '$prezzo' ";
+                $sql_ins .= " '" . convert_smart_quotes($prodotto) . "',";
+                $sql_ins .= " , $prezzo ";
                 $sql_ins .= " , $id_um ";
                 $sql_ins .= ")";
 
@@ -267,8 +292,8 @@
 
             if (strlen(trim($prodotto)) > 0) {
                 $sql_upd = "UPDATE prodotti ";
-                $sql_upd .= " SET prodotto='$prodotto' ";
-                $sql_upd .= " , prezzo='$prezzo' ";
+                $sql_upd .= " SET prodotto='" . convert_smart_quotes($prodotto) . "',";
+                $sql_upd .= " , prezzo=$prezzo ";
                 $sql_upd .= " , id_um=$id_um ";
                 $sql_upd .= " WHERE idProdotto=$id_sel ";
                 //echo "<br>$sql_upd";

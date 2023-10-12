@@ -7,7 +7,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 
@@ -15,9 +14,11 @@
 
 	<link rel="stylesheet" href="CSS/biovita.css">
 	<link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="jQuery/jquery-ui.css"> 
 
 	<script src="JS/MyFooter.js"></script>
-	<script src="JS/index.js"></script>
+	<script src="jQuery/jquery.js"></script>
+	<script src="jQuery/jquery-ui.js"></script>
 	<script src="JS/myTopnav.js"></script>
 	<style>
 		.padding {
@@ -26,6 +27,15 @@
 body{
 	margin: 0;
 }
+
+	 span.ui-icon {
+		margin: 0 5px 0 0;
+		position: absolute;
+		left: .2em;
+		top: 50%;
+		margin-top: -8px;
+	}
+	
 	</style>
 </HEAD>
 
@@ -53,8 +63,8 @@ body{
 						trust. Crediamo nella Natura.
 					</p>
 				</section>
-			  <div class="col-sm-4 padding">
-				<img  src="image/LogoSfondi/BiovitalifeLogo.png" alt="Biovitalife Logo"
+			  <div class="col-sm-4 box" >
+				<img  src="image/LogoSfondi/BiovitalifeLogo.png" alt="Biovitalife Logo" >
 			  </div>
 			</div>
 		  </div>
@@ -122,15 +132,29 @@ body{
 <div class="row container-fluid padding">
 		<div class="responsive col-sm-3">
 			<div class="gallery">
-				<a href="Prodotti.html">
-					<img src="image\Prodotti\Omeotints02.jpg" alt="OMEOTINTS">
+				<a href="javascript:void(0);" id="dialog-link" >
+					<img src="image/Generali/Omeotints02.jpg" alt="OmeoTINTS Logo" >
 				</a>
 			</div>
 		</div>
+
 		<div class="col-sm-9 text-center">
 			<p>descrizione molto lunga</p>
 		</div>
 	</div>
+
+	
+	
+	<!-- ui-dialog -->
+	<div id="dialog" title="Scegli una serie di omeoTINTS!">
+		<a href="Naturali.html"><button>Naturali</button></a> 
+		<a href="Biondi.html"><button>Dorati</button></a>
+		<a href="Mogano.html"><button>Mogano/Rossi</button></a>
+	</div>
+
+
+
+
 
 	<div class="row container-fluid padding">
 		<div class="col-sm-9 text-center">
@@ -138,8 +162,8 @@ body{
 		</div>
 		<div class="responsive col-sm-3">
 			<div class="gallery">
-				<a href="XMLParser.html">
-					<img src="image\Prodotti\als1.jpg" alt="Beauty&Natura">
+				<a href="Beauty.php">
+					<img src="image/Generali/als1.jpg" alt="BeautyNatura Logo">
 				</a>
 			</div>
 		</div>
@@ -147,8 +171,8 @@ body{
 		<div class="row container-fluid padding">
 			<div class="responsive col-sm-3">
 				<div class="gallery">
-					<a href="image\Prodotti\Alimentazione.jpg">
-						<img src="image\Prodotti\henneScritta.jpg" alt="Henné">
+					<a href="Henne.php">
+						<img src="image/Generali/henneScritta.jpg" alt="Hennè Logo">
 					</a>
 				</div>
 			</div>
@@ -164,8 +188,8 @@ body{
 
 			<div class="responsive col-sm-3">
 				<div class="gallery">
-					<a href="Oli.html">
-						<img src="image\Prodotti\Olimonde.png" alt="OliMonde">
+					<a href="Olii.php">
+						<img src="image/Generali/Olimonde.png" alt="OliMonde Logo">
 				</div>
 				</a>
 			</div>
@@ -181,6 +205,26 @@ body{
 </BODY>
 <script language="javaScript">
 	document.write(myFooter);
+</script>
+
+<script>
+$( function() {
+    $( "#dialog" ).dialog({
+      autoOpen: false,
+      show: {
+        effect: "blind",
+        duration: 1000
+      },
+      hide: {
+        effect: "explode",
+        duration: 1000
+      }
+    });
+ 
+    $( "#dialog-link" ).on( "click", function() {
+      $( "#dialog" ).dialog( "open" );
+    });
+  } );
 </script>
 
 <noscript>
