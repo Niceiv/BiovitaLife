@@ -106,7 +106,7 @@
 				error_reporting(E_ERROR | E_PARSE);
 
 				require '..\Config\SQL_command.php';
-	 
+
 
 
 				function convert_smart_quotes($string)
@@ -145,16 +145,16 @@
 
 
 				if ($action == 'Olio') {
- 
+
 
 					$SQL = "UPDATE Olii SET ";
 					$SQL .= " nome='" . convert_smart_quotes($_POST["olii_name"]) . "',";
-					$SQL .= " Order_view=" . $_POST["olii_orderview"]. "  ";
+					$SQL .= " Order_view=" . $_POST["olii_orderview"] . "  ";
 					$SQL .= " WHERE idOlii = " . $IdOliiSel;
 
 
 					//echo "<BR>SQL:[" . $SQL . "]";
-					ExecuteSQL( $SQL);
+					ExecuteSQL($SQL);
 					$action = '';
 				}
 
@@ -166,21 +166,21 @@
 					$SQL .= " WHERE idOlii_Desc = " . $_POST["olii_desc_id"];
 
 					//cho "<BR>SQL:[" . $SQL . "]";
-					ExecuteSQL( $SQL);
+					ExecuteSQL($SQL);
 
 					$action = '';
 				}
 
 				if ($action == 'Avvertenze') {
 
-	
+
 
 					$SQL = "UPDATE olii_desc SET ";
 					$SQL .= " Descrizione='" . convert_smart_quotes($_POST["olio_avv"]) . "'";
 					$SQL .= " WHERE idOlii_Desc = " . $_POST["olii_avv_id"];
 
 					//echo "<BR>SQL:[" . $SQL . "]";
-					ExecuteSQL( $SQL);
+					ExecuteSQL($SQL);
 
 					$action = '';
 				}
@@ -321,7 +321,7 @@
 							$row_olii_desc = $res_olii_desc->fetch_assoc();
 							echo "<input id='olii_desc_id'   name='olii_desc_id' type='hidden' value='" . $row_olii_desc['idOlii_Desc'] . "'>";
 							echo "<textarea id='olio_desc' name='olio_desc' rows='4' cols='100'>" . $row_olii_desc['Descrizione'] . "</textarea>";
-						} 
+						}
 						?>
 
 
@@ -418,7 +418,7 @@
 								$row_olii_desc = $res_olii_desc->fetch_assoc();
 								echo "<input id='olii_avv_id'   name='olii_avv_id' type='hidden' value='" . $row_olii_desc['idOlii_Desc'] . "'>";
 								echo "<textarea id='olio_avv' name='olio_avv' rows='4' cols='100'>" . $row_olii_desc['Descrizione'] . "</textarea>";
-							}  
+							}
 							?>
 							<br />
 							<input type="button" value="Salva Avvertenze" onclick="SalvaOlii('Avvertenze')" </div>
