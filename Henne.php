@@ -43,16 +43,17 @@
       <p>Colorante Vegetale al 100%</p>
     </div>
   </div>
-  <?php
+  <!-- <?php
   require 'SQL_command.php';
-  ?>
+  ?> -->
 
 
   <div class="container-fluid" style="position:relative; top:-40px">
     <div class="row">
       <div class="col-sm-4">
         <div class="panel panel-default">
-          <div class="panel-heading bg-biondo text-center">HENNE' PERSIANO BIONDO (100 gr)</div>
+          <div class="panel-heading bg-biondo text-center"><strong>HENNE' PERSIANO BIONDO (100
+              gr)</strong></div>
           <div class="panel-body"><img src="image/Prodotti/Henné/henne.JPG" class="img-responsive" style="width:100%"
               alt="Hennè Rosso"></div>
           <div class="panel-footer">
@@ -75,7 +76,7 @@
       </div>
       <div class="col-sm-4">
         <div class="panel panel-default">
-          <div class="panel-heading bg-rosso text-center">HENNE' PERSIANO ROSSO (100 gr)</div>
+          <div class="panel-heading bg-rosso text-center"><strong>HENNE' PERSIANO ROSSO (100 gr)</strong></div>
           <div class="panel-body"><img src="image/Prodotti/Henné/henne.JPG" class="img-responsive" style="width:100%"
               alt="Hennè Rosso"></div>
           <div class="panel-footer">
@@ -98,7 +99,7 @@
       </div>
       <div class="col-sm-4">
         <div class="panel panel-default">
-          <div class="panel-heading bg-castano text-center">HENNE' PERSIANO CASTANO (100 gr)</div>
+          <div class="panel-heading bg-castano text-center"><strong>HENNE' PERSIANO CASTANO (100 gr)</strong></div>
           <div class="panel-body"><img src="image/Prodotti/Henné/henne.JPG" class="img-responsive" style="width:100%"
               alt="Hennè Rosso"></div>
           <div class="panel-footer">
@@ -126,7 +127,8 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="panel panel-default">
-          <div class="panel-heading bg-nero text-center">HENNE' PERSIANO NERO (100 gr)</div>
+          <div class="panel-heading bg-nero text-center"><strong class="textWhite">HENNE' PERSIANO NERO (100
+              gr)</strong></div>
           <div class="panel-body"><img src="image/Prodotti/Henné/henne.JPG" class="img-responsive" style="width:100%"
               alt="Hennè Rosso"></div>
           <div class="panel-footer">
@@ -149,7 +151,7 @@
       </div>
       <div class="col-sm-4">
         <div class="panel panel-default">
-          <div class="panel-heading bg-mogano text-center">HENNE' PERSIANO MOGANO (100 gr)</div>
+          <div class="panel-heading bg-mogano text-center"><strong>HENNE' PERSIANO MOGANO (100 gr)</strong></div>
           <div class="panel-body"><img src="image/Prodotti/Henné/henne.JPG" class="img-responsive" style="width:100%"
               alt="Hennè Rosso"></div>
           <div class="panel-footer">
@@ -172,7 +174,8 @@
       </div>
       <div class="col-sm-4">
         <div class="panel panel-default">
-          <div class="panel-heading text-center bg-tiziano">HENNE' PERSIANO TIZIANO (100 gr)</div>
+          <div class="panel-heading text-center bg-tiziano"><strong>HENNE' PERSIANO TIZIANO (100
+              gr)</strong></div>
           <div class="panel-body"><img src="image/Prodotti/Henné/henne.JPG" class="img-responsive" style="width:100%"
               alt="Hennè Rosso"></div>
           <div class="panel-footer">
@@ -199,7 +202,8 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="panel panel-default">
-          <div class="panel-heading bg-neutro text-center">HENNE' PERSIANO NEUTRO (100 gr)</div>
+          <div class="panel-heading bg-neutro text-center"><strong>HENNE' PERSIANO NEUTRO (100
+              gr)</strong></div>
           <div class="panel-body"><img src="image/Prodotti/Henné/henne.JPG" class="img-responsive" style="width:100%"
               alt="Hennè Rosso"></div>
           <div class="panel-footer">

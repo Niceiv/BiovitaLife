@@ -114,7 +114,7 @@
 
         $riga = true;
 
-        $sql_nome = "SELECT * FROM Prodotti";
+        $sql_nome = "SELECT * FROM Prodotti WHERE idgruppo = 1";
         $res_nome = GetData($sql_nome);
         if ($res_nome->num_rows > 0) {
             while ($row_nome = $res_nome->fetch_assoc()) {
@@ -152,13 +152,14 @@
 
                 $colonna++;
 
-                if ($colonna == 5) {
+                if ($colonna == 6) {
                     $riga = true;
                 }
 
 
                 if ($riga) {
                     echo "</div>";
+                    break;
                 }
             }
         }
@@ -177,7 +178,6 @@
 
         </div>
     </div>
-
     <audio src="audio/Harp.mp3" autoplay loop id="Oliiaudio"></audio>
 </body>
 <script>
@@ -185,13 +185,7 @@
     audio.volume = 0.03;
 </script>
 
-<script language="javaScript">
-    document.write(myFooter);
-</script>
 
-<noscript>
-    <strong>Per visualizzare correttamente questa pagina c necessario avere javascript abilitato.</strong>
-</noscript>
 <script>
 
 
@@ -225,5 +219,13 @@
         }
     }
 </script>
+
+<script language="javaScript">
+    document.write(myFooter);
+</script>
+
+<noscript>
+    <strong>Per visualizzare correttamente questa pagina c necessario avere javascript abilitato.</strong>
+</noscript>
 
 </html>

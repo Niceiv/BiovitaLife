@@ -17,7 +17,7 @@ myTopnav += "        <li><a href='index.html'>Home <span class='sr-only'>(curren
 myTopnav += "            <li><a href='azienda.html'>Sull'Azienda</a></li>";
 myTopnav += "        <li class='dropdown'>";
 myTopnav += "          <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true'";
-myTopnav += "            aria-expanded='false'>I Nostri Prodotti <span class='caret'></span></a>";
+myTopnav += "            aria-expanded='false'>Prodotti <span class='caret'></span></a>";
 myTopnav += "          <ul class='dropdown-menu'>";
 myTopnav += "            <li><a href='Beauty.php'>Cura dei capelli</a></li>";
 myTopnav += "            <li><a href='Olii.php'>Oli Essenziali</a></li>";
@@ -30,7 +30,7 @@ myTopnav += "            <li><a href='Mogano.html'>Serie Rossi - Mogano</a></li>
 myTopnav += "          </ul>";
 myTopnav += "        </li>";
 myTopnav += "            <li><a href='vantaggi.html'>Vantaggi</a></li>";
-myTopnav += "            <li><a href='News.html'>News</a></li>";
+//myTopnav += "            <li><a href='News.html'>News</a></li>";
 myTopnav += "      </ul>";
 myTopnav += "      <ul class='nav navbar-nav navbar-right'>";
 myTopnav += "        <li><a href='#'><i class='fa fa-shopping-cart'></i></a></li>";

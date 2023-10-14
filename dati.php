@@ -20,3 +20,4 @@ switch ($idDati) {
         echo '<br>Manca il valore';
         break;
 }
+?>
