@@ -10,7 +10,7 @@ function GetData($sql)
     global $conn;
 
     OpenCnn();
-    //echo '<BR>SQL: $sql';
+    echo '<BR>SQL: $sql';
     $result = $conn->query($sql);
     CloseCnn();
 
@@ -33,7 +33,7 @@ function ExecuteSQL($sql)
     global $SQL_error;
 
 
-    echo "<BR>SQL: $sql";
+    //echo "<BR>SQL: $sql";
     OpenCnn();
     try {
         if ($conn->query($sql) === TRUE) {

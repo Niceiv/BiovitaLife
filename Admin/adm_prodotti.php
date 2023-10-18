@@ -150,7 +150,6 @@
                 //var idgrp = document.getElementById('idgruppo');
                 document.myform.submit();
             }
-
         </script>
         <?php
 
@@ -206,7 +205,7 @@
         $act_dati = $_POST['act_dati'];
 
         //echo "<br><br>act_prod: [$act_prod]";
-        
+
         /*
         echo "<br><br>ID Selezionato: [$id_sel]";
         echo "<br><br>ID Dati: [$id_dati_sel]";
@@ -237,7 +236,7 @@
 
 
             //echo "<h2>inserimento</h2>";
-        
+
 
             $prodotto = $_POST['Prodotto_ins'];
 
@@ -252,6 +251,10 @@
 
             $prezzo = str_replace(',', '.', $prezzo);
             $qta = str_replace(',', '.', $qta);
+
+            $img = $_POST['Img_ins'];
+            $idtinta = $_POST['idtinta_ins'];
+
             /*
             echo "<br><br>prodotto: [$prodotto]";
             echo "<br><br>prezzo: [$prezzo]";
@@ -260,11 +263,18 @@
 
             if (strlen(trim($prodotto)) > 0) {
 
-                $sql_ins = "INSERT INTO prodotti  (prodotto, Descrizione, ingredienti, utilizzo, prezzo,qta, id_um, idgruppo) VALUES (";
+                $sql_ins = "INSERT INTO prodotti  (prodotto, Descrizione, ingredienti, utilizzo,img,idtinte, prezzo,qta, id_um, idgruppo) VALUES (";
                 $sql_ins .= " '" . convert_smart_quotes($prodotto) . "'";
                 $sql_ins .= " ,'" . convert_smart_quotes($desc) . "'";
                 $sql_ins .= " ,'" . convert_smart_quotes($ingr) . "'";
                 $sql_ins .= " ,'" . convert_smart_quotes($util) . "'";
+                $sql_ins .= " , '" . convert_smart_quotes($img) . "'";
+                if ($grpSel == 3) {
+                    $sql_ins .= " , " . $idtinta ;
+                } else {
+                    $sql_ins .= " , 0 ";
+                }
+
                 $sql_ins .= " , $prezzo ";
                 $sql_ins .= " , $qta ";
                 $sql_ins .= " , $id_um ";
@@ -273,7 +283,7 @@
 
 
                 //echo "<br>$sql_ins";
-        
+
                 $Step = 'Inserimento Prodotti';
                 ExecuteSQL($sql_ins);
 
@@ -293,7 +303,7 @@
 
 
             //echo "<h2>aggiorna</h2>";
-        
+
 
 
             $prodotto = $_POST['Prodotto'];
@@ -302,9 +312,13 @@
             $ingr = $_POST['Ingredienti'];
             $util = $_POST['Utilizzo'];
             $qta = $_POST['Qta'];
+           
 
             $prezzo = $_POST['Prezzo'];
             $id_um = $_POST['id_um'];
+
+            $img = $_POST['Img'];
+            $idtinta = $_POST['idtinta'];
 
             $prezzo = str_replace(',', '.', $prezzo);
             $qta = str_replace(',', '.', $qta);
@@ -322,16 +336,20 @@
                 $sql_upd .= " , Descrizione='" . convert_smart_quotes($desc) . "'";
                 $sql_upd .= " , ingredienti='" . convert_smart_quotes($ingr) . "'";
                 $sql_upd .= " , utilizzo='" . convert_smart_quotes($util) . "'";
+                $sql_upd .= " , img='" . convert_smart_quotes($img) . "'";
+                if ($grpSel == 3) {
+                    $sql_upd .= " , idtinte=" . $idtinta ;
+                }
                 $sql_upd .= " , prezzo=$prezzo ";
                 $sql_upd .= " , qta=$qta ";
                 $sql_upd .= " , id_um=$id_um ";
                 $sql_upd .= " WHERE idProdotto=$id_sel ";
                 //echo "<br>$sql_upd";
-        
+
                 $Step = 'Aggiornamento Prodotti';
                 ExecuteSQL($sql_upd);
                 //UpdateData($sql_upd);
-        
+
                 $id_sel = "";
             } else {
                 $_SESSION['ERR_STATUS'] = 'KO';
@@ -348,20 +366,19 @@
 
 
             //echo "<h2>elimina</h2>";
-        
+
 
             //echo "<br><br>ID Selezionato: [$id_sel]";
-        
+
             $sql_del = "DELETE FROM prodotti ";
             $sql_del .= " WHERE idProdotto=$id_sel ";
             //echo "<br>$sql_upd";
-        
+
             $Step = 'Cancellazione Prodotti';
             ExecuteSQL($sql_del);
             //DeleteData($sql_del);
-        
-            $id_sel = "";
 
+            $id_sel = "";
         }
 
 
@@ -381,7 +398,7 @@
         //crea la riga di INSERT
         if ($act_dati == 'inserimento') {
             // echo "<h2>inserimento Dati</h2>";
-        
+
 
             $chiave = htmlspecialchars($_POST['chiave_ins']);
             $valore = htmlspecialchars($_POST['valore_ins']);
@@ -396,7 +413,7 @@
 
                 $sql_INS = "INSERT INTO prodotti_dati (idprodotto, desc, prop) VALUES ( $id_sel, '$chiave','$valore') ";
                 //echo "<br>$sql_INS";
-        
+
                 $Step = 'Inserimento Daeti Prodotti';
                 ExecuteSQL($sql_INS);
 
@@ -415,7 +432,7 @@
 
 
             //echo "<h2>aggiorna</h2>";
-        
+
             $id_sel = $_POST['id'];
             $id_dati_sel = $_POST['idDati'];
 
@@ -434,7 +451,7 @@
 
                 $sql_upd = "UPDATE prodotti_dati SET desc='$chiave', prop='$valore' WHERE idprodotti_dati=$id_dati_sel ";
                 //echo "<br>$sql_upd";
-        
+
                 $Step = 'Aggiornamento Daeti Prodotti';
                 ExecuteSQL($sql_upd);
 
@@ -497,8 +514,7 @@
             } else {
                 echo "      <option value='" . $row_grp['idgruppo'] . "'>" . $row_grp['gruppo'] . "</option>";
             }
-        }
-        ;
+        };
         echo "          </select>";
 
         echo " <h2>Elenco prodotti</h2>";
@@ -512,10 +528,10 @@
         if ($grpSel != '') {
             $sql_prod = 'SELECT * FROM vw_prodotti where idgruppo=' . $grpSel . ' ORDER BY Prodotto';
         } else {
-            $sql_prod = 'SELECT * FROM vw_prodotti idgruppo=99 ORDER BY Prodotto';
+            $sql_prod = 'SELECT * FROM vw_prodotti where idgruppo=99 ORDER BY Prodotto';
         }
         //echo "<br>SQL:$sql_prod";
-        
+
         $res_prod = GetData($sql_prod);
         echo "<table style='border:1px solid;width:100%;'>";
         echo "<thead><tr>";
@@ -538,7 +554,7 @@
                     //  Modifico la loggica di soluzione sfuttando la FORM e quindi uso un pulsante SUBMIT
                     //  Notare che ho aggiunto due input hidden un per idProdotto (id) valorizzata e 
                     //  l'altra per idprodotti_dati (idDati) in questo caso forzato a zero
-        
+
                     //echo "      <td><a href='adm_prodotti.php?id=" . $row['idProdotto'] . "'>seleziona</a></td>";
                     echo "      <td></td>";
                     echo "      <td><input type='submit' id='btnSelProd' value='Seleziona'  onclick='SelProd(" . $row['idProdotto'] . ")' ></td>";
@@ -549,6 +565,8 @@
                     $descTmp = $row['Descrizione'];
                     $ingrTmp = $row['ingredienti'];
                     $utilTmp = $row['utilizzo'];
+                    $imgTmp = $row['img'];
+                    $idtinte  = $row['idtinte'];
                     echo "  <tr>";
                     echo "      <td>";
                     echo "          <table style='border:1px solid;width:100%;'>";
@@ -556,6 +574,10 @@
                     echo "              <tr><td>Descrizione</td><td><input type='text'   id='Descrizione' name='Descrizione' value=\"$descTmp\"  style='width:100%;'></td></tr>";
                     echo "              <tr><td>Ingredienti</td><td><input type='text'   id='Ingredienti' name='Ingredienti' value=\"$ingrTmp\"  style='width:100%;'></td></tr>";
                     echo "              <tr><td>Uilizzo</td><td><input type='text'   id='Uilizzo' name='Utilizzo' value=\"$utilTmp\"  style='width:100%;'></td></tr>";
+                    echo "              <tr><td>Immagine</td><td><input type='text'   id='Img' name='Img' value=\"$imgTmp\"  style='width:100%;'></td></tr>";
+                    if ($grpSel == 3) {
+                        echo "              <tr><td>Tipo Tinta (1 Naturali, 2 Dorati, 3 Rossi-Mogano) </td><td><input type='ranger'  min='1' max='3'  id='idtinta' name='idtinta' value=\"$idtinte\"  style='width:100%;'></td></tr>";
+                    }
                     echo "          </table>";
                     echo "      </td>";
                     echo "      <td><input type='number' min='0' max='999' step='.01' id='Prezzo' name='Prezzo' value=" . $row['Prezzo'] . "></td>";
@@ -574,8 +596,7 @@
                         } else {
                             echo "      <option value='" . $row_um['idunita_misura'] . "'>" . $row_um['unita_misura'] . "</option>";
                         }
-                    }
-                    ;
+                    };
                     echo "          </select>";
 
                     echo "      </td>";
@@ -588,7 +609,6 @@
                     echo "      <td></td>";
                     echo "  </tr>";
                 }
-
             }
             echo "</tbody>";
             echo "<tfoot>";
@@ -613,7 +633,10 @@
         echo "              <tr><td>Descrizione</td><td><input type='text'   id='Descrizione_ins' name='Descrizione_ins' value=''  style='width:100%;'></td></tr>";
         echo "              <tr><td>Ingredienti</td><td><input type='text'   id='Ingredienti_ins' name='Ingredienti_ins' value='' style='width:100%;'></td></tr>";
         echo "              <tr><td>Uilizzo</td><td><input type='text'   id='Utilizzo_ins' name='Utilizzo_ins' value=''  style='width:100%;'></td></tr>";
-        //echo "          </tbody>";
+        echo "              <tr><td>Immagine</td><td><input type='text'   id='Img_ins' name='Img_ins' value=''  style='width:100%;'></td></tr>";
+        if ($grpSel == 3) {
+            echo "              <tr><td>Tipo Tinta (1 Naturali, 2 Dorati, 3 Rossi-Mogano) </td><td><input type='ranger'  min='1' max='3'  id='idtinta_ins' name='idtinta_ins' value=''\"$idtinte\"''  style='width:100%;'></td></tr>";
+        }
         echo "         </table>";
         echo "<label id='lbl_Prezzo_ins'  name='lbl_Prezzo_ins' for='Prezzo_ins'>Prezzo:</label>";
         echo "<input type='number' min='0' max='999' step='.01' id='Prezzo_ins' name='Prezzo_ins' value=''> ";
@@ -625,8 +648,7 @@
         $res_um = GetData($sql_um);
         while ($row_um = $res_um->fetch_assoc()) {
             echo "  <option value='" . $row_um['idunita_misura'] . "'>" . $row_um['unita_misura'] . "</option>";
-        }
-        ;
+        };
         echo "</select>";
 
 
@@ -665,9 +687,9 @@
                         //  Modifico la loggica di soluzione sfuttando la FORM e quindi uso un pulsante SUBMIT
                         //  Notare che ho aggiunto due input hidden un per idProdotto (id) valorizzata e 
                         //  l'altra per idprodotti_dati (idDati) in questo caso forzato a zero
-        
+
                         //echo "      <td><a href='adm_prodotti.php?id=" . $row_dati['idprodotto'] . "&idDati=" . $row_dati['idprodotti_dati'] . "'>seleziona</a></td>";
-        
+
                         echo "      <td></td>";
                         echo "      <td><input type='submit' id='btnSelProd' value='Seleziona'  onclick='SelDati(" . $id_sel . ", " . $row_dati['idprodotti_dati'] . ")' ></td>";
                         echo "      <td></td>";
@@ -689,8 +711,6 @@
                         echo "      <td><input type='submit' id='btmAnnulla' value='annulla' onclick='AnnullaDati(" . $id_sel . ", " . $row_dati['idprodotti_dati'] . ")' ></td>";
                         echo "      <td><input type='submit' id='btnElimina' value='elimina' onclick='EliminaDati(" . $id_sel . ", " . $row_dati['idprodotti_dati'] . ")' ></td>";
                         echo "  </tr>";
-
-
                     }
                     echo "</tbody>";
                 }
@@ -699,7 +719,7 @@
 
             //MM20230907
             //echo "<input type='hidden' id='act_dati' name='act_dati' >";
-        
+
             echo "<hr><b>Nuovo dettaglio</b><br/>";
             echo "<label id='lbl_chiave_ins'  name='lbl_chiave_ins' for='chiave_ins'>Chiave:</label>";
             echo "<input type='text' id='chiave_ins' name='chiave_ins' >";
@@ -709,7 +729,6 @@
 
 
             echo "<input type='submit' id='btnAggiorna' value='Inserimento' onclick='InserimentoDati($id_sel)' >";
-
         }
 
         ?>
