@@ -526,13 +526,19 @@
         echo "<input type='hidden' id='act_dati'        name='act_dati' >";
 
         if ($grpSel != '') {
-            $sql_prod = 'SELECT * FROM vw_prodotti where idgruppo=' . $grpSel . ' ORDER BY Prodotto';
+            if ($grpSel == '3') {
+                $sql_prod = 'SELECT * FROM vw_prodotti where idgruppo=' . $grpSel . ' ORDER BY  idtinte, prodotto';
+            } else {
+                $sql_prod = 'SELECT * FROM vw_prodotti where idgruppo=' . $grpSel . ' ORDER BY Prodotto';
+            }
+            
         } else {
             $sql_prod = 'SELECT * FROM vw_prodotti where idgruppo=99 ORDER BY Prodotto';
         }
         //echo "<br>SQL:$sql_prod";
 
         $res_prod = GetData($sql_prod);
+        $idtinta=0;
         echo "<table style='border:1px solid;width:100%;'>";
         echo "<thead><tr>";
         echo "<th>Prodotto</th>";
@@ -544,6 +550,23 @@
             echo "<tbody>";
             while ($row = $res_prod->fetch_assoc()) {
                 if ($id_sel != $row['idProdotto']) {
+                    if ($row['idtinte'] != $idtinta) {
+                        echo "<tr><td colspan=7 style='background-color:#adb5bd;'>";
+                        switch ($row['idtinte']) {
+                            case '1':
+                                echo 'Naturali';
+                                break;
+        
+                            case '2':
+                                echo 'Dorati';
+                                break;
+                            default:
+                                echo 'Rossi Mogano';
+                                break;
+                        }
+                        echo "</td></tr>";
+                        $idtinta=$row['idtinte'];
+                    }
                     echo "  <tr>";
                     echo "      <td>" . $row['Prodotto'] . "</td>";
                     echo "      <td>" . $row['Prezzo'] . "</td>";
