@@ -58,19 +58,23 @@
         <div class="row">
             <div class="col-md-2">
                 <div>
-                    <img class="Thumb" src="image/Prodotti/ProdottiThumb/astuccio.JPG" onmouseover="myFuncionDyspalyyText('image/Prodotti/astuccio.JPG','Testo01','');">
+                    <img class="Thumb" src="image/Prodotti/ProdottiThumb/astuccio.JPG"
+                        onmouseover="myFuncionDyspalyyText('image/Prodotti/astuccio.JPG','Testo01','');">
                 </div>
 
                 <div>
-                    <img class="Thumb" src="image/Prodotti/ProdottiThumb/TintaFix.JPG" onmouseover="myFuncionDyspalyyText('image/Prodotti/TintaFix.JPG','Testo02', '');">
+                    <img class="Thumb" src="image/Prodotti/ProdottiThumb/TintaFix.JPG"
+                        onmouseover="myFuncionDyspalyyText('image/Prodotti/TintaFix.JPG','Testo02', '');">
                 </div>
 
                 <div>
-                    <img class="Thumb" src="image/Prodotti/foglioIllustrativo.jpg" data-action="zoom" onmouseover="myFuncionDyspalyyText('image/Prodotti/foglioIllustrativo.jpg','Testo03','');">
+                    <img class="Thumb" src="image/Prodotti/foglioIllustrativo.jpg" data-action="zoom"
+                        onmouseover="myFuncionDyspalyyText('image/Prodotti/foglioIllustrativo.jpg','Testo03','');">
                 </div>
 
                 <div>
-                    <img class="Thumb" src="image/Prodotti/ProdottiThumb/Campioncini.JPG" onmouseover="myFuncionDyspalyyText('image/Prodotti/Campioncini.JPG','Testo04', '');">
+                    <img class="Thumb" src="image/Prodotti/ProdottiThumb/Campioncini.JPG"
+                        onmouseover="myFuncionDyspalyyText('image/Prodotti/Campioncini.JPG','Testo04', '');">
                 </div>
             </div>
 
@@ -88,15 +92,22 @@
 
                 <div>
                     <div id="Testo01" style="display:block">
-                        <p style="display:block">Disponibile in 28 luminosissime tonalità. <br /> Confezione in astuccio da 140 ML.</p>
+                        <p style="display:block">Disponibile in 28 luminosissime tonalità. <br /> Confezione in astuccio
+                            da 140 ML.</p>
                         <hr> <!-- mette una linea -->
-                        <p>OmeoTINTS NON contiene ammoniaca, resorcina e glutine. E’ stato testato sulla pelle e non contiene sali di piombo o nichel. Copre i capelli bianchi fin dalla prima applicazione e allo stesso tempo agisce delicatamente sui capelli tinti e fragili. I suoi ingredienti vegetali aiutano a nutrire, proteggere, idratare e ristrutturare i capelli ottenendo un volume splendente e duraturo.
+                        <p>OmeoTINTS NON contiene ammoniaca, resorcina e glutine. E’ stato testato sulla pelle e non
+                            contiene sali di piombo o nichel. Copre i capelli bianchi fin dalla prima applicazione e
+                            allo stesso tempo agisce delicatamente sui capelli tinti e fragili. I suoi ingredienti
+                            vegetali aiutano a nutrire, proteggere, idratare e ristrutturare i capelli ottenendo un
+                            volume splendente e duraturo.
                         </p>
                     </div>
                     <div id="Testo02" style="display:none"><BR>
                         <p>Tubetto in plastica di forma cilindrica contenente la sostanza colorante.</p>
                         <hr> <!-- mette una linea -->
-                        <p>ColorFix (60ml) è un prodotto per la rimozione del colore dai capelli. È progettato per aiutare a eliminare o sfumare il colore indesiderato dai capelli, consentendo di preparare i capelli per una nuova colorazione o per tornare al colore naturale.</p>
+                        <p>ColorFix (60ml) è un prodotto per la rimozione del colore dai capelli. È progettato per
+                            aiutare a eliminare o sfumare il colore indesiderato dai capelli, consentendo di preparare i
+                            capelli per una nuova colorazione o per tornare al colore naturale.</p>
 
                     </div>
                     <div id="Testo03" style="display:none">
@@ -132,14 +143,15 @@
                         </div>
                         <div class="hidden">
                             <div class="col-md-3"> 9.00€</div>
-                            <div class="col-md-3"> <label for="Quantità"><input type="number" id="quantity" name="quantity" class="inputNum"></label></div>
+                            <div class="col-md-3"> <label for="Quantità"><input type="number" id="quantity"
+                                        name="quantity" class="inputNum"></label></div>
                             <div class="col-md-3"> <button type="submit">Aggiungi al carrello</button></div>
                         </div>
                     </div>
 
                     <hr> <!-- mette una linea -->
                     <?php
-                    $sql = "SELECT * FROM vw_prodotti where idgruppo=3 and idtinte=$GrpSel ORDER BY Prodotto";
+                    $sql = "SELECT * FROM vw_prodotti where idgruppo=3 and idtinte=$GrpSel ORDER BY order_view";
 
                     $res = GetData($sql);
 
@@ -173,7 +185,7 @@
                             echo "<div class='col-md-3'>";
                             echo "  <Img class='ThumbCiocche' src='image/Prodotti/Ciocche/" . $folder . "Thumb/" . $row["img"] . "'";
                             echo "     alt='" . $row["Descrizione"] . "'";
-                            echo "     onmouseover=\"myFuncionDyspalyyText('image/Prodotti/Ciocche/" . $folder . "/" . $row["img"] . "','" .  $folderDesc . "','" . $row["Descrizione"] . "');\">";
+                            echo "     onmouseover=\"myFuncionDyspalyyText('image/Prodotti/Ciocche/" . $folder . "/" . $row["img"] . "','" . $folderDesc . "','" . $row["Descrizione"] . "');\">";
                             echo "</div>";
                             $coll++;
                             if ($coll == 5) {
@@ -195,11 +207,15 @@
                         NATURITAL OmeoTINTS possiede una formula esclusiva e rivoluzionaria che combina
                         la garanzia di una tintura permanente con i benefici degli ingredienti vegetali
                         attivi. Il processo di colorazione è stato perfezionato con l’incorporazione di un
-                        complesso vegetale di Vit. E, Aloe Vera, Vit. C, Olii Vegetali Bio (rinforzanti e protettivi per i capelli), nuovi alleati
+                        complesso vegetale di Vit. E, Aloe Vera, Vit. C, Olii Vegetali Bio (rinforzanti e protettivi per
+                        i capelli), nuovi alleati
                         tecnologici dei capelli che permettono di mantenere un colore brillante e pieno di
                         luminosità fino a 5 settimane.</p>
                     <hr> <!-- mette una linea -->
-                    <p><b>Nota bene:</b> i colori della serie scelta (Dorato, Mogano, Ramato e Rosso Ramato) danno molto colore ma una copertura non completa sui capelli bianchi, per cui se si sceglie di fare uno di questi colori bisogna miscelarli con i colori Naturali (della stessa tonalità)in proporzione alla quantità di capelli bianchi.</p>
+                    <p><b>Nota bene:</b> i colori della serie scelta (Dorato, Mogano, Ramato e Rosso Ramato) danno molto
+                        colore ma una copertura non completa sui capelli bianchi, per cui se si sceglie di fare uno di
+                        questi colori bisogna miscelarli con i colori Naturali (della stessa tonalità)in proporzione
+                        alla quantità di capelli bianchi.</p>
                 </div>
 
             </div>
