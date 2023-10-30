@@ -125,27 +125,61 @@
                     $colonna = 1;
                     $riga = false;
                 }
-
+                
 
                 //DESCRIZIONE
                 $sql_olii_desc = "SELECT * FROM OLii_DESC WHERE idOlii = $idOlii and idInfoOli=1";
                 $res_olii_desc = GetData($sql_olii_desc);
                 if ($res_olii_desc->num_rows > 0) {
                     $row_olii_desc = $res_olii_desc->fetch_assoc();
-
-
+                    
+                   
                     echo "<div class='col-md-3 col-sm-6'>";
                     echo "  <div class='service-box'>";
                     echo "      <div class='service-icon yellow'>";
                     echo "          <div class='front-content'>";
-                    echo "              <h3>" . $row_nome['nome'] . "</h3>";
+                    echo "              <h3>" . $row_nome['nome'] . "</h3><br><br>";
+                    echo "          </div>";
+                    echo "          <div>";
+                    echo "              <h4>";
+                    $sql_qta_prz ="SELECT * FROM vw_olii_qta_prz WHERE idolii= $idOlii";
+                    $res_qta_prz = GetData($sql_qta_prz);
+                    if ($res_qta_prz->num_rows > 0) {
+                        $kk=1;
+                        $Oldkk=1;
+                        while ($row_qta_prz = $res_qta_prz->fetch_assoc()) {
+                            $prz = sprintf('%01.2f', $row_qta_prz["prezzo"]) . ' €';
+                            $um = $row_qta_prz["DescUM"];
+                            if ($Oldkk !=  $kk) {
+                                echo "<br>";
+                                $Oldkk=  $kk;
+                            }
+                            echo   $um. ' <strong>'  .$prz. "</strong>"; 
+                           
+                            $kk++;
+                        }
+                    }
+                    echo "              </h4>"; 
                     echo "          </div>";
                     echo "      </div>";
                     echo "      <div class='service-content'>";
                     echo "          <h3>" . $row_nome['nome'] . "</h3>";
-                    echo "          <p>" . $row_olii_desc['Descrizione'] . "</p>";
-                    echo '          <br><button style="width:100%;" onclick="mostra(' . $idOlii . ')" class="btn btn-success btn-lg"/>
-                    <span class="glyphicon glyphicon-shopping-cart"></span> Aggiungi al Carrello</button>';
+                    echo "          <p>" .   substr($row_olii_desc['Descrizione'], 0, 200) . "...</p>";
+                    echo '          <br><button style="width:90%;" onclick="mostra(' . $idOlii . ')" class="btn btn-info "/>Informazioni</button>';
+                    
+                    $sql_qta_prz ="SELECT * FROM vw_olii_qta_prz WHERE idolii= $idOlii";
+                    $res_qta_prz = GetData($sql_qta_prz);
+                    if ($res_qta_prz->num_rows > 0) {
+
+                        while ($row_qta_prz = $res_qta_prz->fetch_assoc()) {
+                            $um = $row_qta_prz["DescUM"];
+                            echo "           <button  class=' btn btn-success  btn-sm glyphicon glyphicon-shopping-cart'/>$um</button>";
+                        }
+                    }
+                    
+                    
+                    
+
                     echo "      </div>";
                     echo "  </div>";
                     echo "</div>";

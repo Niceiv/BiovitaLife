@@ -23,6 +23,7 @@ if ($res_nome->num_rows > 0) {
         echo "  <div class='col-sm-8'>";
         echo '      <h5><b>Descrizione</b></h5>';
         echo '      <p>' . $row_nome['Descrizione'] . '</p>';
+        echo '      <h6>1.00 €</h6>'; 
         echo "  </div>";
         echo "  <div class='col-sm-4'>";
         echo "      <img src='" . $row_nome['img'] . "'alt='" . $row_nome['DescProd'] . "' style='width:250px;height:250px;'>";

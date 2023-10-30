@@ -43,187 +43,74 @@
       <p>Colorante Vegetale al 100%</p>
     </div>
   </div>
-  <!-- <?php
-  require 'SQL_command.php';
-  ?> -->
-
 
   <div class="container-fluid" style="position:relative; top:-40px">
-    <div class="row">
-      <div class="col-sm-4">
-        <div class="panel panel-default">
-          <div class="panel-heading bg-biondo text-center"><strong>HENNE' PERSIANO BIONDO (100
-              gr)</strong></div>
-          <div class="panel-body"><img src="image/Prodotti/Henné/henne.JPG" class="img-responsive" style="width:100%"
-              alt="Hennè Rosso"></div>
-          <div class="panel-footer">
-            <div class="row">
-              <div class="col-sm-2">
-                <p>6,00€ al pz</p>
-              </div>
-              <div class="col-sm-2">
-                <p>quantità</p>
-              </div>
-              <div class="col-sm-3">
-                <input type="number" class="inputNum">
-              </div>
-              <div class="col-sm-2 ">
-                <button class="btn btn-success">Aggiungi al Carrello</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="panel panel-default">
-          <div class="panel-heading bg-rosso text-center"><strong>HENNE' PERSIANO ROSSO (100 gr)</strong></div>
-          <div class="panel-body"><img src="image/Prodotti/Henné/henne.JPG" class="img-responsive" style="width:100%"
-              alt="Hennè Rosso"></div>
-          <div class="panel-footer">
-            <div class="row">
-              <div class="col-sm-2">
-                <p>6,00€ al pz</p>
-              </div>
-              <div class="col-sm-2">
-                <p>quantità</p>
-              </div>
-              <div class="col-sm-3">
-                <input type="number" class="inputNum">
-              </div>
-              <div class="col-sm-2 ">
-                <button class="btn btn-success">Aggiungi al Carrello</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="panel panel-default">
-          <div class="panel-heading bg-castano text-center"><strong>HENNE' PERSIANO CASTANO (100 gr)</strong></div>
-          <div class="panel-body"><img src="image/Prodotti/Henné/henne.JPG" class="img-responsive" style="width:100%"
-              alt="Hennè Rosso"></div>
-          <div class="panel-footer">
-            <div class="row">
-              <div class="col-sm-2">
-                <p>6,00€ al pz</p>
-              </div>
-              <div class="col-sm-2">
-                <p>quantità</p>
-              </div>
-              <div class="col-sm-3">
-                <input type="number" class="inputNum">
-              </div>
-              <div class="col-sm-2 ">
-                <button class="btn btn-success">Aggiungi al Carrello</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div><br><br>
+    <?php
+    require 'SQL_command.php';
 
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-4">
-        <div class="panel panel-default">
-          <div class="panel-heading bg-nero text-center"><strong class="textWhite">HENNE' PERSIANO NERO (100
-              gr)</strong></div>
-          <div class="panel-body"><img src="image/Prodotti/Henné/henne.JPG" class="img-responsive" style="width:100%"
-              alt="Hennè Rosso"></div>
-          <div class="panel-footer">
-            <div class="row">
-              <div class="col-sm-2">
-                <p>6,00€ al pz</p>
-              </div>
-              <div class="col-sm-2">
-                <p>quantità</p>
-              </div>
-              <div class="col-sm-3">
-                <input type="number" class="inputNum">
-              </div>
-              <div class="col-sm-2 ">
-                <button class="btn btn-success">Aggiungi al Carrello</button>
+    $riga = true;
+
+    $sql_nome = "SELECT * FROM vw_prodotti where idgruppo=2 order by order_view";
+    $res_nome = GetData($sql_nome);
+    if ($res_nome->num_rows > 0) {
+      while ($row_nome = $res_nome->fetch_assoc()) {
+
+      
+       
+
+        if ($riga) {
+          echo "<div class='row'>";
+          $colonna = 1;
+          $riga = false;
+        }
+    ?>
+        <div class="col-sm-4">
+          <div class="panel panel-default">
+            <div class="panel-heading <?php echo $row_nome["utilizzo"] ?> text-center">
+            <?php
+            if ($row_nome["ingredienti"]=='') {
+              echo "<strong>" . $row_nome["DescProd"] . "</strong>";
+            }  else {
+              echo "<strong class='" . $row_nome["ingredienti"] ."'>" . $row_nome["DescProd"] . "</strong>";
+
+            }
+            ?>
+            
+            </div>
+            <div class="panel-body"><img src="<?php echo $row_nome["img"] ?>" class="img-responsive" style="width:100%" alt="<?php echo $row_nome["Prodotto"] ?>">
+            </div>
+            <div class="panel-footer">
+              <div class="row">
+                <div class="col-sm-8">
+                  <h4>
+                    <?php  
+                    $prz = sprintf('%01.2f', $row_nome["Prezzo"]) . ' €';
+                    echo $prz ;
+                   ?></h4>
+                </div>
+                <div class="col-sm-2 ">
+                  <button  class='  btn btn-success  btn-lg glyphicon glyphicon-shopping-cart'/>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="panel panel-default">
-          <div class="panel-heading bg-mogano text-center"><strong>HENNE' PERSIANO MOGANO (100 gr)</strong></div>
-          <div class="panel-body"><img src="image/Prodotti/Henné/henne.JPG" class="img-responsive" style="width:100%"
-              alt="Hennè Rosso"></div>
-          <div class="panel-footer">
-            <div class="row">
-              <div class="col-sm-2">
-                <p>6,00€ al pz</p>
-              </div>
-              <div class="col-sm-2">
-                <p>quantità</p>
-              </div>
-              <div class="col-sm-3">
-                <input type="number" class="inputNum">
-              </div>
-              <div class="col-sm-2 ">
-                <button class="btn btn-success">Aggiungi al Carrello</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="panel panel-default">
-          <div class="panel-heading text-center bg-tiziano"><strong>HENNE' PERSIANO TIZIANO (100
-              gr)</strong></div>
-          <div class="panel-body"><img src="image/Prodotti/Henné/henne.JPG" class="img-responsive" style="width:100%"
-              alt="Hennè Rosso"></div>
-          <div class="panel-footer">
-            <div class="row">
-              <div class="col-sm-2">
-                <p>6,00€ al pz</p>
-              </div>
-              <div class="col-sm-2">
-                <p>quantità</p>
-              </div>
-              <div class="col-sm-3">
-                <input type="number" class="inputNum">
-              </div>
-              <div class="col-sm-2 ">
-                <button class="btn btn-success">Aggiungi al Carrello</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div><br><br>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-4">
-        <div class="panel panel-default">
-          <div class="panel-heading bg-neutro text-center"><strong>HENNE' PERSIANO NEUTRO (100
-              gr)</strong></div>
-          <div class="panel-body"><img src="image/Prodotti/Henné/henne.JPG" class="img-responsive" style="width:100%"
-              alt="Hennè Rosso"></div>
-          <div class="panel-footer">
-            <div class="row">
-              <div class="col-sm-2">
-                <p>6,00€ al pz</p>
-              </div>
-              <div class="col-sm-2">
-                <p>quantità</p>
-              </div>
-              <div class="col-sm-3">
-                <input type="number" class="inputNum">
-              </div>
-              <div class="col-sm-2 ">
-                <button class="btn btn-success">Aggiungi al Carrello</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <?php
+        $colonna++;
+
+        if ($colonna == 4) {
+          $riga = true;
+        }
+
+
+        if ($riga) {
+          echo "</div>";
+        }
+      }
+    }
+    ?>
+  
+ 
       <div class="col-sm-8 bg-grigio container-fluid">
         <div class="row ">
           <div class="col-sm-8">
