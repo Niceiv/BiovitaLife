@@ -131,22 +131,19 @@
                     <DIV class="row hidden">
                         <div class="col-md-3"></div>
                         <div class="col-md-3"> Prezzo unitario</div>
-                        <div class="col-md-3"> Quantità</div>
-
-
+                        <div class="col-md-3 "> Quantità</div>
                     </DIV>
                     <br />
                     <div class="row">
-                        <div class="col-md-3" id="Ciocche" style="display:block">
+                        <div class="col-md-8" id="Ciocche" style="display:block">
 
-                            <p id="CodiceColore" style="font-size: 2em; width:400px"></p>
+                            <p id="CodiceColore" style="font-size: 2em; width:500px; text-align:left;"></p>
                         </div>
-                        <div class="hidden">
-                            <div class="col-md-3"> 9.00€</div>
-                            <div class="col-md-3"> <label for="Quantità"><input type="number" id="quantity"
-                                        name="quantity" class="inputNum"></label></div>
-                            <div class="col-md-3"> <button type="submit">Aggiungi al carrello</button></div>
+                        <div class="col-md-2">
+                            <p id="PrezzoProdotto" style="font-size: 2em; width:100px"></p>
                         </div>
+                        <div class="col-md-1 hidden"> <button type="submit"  class="btn btn-success btn-lg; glyphicon glyphicon-shopping-cart" title="Aggiungi al carrello" data-toggle="tooltip"></button></div>
+                     
                     </div>
 
                     <hr> <!-- mette una linea -->
@@ -177,15 +174,20 @@
                                     $folderDesc = 'CioccheBionde';
                                     break;
                                 default:
-                                    $folder = 'RossiMogano';
+                                    $folder = 'Mogano';
                                     $folderDesc = 'CioccheBionde';
                                     break;
                             }
 
+
+                            //$prz = new NumberFormatter('de_DE', NumberFormatter::CURRENCY);
+                            //$prz->formatCurrency($row["Prezzo"] , 'EUR');
+                            $prz = sprintf('%01.2f', $row["Prezzo"]) . ' €';
+
                             echo "<div class='col-md-3'>";
                             echo "  <Img class='ThumbCiocche' src='image/Prodotti/Ciocche/" . $folder . "Thumb/" . $row["img"] . "'";
                             echo "     alt='" . $row["Descrizione"] . "'";
-                            echo "     onmouseover=\"myFuncionDyspalyyText('image/Prodotti/Ciocche/" . $folder . "/" . $row["img"] . "','" . $folderDesc . "','" . $row["Descrizione"] . "');\">";
+                            echo "     onmouseover=\"myFuncionDyspalyyText('image/Prodotti/Ciocche/" . $folder . "/" . $row["img"] . "','" . $folderDesc . "','" . $row["Descrizione"] . "','" . $prz . "');\">";
                             echo "</div>";
                             $coll++;
                             if ($coll == 5) {
