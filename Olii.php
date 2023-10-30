@@ -24,7 +24,7 @@
     <script src="JS/MyFooter.js"></script>
     <script src="JS/index.js"></script>
     <script src="JS/myTopnav.js"></script>
-    <title>Document</title>
+    <title>OliMonde | Oli Essenziali</title>
 
     <style>
         /* The Modal (background) */
@@ -86,6 +86,9 @@
 </head>
 
 <body>
+
+
+
     <script language="javaScript">
         document.write(myTopnav);
     </script>
@@ -93,7 +96,7 @@
 
     <div class="container " style="margin-top: 120px;">
 
-        <h1 class="text-center">Olii Essenziali</h1>
+        <h1 class="text-center">OliMonde</h1>
 
 
         <!-- 
@@ -141,7 +144,8 @@
                     echo "      <div class='service-content'>";
                     echo "          <h3>" . $row_nome['nome'] . "</h3>";
                     echo "          <p>" . $row_olii_desc['Descrizione'] . "</p>";
-                    echo '          <br><button  onclick="mostra(' . $idOlii . ')"/>mostra di più...</button>';
+                    echo '          <br><button style="width:100%;" onclick="mostra(' . $idOlii . ')" class="btn btn-success btn-lg"/>
+                    <span class="glyphicon glyphicon-shopping-cart"></span> Aggiungi al Carrello</button>';
                     echo "      </div>";
                     echo "  </div>";
                     echo "</div>";
@@ -178,8 +182,12 @@
         </div>
     </div>
 
-    <audio src="audio/Harp.mp3" autoplay loop></audio>
+    <audio src="audio/Harp.mp3" autoplay loop id="Oliiaudio"></audio>
 </body>
+<script>
+    var audio = document.getElementById("Oliiaudio");
+    audio.volume = 0.03;
+</script>
 
 <script language="javaScript">
     document.write(myFooter);
@@ -189,6 +197,8 @@
     <strong>Per visualizzare correttamente questa pagina c necessario avere javascript abilitato.</strong>
 </noscript>
 <script>
+
+
     function mostra(idVal) {
 
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <HTML>
 	<HEAD>
-		<TITLE>Articoli </TITLE>
+		<TITLE>OmeoTINTS | Serie Dorati</TITLE>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -17,6 +17,8 @@
 		<script src="JS/MyFooter.js"></script>
 		<script src="JS/articoli.js"></script>
 		<script src="JS/myTopnav.js"></script>
+		<script src="JS/index.js"></script>
+
 	</HEAD>
 	 
 	<BODY>
@@ -28,30 +30,30 @@
 
 		<div >
 			<h5 class="serieTinte"style="float: left;">Dorati</h5>
-			<p style="float:right"><b>omeoTINTS</b> - <span style="color: red;">GEL CREMA COLORANTE</span></p>
+			<p style="float:right"><b>omeoTINTS</b> - <span style="color: red;">TINTURA PER CAPELLI</span></p>
 		</div>
 		<div class="clearfix"></div>
 		<br/>
 		<div class="row" >
 			<div class="col-md-2">
 				<div>
-					<img class="Thumb" src="image\foto/astuccio.JPG"
-						onmouseover="myFuncionDyspalyyText('image/foto/astuccio.JPG','Testo01','');">
+					<img class="Thumb" src="image/Prodotti/astuccio.JPG"
+						onmouseover="myFuncionDyspalyyText('image/Prodotti/astuccio.JPG','Testo01','');">
 				</div>
 	
 				<div>
-					<img class="Thumb" src="image/foto/TintaFix.jpg"
-						onmouseover="myFuncionDyspalyyText('image/foto/TintaFix.jpg','Testo02', '');">
-				</div>
-	
-				<div><a href="image\foto/foglioillustrativo.png" target="_blank">
-					<img class="Thumb" src="image\foto/foglioillustrativo.png"
-						onmouseover="myFuncionDyspalyyText('image/foto/foglioillustrativo.png','Testo03','');"></a>
+					<img class="Thumb" src="image/Prodotti/TintaFix.JPG"
+						onmouseover="myFuncionDyspalyyText('image/Prodotti/TintaFix.JPG','Testo02', '');">
 				</div>
 	
 				<div>
-					<img class="Thumb" src="image\foto/Campioncini.JPG"
-						onmouseover="myFuncionDyspalyyText('image/foto/Campioncini.JPG','Testo04', '');">
+					<img class="Thumb" src="image/Prodotti/foglioIllustrativo.jpg" data-action="zoom"
+						onmouseover="myFuncionDyspalyyText('image/Prodotti/foglioIllustrativo.jpg','Testo03','');">
+				</div>
+	
+				<div>
+					<img class="Thumb" src="image/Prodotti/Campioncini.JPG"
+						onmouseover="myFuncionDyspalyyText('image/Prodotti/Campioncini.JPG','Testo04', '');">
 				</div>
 			</div>
 			
@@ -62,7 +64,7 @@
 				
 					<!-- qui mostro per prima la prima immagine poi sarà il Java script che fa il resto -->
 					<!--Expanded image -->
-					<img id="expandedImg" class="Big" src="image/foto/astuccio.JPG">
+					<img id="expandedImg" class="Big" src="image/Prodotti/astuccio.JPG">
 					
 				
 				</div>
@@ -72,7 +74,7 @@
 						<p style="display:block">Disponibile in 28 luminosissime tonalità. <br/> Confezione in astuccio da 140 ML</p>
 						<hr> <!-- mette una linea -->
 						<p>OmeoTINTS NON contiene ammoniaca, resorcina e glutine. E’ stato testato sulla pelle e non contiene sali di piombo o nichel. Copre i capelli bianchi fin dalla prima applicazione e allo stesso tempo agisce delicatamente sui capelli tinti e fragili. I suoi ingredienti vegetali aiutano a nutrire, proteggere, idratare e ristrutturare i capelli ottenendo un volume splendente e duraturo.
-							<img src="image/Icone/CertificatoThumb.png" alt="Certified"></p>
+							</p>
 					</div>
 					<div  id="Testo02" style="display:none">
 						<p >Colorfix da 140 ml</p>
@@ -97,7 +99,7 @@
 			<div class="col-md-6">
 					<!-- qui nota che ho messo il display a block solo sul primo in questo modo mi preparo a mostrare la prima immagine come preselezionata -->
 					<div>
-						<DIV class="row">
+						<DIV class="row hidden">
 					<div class="col-md-3"></div>	
 					<div class="col-md-3"> Prezzo unitario</div>	
 					<div class="col-md-3"> Quantità</div>	
@@ -108,11 +110,13 @@
 					<div class="row">
 					<div class="col-md-3" id="Ciocche"  style="display:block">
 							
-							<p  id="CodiceColore" ></p>
+							<p  id="CodiceColore" style="font-size: 2em; width:400px"></p>
 							</div>
+							<div class="hidden">
 							<div class="col-md-3"> 9.00€</div>						
 							<div class="col-md-3"> <label for="Quantità"><input type="number" id="quantity" name="quantity" class="inputNum"></label></div>	
 							<div class="col-md-3"> <button type="submit">Aggiungi al carrello</button></div>	
+						</div>
 						</div>
 
 							<hr> <!-- mette una linea -->
@@ -120,43 +124,32 @@
 							<div class="row">
 				 
 								<div class="col-md-3">
-									<img class="ThumbCiocche" src="image\Prodotti\Ciocche\1N.png"
-										onmouseover="myFuncionDyspalyyText('image/Prodotti/Ciocche/1N.png','CioccheBionde','1N Castano Chiaro');">
+									<img class="ThumbCiocche" src="image/Prodotti/Ciocche/DoratiThumb/4D.png"
+										onmouseover="myFuncionDyspalyyText('image/Prodotti/Ciocche/Dorati/4D.png','CioccheBionde','4D Castano Dorato');">
 								</div>
 								<div class="col-md-3">
-									<img class="ThumbCiocche" src="image\Prodotti\Ciocche\2N.png"
-										onmouseover="myFuncionDyspalyyText('image/Prodotti/Ciocche/2N.png','CioccheBionde','2N Castano Chiaro');">
-								</div>
-				
-								<div class="col-md-3">
-									<img class="ThumbCiocche" src="image\Prodotti\Ciocche\3N.png"
-										onmouseover="myFuncionDyspalyyText('image/Prodotti/Ciocche/3N.png','CioccheBionde','3N Castano Chiaro');">
+									<img class="ThumbCiocche" src="image/Prodotti/Ciocche/DoratiThumb/5D.png"
+										onmouseover="myFuncionDyspalyyText('image/Prodotti/Ciocche/Dorati/5D.png','CioccheBionde','5D Castano Chiaro Dorato');">
 								</div>
 				
 								<div class="col-md-3">
-									<img class="ThumbCiocche" src="image\Prodotti\Ciocche\4N.png"
-										onmouseover="myFuncionDyspalyyText('image/Prodotti/Ciocche/4N.png','CioccheBionde','4N Castano Chiaro');">
+									<img class="ThumbCiocche" src="image/Prodotti/Ciocche/DoratiThumb/6D.png"
+										onmouseover="myFuncionDyspalyyText('image/Prodotti/Ciocche/Dorati/6D.png','CioccheBionde','6D Biondo Scuro Dorato');">
+								</div>
+				
+								<div class="col-md-3">
+									<img class="ThumbCiocche" src="image/Prodotti/Ciocche/DoratiThumb/7D.png"
+										onmouseover="myFuncionDyspalyyText('image/Prodotti/Ciocche/Dorati/7D.png','CioccheBionde','7D Biondo Dorato');">
 								</div>
 				
 							</div>
 							<div class="row">
 								 
 								<div class="col-md-3">
-									<video class="ThumbCiocche" src="image/Prodotti/Ciocche/5N.mp4"
-										onmouseover="myFuncionDyspalyyText('image/Prodotti/Ciocche/5N.mp4','CioccheBionde','5N Castano Chiaro');">
+									<img class="ThumbCiocche" src="image/Prodotti/Ciocche/DoratiThumb/8D.png"
+										onmouseover="myFuncionDyspalyyText('image/Prodotti/Ciocche/Dorati/8D.png','CioccheBionde','8D Biondo Chiaro Dorato');">
 								</div>
-								<div class="col-md-3">
-									<img class="ThumbCiocche" src="image\Thumbnail\1N.png"
-										onmouseover="myFuncionDyspalyyText('image/Big/1N.png','CioccheBionde','6N Castano Chiaro');">
-								</div>
-								<div class="col-md-3">
-									<img class="ThumbCiocche" src="image\Thumbnail\1N.png"
-										onmouseover="myFuncionDyspalyyText('image/Big/1N.png','CioccheBionde','7N Castano Chiaro');">
-								</div>
-								<div class="col-md-3">
-									<img class="ThumbCiocche" src="image\Thumbnail\1N.png"
-										onmouseover="myFuncionDyspalyyText('image/Big/1N.png','CioccheBionde','9N Castano Chiaro');">
-								</div>
+								
 							</div>
 				
 				
