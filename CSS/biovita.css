@@ -353,25 +353,6 @@ hr {
 	background-image: linear-gradient(to right, #b3ffb3, #00b300, #b3ffb3);
 }
 
-.due {
-
-	font-size: 20px;
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.tre {
-	font-size: 10px;
-	padding-top: 10px;
-	font-family: cursive;
-
-}
-
-.uno {
-	font-size: 2em;
-	margin-right: 0%;
-	font-family: cursive;
-
-}
 
 .icon-green {
 	color: green;
