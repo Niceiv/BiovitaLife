@@ -6,7 +6,7 @@ myFooter = myFooter + "	<div class='footer-left'>";
 myFooter = myFooter + "		<h3>Biovita<span>Life</span></h3>";
 myFooter = myFooter + "		<p class='footer-links'>";
 myFooter = myFooter + "			<a href='INDEX.HTML' class='link-1'>Home</a>";
-myFooter = myFooter + "			<a href='Mappadelsito.html'>Mappa Sito</a>";
+myFooter = myFooter + "			<a href='Privacy.html'>Privacy</a>";
 myFooter = myFooter + "			<a href='#'>Pricing</a>";
 myFooter = myFooter + "			<a href='linee.html'>Linee Guida</a>";
 myFooter = myFooter + "			<a href='faq.html'>FAQ</a>";
