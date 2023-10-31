@@ -173,7 +173,7 @@
 
                         while ($row_qta_prz = $res_qta_prz->fetch_assoc()) {
                             $um = $row_qta_prz["DescUM"];
-                            echo "           <button  class=' btn btn-success  btn-sm glyphicon glyphicon-shopping-cart'/>$um</button>";
+                            echo "           <button  class='hidden btn btn-success  btn-sm glyphicon glyphicon-shopping-cart'/>$um</button>";
                         }
                     }
                     

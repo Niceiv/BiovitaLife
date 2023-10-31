@@ -147,7 +147,7 @@
                 echo "          <strong>" . $row_nome['Prodotto'] . ": </strong>";
                 echo "          <p>" . substr($row_nome['Descrizione'], 0, 300) . "...</p>";
                 echo '          <br><button style="width:70%;" onclick="mostra(' . $idProdotto . ')" class="btn btn-info btn-lg"/>Informazioni</button>';
-                 echo "           <button  class=' btn btn-success btn-lg glyphicon glyphicon-shopping-cart'/></button>";
+                // echo "           <button  class='hdden btn btn-success btn-lg glyphicon glyphicon-shopping-cart'/></button>";
                 echo "      </div>";
                 echo "  </div>";
                 echo "</div>";

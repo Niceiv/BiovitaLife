@@ -89,7 +89,7 @@
                    ?></h4>
                 </div>
                 <div class="col-sm-2 ">
-                  <button  class='  btn btn-success  btn-lg glyphicon glyphicon-shopping-cart'/>
+                  <button  class='hidden  btn btn-success  btn-lg glyphicon glyphicon-shopping-cart'/>
                 </div>
               </div>
             </div>
