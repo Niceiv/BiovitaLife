@@ -157,7 +157,7 @@
         error_reporting(E_ERROR | E_PARSE);
 
 
-        require '..\Config\SQL_Command.php';
+        require(__DIR__.'\..\Config\SQL_command.php');
 
         function convert_smart_quotes($string)
         {

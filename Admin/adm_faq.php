@@ -11,7 +11,7 @@
     <h1>ADMIN FAQ'S</h1>
     <h4>ELENCO E GESTIONE DELLE FAQ'S</h4>
     <?php
-    require 'SQL_command.php';
+    require(__DIR__.'\..\Config\SQL_command.php');
 
 
     $sql_sel = "SELECT * FROM vw_faqs ORDER BY domanda";

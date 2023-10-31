@@ -9,7 +9,7 @@
 
 <body>
     <?php
-    require 'SQL_command.php';
+    require(__DIR__.'\..\Config\SQL_command.php');
 
     $id_faq = $_REQUEST['id'];
     $sql = "SELECT * FROM faq WHERE idfaq=$id_faq";

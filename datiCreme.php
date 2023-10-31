@@ -4,7 +4,7 @@ $idDati = $_POST["idDati"];
 
 error_reporting(E_ERROR | E_PARSE);
 
-require 'SQL_command.php';
+require(__DIR__.'\Config\SQL_command.php');
 
 
 $sql_nome = "SELECT * FROM vw_Prodotti where idProdotto=$idDati";

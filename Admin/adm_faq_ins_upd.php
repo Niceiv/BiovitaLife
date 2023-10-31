@@ -1,5 +1,5 @@
 <?php
-require 'SQL_command.php';
+require(__DIR__.'\..\Config\SQL_command.php');
 
 //leggo il valore passato dalla form della pagina chiamante
 $id_faq = $_POST['idfaq'];

@@ -5,7 +5,7 @@ $idDati = $_POST["idDati"];
 
 error_reporting(E_ERROR | E_PARSE);
 
-require 'Config\SQL_command.php';
+require(__DIR__.'\Config\SQL_command.php');
 
 
 $sql_nome = "SELECT * FROM Olii where idolii=$idDati";

@@ -64,7 +64,7 @@
 
     <?php
 
-    require "SQL_Command.php";
+require(__DIR__.'\..\Config\SQL_command.php');
 
     ?>
 

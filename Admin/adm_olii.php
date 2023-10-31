@@ -105,7 +105,7 @@
 				<?php
 				error_reporting(E_ERROR | E_PARSE);
 
-				require '..\Config\SQL_command.php';
+				require(__DIR__.'\..\Config\SQL_command.php');
 
 
 

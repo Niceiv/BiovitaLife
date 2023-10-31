@@ -9,7 +9,7 @@
 
 <body>
     <?php
-    require 'SQL_command.php';
+    require(__DIR__.'\..\Config\SQL_command.php');
 
     $grp = $_REQUEST['id'];
     $sql = "SELECT * FROM gruppi WHERE idgruppo=$grp";
