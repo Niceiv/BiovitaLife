@@ -5,6 +5,10 @@
     <TITLE>OmeoTINTS | Serie Naturali</TITLE>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+        content="Tinte Naturali, Prodotti per Capelli Naturali, Cosmetici Sensibili, Biovitalife, Oli Naturali, Bellezza Naturale, Cura dei Capelli, Sensibile, Ingredienti Naturali, Salute dei Capelli, Rispetto della Natura, Tecnologie Naturali, Benessere Cosmetico, Cura Naturale dei Capelli, Prodotti Eco-friendly, Sensibilità Cutanea, eco-bio, prodotti, longevità, ragonici aurelia, prodotto non aggressivo, qualita, tinte di qualita, henne, henne persiano, henne persiano naturale, 100% naturale, cassia, indigo, oli essenziali, gel, gel naturale, shampoo naturale, shampoo per capelli sensibili, bagnosciuma, intimo, bagnodoccia, tea tree, lavanda">
+    <meta name="author" content="Massimiliano Mascherin, Daniele Garofalo">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -29,7 +33,7 @@
     </script>
     <div class="container-fluid text-center" style="margin-top: 80px; ">
         <?php
-        require(__DIR__.'\Config\SQL_command.php');
+        require(__DIR__ . '\Config\SQL_command.php');
         $GrpSel = $_REQUEST["IDGrp"];
         ?>
 
@@ -142,8 +146,10 @@
                         <div class="col-md-2">
                             <p id="PrezzoProdotto" style="font-size: 2em; width:100px"></p>
                         </div>
-                        <div class="col-md-1 hidden"> <button type="submit"  class="btn btn-success btn-lg; glyphicon glyphicon-shopping-cart" title="Aggiungi al carrello" data-toggle="tooltip"></button></div>
-                     
+                        <div class="col-md-1 hidden"> <button type="submit"
+                                class="btn btn-success btn-lg; glyphicon glyphicon-shopping-cart"
+                                title="Aggiungi al carrello" data-toggle="tooltip"></button></div>
+
                     </div>
 
                     <hr> <!-- mette una linea -->

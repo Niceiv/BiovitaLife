@@ -20,8 +20,8 @@ myFooter = myFooter + "			<i class='fa fa-map-marker'></i>";
 myFooter = myFooter + "			<p><span>Via Caio C. Nepote 50</span>Marco Simone, Guidonia Montecelio (RM)</p>";
 myFooter = myFooter + "		</div>";
 myFooter = myFooter + "		<div>";
-myFooter = myFooter + "			<a href=”callto:+390774367075”><i class='fa fa-phone'></i></a>";
-myFooter = myFooter + "			<p> <a href=”callto:+390774367075”>+39 0774367075</a></p>";
+myFooter = myFooter + "			<a href='tel:+390774367075'><i class='fa fa-phone'></i></a>";
+myFooter = myFooter + "			<p> <a href='tel:+390774367075'>+39 0774367075</a></p>";
 myFooter = myFooter + "		</div>";
 myFooter = myFooter + "		<div>";
 myFooter = myFooter + "			<a href='mailto:info@biovitalife.it'><i class='fa fa-envelope'></i></a>";
@@ -33,11 +33,13 @@ myFooter = myFooter + "		<p class='footer-company-about'>";
 myFooter = myFooter + "			<span>La nostra azienda</span>";
 myFooter = myFooter + "			Siamo un'azienda familiare specializzata in prodotti naturali.";
 myFooter = myFooter + "		</p>";
+/*
 myFooter = myFooter + "		<div class='footer-icons'>";
 myFooter = myFooter + "			<a href='#'><i class='fa fa-facebook'></i></a>";
 myFooter = myFooter + "			<a href='#'><i class='fa fa-twitter'></i></a>";
 myFooter = myFooter + "			<a href='#'><i class='fa fa-linkedin'></i></a>";
 myFooter = myFooter + "			<a href='#'><i class='fa fa-github'></i></a>";
 myFooter = myFooter + "		</div>";
+*/
 myFooter = myFooter + "	</div>";
 myFooter = myFooter + "</footer>";

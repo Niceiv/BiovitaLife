@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords"
+        content="Tinte Naturali, Prodotti per Capelli Naturali, Cosmetici Sensibili, Biovitalife, Oli Naturali, Bellezza Naturale, Cura dei Capelli, Sensibile, Ingredienti Naturali, Salute dei Capelli, Rispetto della Natura, Tecnologie Naturali, Benessere Cosmetico, Cura Naturale dei Capelli, Prodotti Eco-friendly, Sensibilità Cutanea, eco-bio, prodotti, longevità, ragonici aurelia, prodotto non aggressivo, qualita, tinte di qualita, henne, henne persiano, henne persiano naturale, 100% naturale, cassia, indigo, oli essenziali, gel, gel naturale, shampoo naturale, shampoo per capelli sensibili, bagnosciuma, intimo, bagnodoccia, tea tree, lavanda">
+    <meta name="author" content="Massimiliano Mascherin, Daniele Garofalo">
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -110,7 +114,7 @@
 
         error_reporting(E_ERROR | E_PARSE);
 
-        require(__DIR__.'\Config\SQL_command.php');
+        require(__DIR__ . '\Config\SQL_command.php');
 
         $riga = true;
 
@@ -137,10 +141,10 @@
                 echo "              <h4>" . $row_nome['Prodotto'] . "</h4>";
                 echo "          </div>";
                 echo "          <div>";
-                echo "              <img src='" . $row_nome['img'] . "'alt='" . $row_nome['Prodotto'] . "' style='width:150px;height:150px;'>";             
+                echo "              <img src='" . $row_nome['img'] . "'alt='" . $row_nome['Prodotto'] . "' style='width:150px;height:150px;'>";
                 echo "          </div>";
                 echo "          <div>";
-                echo "              <h4>" . $row_nome["DescUM"]. ' <strong>'  .$prz. "</strong></h4>"; 
+                echo "              <h4>" . $row_nome["DescUM"] . ' <strong>' . $prz . "</strong></h4>";
                 echo "          </div>";
                 echo "      </div>";
                 echo "      <div class='service-content'>";

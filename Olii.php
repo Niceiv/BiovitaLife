@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords"
+        content="Tinte Naturali, Prodotti per Capelli Naturali, Cosmetici Sensibili, Biovitalife, Oli Naturali, Bellezza Naturale, Cura dei Capelli, Sensibile, Ingredienti Naturali, Salute dei Capelli, Rispetto della Natura, Tecnologie Naturali, Benessere Cosmetico, Cura Naturale dei Capelli, Prodotti Eco-friendly, Sensibilità Cutanea, eco-bio, prodotti, longevità, ragonici aurelia, prodotto non aggressivo, qualita, tinte di qualita, henne, henne persiano, henne persiano naturale, 100% naturale, cassia, indigo, oli essenziali, gel, gel naturale, shampoo naturale, shampoo per capelli sensibili, bagnosciuma, intimo, bagnodoccia, tea tree, lavanda">
+    <meta name="author" content="Massimiliano Mascherin, Daniele Garofalo">
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -109,7 +113,7 @@
 
         error_reporting(E_ERROR | E_PARSE);
 
-        require(__DIR__.'\Config\SQL_command.php');
+        require(__DIR__ . '\Config\SQL_command.php');
 
         $riga = true;
 
@@ -125,15 +129,15 @@
                     $colonna = 1;
                     $riga = false;
                 }
-                
+
 
                 //DESCRIZIONE
                 $sql_olii_desc = "SELECT * FROM OLii_DESC WHERE idOlii = $idOlii and idInfoOli=1";
                 $res_olii_desc = GetData($sql_olii_desc);
                 if ($res_olii_desc->num_rows > 0) {
                     $row_olii_desc = $res_olii_desc->fetch_assoc();
-                    
-                   
+
+
                     echo "<div class='col-md-3 col-sm-6'>";
                     echo "  <div class='service-box'>";
                     echo "      <div class='service-icon yellow'>";
@@ -142,32 +146,32 @@
                     echo "          </div>";
                     echo "          <div>";
                     echo "              <h4>";
-                    $sql_qta_prz ="SELECT * FROM vw_olii_qta_prz WHERE idolii= $idOlii";
+                    $sql_qta_prz = "SELECT * FROM vw_olii_qta_prz WHERE idolii= $idOlii";
                     $res_qta_prz = GetData($sql_qta_prz);
                     if ($res_qta_prz->num_rows > 0) {
-                        $kk=1;
-                        $Oldkk=1;
+                        $kk = 1;
+                        $Oldkk = 1;
                         while ($row_qta_prz = $res_qta_prz->fetch_assoc()) {
                             $prz = sprintf('%01.2f', $row_qta_prz["prezzo"]) . ' €';
                             $um = $row_qta_prz["DescUM"];
-                            if ($Oldkk !=  $kk) {
+                            if ($Oldkk != $kk) {
                                 echo "<br>";
-                                $Oldkk=  $kk;
+                                $Oldkk = $kk;
                             }
-                            echo   $um. ' <strong>'  .$prz. "</strong>"; 
-                           
+                            echo $um . ' <strong>' . $prz . "</strong>";
+
                             $kk++;
                         }
                     }
-                    echo "              </h4>"; 
+                    echo "              </h4>";
                     echo "          </div>";
                     echo "      </div>";
                     echo "      <div class='service-content'>";
                     echo "          <h3>" . $row_nome['nome'] . "</h3>";
-                    echo "          <p>" .   substr($row_olii_desc['Descrizione'], 0, 200) . "...</p>";
+                    echo "          <p>" . substr($row_olii_desc['Descrizione'], 0, 200) . "...</p>";
                     echo '          <br><button style="width:90%;" onclick="mostra(' . $idOlii . ')" class="btn btn-info "/>Informazioni</button>';
-                    
-                    $sql_qta_prz ="SELECT * FROM vw_olii_qta_prz WHERE idolii= $idOlii";
+
+                    $sql_qta_prz = "SELECT * FROM vw_olii_qta_prz WHERE idolii= $idOlii";
                     $res_qta_prz = GetData($sql_qta_prz);
                     if ($res_qta_prz->num_rows > 0) {
 
@@ -176,9 +180,9 @@
                             echo "           <button  class='hidden btn btn-success  btn-sm glyphicon glyphicon-shopping-cart'/>$um</button>";
                         }
                     }
-                    
-                    
-                    
+
+
+
 
                     echo "      </div>";
                     echo "  </div>";
