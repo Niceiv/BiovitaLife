@@ -582,6 +582,13 @@
                     //echo "      <td><a href='adm_prodotti.php?id=" . $row['idProdotto'] . "'>seleziona</a></td>";
                     echo "      <td></td>";
                     echo "      <td><input type='submit' id='btnSelProd' value='Seleziona'  onclick='SelProd(" . $row['idProdotto'] . ")' ></td>";
+                    if ($grpSel==4) {
+                        echo "<td>";
+
+                        echo "      <a href='adm_olii.php?idSel=". $row['idProdotto'] . "'>Scheda</a>";
+
+                        echo "</td>";
+                        }
                     echo "      <td></td>";
                     echo "  </tr>";
                 } else {
