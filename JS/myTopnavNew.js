@@ -1,4 +1,5 @@
 var myTopnav = "";
+var myTopnav = "";
 
 myToponav += "<nav class='navbar navbar-default navbar-fixed-top navbar-inverse' style='font-size: large;'>";
 myToponav += "	<div class='container-fluid'>";
