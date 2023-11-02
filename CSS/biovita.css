@@ -110,7 +110,8 @@ a:hover {
 
 
 .Titolo {
-
+	margin-top: 90px;
+	margin-left: 100px;
 	padding: 0px 10px;
 	height: 60%;
 	text-align: center;
