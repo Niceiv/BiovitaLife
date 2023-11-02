@@ -23,7 +23,6 @@
     <script src="JS/MyFooter.js"></script>
     <script src="JS/articoli.js"></script>
     <script src="JS/myTopnav.js"></script>
-    <script src="JS/toolkit.js"></script>
 
 </HEAD>
 
@@ -72,7 +71,7 @@
                 </div>
 
                 <div>
-                    <img class="Thumb" src="image/Prodotti/foglioIllustrativo.jpg" data-action="zoom"
+                    <img class="Thumb" src="image/Prodotti/foglioIllustrativo.jpg"
                         onmouseover="myFuncionDyspalyyText('image/Prodotti/foglioIllustrativo.jpg','Testo03','');">
                 </div>
 
