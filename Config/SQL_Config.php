@@ -11,10 +11,10 @@ $dbname = 'Sql1749091_1';
 $dbname = 'biovita';
 */
 
-$servername = '31.11.39.136';
-$username = 'Sql1749091';
-$password = 'Ntentanterna1@';
-$dbname = 'Sql1749091_1';
+$servername = 'localhost';
+$username = 'root';
+$password = 'Ntentanterna1';
+$dbname = 'biovita';
 
 
 
