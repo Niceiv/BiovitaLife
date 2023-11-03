@@ -33,9 +33,7 @@ myTopnav += "	  <div class='collapse navbar-collapse' id='bs-example-navbar-coll
 myTopnav += "		<ul class='nav navbar-nav'>";
 
 myTopnav += "		  <li><a href='index.html'>Home<span class='sr-only'>(current)</span></a></li>";
-
 myTopnav += "		  <li><a href='azienda.html'>Chi Siamo</a></li>";
-
 myTopnav += "		  <li class='dropdown'>";
 
 myTopnav += "			<a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>Prodotti<span class='caret'></span></a>";
@@ -61,9 +59,7 @@ myTopnav += "				<li><a href='Tinte.php?IDGrp=3'>Serie Rossi - Mogano</a></li>";
 myTopnav += "			</ul>";
 
 myTopnav += "		  </li>";
-
 myTopnav += "		  <li><a href='lineeGuida.html'>Linee Guida</a></li>";
-
 myTopnav += "		</ul>";
 
 myTopnav += "		<form class='navbar-form navbar-left hidden' style='padding-top: 10px;'>";
@@ -101,7 +97,6 @@ myTopnav += "					<li role='separator' class='divider'></li>";
 myTopnav += "					<li class='dropdown-header'>Informazioni</li>";
 
 myTopnav += "					<li><a href='faqXML.html'>Faq</a></li>";
-
 myTopnav += "			</ul>";
 
 myTopnav += "		  </li>";

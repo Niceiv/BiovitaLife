@@ -1,3 +1,7 @@
+.BVL_margin-top {
+	margin-top: 20px;
+}
+
 .right {
 	float: right;
 }
@@ -6,9 +10,19 @@
 	float: left;
 }
 
+.cursive {
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	font-size: 1.3em;
+}
+
 .helvetica {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: large;
+
+}
+
+.brush {
+	font-family: Brush Script MT;
 
 }
 
@@ -20,10 +34,6 @@
 	color: black;
 }
 
-.box {
-	width: 50%;
-	height: 50%;
-}
 
 .hidden {
 	display: none;
@@ -100,7 +110,7 @@ a:hover {
 
 
 .navbar {
-	min-height: 70px;
+	min-height: 60px;
 }
 
 .navbar-nav>li>a {
@@ -466,4 +476,10 @@ img.zoom-img {
 .zoom-overlay-open,
 .zoom-overlay-transitioning {
 	cursor: default;
+}
+
+.jumbotron {
+	height: 180px;
+	margin-top: 60px;
+	margin-bottom: 80px;
 }

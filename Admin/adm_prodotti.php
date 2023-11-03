@@ -157,7 +157,7 @@
         error_reporting(E_ERROR | E_PARSE);
 
 
-        require(__DIR__.'\..\Config\SQL_command.php');
+        require(__DIR__ . '\..\Config\SQL_command.php');
 
         function convert_smart_quotes($string)
         {
@@ -249,8 +249,8 @@
 
             $id_um = $_POST['id_um_ins'];
 
-            $prezzo = str_replace(',', '.', $prezzo);
-            $qta = str_replace(',', '.', $qta);
+            $prezzo = str_replace(",", ".", $prezzo);
+            $qta = str_replace(",", ".", $qta);
 
             $img = $_POST['Img_ins'];
             $idtinta = $_POST['idtinta_ins'];
@@ -263,7 +263,7 @@
 
             if (strlen(trim($prodotto)) > 0) {
 
-                $sql_ins = "INSERT INTO prodotti  (prodotto, Descrizione, ingredienti, utilizzo,img,idtinte, prezzo,qta, id_um, idgruppo) VALUES (";
+                $sql_ins = "INSERT INTO `prodotti`  (prodotto, Descrizione, ingredienti, utilizzo,img,idtinte, prezzo,qta, id_um, idgruppo) VALUES (";
                 $sql_ins .= " '" . convert_smart_quotes($prodotto) . "'";
                 $sql_ins .= " ,'" . convert_smart_quotes($desc) . "'";
                 $sql_ins .= " ,'" . convert_smart_quotes($ingr) . "'";
@@ -320,8 +320,8 @@
             $img = $_POST['Img'];
             $idtinta = $_POST['idtinta'];
 
-            $prezzo = str_replace(',', '.', $prezzo);
-            $qta = str_replace(',', '.', $qta);
+            $prezzo = str_replace(",", ".", $prezzo);
+            $qta = str_replace(",", ".", $qta);
 
             /*
             echo "<br><br>ID Selezionato: [$id_sel]";
@@ -331,7 +331,7 @@
             */
 
             if (strlen(trim($prodotto)) > 0) {
-                $sql_upd = "UPDATE prodotti ";
+                $sql_upd = "UPDATE `prodotti` ";
                 $sql_upd .= " SET prodotto='" . convert_smart_quotes($prodotto) . "'";
                 $sql_upd .= " , Descrizione='" . convert_smart_quotes($desc) . "'";
                 $sql_upd .= " , ingredienti='" . convert_smart_quotes($ingr) . "'";
@@ -340,7 +340,7 @@
                 if ($grpSel == 3) {
                     $sql_upd .= " , idtinte=" . $idtinta;
                 }
-                $sql_upd .= " , prezzo=$prezzo ";
+                $sql_upd .= " , prezzo= $prezzo ";
                 $sql_upd .= " , qta=$qta ";
                 $sql_upd .= " , id_um=$id_um ";
                 $sql_upd .= " WHERE idProdotto=$id_sel ";
@@ -370,7 +370,7 @@
 
             //echo "<br><br>ID Selezionato: [$id_sel]";
         
-            $sql_del = "DELETE FROM prodotti ";
+            $sql_del = "DELETE FROM `prodotti` ";
             $sql_del .= " WHERE idProdotto=$id_sel ";
             //echo "<br>$sql_upd";
         
@@ -411,7 +411,7 @@
 
             if ((strlen(trim($chiave)) > 0) && (strlen(trim($valore)) > 0)) {
 
-                $sql_INS = "INSERT INTO prodotti_dati (idprodotto, desc, prop) VALUES ( $id_sel, '$chiave','$valore') ";
+                $sql_INS = "INSERT INTO `prodotti_dati` (idprodotto, desc, prop) VALUES ( $id_sel, '$chiave','$valore') ";
                 //echo "<br>$sql_INS";
         
                 $Step = 'Inserimento Daeti Prodotti';
@@ -449,7 +449,7 @@
 
             if ((strlen(trim($chiave)) > 0) && (strlen(trim($valore)) > 0)) {
 
-                $sql_upd = "UPDATE prodotti_dati SET desc='$chiave', prop='$valore' WHERE idprodotti_dati=$id_dati_sel ";
+                $sql_upd = "UPDATE `prodotti_dati` SET desc='$chiave', prop='$valore' WHERE idprodotti_dati=$id_dati_sel ";
                 //echo "<br>$sql_upd";
         
                 $Step = 'Aggiornamento Daeti Prodotti';
@@ -476,7 +476,7 @@
             echo "<br><br>id_dati_sel: [$id_dati_sel]";
            */
 
-            $sql_del = "DELETE FROM prodotti_dati  WHERE idprodotti_dati=$id_dati_sel ";
+            $sql_del = "DELETE FROM `prodotti_dati`  WHERE idprodotti_dati=$id_dati_sel ";
             //echo "<br>$sql_upd";
             $Step = 'Cancellazione Daeti Prodotti';
             ExecuteSQL($sql_del);
@@ -506,7 +506,7 @@
         echo "<br><label for='cboGruppo'>Gruppo:</label>";
         echo "          <select id='idgruppo' name='idgruppo' onChange='SelGrp()' >";
         echo "          <option value='0' >---</option>";
-        $sql_grp = "select * FROM gruppi";
+        $sql_grp = "select * FROM `gruppi`";
         $res_grp = GetData($sql_grp);
         while ($row_grp = $res_grp->fetch_assoc()) {
             if ($row_grp['idgruppo'] == $grpSel) {
@@ -528,13 +528,13 @@
 
         if ($grpSel != '') {
             if ($grpSel == '3') {
-                $sql_prod = 'SELECT * FROM vw_prodotti where idgruppo=' . $grpSel . ' ORDER BY  idtinte, order_view';
+                $sql_prod = 'SELECT * FROM `vw_prodotti` where idgruppo=' . $grpSel . ' ORDER BY  idtinte, order_view';
             } else {
-                $sql_prod = 'SELECT * FROM vw_prodotti where idgruppo=' . $grpSel . ' ORDER BY order_view';
+                $sql_prod = 'SELECT * FROM `vw_prodotti` where idgruppo=' . $grpSel . ' ORDER BY order_view';
             }
 
         } else {
-            $sql_prod = 'SELECT * FROM vw_prodotti where idgruppo=99 ORDER BY order_view';
+            $sql_prod = 'SELECT * FROM `vw_prodotti` where idgruppo=99 ORDER BY order_view';
         }
         //echo "<br>SQL:$sql_prod";
         
@@ -582,13 +582,13 @@
                     //echo "      <td><a href='adm_prodotti.php?id=" . $row['idProdotto'] . "'>seleziona</a></td>";
                     echo "      <td></td>";
                     echo "      <td><input type='submit' id='btnSelProd' value='Seleziona'  onclick='SelProd(" . $row['idProdotto'] . ")' ></td>";
-                    if ($grpSel==4) {
+                    if ($grpSel == 4) {
                         echo "<td>";
 
-                        echo "      <a href='adm_olii.php?idSel=". $row['idProdotto'] . "'>Scheda</a>";
+                        echo "      <a href='adm_olii.php?idSel=" . $row['idProdotto'] . "'>Scheda</a>";
 
                         echo "</td>";
-                        }
+                    }
                     echo "      <td></td>";
                     echo "  </tr>";
                 } else {
@@ -619,7 +619,7 @@
                     //Disegno la combo box per le unita di misura preselezionando il valore
                     echo "          <select id='id_um' name='id_um' >";
                     echo "          <option value='0' >---</option>";
-                    $sql_um = "select * FROM unita_misura";
+                    $sql_um = "select * FROM `unita_misura`";
                     $res_um = GetData($sql_um);
                     while ($row_um = $res_um->fetch_assoc()) {
                         if ($row_um['idunita_misura'] == $row['id_um']) {
@@ -676,7 +676,7 @@
         echo "<input type='number' min='0' max='999' step='.01' id='Qta_ins' name='Qta_ins' value=''> ";
         echo "<select id='id_um_ins' name='id_um_ins' >";
         echo "  <option value='0' >---</option>";
-        $sql_um = "select * FROM unita_misura";
+        $sql_um = "select * FROM `unita_misura`";
         $res_um = GetData($sql_um);
         while ($row_um = $res_um->fetch_assoc()) {
             echo "  <option value='" . $row_um['idunita_misura'] . "'>" . $row_um['unita_misura'] . "</option>";
@@ -697,7 +697,7 @@
             echo "<h2>Dettaglio prodotto selezionato</h2>";
 
 
-            $sql_prod_dati = "SELECT * FROM prodotti_dati WHERE idProdotto = $id_sel";
+            $sql_prod_dati = "SELECT * FROM `prodotti_dati` WHERE idProdotto = $id_sel";
             $res_prod_dati = GetData($sql_prod_dati);
             if ($res_prod_dati->num_rows > 0) {
 

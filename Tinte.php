@@ -94,7 +94,7 @@
                 </div>
 
                 <div>
-                    <div id="Testo01" style="display:block">
+                    <div id="Testo01" style="display:block"><BR>
                         <p style="display:block">Disponibile in 28 luminosissime tonalità. <br /> Confezione in astuccio
                             da 140 ML.</p>
                         <hr> <!-- mette una linea -->
