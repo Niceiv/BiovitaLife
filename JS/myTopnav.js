@@ -40,7 +40,7 @@ myTopnav += "			<a href='#' class='dropdown-toggle' data-toggle='dropdown' role=
 
 myTopnav += "			<ul class='dropdown-menu'>";
 
-myTopnav += "				<li><a href='Beauty.php'>Cura dei capelli</a></li>";
+myTopnav += "				<li><a href='Beauty.php'>Cura Personale</a></li>";
 
 myTopnav += "				<li><a href='Olii.php'>Oli Essenziali</a></li>";
 
