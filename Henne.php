@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Hennè-BiovitaLife</title>
+  <title>Hennè | BiovitaLife</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords"
@@ -28,11 +28,6 @@
   <script src="JS/myTopnav.js"></script>
   <style>
     /* Remove the jumbotron's default bottom margin */
-    .jumbotron {
-      height: 180px;
-      margin-top: 70px;
-      margin-bottom: 80px;
-    }
   </style>
 </head>
 
@@ -43,8 +38,8 @@
 
 
   <div class="jumbotron container-fluid">
-    <div class="container text-center">
-      <h1>Henné Persiano Puro</h1>
+    <div class="container text-center brush">
+      <h1 class="BVL_margin-top">Henné Persiano Puro</h1>
       <p>Colorante Vegetale al 100%</p>
     </div>
   </div>
