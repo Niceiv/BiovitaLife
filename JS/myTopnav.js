@@ -44,7 +44,7 @@ myTopnav += "				<li><a href='Beauty.php'>Cura dei capelli</a></li>";
 
 myTopnav += "				<li><a href='Olii.php'>Oli Essenziali</a></li>";
 
-myTopnav += "				<li><a href='Henne.php'>Hennè</a></li>";
+myTopnav += "				<li><a href='Henne.php'>Henn&egrave;</a></li>";
 
 myTopnav += "				<li role='separator' class='divider'></li>";
 

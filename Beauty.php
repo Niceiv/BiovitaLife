@@ -23,11 +23,9 @@
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
-
         type="text/css" />
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <link rel="stylesheet" href="CSS/boxservice.css">
@@ -55,7 +53,6 @@
 
 
     <style>
-
         /* The Modal (background) */
 
         .modal {
@@ -167,7 +164,6 @@
             background-size: auto;
 
         }
-
     </style>
 
 </head>
@@ -189,18 +185,16 @@
     </script>
 
 
+    <div class="jumbotron container-fluid">
+        <div class="container text-center brush">
+            <h1 class="BVL_margin-top text-center">BeautyNatura</h1>
+            <p>Azione antiage per pelle e capelli</p>
+        </div>
+    </div>
 
 
 
-    <div class="container " style="margin-top: 120px;">
-
-
-
-        <h1 class="text-center">Creme</h1>
-
-
-
-
+    <div class="container ">
 
         <!-- 
 
@@ -212,17 +206,17 @@
 
 
 
-<?php
-/*Just for your server-side code*/
-header('Content-Type: text/html; charset=ISO-8859-1');
- 
+        <?php
+        /*Just for your server-side code*/
+        header('Content-Type: text/html; charset=ISO-8859-1');
+
 
 
         error_reporting(E_ERROR | E_PARSE);
 
 
 
-                require(__DIR__.'\Config\SQL_command.php');
+        require(__DIR__ . '\Config\SQL_command.php');
 
 
 
@@ -276,13 +270,13 @@ header('Content-Type: text/html; charset=ISO-8859-1');
 
                 echo "          <div>";
 
-                echo "              <img src='" . $row_nome['img'] . "'alt='" . $row_nome['Prodotto'] . "' style='width:150px;height:150px;'>";             
+                echo "              <img src='" . $row_nome['img'] . "'alt='" . $row_nome['Prodotto'] . "' style='width:150px;height:150px;'>";
 
                 echo "          </div>";
 
                 echo "          <div>";
 
-                echo "              <h4>" . $row_nome["DescUM"]. ' <strong>'  .$prz. "</strong></h4>"; 
+                echo "              <h4>" . $row_nome["DescUM"] . ' <strong>' . $prz . "</strong></h4>";
 
                 echo "          </div>";
 
@@ -297,7 +291,7 @@ header('Content-Type: text/html; charset=ISO-8859-1');
                 echo '          <br><button style="width:70%;" onclick="mostra(' . $idProdotto . ')" class="btn btn-info btn-lg"/>Informazioni</button>';
 
                 // echo "           <button  class='hdden btn btn-success btn-lg glyphicon glyphicon-shopping-cart'/></button>";
-
+        
                 echo "      </div>";
 
                 echo "  </div>";
@@ -370,13 +364,13 @@ header('Content-Type: text/html; charset=ISO-8859-1');
 
     </div>
 
-    <audio src="audio/Harp.mp3" autoplay loop id="Oliiaudio"></audio>
+    <audio src="audio/Harp.mp3" autoplay loop id="Cremeaudio"></audio>
 
 </body>
 
 <script>
 
-    var audio = document.getElementById("Oliiaudio");
+    var audio = document.getElementById("Cremeaudio");
 
     audio.volume = 0.03;
 

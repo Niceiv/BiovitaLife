@@ -183,17 +183,15 @@
     </script>
 
 
+    <div class="jumbotron container-fluid">
+        <div class="container text-center brush">
+            <h1 class="BVL_margin-top text-center">OLIMONDE</h1>
+            <p>Oli essenziali e naturali</p>
+        </div>
+    </div>
 
 
-
-    <div class="container " style="margin-top: 120px;">
-
-
-
-        <h1 class="text-center">OliMonde</h1>
-
-
-
+    <div class="container ">
 
 
         <!-- 
@@ -429,13 +427,13 @@
 
 
 
-    <audio src="audio/Harp.mp3" autoplay loop id="Oliiaudio"></audio>
+    <audio src="audio/smooth-waters-115977.mp3" autoplay loop id="Oliaudio"></audio>
 
 </body>
 
 <script>
 
-    var audio = document.getElementById("Oliiaudio");
+    var audio = document.getElementById("Oliaudio");
 
     audio.volume = 0.03;
 
@@ -447,7 +445,6 @@
     document.write(myFooter);
 
 </script>
-
 
 
 <noscript>
