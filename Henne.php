@@ -11,7 +11,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="keywords"
-
     content="Tinte Naturali, Prodotti per Capelli Naturali, Cosmetici Sensibili, Biovitalife, Oli Naturali, Bellezza Naturale, Cura dei Capelli, Sensibile, Ingredienti Naturali, Salute dei Capelli, Rispetto della Natura, Tecnologie Naturali, Benessere Cosmetico, Cura Naturale dei Capelli, Prodotti Eco-friendly, Sensibilità Cutanea, eco-bio, prodotti, longevità, ragonici aurelia, prodotto non aggressivo, qualita, tinte di qualita, henne, henne persiano, henne persiano naturale, 100% naturale, cassia, indigo, oli essenziali, gel, gel naturale, shampoo naturale, shampoo per capelli sensibili, bagnosciuma, intimo, bagnodoccia, tea tree, lavanda">
 
   <meta name="author" content="Massimiliano Mascherin, Daniele Garofalo">
@@ -53,7 +52,6 @@
   <script src="JS/myTopnav.js"></script>
 
   <style>
-
     /* Remove the jumbotron's default bottom margin */
   </style>
 
@@ -75,7 +73,8 @@
 
   <div class="jumbotron container-fluid">
     <div class="container text-center brush">
-      <h1 class="BVL_margin-top">Henné Persiano Puro</h1>
+      <h1 class="BVL_margin-top text-center">Henn&egrave; Persiano Puro</h1>
+
       <p>Colorante Vegetale al 100%</p>
 
     </div>
@@ -150,8 +149,7 @@
 
             </div>
 
-            <div class="panel-body"><img src="<?php echo  $row_nome["img"] ?>" class="img-responsive" style="width:100%"
-
+            <div class="panel-body"><img src="<?php echo $row_nome["img"] ?>" class="img-responsive" style="width:100%"
                 alt="<?php echo $row_nome["Prodotto"] ?>">
 
             </div>
@@ -169,7 +167,7 @@
                     $prz = sprintf('%01.2f', $row_nome["Prezzo"]) . ' €';
 
                     echo $prz;
-                  
+
 
                     ?>
 
