@@ -1,6 +1,4 @@
-.BVL_margin-top {
-	margin-top: 20px;
-}
+
 
 .right {
 	float: right;
@@ -479,7 +477,10 @@ img.zoom-img {
 }
 
 .jumbotron {
-	height: 180px;
+	height: 160px;
 	margin-top: 60px;
 	margin-bottom: 80px;
+}
+.BVL_margin-top {
+	margin-top: -20px;
 }
