@@ -244,5 +244,10 @@
 <noscript>
     <strong>Per visualizzare correttamente questa pagina c necessario avere javascript abilitato.</strong>
 </noscript>
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
 
 </HTML>
