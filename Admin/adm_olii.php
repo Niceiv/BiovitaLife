@@ -179,7 +179,7 @@
 
 				//echo "<br><br>ID Selezionato: [$idSelAct]";
 				//echo "<br><br>act_prod: [$act_prod]";
-
+				
 
 
 
@@ -218,7 +218,7 @@
 				$action = $_POST['action'];
 
 				//echo "<br><br>action: [$action]";
-
+				
 				if ($IdOliiSel == '') {
 					$IdOliiSel = 0;
 				}
@@ -227,7 +227,7 @@
 				if ($action == 'Olio') {
 
 
-					$SQL = "UPDATE Olii SET ";
+					$SQL = "UPDATE `Olii` SET ";
 					$SQL .= " nome='" . convert_smart_quotes($_POST["olii_name"]) . "',";
 					$SQL .= " Order_view=" . $_POST["olii_orderview"] . "  ";
 					$SQL .= " WHERE idOlii = " . $IdOliiSel;
@@ -243,10 +243,10 @@
 					$SQL = "INSERT INTO `olii_qta_prz` ";
 					$SQL .= "(`idolii`,`qta`,`id_um`,`prezzo`) ";
 					$SQL .= " VALUES (";
-					$SQL .=  $IdOliiSel . ",";
-					$SQL .=  $_POST["prz_qta_qta"] . ",  ";
-					$SQL .=  $_POST["id_um"] . ",  ";
-					$SQL .=  str_replace(",", ".", $_POST["prz_qta_prz"]) . ")";
+					$SQL .= $IdOliiSel . ",";
+					$SQL .= $_POST["prz_qta_qta"] . ",  ";
+					$SQL .= $_POST["id_um"] . ",  ";
+					$SQL .= str_replace(",", ".", $_POST["prz_qta_prz"]) . ")";
 
 					//echo "<BR>SQL:[" . $SQL . "]";
 					ExecuteSQL($SQL);
@@ -257,9 +257,9 @@
 				if ($action == 'UpdQtaPrz') {
 
 					$SQL = "UPDATE `olii_qta_prz` SET ";
-					$SQL .=  "qta=" . $_POST["upd_prz_qta_qta"] . ",  ";
-					$SQL .=  "id_um=" . $_POST["upd_id_um"] . ",  ";
-					$SQL .=  "prezzo=" . str_replace(",", ".", $_POST["upd_prz_qta_prz"]) . " ";
+					$SQL .= "qta=" . $_POST["upd_prz_qta_qta"] . ",  ";
+					$SQL .= "id_um=" . $_POST["upd_id_um"] . ",  ";
+					$SQL .= "prezzo=" . str_replace(",", ".", $_POST["upd_prz_qta_prz"]) . " ";
 					$SQL .= "WHERE idolii_qta_prz=" . $_POST["upd_idolii_qta_prz"] . " ";
 
 
@@ -287,7 +287,7 @@
 
 				if ($action == 'Descrizione') {
 
-					$SQL = "UPDATE olii_desc SET ";
+					$SQL = "UPDATE `olii_desc` SET ";
 					$SQL .= " Descrizione='" . convert_smart_quotes($_POST["olio_desc"]) . "'";
 					$SQL .= " WHERE idOlii_Desc = " . $_POST["olii_desc_id"];
 
@@ -303,9 +303,9 @@
 					$SQL = "INSERT INTO `olii_ben_prop` ";
 					$SQL .= "(`idOlii`, `IdInfoOlii`, `Ben_Prop`, `Descrizione`)";
 					$SQL .= " VALUES (";
-					$SQL .=  $IdOliiSel . ",2,";
-					$SQL .=  "'" . $_POST["ben_name"] . "',  ";
-					$SQL .=  "'" . $_POST["ben_desc"] . "')";
+					$SQL .= $IdOliiSel . ",2,";
+					$SQL .= "'" . $_POST["ben_name"] . "',  ";
+					$SQL .= "'" . $_POST["ben_desc"] . "')";
 
 					//echo "<BR>SQL:[" . $SQL . "]";
 					ExecuteSQL($SQL);
@@ -342,9 +342,9 @@
 					$SQL = "INSERT INTO `olii_ben_prop` ";
 					$SQL .= "(`idOlii`, `IdInfoOlii`, `Ben_Prop`, `Descrizione`)";
 					$SQL .= " VALUES (";
-					$SQL .=  $IdOliiSel . ",3,";
-					$SQL .=  "'" . $_POST["prop_name"] . "',  ";
-					$SQL .=  "'" . $_POST["prop_desc"] . "')";
+					$SQL .= $IdOliiSel . ",3,";
+					$SQL .= "'" . $_POST["prop_name"] . "',  ";
+					$SQL .= "'" . $_POST["prop_desc"] . "')";
 
 					//echo "<BR>SQL:[" . $SQL . "]";
 					ExecuteSQL($SQL);
@@ -357,7 +357,7 @@
 
 
 
-					$SQL = "UPDATE olii_desc SET ";
+					$SQL = "UPDATE `olii_desc` SET ";
 					$SQL .= " Descrizione='" . convert_smart_quotes($_POST["olio_avv"]) . "'";
 					$SQL .= " WHERE idOlii_Desc = " . $_POST["olii_avv_id"];
 
@@ -377,7 +377,7 @@
 				echo "<br><label' for='idolii'>Seleziona un olio: </label>";
 				echo "<select id='idolii' name='idolii' onchange='SelOlio()'>";
 				echo "<option value='0' >---</option>";
-				$sql_oli = "SELECT * FROM Olii";
+				$sql_oli = "SELECT * FROM `Olii`";
 				$res_oli = GetData($sql_oli);
 				while ($row_oli = $res_oli->fetch_assoc()) {
 					if ($row_oli['idolii'] == $IdOliiSel) {
@@ -385,7 +385,8 @@
 					} else {
 						echo "      <option value='" . $row_oli['idolii'] . "'>" . $row_oli['nome'] . "</option>";
 					}
-				};
+				}
+				;
 				echo "</select>";
 				?>
 			</DIV>
@@ -405,7 +406,7 @@
 					<!--OK modifica order view-->
 					<div class="row DefData">
 						<?php
-						$sql_olii = "SELECT * FROM OLii WHERE idOlii = " . $idOlii;
+						$sql_olii = "SELECT * FROM `OLii` WHERE idOlii = " . $idOlii;
 						$res_olii = GetData($sql_olii);
 						if ($res_olii->num_rows > 0) {
 							$row_olii = $res_olii->fetch_assoc();
@@ -442,7 +443,7 @@
 							<tbody>
 
 								<?php
-								$sql_olii_qta_prz = "SELECT * FROM vw_olii_qta_prz WHERE idOlii = $idOlii ";
+								$sql_olii_qta_prz = "SELECT * FROM `vw_olii_qta_prz` WHERE idOlii = $idOlii ";
 								$res_olii_qta_prz = GetData($sql_olii_qta_prz);
 								if ($res_olii_qta_prz->num_rows > 0) {
 									while ($row_olii_qta_prz = $res_olii_qta_prz->fetch_assoc()) {
@@ -463,15 +464,16 @@
 
 											echo "<select id='upd_id_um' name='upd_id_um'>";
 											echo "<option value='0' >---</option>";
-											$sql_um = "SELECT * FROM unita_misura";
+											$sql_um = "SELECT * FROM `unita_misura`";
 											$res_um = GetData($sql_um);
 											while ($row_um = $res_um->fetch_assoc()) {
-												if ($row_um['idunita_misura'] ==  $row_olii_qta_prz["id_um"]) {
+												if ($row_um['idunita_misura'] == $row_olii_qta_prz["id_um"]) {
 													echo "      <option value='" . $row_um['idunita_misura'] . "' selected>" . $row_um['unita_misura'] . "</option>";
 												} else {
 													echo "      <option value='" . $row_um['idunita_misura'] . "'>" . $row_um['unita_misura'] . "</option>";
 												}
-											};
+											}
+											;
 											echo "</select>";
 
 
@@ -497,15 +499,16 @@
 							<?php
 							echo "<select id='id_um' name='id_um'>";
 							echo "<option value='0' >---</option>";
-							$sql_um = "SELECT * FROM unita_misura";
+							$sql_um = "SELECT * FROM `unita_misura`";
 							$res_um = GetData($sql_um);
 							while ($row_um = $res_um->fetch_assoc()) {
-								if ($row_um['idunita_misura'] ==  $row_olii_qta_prz["id_um"]) {
+								if ($row_um['idunita_misura'] == $row_olii_qta_prz["id_um"]) {
 									echo "      <option value='" . $row_um['idunita_misura'] . "' selected>" . $row_um['unita_misura'] . "</option>";
 								} else {
 									echo "      <option value='" . $row_um['idunita_misura'] . "'>" . $row_um['unita_misura'] . "</option>";
 								}
-							};
+							}
+							;
 							echo "</select>";
 
 							?>
@@ -522,7 +525,7 @@
 						<br />
 
 						<?php
-						$sql_olii_desc = "SELECT * FROM OLii_DESC WHERE idOlii = " . $idOlii . " and idInfoOli=1";
+						$sql_olii_desc = "SELECT * FROM `OLii_DESC` WHERE idOlii = " . $idOlii . " and idInfoOli=1";
 						$res_olii_desc = GetData($sql_olii_desc);
 						if ($res_olii_desc->num_rows > 0) {
 							$row_olii_desc = $res_olii_desc->fetch_assoc();
@@ -549,7 +552,7 @@
 							</thead>
 							<tbody>
 								<?php
-								$sql_olii_benefici = "SELECT * FROM OLii_Ben_Prop WHERE idOlii = $idOlii and idInfoOlii=2";
+								$sql_olii_benefici = "SELECT * FROM `OLii_Ben_Prop` WHERE idOlii = $idOlii and idInfoOlii=2";
 								$res_olii_benefici = GetData($sql_olii_benefici);
 								if ($res_olii_benefici->num_rows > 0) {
 									while ($row_olii_benefici = $res_olii_benefici->fetch_assoc()) {
@@ -570,7 +573,7 @@
 											echo "	<td style='width:20%'>";
 											echo "		<input type='hidden'  id='upd_idOlii_Ben_Prop'  name='upd_idOlii_Ben_Prop'   style='width:100%'  value=\"" . $row_olii_benefici["idOlii_Ben_Prop"] . "\"> ";
 											echo "		<input type='button' value='Salva' onclick='SalvaOlii(\"UpdBenefici\")'>";
-											echo  "</td>";
+											echo "</td>";
 											echo "	<td style='width:10%'><input type='button' value='Elimina'  onclick='DelOlii(\"DelBenefici\")' ></td>";
 											echo "	<td style='width:25%'><input type='button' value='Annulla'  onclick='AnnullaSel()' ></td>";
 											echo "</tr>";
@@ -606,7 +609,7 @@
 							</thead>
 							<tbody>
 								<?php
-								$sql_olii_benefici = "SELECT * FROM OLii_Ben_Prop WHERE idOlii = $idOlii and idInfoOlii=3";
+								$sql_olii_benefici = "SELECT * FROM `OLii_Ben_Prop` WHERE idOlii = $idOlii and idInfoOlii=3";
 								$res_olii_benefici = GetData($sql_olii_benefici);
 								if ($res_olii_benefici->num_rows > 0) {
 									while ($row_olii_benefici = $res_olii_benefici->fetch_assoc()) {
@@ -626,7 +629,7 @@
 											echo "	<td style='width:20%'>";
 											echo "		<input type='hidden'  id='upd_idOlii_Ben_Prop'  name='upd_idOlii_Ben_Prop'   style='width:100%'  value=\"" . $row_olii_benefici["idOlii_Ben_Prop"] . "\"> ";
 											echo "		<input type='button' value='Salva' onclick='SalvaOlii(\"UpdBenefici\")'>";
-											echo  "</td>";
+											echo "</td>";
 											echo "	<td style='width:10%'><input type='button' value='Elimina'  onclick='DelOlii(\"DelBenefici\")' ></td>";
 											echo "	<td style='width:25%'><input type='button' value='Annulla'  onclick='AnnullaSel()' ></td>";
 											echo "</tr>";
@@ -653,7 +656,7 @@
 						<br />
 
 						<?php
-						$sql_olii_desc = "SELECT * FROM OLii_DESC WHERE idOlii = " . $idOlii . " and idInfoOli=4";
+						$sql_olii_desc = "SELECT * FROM `OLii_DESC` WHERE idOlii = " . $idOlii . " and idInfoOli=4";
 						$res_olii_desc = GetData($sql_olii_desc);
 						if ($res_olii_desc->num_rows > 0) {
 							$row_olii_desc = $res_olii_desc->fetch_assoc();
@@ -669,7 +672,7 @@
 				<!-- Area di Preview  -->
 				<DIV class="col-md-5  PreArea">
 					<?php
-					$sql_nome = "SELECT * FROM Olii where idolii=$IdOliiSel";
+					$sql_nome = "SELECT * FROM `Olii` where idolii=$IdOliiSel";
 					$res_nome = GetData($sql_nome);
 					if ($res_nome->num_rows > 0) {
 						while ($row_nome = $res_nome->fetch_assoc()) {
@@ -680,7 +683,7 @@
 							echo '<H2>' . $row_nome['nome'] . '</H2>';
 
 							echo '<h5><b>Quantità e prezzo</b></h5>';
-							$sql_qta_prz = "SELECT * FROM vw_olii_qta_prz WHERE idolii= $idOlii";
+							$sql_qta_prz = "SELECT * FROM `vw_olii_qta_prz` WHERE idolii= $idOlii";
 							$res_qta_prz = GetData($sql_qta_prz);
 							if ($res_qta_prz->num_rows > 0) {
 								$kk = 1;
@@ -693,14 +696,14 @@
 										$Oldkk = $kk;
 									}
 									echo $um . ' <strong>' . $prz . "</strong>";
-		
+
 									$kk++;
 								}
 							}
- 
+
 
 							//DESCRIZIONE
-							$sql_olii_desc = "SELECT * FROM OLii_DESC WHERE idOlii = $idOlii and idInfoOli=1";
+							$sql_olii_desc = "SELECT * FROM `OLii_DESC` WHERE idOlii = $idOlii and idInfoOli=1";
 							$res_olii_desc = GetData($sql_olii_desc);
 							if ($res_olii_desc->num_rows > 0) {
 								$row_olii_desc = $res_olii_desc->fetch_assoc();
@@ -709,7 +712,7 @@
 							}
 
 							//BENEFICI
-							$sql_olii_benefici = "SELECT * FROM OLii_Ben_Prop WHERE idOlii = $idOlii and idInfoOlii=2";
+							$sql_olii_benefici = "SELECT * FROM `OLii_Ben_Prop` WHERE idOlii = $idOlii and idInfoOlii=2";
 							$res_olii_benefici = GetData($sql_olii_benefici);
 							if ($res_olii_benefici->num_rows > 0) {
 								echo '<h5><b>Benefici</b></h5>';
@@ -724,7 +727,7 @@
 							}
 
 							//PROPRIETA
-							$sql_olii_prop = "SELECT * FROM OLii_Ben_Prop WHERE idOlii = $idOlii and idInfoOlii=3";
+							$sql_olii_prop = "SELECT * FROM `OLii_Ben_Prop` WHERE idOlii = $idOlii and idInfoOlii=3";
 							$res_olii_prop = GetData($sql_olii_prop);
 							if ($res_olii_prop->num_rows > 0) {
 								echo '<h5><b>Proprieta</b></h5>';
@@ -740,7 +743,7 @@
 
 
 							//AVVERTENZE
-							$sql_olii_avv = "SELECT * FROM OLii_DESC WHERE idOlii = $idOlii and idInfoOli=4";
+							$sql_olii_avv = "SELECT * FROM `OLii_DESC` WHERE idOlii = $idOlii and idInfoOli=4";
 
 							$res_olii_avv = GetData($sql_olii_avv);
 							if ($res_olii_avv->num_rows > 0) {
