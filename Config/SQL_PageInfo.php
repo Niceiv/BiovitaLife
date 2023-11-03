@@ -1,7 +1,7 @@
-<?php
-$PageName = '';
-$Step = '';
-$Severity = '';
-$SQL_error = '';
-
+<?php
+$PageName = '';
+$Step = '';
+$Severity = '';
+$SQL_error = '';
+
 ?>
