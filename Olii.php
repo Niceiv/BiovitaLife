@@ -23,11 +23,9 @@
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
-
         type="text/css" />
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <link rel="stylesheet" href="CSS/boxservice.css">
@@ -55,7 +53,6 @@
 
 
     <style>
-
         /* The Modal (background) */
 
         .modal {
@@ -165,7 +162,6 @@
             background-attachment: scroll;
 
         }
-
     </style>
 
 </head>
@@ -212,8 +208,8 @@
 
         <?php
 
-header('Content-Type: text/html; charset=ISO-8859-1');
- 
+        header('Content-Type: text/html; charset=ISO-8859-1');
+
 
 
 
@@ -221,7 +217,7 @@ header('Content-Type: text/html; charset=ISO-8859-1');
 
 
 
-                require(__DIR__.'\Config\SQL_command.php');
+        require(__DIR__ . '\Config\SQL_command.php');
 
 
 
@@ -230,15 +226,15 @@ header('Content-Type: text/html; charset=ISO-8859-1');
 
 
         $sql_nome = "SELECT * FROM `olii`";
-        
-        
+
+
         $res_nome = GetData($sql_nome);
- 
+
         if ($res_nome->num_rows > 0) {
- 
+
             while ($row_nome = $res_nome->fetch_assoc()) {
 
- 
+
 
                 $idOlii = $row_nome['idolii'];
 
@@ -254,22 +250,22 @@ header('Content-Type: text/html; charset=ISO-8859-1');
 
                 }
 
-                
+
 
 
 
                 //DESCRIZIONE
-
+        
                 $sql_olii_desc = "SELECT * FROM `olii_desc` WHERE idOlii = $idOlii and idInfoOli=1";
- 
+
                 $res_olii_desc = GetData($sql_olii_desc);
- 
+
                 if ($res_olii_desc->num_rows > 0) {
- 
+
                     $row_olii_desc = $res_olii_desc->fetch_assoc();
 
 
-                   
+
 
                     echo "<div class='col-md-3 col-sm-6'>";
 
@@ -287,15 +283,15 @@ header('Content-Type: text/html; charset=ISO-8859-1');
 
                     echo "              <h4>";
 
-                    $sql_qta_prz ="SELECT * FROM `vw_olii_qta_prz` WHERE idolii= $idOlii";
+                    $sql_qta_prz = "SELECT * FROM `vw_olii_qta_prz` WHERE idolii= $idOlii";
 
                     $res_qta_prz = GetData($sql_qta_prz);
 
                     if ($res_qta_prz->num_rows > 0) {
 
-                        $kk=1;
+                        $kk = 1;
 
-                        $Oldkk=1;
+                        $Oldkk = 1;
 
                         while ($row_qta_prz = $res_qta_prz->fetch_assoc()) {
 
@@ -303,17 +299,17 @@ header('Content-Type: text/html; charset=ISO-8859-1');
 
                             $um = $row_qta_prz["DescUM"];
 
-                            if ($Oldkk !=  $kk) {
+                            if ($Oldkk != $kk) {
 
                                 echo "<br>";
 
-                                $Oldkk=  $kk;
+                                $Oldkk = $kk;
 
                             }
 
-                            echo   $um. ' <strong>'  .$prz. "</strong>"; 
+                            echo $um . ' <strong>' . $prz . "</strong>";
 
-                           
+
 
                             $kk++;
 
@@ -321,7 +317,7 @@ header('Content-Type: text/html; charset=ISO-8859-1');
 
                     }
 
-                    echo "              </h4>"; 
+                    echo "              </h4>";
 
                     echo "          </div>";
 
@@ -331,19 +327,19 @@ header('Content-Type: text/html; charset=ISO-8859-1');
 
                     echo "          <h3>" . $row_nome['nome'] . "</h3>";
 
-                    echo "          <p>" .   substr($row_olii_desc['Descrizione'], 0, 200) . "...</p>";
+                    echo "          <p>" . substr($row_olii_desc['Descrizione'], 0, 200) . "...</p>";
 
                     echo '          <br><button style="width:90%;" onclick="mostra(' . $idOlii . ')" class="btn btn-info "/>Informazioni</button>';
 
-                    
 
-                    $sql_qta_prz ="SELECT * FROM `vw_olii_qta_prz` WHERE idolii= $idOlii";
+
+                    $sql_qta_prz = "SELECT * FROM `vw_olii_qta_prz` WHERE idolii= $idOlii";
 
                     $res_qta_prz = GetData($sql_qta_prz);
 
                     if ($res_qta_prz->num_rows > 0) {
 
-                       while ($row_qta_prz = $res_qta_prz->fetch_assoc()) {
+                        while ($row_qta_prz = $res_qta_prz->fetch_assoc()) {
 
                             $um = $row_qta_prz["DescUM"];
 
@@ -353,11 +349,11 @@ header('Content-Type: text/html; charset=ISO-8859-1');
 
                     }
 
-                    
 
-                    
 
-                    
+
+
+
 
 
 
@@ -381,7 +377,7 @@ header('Content-Type: text/html; charset=ISO-8859-1');
 
 
 
-                if ($colonna == 5) {
+                if ($colonna == 6) {
 
                     $riga = true;
 
@@ -445,13 +441,13 @@ header('Content-Type: text/html; charset=ISO-8859-1');
 
 </script>
 
-<!--
+
 <script language="javaScript">
 
     document.write(myFooter);
 
 </script>
--->
+
 
 
 <noscript>
