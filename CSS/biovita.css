@@ -1,4 +1,7 @@
+.pointer {
+	cursor: pointer;
 
+}
 
 .right {
 	float: right;
@@ -481,6 +484,7 @@ img.zoom-img {
 	margin-top: 60px;
 	margin-bottom: 80px;
 }
+
 .BVL_margin-top {
 	margin-top: -20px;
 }

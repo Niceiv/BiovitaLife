@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script src="email.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Contattaci</button>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title text-center"><i class="glyphicon glyphicon-info-sign"></i> Contatta Assistenza</h4>
+      </div>
+      <div class="modal-body">
+        <form name="formMail" action="formEmail.php"  method="post">
+
+        <!--<form method="POST" action="formEmail.php" enctype="text/plain" name="formMail" onsubmit="return controlloForm()">-->
+  <div class="input-group">
+    <input type="hidden" name="successo" value="https://www.biovitalife.it/modal_email.html">
+
+    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+    <input id="emailHelp" type="email" class="form-control" name="emailHelp" placeholder="Email">
+  </div>
+  <br>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></span>
+    <input id="subjectHelp" type="text" class="form-control" name="subjectHelp" placeholder="Oggetto">
+  </div>
+  <br>
+  <div class="input-group ">
+    <span class="input-group-addon pointer"><i class="glyphicon glyphicon-paperclip"></i></span>
+     <input type="file" accept="image/*" capture  class="form-control pointer" name="image" style="width: 90%;">
+     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+     <input id="nomeCognome" type="text" class="form-control " name="nomeCognome" placeholder="Nome e Cognome">
+    </div>
+  <br>
+
+  <div class="input-group">
+    <span class="input-group-addon">Messaggio</span>
+    <textarea class="form-control has-error" rows="5" id="messageHelp" name="messageHelp"></textarea>
+  </div>
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-lg" style="float: left;" onclick="controlloForm()">
+            <i class="glyphicon glyphicon-send"></i>  Invia</button>
+        <button type="button" class="btn btn-default btn-lg" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
