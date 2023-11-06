@@ -62,22 +62,22 @@
             <div class="col-md-2">
                 <div>
                     <img class="Thumb" src="image/Prodotti/ProdottiThumb/astuccio.JPG"
-                        onmouseover="myFuncionDyspalyyText('image/Prodotti/astuccio.JPG','Testo01','');">
+                        onmouseover="myFuncionDyspalyyText('image/Prodotti/ProdottiBig/astuccio.JPG','Testo01','');">
                 </div>
 
                 <div>
                     <img class="Thumb" src="image/Prodotti/ProdottiThumb/TintaFix.JPG"
-                        onmouseover="myFuncionDyspalyyText('image/Prodotti/TintaFix.JPG','Testo02', '');">
+                        onmouseover="myFuncionDyspalyyText('image/Prodotti/ProdottiBig/TintaFix.JPG','Testo02', '');">
                 </div>
 
                 <div>
-                    <img class="Thumb" src="image/Prodotti/foglioIllustrativo.jpg"
-                        onmouseover="myFuncionDyspalyyText('image/Prodotti/foglioIllustrativo.jpg','Testo03','');">
+                    <img class="Thumb" src="image/Prodotti/ProdottiThumb/foglioIllustrativo.jpg"
+                        onmouseover="myFuncionDyspalyyText('image/Prodotti/ProdottiBig/foglioIllustrativo.jpg','Testo03','');">
                 </div>
 
                 <div>
                     <img class="Thumb" src="image/Prodotti/ProdottiThumb/Campioncini.JPG"
-                        onmouseover="myFuncionDyspalyyText('image/Prodotti/Campioncini.JPG','Testo04', '');">
+                        onmouseover="myFuncionDyspalyyText('image/Prodotti/ProdottiThumb/Campioncini.JPG','Testo04', '');">
                 </div>
             </div>
 
@@ -88,7 +88,7 @@
 
                     <!-- qui mostro per prima la prima immagine poi sarà il Java script che fa il resto -->
                     <!--Expanded image -->
-                    <img id="expandedImg" class="Big" src="image/Prodotti/astuccio.JPG">
+                    <img id="expandedImg" class="Big" src="image/Prodotti/ProdottiBig/astuccio.JPG">
 
 
                 </div>
