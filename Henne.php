@@ -9,6 +9,8 @@
   <meta charset="utf-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Esplora la nostra esclusiva linea di henne persiano al 100% naturale. Scopri la potenza di questo antico rimedio per la colorazione dei capelli, ottenuto con ingredienti puri e naturali. Sperimenta la tradizione e la bellezza autentica con il nostro henne persiano, offrendo una colorazione intensa e duratura, senza compromettere la naturalezza dei capelli." />
 
   <meta name="keywords"
     content="Tinte Naturali, Prodotti per Capelli Naturali, Cosmetici Sensibili, Biovitalife, Oli Naturali, Bellezza Naturale, Cura dei Capelli, Sensibile, Ingredienti Naturali, Salute dei Capelli, Rispetto della Natura, Tecnologie Naturali, Benessere Cosmetico, Cura Naturale dei Capelli, Prodotti Eco-friendly, Sensibilità Cutanea, eco-bio, prodotti, longevità, ragonici aurelia, prodotto non aggressivo, qualita, tinte di qualita, henne, henne persiano, henne persiano naturale, 100% naturale, cassia, indigo, oli essenziali, gel, gel naturale, shampoo naturale, shampoo per capelli sensibili, bagnosciuma, intimo, bagnodoccia, tea tree, lavanda">

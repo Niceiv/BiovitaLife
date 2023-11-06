@@ -8,6 +8,8 @@
     <meta name="keywords"
         content="Tinte Naturali, Prodotti per Capelli Naturali, Cosmetici Sensibili, Biovitalife, Oli Naturali, Bellezza Naturale, Cura dei Capelli, Sensibile, Ingredienti Naturali, Salute dei Capelli, Rispetto della Natura, Tecnologie Naturali, Benessere Cosmetico, Cura Naturale dei Capelli, Prodotti Eco-friendly, Sensibilità Cutanea, eco-bio, prodotti, longevità, ragonici aurelia, prodotto non aggressivo, qualita, tinte di qualita, henne, henne persiano, henne persiano naturale, 100% naturale, cassia, indigo, oli essenziali, gel, gel naturale, shampoo naturale, shampoo per capelli sensibili, bagnosciuma, intimo, bagnodoccia, tea tree, lavanda">
     <meta name="author" content="Massimiliano Mascherin, Daniele Garofalo">
+    <meta name="description"
+        content="Scopri la nostra eccezionale linea di tinte per capelli create in modo più naturale possibile. Sperimenta la bellezza dei colori mogano, dorati e rossi, arricchiti con formulazioni naturali per una colorazione delicata ed efficace. La nostra innovativa gamma di tinte offre la possibilità di ottenere splendidi risultati, rispettando la naturalezza dei tuoi capelli." />
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>

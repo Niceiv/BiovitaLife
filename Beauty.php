@@ -3,28 +3,30 @@
 
 <head>
 
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="keywords"
-    content="Tinte Naturali, Prodotti per Capelli Naturali, Cosmetici Sensibili, Biovitalife, Oli Naturali, Bellezza Naturale, Cura dei Capelli, Sensibile, Ingredienti Naturali, Salute dei Capelli, Rispetto della Natura, Tecnologie Naturali, Benessere Cosmetico, Cura Naturale dei Capelli, Prodotti Eco-friendly, Sensibilità Cutanea, eco-bio, prodotti, longevità, ragonici aurelia, prodotto non aggressivo, qualita, tinte di qualita, henne, henne persiano, henne persiano naturale, 100% naturale, cassia, indigo, oli essenziali, gel, gel naturale, shampoo naturale, shampoo per capelli sensibili, bagnosciuma, intimo, bagnodoccia, tea tree, lavanda">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+        content="Tinte Naturali, Prodotti per Capelli Naturali, Cosmetici Sensibili, Biovitalife, Oli Naturali, Bellezza Naturale, Cura dei Capelli, Sensibile, Ingredienti Naturali, Salute dei Capelli, Rispetto della Natura, Tecnologie Naturali, Benessere Cosmetico, Cura Naturale dei Capelli, Prodotti Eco-friendly, Sensibilità Cutanea, eco-bio, prodotti, longevità, ragonici aurelia, prodotto non aggressivo, qualita, tinte di qualita, henne, henne persiano, henne persiano naturale, 100% naturale, cassia, indigo, oli essenziali, gel, gel naturale, shampoo naturale, shampoo per capelli sensibili, bagnosciuma, intimo, bagnodoccia, tea tree, lavanda">
+    <meta name="description"
+        content="Scopri la nostra esclusiva linea di cura personale naturale con azione antiage. Approfitta dell'eccellenza dei nostri prodotti formulati con ingredienti naturali e innovativi per contrastare i segni dell'invecchiamento. Rivitalizza la tua bellezza in modo naturale e scopri i segreti per una pelle luminosa e giovane." />
 
-  <meta name="author" content="Massimiliano Mascherin, Daniele Garofalo">
+    <meta name="author" content="Massimiliano Mascherin, Daniele Garofalo">
 
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-  <link rel="icon" type="image/vnd.icon" href="image/LogoSfondi/Logo.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <link rel="stylesheet" href="CSS/boxservice.css">
-  <link rel="stylesheet" href="CSS/biovita.css">
-  <link rel="stylesheet" href="CSS/footer.css">
-  <link rel="stylesheet" href="CSS/background.css">
+    <link rel="icon" type="image/vnd.icon" href="image/LogoSfondi/Logo.ico">
 
-  
-  <script src="JS/MyFooter.js"></script>
+    <link rel="stylesheet" href="CSS/boxservice.css">
+    <link rel="stylesheet" href="CSS/biovita.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/background.css">
+
+
+    <script src="JS/MyFooter.js"></script>
     <script src="JS/index.js"></script>
     <script src="JS/myTopnav.js"></script>
     <title>BeautyNatura | BiovitaLife</title>
@@ -153,7 +155,7 @@
                 echo "          <p>" . substr($row_nome['Descrizione'], 0, 300) . "...</p>";
                 echo '          <br><button style="width:70%;" onclick="mostra(' . $idProdotto . ')" class="btn btn-info btn-lg"/>Informazioni</button>';
                 // echo "           <button  class='hdden btn btn-success btn-lg glyphicon glyphicon-shopping-cart'/></button>";
-
+        
                 echo "      </div>";
                 echo "  </div>";
                 echo "</div>";
@@ -174,7 +176,7 @@
                     break;
                 }
             }
-                       
+
             if (!$riga) {
                 echo "</div>";
             }
@@ -220,13 +222,13 @@
                 'idDati': idVal
             },
             dataType: 'html'
-        }).done(function(html) {
+        }).done(function (html) {
             $('#miodiv').html(html)
         });
 
 
         // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }

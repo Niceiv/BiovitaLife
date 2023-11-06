@@ -4,8 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="Tinte Naturali, Prodotti per Capelli Naturali, Cosmetici Sensibili, Biovitalife, Oli Naturali, Bellezza Naturale, Cura dei Capelli, Sensibile, Ingredienti Naturali, Salute dei Capelli, Rispetto della Natura, Tecnologie Naturali, Benessere Cosmetico, Cura Naturale dei Capelli, Prodotti Eco-friendly, Sensibilità Cutanea, eco-bio, prodotti, longevità, ragonici aurelia, prodotto non aggressivo, qualita, tinte di qualita, henne, henne persiano, henne persiano naturale, 100% naturale, cassia, indigo, oli essenziali, gel, gel naturale, shampoo naturale, shampoo per capelli sensibili, bagnosciuma, intimo, bagnodoccia, tea tree, lavanda">
-   <meta name="author" content="Massimiliano Mascherin, Daniele Garofalo">
+    <meta name="keywords"
+        content="Tinte Naturali, Prodotti per Capelli Naturali, Cosmetici Sensibili, Biovitalife, Oli Naturali, Bellezza Naturale, Cura dei Capelli, Sensibile, Ingredienti Naturali, Salute dei Capelli, Rispetto della Natura, Tecnologie Naturali, Benessere Cosmetico, Cura Naturale dei Capelli, Prodotti Eco-friendly, Sensibilità Cutanea, eco-bio, prodotti, longevità, ragonici aurelia, prodotto non aggressivo, qualita, tinte di qualita, henne, henne persiano, henne persiano naturale, 100% naturale, cassia, indigo, oli essenziali, gel, gel naturale, shampoo naturale, shampoo per capelli sensibili, bagnosciuma, intimo, bagnodoccia, tea tree, lavanda">
+    <meta name="author" content="Massimiliano Mascherin, Daniele Garofalo">
+    <meta name="description"
+        content="Esplora la nostra selezione di oli essenziali puri e naturali. Dai benefici terapeutici alle applicazioni in aromaterapia, scopri la gamma completa di oli estratti da piante con proprietà benefiche. Scopri come migliorare il benessere quotidiano in modo naturale con i nostri oli essenziali di alta qualità." />
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -20,7 +23,7 @@
     <link rel="stylesheet" href="CSS/footer.css">
     <link rel="stylesheet" href="CSS/background.css">
 
-    
+
     <script src="JS/MyFooter.js"></script>
     <script src="JS/index.js"></script>
     <script src="JS/myTopnav.js"></script>
@@ -134,7 +137,7 @@
 
 
                 //DESCRIZIONE
-
+        
                 $sql_olii_desc = "SELECT * FROM `olii_desc` WHERE idOlii = $idOlii and idInfoOli=1";
                 $res_olii_desc = GetData($sql_olii_desc);
                 if ($res_olii_desc->num_rows > 0) {
@@ -205,7 +208,7 @@
                     echo "</div>";
                 }
             }
-            
+
             if (!$riga) {
                 echo "</div>";
             }
@@ -258,13 +261,13 @@
                 'idDati': idVal
             },
             dataType: 'html'
-        }).done(function(html) {
+        }).done(function (html) {
             $('#miodiv').html(html)
         });
 
 
         // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
