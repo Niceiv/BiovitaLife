@@ -38,18 +38,12 @@ if ($res_nome_psw->num_rows > 0) {
     $idutente = $row["idutente"];
 
     $token = uniq_user_token();
+    $_SESSION["Token"] = $token;
 
     $sql_upd = "UPDATE utenti_login set token=\"$token\" WHERE idutente_login=$id";
     ExecuteSQL($sql_upd);
 
-    $sql_user = "select * from utenti where idutente=$idutente";
-    echo "<br>SQL Nome sql_user: $sql_user<br/>";
-    $res_ut = GetData($sql_user);
-    $row_ut = $res_ut->fetch_assoc();
-
-    echo "<br>" . $token;
-    echo "<br>" . $row_ut["first_name"];
-    echo "<br>" . $row_ut["last_name"];
+    header("location: index.html");
 
 } else {
     //Verifico che il nome non sia giù usato
