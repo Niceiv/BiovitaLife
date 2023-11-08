@@ -76,7 +76,10 @@ function ExecuteSQL($sql)
 
         if ($conn->query($sql) === TRUE) {
 
-
+            if (substr($sql,0,6) == "INSERT") {
+                $_SESSION["last_id"]=$conn->insert_id;
+                echo '<br>LastID:' . $_SESSION["last_id"];
+            }
 
             $_SESSION['ERR_STATUS'] = 'OK';
 

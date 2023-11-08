@@ -74,7 +74,7 @@ myTopnav += "		  <button type='submit' class='btn btn-default'>Cerca</button>";
 
 myTopnav += "		</form>";
 
-myTopnav += "		<ul class='nav navbar-nav navbar-right hidden'>";
+myTopnav += "		<ul class='nav navbar-nav navbar-right '>";
 
 myTopnav += "			<li><a href='#'><i class='fa fa-shopping-cart'></i></a></li>";
 

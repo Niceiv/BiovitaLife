@@ -26,7 +26,7 @@ echo "password: $mypassword <br/>";
 //2) che alla mail non sia già abbinato un'altro utente
 
 //prima verifica -- utente
-$sql_nome_psw = "SELECT * FROM utenti_login WHERE nome = \"$nome\" and password = \"$mypassword\";";
+$sql_nome_psw = "SELECT * FROM utenti_login WHERE nome = \"$nome\" and rtrim(password) = \"$mypassword\";";
 echo "SQL Nome Email: $sql_nome_psw<br/>";
 $res_nome_psw = GetData($sql_nome_psw);
 if ($res_nome_psw->num_rows > 0) {
