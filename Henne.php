@@ -53,9 +53,7 @@
 
   <script src="JS/myTopnav.js"></script>
 
-  <style>
-    /* Remove the jumbotron's default bottom margin */
-  </style>
+
 
 </head>
 

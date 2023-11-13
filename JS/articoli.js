@@ -84,3 +84,45 @@ function myFuncionDyspalyyText(imgs, TestoDaMostrare, descColore, prezzo) {
 
   immagineGrande.parentElement.style.display = "block";
 }
+
+
+
+var audio = document.getElementById("Cremeaudio");
+audio.volume = 0.03;
+
+
+
+function mostra(idVal) {
+
+
+  var modal = document.getElementById("myModal");
+  var span = document.getElementsByClassName("close")[0];
+  modal.style.display = "block";
+
+
+  document.getElementById('miodiv').style.display = 'block';
+
+  $.ajax({
+    url: 'datiCreme.php',
+    type: 'POST',
+    data: {
+      'idDati': idVal
+    },
+    dataType: 'html'
+  }).done(function (html) {
+    $('#miodiv').html(html)
+  });
+
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+}
+
+
+$(document).ready(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});
