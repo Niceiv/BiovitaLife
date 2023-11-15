@@ -1,3 +1,4 @@
+
 <div class="jumbotron container-fluid">
     <div class="container text-center brush">
         <h1 class="BVL_margin-top text-center">Henn&egrave; Persiano Puro</h1>
@@ -7,7 +8,7 @@
 
 <div class="container-fluid" style="position:relative; top:-40px">
     <?php
-  
+
 
     $riga = true;
 
@@ -24,7 +25,7 @@
                 $colonna = 1;
                 $riga = false;
             }
-            ?>
+    ?>
             <div class="col-sm-4">
                 <div class="panel panel-default">
                     <div class="panel-heading <?php echo $row_nome["utilizzo"] ?> text-center">
@@ -33,13 +34,11 @@
                             echo "<strong>" . $row_nome["DescProd"] . "</strong>";
                         } else {
                             echo "<strong class='" . $row_nome["ingredienti"] . "'>" . $row_nome["DescProd"] . "</strong>";
-
                         }
                         ?>
 
                     </div>
-                    <div class="panel-body"><img src="<?php echo $row_nome["img"] ?>" class="img-responsive" style="width:100%"
-                            alt="<?php echo $row_nome["Prodotto"] ?>">
+                    <div class="panel-body"><img src="<?php echo $row_nome["img"] ?>" class="img-responsive" style="width:100%" alt="<?php echo $row_nome["Prodotto"] ?>">
                     </div>
                     <div class="panel-footer">
                         <div class="row">
@@ -59,7 +58,7 @@
                     </div>
                 </div>
             </div>
-            <?php
+    <?php
             $colonna++;
 
             if ($colonna == 4) {

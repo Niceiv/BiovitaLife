@@ -35,7 +35,7 @@
 
   include(__DIR__ . '\Config\SQL_command.php');
 
-  
+
   include('JS/MyTopNavEss.html');
 
   $page = 'Home.html';
