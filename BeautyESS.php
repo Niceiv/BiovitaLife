@@ -9,10 +9,7 @@
     }
 </style>
 
-<?php
-/*Just for your server-side code*/
-header('Content-Type: text/html; charset=ISO-8859-1');
-?>
+
 
 
 <div class="jumbotron container-fluid">
@@ -22,15 +19,15 @@ header('Content-Type: text/html; charset=ISO-8859-1');
     </div>
 </div>
 
-<div class="container ">
+<div class="container">
     <!-- 
             Nel disegnare lo schema a quadrati devo tenere conto delle dimensioni della griglia
             Potrebbe andare bene 4 colonne per N righe
         -->
     <?php
-    error_reporting(E_ERROR | E_PARSE);
-
-    require(__DIR__ . '\Config\SQL_command.php');
+    
+    //header('Content-Type: text/html; charset=ISO-8859-1');
+ 
 
     $riga = true;
 
@@ -47,7 +44,7 @@ header('Content-Type: text/html; charset=ISO-8859-1');
                 $riga = false;
             }
 
-            $prz = sprintf('%01.2f', $row_nome["Prezzo"]) . ' ' . chr(128);
+            $prz = sprintf('%01.2f', $row_nome["Prezzo"]) .   ' €';
 
 
             echo "<div class='col-md-3 col-sm-6'>";
@@ -66,7 +63,7 @@ header('Content-Type: text/html; charset=ISO-8859-1');
             echo "      <div class='service-content'>";
             echo "          <strong>" . $row_nome['Prodotto'] . ": </strong>";
             echo "          <p>" . substr($row_nome['Descrizione'], 0, 300) . "...</p>";
-            echo '          <br><button style="width:70%;" onclick="mostra(' . $idProdotto . ')" class="btn btn-info btn-lg"/>Informazioni</button>';
+            echo '          <br><button style="width:70%;" onclick="mostraCreme(' . $idProdotto . ')" class="btn btn-info btn-lg"/>Informazioni</button>';
             // echo "           <button  class='hdden btn btn-success btn-lg glyphicon glyphicon-shopping-cart'/></button>";
     
             echo "      </div>";
@@ -109,4 +106,10 @@ header('Content-Type: text/html; charset=ISO-8859-1');
 
     </div>
 </div>
+
 <audio src="audio/Harp.mp3" autoplay loop id="Cremeaudio"></audio>
+ 
+<script>
+    var audio = document.getElementById("Cremeaudio");
+    audio.volume = 0.03;
+</script>

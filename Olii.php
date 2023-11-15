@@ -112,7 +112,7 @@
         -->
 
         <?php
-        header('Content-Type: text/html; charset=ISO-8859-1');
+        //header('Content-Type: text/html; charset=ISO-8859-1');
 
 
         error_reporting(E_ERROR | E_PARSE);

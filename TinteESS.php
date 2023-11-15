@@ -1,9 +1,4 @@
 <div class="container-fluid text-center" style="margin-top: 80px; ">
-    <?php
-    require(__DIR__ . '\Config\SQL_command.php');
-    $GrpSel = $_REQUEST["IDGrp"];
-    ?>
-
     <div>
         <h5 class="serieTinte" style="float: left;">
             <?php
@@ -122,7 +117,7 @@
                 <hr> <!-- mette una linea -->
                 <?php
                 $sql = "SELECT * FROM vw_prodotti where idgruppo=3 and idtinte=$GrpSel ORDER BY order_view";
-
+ 
                 $res = GetData($sql);
 
 

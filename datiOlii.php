@@ -1,10 +1,10 @@
 <?php
-header('Content-Type: text/html; charset=ISO-8859-1');
+//header('Content-Type: text/html; charset=ISO-8859-1');
 
 
 $idDati = $_POST["idDati"];
 
-error_reporting(E_ERROR | E_PARSE);
+//error_reporting(E_ERROR | E_PARSE);
 require(__DIR__ . '\Config\SQL_command.php');
 
 

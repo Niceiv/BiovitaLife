@@ -34,7 +34,7 @@
     </script>
     <div class="container-fluid text-center" style="margin-top: 80px; ">
         <?php
-        require(__DIR__ . '\Config\SQL_command.php');
+ 
         $GrpSel = $_REQUEST["IDGrp"];
         ?>
 

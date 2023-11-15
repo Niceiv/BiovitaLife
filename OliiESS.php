@@ -1,3 +1,17 @@
+<style>
+    body {
+        background-image: url(image/LogoSfondi/sfondoOlii.png);
+        color: black;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-attachment: scroll;
+        background-size: auto;
+    }
+</style>
+
+
+
+
 <div class="jumbotron container-fluid">
     <div class="container text-center brush">
         <h1 class="BVL_margin-top text-center">OLIMONDE</h1>
@@ -5,7 +19,8 @@
     </div>
 </div>
 
-<div class="container ">
+<div class="container">
+ 
 
     <!-- 
             Nel disegnare lo schema a quadrati devo tenere conto delle dimensioni della griglia
@@ -13,12 +28,9 @@
         -->
 
     <?php
-    header('Content-Type: text/html; charset=ISO-8859-1');
+ 
 
-
-    error_reporting(E_ERROR | E_PARSE);
-
-    require(__DIR__ . '\Config\SQL_command.php');
+    //header('Content-Type: text/html; charset=ISO-8859-1');
 
     $riga = true;
 
@@ -59,7 +71,7 @@
                     $kk = 1;
                     $Oldkk = 1;
                     while ($row_qta_prz = $res_qta_prz->fetch_assoc()) {
-                        $prz = sprintf('%01.2f', $row_qta_prz["prezzo"]) . ' ' . chr(128);
+                        $prz = sprintf('%01.2f', $row_qta_prz["prezzo"]) . ' €';
                         $um = $row_qta_prz["DescUM"];
                         if ($Oldkk != $kk) {
                             echo "<br>";
@@ -76,7 +88,7 @@
                 echo "      <div class='service-content'>";
                 echo "          <h3>" . $row_nome['nome'] . "</h3>";
                 echo "          <p>" . substr($row_olii_desc['Descrizione'], 0, 200) . "...</p>";
-                echo '          <br><button style="width:90%;" onclick="mostra(' . $idOlii . ')" class="btn btn-info "/>Informazioni</button>';
+                echo '          <br><button style="width:90%;" onclick="mostraOlii(' . $idOlii . ')" class="btn btn-info "/>Informazioni</button>';
 
                 $sql_qta_prz = "SELECT * FROM `vw_olii_qta_prz` WHERE idolii= $idOlii";
                 $res_qta_prz = GetData($sql_qta_prz);
@@ -131,3 +143,7 @@
 </div>
 
 <audio src="audio/smooth-waters-115977.mp3" autoplay loop id="Oliaudio"></audio>
+<script>
+    var audio = document.getElementById("Oliaudio");
+    audio.volume = 0.03;
+</script>

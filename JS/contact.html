@@ -1,0 +1,41 @@
+<div id="myModal" class="modal fade" role="dialog" style="display: none;">
+    <div class="modal-dialog"> <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header"> <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="modal-title text-center"><i class="glyphicon glyphicon-info-sign"></i> Contattaci</h4>
+            </div>
+            <div class="modal-body">
+                <form name="formMail" action="formEmail.php" method="post" enctype="multipart/form-data">
+                    <div class="input-group has-feedback" id="emailDiv"> <input type="hidden" name="successo"
+                            value="https://www.biovitalife.it/modal_email.html"> <span class="input-group-addon"><i
+                                class="glyphicon glyphicon-envelope"></i></span> <input id="emailHelp" type="email"
+                            class="form-control" name="emailHelp" placeholder="Email"> <span id="spanEmail"
+                            class="form-control-feedback"></span>
+                    </div>
+                    <br>
+                    <div class="input-group has-feedback" id="subjectDiv"> <span class="input-group-addon"><i
+                                class="glyphicon glyphicon-tag"></i></span> <input id="subjectHelp" type="text"
+                            class="form-control" name="subjectHelp" placeholder="Oggetto"> <span id="spanSubject"
+                            class="form-control-feedback"></span>
+                    </div>
+                    <br>
+                    <div class="input-group has-feedback " id="nomeDiv">
+                        <!-- <span class='input-group-addon'><i class='glyphicon glyphicon-paperclip'></i></span>     <input type='file' accept='image/*' capture  class='form-control pointer' id='imageHelp' name='imageHelp' style='width: 90%;'>-->
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> <input
+                            id="nomeCognome" type="text" class="form-control " name="nomeCognome"
+                            placeholder="Nome e Cognome"> <span id="spanNomeCognome"
+                            class="form-control-feedback"></span>
+                    </div>
+                    <br>
+                    <div class="input-group" id="msgDiv"> <span class="input-group-addon">Messaggio</span> <textarea
+                            class="form-control" rows="5" id="messageHelp" name="messageHelp"></textarea> <span
+                            id="spanMsg" class="form-control-feedback"></span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer"> <button type="button" class="btn btn-default btn-lg" style="float: left;"
+                    onclick="controlloForm()"> <i class="glyphicon glyphicon-send"></i> Invia</button> <button
+                    type="button" class="btn btn-default btn-lg" data-dismiss="modal">Close</button> </div>
+        </div>
+    </div>
+</div>

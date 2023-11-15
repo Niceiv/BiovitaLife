@@ -7,7 +7,7 @@
 
 <div class="container-fluid" style="position:relative; top:-40px">
     <?php
-    require(__DIR__ . '\Config\SQL_command.php');
+  
 
     $riga = true;
 

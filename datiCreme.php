@@ -1,10 +1,10 @@
 <?php
-header('Content-Type: text/html; charset=ISO-8859-1');
+//header('Content-Type: text/html; charset=ISO-8859-1');
 
 
 $idDati = $_POST["idDati"];
 
-error_reporting(E_ERROR | E_PARSE);
+//error_reporting(E_ERROR | E_PARSE);
 
 require(__DIR__ . '\Config\SQL_command.php');
 
@@ -25,7 +25,8 @@ if ($res_nome->num_rows > 0) {
         echo "  <div class='col-sm-8'>";
         echo '      <h5><b>Descrizione</b></h5>';
         echo '      <p>' . $row_nome['Descrizione'] . '</p>';
-        $prz = sprintf('%01.2f', $row_nome["Prezzo"]) . ' ' . chr(128);
+        $prz = sprintf('%01.2f', $row_nome["Prezzo"]) .  ' €';
+
         echo '      <h6>' . $prz . '</h6>';
         echo "  </div>";
         echo "  <div class='col-sm-4'>";
