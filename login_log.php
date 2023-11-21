@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
 
-require(__DIR__.'\Config\SQL_command.php');
+require(__DIR__ . '\Config\SQL_command.php');
 
 function uniq_user_token()
 {
@@ -43,7 +43,7 @@ if ($res_nome_psw->num_rows > 0) {
     $sql_upd = "UPDATE utenti_login set token=\"$token\" WHERE idutente_login=$id";
     ExecuteSQL($sql_upd);
 
-    header("location: index.html");
+    header("location: profilo.php");
 
 } else {
     //Verifico che il nome non sia giù usato

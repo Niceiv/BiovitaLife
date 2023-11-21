@@ -1,3 +1,8 @@
+/* Rimuovere lo stile predefinito del link visitato */
+a:visited {
+	color: black !important;
+}
+
 textarea {
 	resize: none;
 }
