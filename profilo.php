@@ -37,7 +37,13 @@
         });
     });
 
-
+    function AggiornaProfilo(idutente) {
+        var idSel = document.getElementById('idSel');
+        idSel.value = idutente;
+        var act = document.getElementById('act_upd');
+        act.value = 'aggiorna';
+        document.myform.submit();
+    }
 </script>
 
 <?php
@@ -64,6 +70,22 @@ if ($res_nome_psw->num_rows > 0) {
     die();
 }
 
+
+if (isset($_SESSION['idutente'])) {
+    // L'utente è loggato, puoi accedere alle informazioni dell'utente
+    $idutente = $_SESSION['idutente'];
+    // Effettua query al database o recupera informazioni dell'utente
+    // ...
+
+    // Esempio di stampa dell'ID dell'utente
+    echo "Utente loggato con ID: " . $idutente;
+} else {
+    // L'utente non è loggato, gestisci di conseguenza
+    echo "<br> è necessario fare il login.";
+    // header('location:login.html');
+}
+
+
 ?>
 
 
@@ -86,21 +108,7 @@ if ($res_nome_psw->num_rows > 0) {
     </div>
 </div>
 
-<?php
-if (isset($_SESSION['idutente'])) {
-    // L'utente è loggato, puoi accedere alle informazioni dell'utente
-    $idutente = $_SESSION['idutente'];
-    // Effettua query al database o recupera informazioni dell'utente
-    // ...
 
-    // Esempio di stampa dell'ID dell'utente
-    echo "Utente loggato con ID: " . $idutente;
-} else {
-    // L'utente non è loggato, gestisci di conseguenza
-    echo "<br> è necessario fare il login.";
-    // header('location:login.html');
-}
-?>
 
 
 <div class="container-fluid " id="PersFisica">
@@ -222,7 +230,8 @@ if (isset($_SESSION['idutente'])) {
 
                                 <!-- Save changes button-->
                                 <div class="mb-3 gx-3 mt-5">
-                                    <button class="btn btn-success gx-3" type="submit">Salva Modifiche</button>
+                                    <button class="btn btn-success gx-3" type="submit" id="act_upd"
+                                        onclick="AggiornaProfilo()">Salva Modifiche</button>
                                 </div>
                             </form>
                         </div>
@@ -240,8 +249,9 @@ if (isset($_SESSION['idutente'])) {
 
 
             // Query per l'update
-            $sql_upd = "UPDATE `persona` SET nome='$nuovoNome',
-             cognome='$nuovoCognome', 
+            $sql_upd = "UPDATE `persona` SET 
+            nome='$nuovoNome',
+            cognome='$nuovoCognome', 
             codice_fiscale='$nuovoCodiceFiscale', 
             luogo_di_nascita='$nuovoLuogoDiNascita', 
             data_di_nascita='$nuovoDataDiNascita', 
