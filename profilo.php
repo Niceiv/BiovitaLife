@@ -6,175 +6,266 @@
 <link rel="stylesheet" href="CSS/biovita.css">
 
 <script src="JS/articoli.js"></script>
+<form name="frmProfilo" method="post" action="#" OnOpenForm="OnOpenForm()">
+    <input type='text' id='act_upd' name='act_upd'>
+    <script>
+        $(document).ready(function () {
+            console.log('avvio');
+            OnOpenForm();
 
-<script>
-    $(document).ready(function () {
-        $("#scelta1").click(function () {
-            setTimeout(function () {
-                $("#PersFisica").css("visibility", "visible");
-                $("#SceltaPers").hide();
+            $("#scelta1").click(function () {
+                setTimeout(function () {
+                    $("#PersFisica").css("visibility", "visible");
+                    $("#SceltaPers").hide();
+                    $("#act_upd").value = "-";
 
-            }, 1500); // 1500 millisecondi = 1.5 secondi
+                }, 1500); // 1500 millisecondi = 1.5 secondi
+            });
+            $("#scelta1").click(function () {
+                console.log("È stata scelta la persona.");
+                $("#sceltaFatta").css("visibility", "visible").html("<p>È stato scelto persona.</p>");
+
+            });
+
+            $("#scelta2").click(function () {
+                setTimeout(function () {
+
+                    $("#PersGiuridica").css("visibility", "visible");
+                    $("#SceltaPers").hide();
+                    $("#act_upd").value = "-";
+
+                }, 1500); // 1500 millisecondi = 1.5 secondi
+            });
+            $("#scelta2").click(function () {
+                console.log("È stata scelta l'azienda.");
+                $("#sceltaFatta").css("visibility", "visible").html("<p>È stato scelto azienda.</p>");
+
+            });
         });
-        $("#scelta1").click(function () {
-            console.log("È stata scelta la persona.");
-            $("#sceltaFatta").css("visibility", "visible").html("<p>È stato scelto persona.</p>");
-
-        });
-
-        $("#scelta2").click(function () {
-            setTimeout(function () {
-
-                $("#PersGiuridica").css("visibility", "visible");
-                $("#SceltaPers").hide();
-
-            }, 1500); // 1500 millisecondi = 1.5 secondi
-        });
-        $("#scelta2").click(function () {
-            console.log("È stata scelta l'azienda.");
-            $("#sceltaFatta").css("visibility", "visible").html("<p>È stato scelto azienda.</p>");
-
-        });
-    });
-
-    function AggiornaProfilo(idutente) {
-        var idSel = document.getElementById('idSel');
-        idSel.value = idutente;
-        var act = document.getElementById('act_upd');
-        act.value = 'aggiorna';
-        document.myform.submit();
-    }
-</script>
-
-<?php
-
-session_start();
-
-error_reporting(E_ERROR | E_PARSE);
-
-require(__DIR__ . '\Config\SQL_command.php');
-
-
-$token = $_SESSION["Token"];
-//echo "Token: $token<br/>";
-$sql_nome_psw = "SELECT * FROM utenti_login WHERE token=\"$token\";";
-//echo "SQL Nome Email: $sql_nome_psw<br/>";
-$res_nome_psw = GetData($sql_nome_psw);
-if ($res_nome_psw->num_rows > 0) {
-    //Se trovato
-    //echo "Utente registrato<br>";
-    $row = $res_nome_psw->fetch_assoc();
-    echo "Ciao " . $row["nome"];
-} else if ($token = '') {
-    header('location:index.php');
-    die();
-}
-
-
-if (isset($_SESSION['idutente'])) {
-    // L'utente è loggato, puoi accedere alle informazioni dell'utente
-    $idutente = $_SESSION['idutente'];
-    // Effettua query al database o recupera informazioni dell'utente
-    // ...
-
-    // Esempio di stampa dell'ID dell'utente
-    echo "Utente loggato con ID: " . $idutente;
-} else {
-    // L'utente non è loggato, gestisci di conseguenza
-    echo "<br> è necessario fare il login.";
-    // header('location:login.html');
-}
-
-
-?>
-
-
-
-<div class="container-fluid main " id="SceltaPers">
-    <div class="text-center main-text">
-        <h3>Seleziona il tipo di account</h3>
-
-        <div class="c2a-btn footer-c2a-btn">
-            <div class="btn-group btn-group-lg" role="group" aria-label="Call to action">
-                <a type="button" class="btn btn-default btn-lg" href="#" id="scelta1">Persona </a>
-                <span class="btn-circle btn-or">tra</span>
-                <a type="button" class="btn btn-default btn-lg" href="#" id="scelta2">Azienda</a>
-            </div>
-        </div>
-        <br>
-        <br>
-        <div class="alert alert-success" id=sceltaFatta></div>
-
-    </div>
-</div>
-
-
-
-
-<div class="container-fluid " id="PersFisica">
-
-
-    <ul class="nav nav-tabs ">
-        <li class="active "><a href="#profile" data-toggle="tab">Profilo</a></li>
-        <li><a href="#indirizzo " data-toggle="tab">Indirizzo</a></li>
-        <li><a href="#messages " data-toggle="tab">Pagamento</a></li>
-        <li><a href="#settings " data-toggle="tab">Sicurezza</a></li>
-    </ul>
+        function OnOpenForm() {
+            console.log('inizio:avOnOpenFormvio');
+            var act = document.getElementById('act_upd');
+            act.value = 'OPEN';
+            console.log(act.value);
+            console.log('fine:avOnOpenFormvio');
+        }
+        function AggiornaProfilo(TipoAct) {
+             
+            var act = document.getElementById('act_upd');
+            act.value = TipoAct;
+            document.frmProfilo.submit();
+        }
+    </script>
 
     <?php
 
-    $idutente = 4;
-    $sql_nome = "SELECT * FROM `persona` WHERE idutente = $idutente";
-    $res_nome = GetData($sql_nome);
-    if ($res_nome->num_rows > 0) {
-        while ($row_nome = $res_nome->fetch_assoc()) {
-            //var_dump($row_nome); // Verifica la struttura del risultato
-            // Recupera i dati
-            $nome = $row_nome['nome'];
-            $cognome = $row_nome['cognome'];
-            $data_di_nascita = $row_nome['data_di_nascita'];
-            $luogo_di_nascita = $row_nome['luogo_di_nascita'];
-            $sesso = $row_nome['sesso'];
-            $codice_fiscale = $row_nome['codice_fiscale'];
-            // ...
+    session_start();
+
+    error_reporting(E_ERROR | E_PARSE);
+
+    require(__DIR__ . '\Config\SQL_command.php');
+
+    $actUpd = $_POST["act_upd"];
+
+    echo "actUpd: [$actUpd]";
+
+
+    $token = $_SESSION["Token"];
+    //echo "Token: $token<br/>";
+    $sql_nome_psw = "SELECT * FROM utenti_login WHERE token=\"$token\";";
+    //echo "SQL Nome Email: $sql_nome_psw<br/>";
+    $res_nome_psw = GetData($sql_nome_psw);
+    if ($res_nome_psw->num_rows > 0) {
+        //Se trovato
+        //echo "Utente registrato<br>";
+        $row = $res_nome_psw->fetch_assoc();
+        $idutente = $row["idutente"];
+
+        /*
+        Cosa vuol dire essere qui
+        Devo saper se il TIPO_PErSOMA di UTENTI vale ZERO --> non ho ancora definito nulla
+        */
+        $sql_utente = "SELECT * FROM utenti WHERE idutente=" . $idutente . ";";
+        //echo "SQL Nome Email: $sql_nome_psw<br/>";
+        $res_utente = GetData($sql_utente);
+        if ($res_utente->num_rows > 0) {
+            $rowUtente = $res_utente->fetch_assoc();
+            $IDTipoPersona = $rowUtente["IDTipoPersona"];
         }
+       
 
-
-    } else {
+    } else if ($token = '') {
+        header('location:login.html');
+        die();
     }
+
+
+
+    if ($IDTipoPersona == 0) {
+        ?>
+        <div class="container-fluid main " id="SceltaPers">
+            <div class="text-center main-text">
+                <h3>Seleziona il tipo di account</h3>
+                
+                <div class="c2a-btn footer-c2a-btn">
+                    <div class="btn-group btn-group-lg" role="group" aria-label="Call to action">
+                        <a type="button" class="btn btn-default btn-lg" href="#" id="scelta1">Persona </a>
+                        <span class="btn-circle btn-or">tra</span>
+                        <a type="button" class="btn btn-default btn-lg" href="#" id="scelta2">Azienda</a>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="alert alert-success" id=sceltaFatta></div>
+
+            </div>
+        </div>
+        <?php
+    } else {
+        if ($IDTipoPersona == 1) {
+            ?>
+            <style type="text/css">
+          #PersFisica {
+              visibility: visible;
+              }
+          </style>
+    <?php
+          } else {
+            ?>
+            <style type="text/css">
+          #PersGiuridica {
+              visibility: visible;
+              }
+          </style>
+    <?php
+          }
+        
+    }
+
     ?>
 
-    <div class="tab-content">
-        <div class="tab-pane active" id="profile">
 
-            <div class="row">
-                <div class="col-md-4">
-                    <!-- Profile picture card-->
-                    <div class="card mb-3 gx-3">
-                        <div class=" text-center">Foto Profilo</div>
-                        <div class="card-body text-center">
-                            <!-- Profile picture image-->
-                            <div class="avatar-wrapper">
-                                <img class="profile-pic" src="" />
-                                <div class="upload-button">
-                                    <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+    <?php
+
+
+    if ($actUpd == 'AggiornaPersona') {
+
+
+        $nuovoNome = ucfirst($_POST['inputName']);
+        $nuovoCognome = ucfirst($_POST['inputLastName']);
+        $nuovoCodiceFiscale = strtoupper($_POST['inputCodFisc']);
+        $nuovoLuogoDiNascita = ucfirst($_POST['inputLuogoNascita']);
+        $nuovoDataDiNascita = $_POST['inputBirthday'];
+        $nuovoSesso = $_POST['sesso'];
+
+        if ($IDTipoPersona == 0) {
+
+            //E' la prima volta che salvo i dati della persona
+            $sql = "UPDATE utenti SET IDTipoPersona=1 where idutente = $idutente";
+            ExecuteSQL($sql);
+            $IDTipoPersona = 1;
+
+            $sql_ins = "INSERT INTO `persona`
+                (`idutente`,`cognome`,`nome`,`codice_fiscale`,`data_di_nascita`,`sesso`,`luogo_di_nascita`)
+                VALUES
+                ($idutente,
+                '$nuovoCognome',
+                '$nuovoNome',
+                '$nuovoCodiceFiscale',
+                '$nuovoDataDiNascita',
+                '$nuovoSesso',
+                '$nuovoLuogoDiNascita'); ";
+            ExecuteSQL($sql_ins);
+
+        } else {
+
+            // Query per l'update della persona
+            $sql_upd = "UPDATE `persona` SET 
+            nome='$nuovoNome',
+            cognome='$nuovoCognome', 
+            codice_fiscale='$nuovoCodiceFiscale', 
+            luogo_di_nascita='$nuovoLuogoDiNascita', 
+            data_di_nascita='$nuovoDataDiNascita', 
+            sesso='$nuovoSesso' WHERE idutente = $idutente";
+
+            ExecuteSQL($sql_upd);
+
+        }
+
+        $actUpd = '-';
+
+    }
+
+    ?>
+
+    <div class="container-fluid " id="PersFisica">
+
+
+        <ul class="nav nav-tabs ">
+            <li class="active "><a href="#profile" data-toggle="tab">Profilo</a></li>
+            <li><a href="#indirizzo " data-toggle="tab">Indirizzo</a></li>
+            <li><a href="#messages " data-toggle="tab">Pagamento</a></li>
+            <li><a href="#settings " data-toggle="tab">Sicurezza</a></li>
+        </ul>
+
+        <?php
+        $nome = "";
+        $cognome = "";
+        $data_di_nascita = "";
+        $luogo_di_nascita = "";
+        $sesso = "";
+        $codice_fiscale = "";
+
+        $sql_nome = "SELECT * FROM `persona` WHERE idutente = $idutente";
+        $res_nome = GetData($sql_nome);
+        if ($res_nome->num_rows > 0) {
+            while ($row_nome = $res_nome->fetch_assoc()) {
+                //var_dump($row_nome); // Verifica la struttura del risultato
+                // Recupera i dati
+                $nome = $row_nome['nome'];
+                $cognome = $row_nome['cognome'];
+                $data_di_nascita = $row_nome['data_di_nascita'];
+                $luogo_di_nascita = $row_nome['luogo_di_nascita'];
+                $sesso = $row_nome['sesso'];
+                $codice_fiscale = $row_nome['codice_fiscale'];
+                // ...
+            }
+
+
+        } else {
+        }
+        ?>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="profile">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <!-- Profile picture card-->
+                        <div class="card mb-3 gx-3">
+                            <div class=" text-center">Foto Profilo</div>
+                            <div class="card-body text-center">
+                                <!-- Profile picture image-->
+                                <div class="avatar-wrapper">
+                                    <img class="profile-pic" src="" />
+                                    <div class="upload-button">
+                                        <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+                                    </div>
+                                    <input class="file-upload" type="file" accept="image/*" />
                                 </div>
-                                <input class="file-upload" type="file" accept="image/*" />
+                                <!-- Profile picture help block-->
+                                <div class="small font-italic text-muted ">Inserisci la tua immagine profilo</div>
+                                <!-- Profile picture upload button-->
+
                             </div>
-                            <!-- Profile picture help block-->
-                            <div class="small font-italic text-muted ">Inserisci la tua immagine profilo</div>
-                            <!-- Profile picture upload button-->
-
                         </div>
-                    </div>
 
-                </div>
-                <div class="col-md-8">
-                    <!-- Account details card-->
-                    <div class=" card mb-4">
-                        <div class="card-header">Dettagli Dell'Account</div>
-                        <div class="card-body gx-4 ">
-                            <form method="post" action="#">
+                    </div>
+                    <div class="col-md-8">
+                        <!-- Account details card-->
+                        <div class=" card mb-4">
+                            <div class="card-header">Dettagli Dell'Account</div>
+                            <div class="card-body gx-4 ">
 
                                 <!-- Form Row-->
                                 <div class="row gx-3 mb-3">
@@ -214,8 +305,8 @@ if (isset($_SESSION['idutente'])) {
                                     <div class="col-md-4">
                                         <label class="small mb-1" for="inputBirthday">DATA DI NASCITA</label>
                                         <input class="form-control" id="inputBirthday" name="inputBirthday" type="date"
-                                            data-format="dd/MM/yyyy hh:mm:ss name=" birthday" placeholder="yyyy/mm/gg"
-                                            <?= $data_di_nascita ?>>
+                                            data-format="dd/MM/yyyy" placeholder="dd/MM/yyyy"
+                                            value=<?= $data_di_nascita ?>>
                                     </div>
 
                                     <div class=" col-md-6 mt-4">
@@ -230,153 +321,130 @@ if (isset($_SESSION['idutente'])) {
 
                                 <!-- Save changes button-->
                                 <div class="mb-3 gx-3 mt-5">
-                                    <button class="btn btn-success gx-3" type="submit" id="act_upd"
-                                        onclick="AggiornaProfilo()">Salva Modifiche</button>
+                                    <button class="btn btn-success gx-3" id="btn_persona"
+                                        onClick="AggiornaProfilo('AggiornaPersona')">Salva Modifiche</button>
                                 </div>
-                            </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECONDA ROW-->
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card text-center">
+                            <!-- <div class="card-header ">Lista dei Desideri</div>-->
+                            <div class="card-body gx-3 gx-4">
+                                <a href="#" class="helvetica">Vai alla lista dei desideri
+                                    <span class="glyphicon glyphicon-arrow-right"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card text-center">
+                            <!--<div class="card-header ">Storico Ordini</div>-->
+                            <div class="card-body gx-3 gx-4">
+                                <a href="#" class="helvetica">Vai allo storico degli ordini
+                                    <span class="glyphicon glyphicon-folder-open"></span></a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card text-center">
+                            <!-- <div class="card-header ">Lascia Una Recensione</div>-->
+                            <div class="card-body gx-3 gx-4">
+                                <a href="#" class="helvetica">Lascia una recensione
+                                    <span class="glyphicon glyphicon-comment"></span>
+                                </a>
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <?php
-
-            $nuovoNome = ucfirst($_POST['inputName']);
-            $nuovoCognome = ucfirst($_POST['inputLastName']);
-            $nuovoCodiceFiscale = strtoupper($_POST['inputCodFisc']);
-            $nuovoLuogoDiNascita = ucfirst($_POST['inputLuogoNascita']);
-            $nuovoDataDiNascita = $_POST['inputBirthday'];
-            $nuovoSesso = $_POST['sesso'];
-
-
-            // Query per l'update
-            $sql_upd = "UPDATE `persona` SET 
-            nome='$nuovoNome',
-            cognome='$nuovoCognome', 
-            codice_fiscale='$nuovoCodiceFiscale', 
-            luogo_di_nascita='$nuovoLuogoDiNascita', 
-            data_di_nascita='$nuovoDataDiNascita', 
-            sesso='$nuovoSesso' WHERE idutente = $idutente";
-
-            ExecuteSQL($sql_upd);
-
-            ?>
-
-            <!-- SECONDA ROW-->
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card text-center">
-                        <!-- <div class="card-header ">Lista dei Desideri</div>-->
-                        <div class="card-body gx-3 gx-4">
-                            <a href="#" class="helvetica">Vai alla lista dei desideri
-                                <span class="glyphicon glyphicon-arrow-right"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card text-center">
-                        <!--<div class="card-header ">Storico Ordini</div>-->
-                        <div class="card-body gx-3 gx-4">
-                            <a href="#" class="helvetica">Vai allo storico degli ordini
-                                <span class="glyphicon glyphicon-folder-open"></span></a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card text-center">
-                        <!-- <div class="card-header ">Lascia Una Recensione</div>-->
-                        <div class="card-body gx-3 gx-4">
-                            <a href="#" class="helvetica">Lascia una recensione
-                                <span class="glyphicon glyphicon-comment"></span>
+            <div class="tab-pane" id="indirizzo">
+                <h2 class="text-center">I Tuoi Indirizzi</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card ">
+                            <div class="card-header text-center">Aggiungi Indirizzo</div>
+                            <a href="#" data-toggle="modal" data-target="#ModalIndirizzo">
+                                <div class="card-body card-add-item">
+                                    <div class="add-item ">
+                                        <i class="glyphicon glyphicon-plus "></i>
+                                    </div>
+                                </div>
                             </a>
 
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="tab-pane" id="indirizzo">
-            <h2 class="text-center">I Tuoi Indirizzi</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card ">
-                        <div class="card-header text-center">Aggiungi Indirizzo</div>
-                        <a href="#" data-toggle="modal" data-target="#ModalIndirizzo">
-                            <div class="card-body card-add-item">
-                                <div class="add-item ">
-                                    <i class="glyphicon glyphicon-plus "></i>
-                                </div>
+
+                <!-- Modal -->
+                <div id="ModalIndirizzo" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title text-center">Aggiungi un nuovo indirizzo</h4>
                             </div>
-                        </a>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- Modal -->
-            <div id="ModalIndirizzo" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title text-center">Aggiungi un nuovo indirizzo</h4>
-                        </div>
-                        <div class="modal-body">
-                            <p>Some text in the modal.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default left">Aggiungi</button>
-
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <h2 class="text-center">Informazioni di contatto</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card ">
-                        <div class="card-header text-center">Aggiungi contatto</div>
-                        <a href="#" data-toggle="modal" data-target="#ModalContatto">
-                            <div class="card-body card-add-item">
-                                <div class="add-item ">
-                                    <i class="glyphicon glyphicon-plus "></i>
-                                </div>
+                            <div class="modal-body">
+                                <p>Some text in the modal.</p>
                             </div>
-                        </a>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default left">Aggiungi</button>
+
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-            </div>
 
-            <!-- Modal -->
-            <div id="ModalContatto" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title text-center">Aggiungi un nuovo contatto</h4>
-                        </div>
-                        <div class="modal-body">
-                            <p>Some text in the modal.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default left">Aggiungi</button>
-
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <h2 class="text-center">Informazioni di contatto</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card ">
+                            <div class="card-header text-center">Aggiungi contatto</div>
+                            <a href="#" data-toggle="modal" data-target="#ModalContatto">
+                                <div class="card-body card-add-item">
+                                    <div class="add-item ">
+                                        <i class="glyphicon glyphicon-plus "></i>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
-
                 </div>
-            </div>
-            <?php
-            $indirizzo = " <div class='col-md-4'>
+
+                <!-- Modal -->
+                <div id="ModalContatto" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title text-center">Aggiungi un nuovo contatto</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Some text in the modal.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default left">Aggiungi</button>
+
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <?php
+                $indirizzo = " <div class='col-md-4'>
              <div class='card'>
                  <div class='card-header'>Indirizzo Predefinito</div>
                  <div class='card-body gx-4 '>
@@ -387,9 +455,10 @@ if (isset($_SESSION['idutente'])) {
 
              </div>
             </div>"
-                ?>
+                    ?>
+            </div>
+            <div class="tab-pane" id="messages">Contenuto della scheda Messages</div>
+            <div class="tab-pane" id="settings">Contenuto della scheda Settings</div>
         </div>
-        <div class="tab-pane" id="messages">Contenuto della scheda Messages</div>
-        <div class="tab-pane" id="settings">Contenuto della scheda Settings</div>
     </div>
-</div>
+</form>
