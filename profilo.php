@@ -55,6 +55,8 @@
             act.value = TipoAct;
             document.frmProfilo.submit();
         }
+
+        
     </script>
 
     <?php
@@ -95,7 +97,7 @@
        
 
     } else if ($token = '') {
-        header('location:login.html');
+        header('location:login.php');
         die();
     }
 
@@ -109,9 +111,9 @@
                 
                 <div class="c2a-btn footer-c2a-btn">
                     <div class="btn-group btn-group-lg" role="group" aria-label="Call to action">
-                        <a type="button" class="btn btn-default btn-lg" href="#" id="scelta1">Persona </a>
+                        <a type="button" class="btn btn-default-scelta btn-lg" href="#" id="scelta1">Persona </a>
                         <span class="btn-circle btn-or">tra</span>
-                        <a type="button" class="btn btn-default btn-lg" href="#" id="scelta2">Azienda</a>
+                        <a type="button" class="btn btn-default-scelta btn-lg" href="#" id="scelta2">Azienda</a>
                     </div>
                 </div>
                 <br>
@@ -187,6 +189,50 @@
             luogo_di_nascita='$nuovoLuogoDiNascita', 
             data_di_nascita='$nuovoDataDiNascita', 
             sesso='$nuovoSesso' WHERE idutente = $idutente";
+
+            ExecuteSQL($sql_upd);
+
+        }
+
+        $actUpd = '-';
+
+    }
+
+    if ($actUpd == 'AggiornaImpresa') {
+
+
+        $nuovoNomeComm = ucwords($_POST['inputNameComm']);
+        $nuovaPartitaIva = $_POST['inputPartitaIva'];
+        $nuovoCodiceFiscale = strtoupper($_POST['inputCodFisc']);
+        $nuovoCodiceRea = $_POST['inputCodRea'];
+
+        if ($IDTipoPersona == 0) {
+
+            //E' la prima volta che salvo i dati della persona
+            $sql = "UPDATE utenti SET IDTipoPersona=2 where idutente = $idutente";
+            ExecuteSQL($sql);
+            $IDTipoPersona = 2;
+
+            $sql_ins = "INSERT INTO `impresa`
+                (`idutente`,`ragione_sociale`,`partita_iva`,`codice_fiscale`,`codice_rea`)
+                VALUES
+                ($idutente,
+                '$nuovoNomeComm',
+                '$nuovaPartitaIva',
+                '$nuovoCodiceFiscale',
+                '$nuovoCodiceRea',
+                ); ";
+            ExecuteSQL($sql_ins);
+
+        } else {
+
+            // Query per l'update della persona
+            $sql_upd = "UPDATE `impresa` SET 
+            ragione_sociale='$nuovoNomeComm',
+            partita_iva='$nuovaPartitaIva', 
+            codice_fiscale='$nuovoCodiceFiscale', 
+            codice_rea='$nuovoCodiceRea', 
+            ";
 
             ExecuteSQL($sql_upd);
 
@@ -370,7 +416,7 @@
                     <div class="col-md-4">
                         <div class="card ">
                             <div class="card-header text-center">Aggiungi Indirizzo</div>
-                            <a href="#" data-toggle="modal" data-target="#ModalIndirizzo">
+                            <a href="#" data-toggle="modal" data-target="#ModalIndirizzoPers">
                                 <div class="card-body card-add-item">
                                     <div class="add-item ">
                                         <i class="glyphicon glyphicon-plus "></i>
@@ -383,7 +429,7 @@
                 </div>
 
                 <!-- Modal -->
-                <div id="ModalIndirizzo" class="modal fade" role="dialog">
+                <div id="ModalIndirizzoPers" class="modal fade" role="dialog">
                     <div class="modal-dialog">
 
                         <!-- Modal content-->
@@ -393,7 +439,163 @@
                                 <h4 class="modal-title text-center">Aggiungi un nuovo indirizzo</h4>
                             </div>
                             <div class="modal-body">
-                                <p>Some text in the modal.</p>
+                            <div class=" row ml-4 mr-4">
+                                    <div class="col-md-6 mt-4">
+                                    <div class="form-group ml-3">
+                                    <label for="tipo_indirizzo" class="mb-3" >Tipo di indirizzo:</label>
+                                    <select id="tipo_indirizzo" class="mb-3" required>
+                                        <option value="Sede Legale">Sede Legale</option>
+                                        <option value="Residenza">Residenza</option>
+                                        <option value="Domicilio">Domicilio</option>
+                                        <option value="Destinazione merci">Destinazione merci</option>
+                                    </select>
+                                    </div>
+                                    </div>
+
+                                    <div class="col-md-6 mt-4">
+                                        <div class="form-group">
+                                            <label for="provincia" class="mb-3">Provincia:</label>
+                                            <select id="provincia" name="provincia" class="mb-3" required>
+                                                <option value="AG">Agrigento</option>
+                                                <option value="AL">Alessandria</option>
+                                                <option value="AN">Ancona</option>
+                                                <option value="AO">Aosta</option>
+                                                <option value="AR">Arezzo</option>
+                                                <option value="AP">Ascoli Piceno</option>
+                                                <option value="AT">Asti</option>
+                                                <option value="AV">Avellino</option>
+                                                <option value="BA">Bari</option>
+                                                <option value="BT">Barletta-Andria-Trani</option>
+                                                <option value="BL">Belluno</option>
+                                                <option value="BN">Benevento</option>
+                                                <option value="BG">Bergamo</option>
+                                                <option value="BI">Biella</option>
+                                                <option value="BO">Bologna</option>
+                                                <option value="BZ">Bolzano</option>
+                                                <option value="BS">Brescia</option>
+                                                <option value="BR">Brindisi</option>
+                                                <option value="CA">Cagliari</option>
+                                                <option value="CL">Caltanissetta</option>
+                                                <option value="CB">Campobasso</option>
+                                                <option value="CE">Caserta</option>
+                                                <option value="CT">Catania</option>
+                                                <option value="CZ">Catanzaro</option>
+                                                <option value="CH">Chieti</option>
+                                                <option value="CO">Como</option>
+                                                <option value="CS">Cosenza</option>
+                                                <option value="CR">Cremona</option>
+                                                <option value="KR">Crotone</option>
+                                                <option value="CN">Cuneo</option>
+                                                <option value="EN">Enna</option>
+                                                <option value="FM">Fermo</option>
+                                                <option value="FE">Ferrara</option>
+                                                <option value="FI">Firenze</option>
+                                                <option value="FG">Foggia</option>
+                                                <option value="FC">Forl&igrave;-Cesena</option>
+                                                <option value="FR">Frosinone</option>
+                                                <option value="GE">Genova</option>
+                                                <option value="GO">Gorizia</option>
+                                                <option value="GR">Grosseto</option>
+                                                <option value="IM">Imperia</option>
+                                                <option value="IS">Isernia</option>
+                                                <option value="AQ">L'aquila</option>
+                                                <option value="SP">La spezia</option>
+                                                <option value="LT">Latina</option>
+                                                <option value="LE">Lecce</option>
+                                                <option value="LC">Lecco</option>
+                                                <option value="LI">Livorno</option>
+                                                <option value="LO">Lodi</option>
+                                                <option value="LU">Lucca</option>
+                                                <option value="MC">Macerata</option>
+                                                <option value="MN">Mantova</option>
+                                                <option value="MS">Massa-Carrara</option>
+                                                <option value="MT">Matera</option>
+                                                <option value="ME">Messina</option>
+                                                <option value="MI">Milano</option>
+                                                <option value="MO">Modena</option>
+                                                <option value="MB">Monza e Brianza</option>
+                                                <option value="NA">Napoli</option>
+                                                <option value="NO">Novara</option>
+                                                <option value="NU">Nuoro</option>
+                                                <option value="OR">Oristano</option>
+                                                <option value="PD">Padova</option>
+                                                <option value="PA">Palermo</option>
+                                                <option value="PR">Parma</option>
+                                                <option value="PV">Pavia</option>
+                                                <option value="PG">Perugia</option>
+                                                <option value="PU">Pesaro e Urbino</option>
+                                                <option value="PE">Pescara</option>
+                                                <option value="PC">Piacenza</option>
+                                                <option value="PI">Pisa</option>
+                                                <option value="PT">Pistoia</option>
+                                                <option value="PN">Pordenone</option>
+                                                <option value="PZ">Potenza</option>
+                                                <option value="PO">Prato</option>
+                                                <option value="RG">Ragusa</option>
+                                                <option value="RA">Ravenna</option>
+                                                <option value="RC">Reggio Calabria</option>
+                                                <option value="RE">Reggio Emilia</option>
+                                                <option value="RI">Rieti</option>
+                                                <option value="RN">Rimini</option>
+                                                <option value="RM">Roma</option>
+                                                <option value="RO">Rovigo</option>
+                                                <option value="SA">Salerno</option>
+                                                <option value="SS">Sassari</option>
+                                                <option value="SV">Savona</option>
+                                                <option value="SI">Siena</option>
+                                                <option value="SR">Siracusa</option>
+                                                <option value="SO">Sondrio</option>
+                                                <option value="SU">Sud Sardegna</option>
+                                                <option value="TA">Taranto</option>
+                                                <option value="TE">Teramo</option>
+                                                <option value="TR">Terni</option>
+                                                <option value="TO">Torino</option>
+                                                <option value="TP">Trapani</option>
+                                                <option value="TN">Trento</option>
+                                                <option value="TV">Treviso</option>
+                                                <option value="TS">Trieste</option>
+                                                <option value="UD">Udine</option>
+                                                <option value="VA">Varese</option>
+                                                <option value="VE">Venezia</option>
+                                                <option value="VB">Verbano-Cusio-Ossola</option>
+                                                <option value="VC">Vercelli</option>
+                                                <option value="VR">Verona</option>
+                                                <option value="VV">Vibo valentia</option>
+                                                <option value="VI">Vicenza</option>
+                                                <option value="VT">Viterbo</option>
+                                                
+                                            </select>
+                                        </div>
+                                    
+                                    </div>
+                                <div class="ml-3 mr-3 row">
+                                    <div class="col-md-6 mt-4">
+                                        <div class="form-group">
+                                            <label for="citta">Città:</label>
+                                            <input type="text" class="form-control" id="citta" placeholder="Inserisci la città" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mt-4">
+                                        <div class="form-group">
+                                            <label for="indirizzo">Indirizzo:</label>
+                                            <input type="text" class="form-control" id="indirizzo" placeholder="Inserisci la via" required>
+                                        </div>
+                                    </div>
+                                    </div>
+                                <div class="row ml-3 mr-3">
+                                    <div class="col-md-6 mt-4">
+                                        <div class="form-group">
+                                            <label for="cap">CAP:</label>
+                                            <input type="text" class="form-control" id="cap" placeholder="Inserisci il CAP" required maxlength="5" pattern="[0-9]{5}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mt-4">
+                                        <div class="form-group">
+                                            <label for="denominazione">Denominazione:</label>
+                                            <input type="text" class="form-control" id="denominazione" placeholder="Inserisci il nominativo" required>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default left">Aggiungi</button>
@@ -410,7 +612,7 @@
                     <div class="col-md-4">
                         <div class="card ">
                             <div class="card-header text-center">Aggiungi contatto</div>
-                            <a href="#" data-toggle="modal" data-target="#ModalContatto">
+                            <a href="#" data-toggle="modal" data-target="#ModalContattoPers">
                                 <div class="card-body card-add-item">
                                     <div class="add-item ">
                                         <i class="glyphicon glyphicon-plus "></i>
@@ -422,7 +624,7 @@
                 </div>
 
                 <!-- Modal -->
-                <div id="ModalContatto" class="modal fade" role="dialog">
+                <div id="ModalContattoPers" class="modal fade" role="dialog">
                     <div class="modal-dialog">
 
                         <!-- Modal content-->
@@ -432,8 +634,8 @@
                                 <h4 class="modal-title text-center">Aggiungi un nuovo contatto</h4>
                             </div>
                             <div class="modal-body">
-                                <p>Some text in the modal.</p>
-                            </div>
+                   
+                        </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default left">Aggiungi</button>
 
@@ -461,4 +663,243 @@
             <div class="tab-pane" id="settings">Contenuto della scheda Settings</div>
         </div>
     </div>
+    <div class="container-fluid " id="PersGiuridica">
+
+
+<ul class="nav nav-tabs ">
+    <li class="active "><a href="#profile" data-toggle="tab">Profilo</a></li>
+    <li><a href="#indirizzo " data-toggle="tab">Indirizzo</a></li>
+    <li><a href="#messages " data-toggle="tab">Pagamento</a></li>
+    <li><a href="#settings " data-toggle="tab">Sicurezza</a></li>
+</ul>
+
+<?php
+$ragione_sociale = "";
+$partita_iva = "";
+$codice_fiscale = "";
+$codice_rea = "";
+
+$sql_nome = "SELECT * FROM `impresa` WHERE idutente = $idutente";
+$res_nome = GetData($sql_nome);
+if ($res_nome->num_rows > 0) {
+    while ($row_nome = $res_nome->fetch_assoc()) {
+        //var_dump($row_nome); // Verifica la struttura del risultato
+        // Recupera i dati
+        $ragione_sociale = $row_nome['ragione_sociale'];
+        $partita_iva = $row_nome['partita_iva'];
+        $codice_fiscale = $row_nome['codice_fiscale'];
+        $codice_rea = $row_nome['codice_rea'];
+        // ...
+    }
+
+
+} else {
+}
+?>
+
+<div class="tab-content">
+    <div class="tab-pane active" id="profile">
+
+        <div class="row">
+            <div class="col-md-4">
+                <!-- Profile picture card-->
+                <div class="card mb-3 gx-3">
+                    <div class=" text-center">Foto Profilo</div>
+                    <div class="card-body text-center">
+                        <!-- Profile picture image-->
+                        <div class="avatar-wrapper">
+                            <img class="profile-pic" src="" />
+                            <div class="upload-button">
+                                <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+                            </div>
+                            <input class="file-upload" type="file" accept="image/*" />
+                        </div>
+                        <!-- Profile picture help block-->
+                        <div class="small font-italic text-muted ">Inserisci la tua immagine profilo</div>
+                        <!-- Profile picture upload button-->
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-8">
+                <!-- Account details card-->
+                <div class=" card mb-4">
+                    <div class="card-header">Dettagli Dell'Account</div>
+                    <div class="card-body gx-4 ">
+
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (first name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputNameComm">DENOMINAZIONE COMMERCIALE</label>
+                                <input class="form-control" id="inputNameComm" name="inputNameComm" type="text"
+                                    placeholder="Inserisci la ragione sociale" value="<?= $ragione_sociale ?>">
+                            </div>
+                            <!-- Form Group (last name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputPartitaIva">PARTITA IVA</label>
+                                <input class="form-control" id="inputPartitaIva" name="inputPartitaIva" type="text" 
+                                maxlength="11"
+                                    placeholder="Inserisci la partita IVA" value="<?= $partita_iva ?>">
+                            </div>
+                        </div> 
+                        
+                        <!-- Form Row        -->
+                        <div class="row gx-3 mb-3">
+                        <div class="col-md-6 mb-3 gx-3">
+                            <label class="small mb-1 " for="inputCodFisc">CODICE FISCALE</label>
+                            <input class="form-control" id="inputCodFisc" type="text" name="inputCodFisc"
+                                maxlength="16" placeholder="Inserisci il tuo Codice Fiscale"
+                                value="<?= $codice_fiscale ?>">
+                        </div>
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputCodRea">CODICE REA</label>
+                                <input class="form-control" id="inputCodRea" name="inputCodRea"
+                                    type="text" placeholder="Inserisci il Codice REA"
+                                    value="<?= $codice_rea ?>">
+                            </div>
+
+                        </div>
+                        <!-- Save changes button-->
+                        <div class="mb-3 gx-3 mt-5">
+                            <button class="btn btn-success gx-3" id="btn_azienda"
+                                onClick="AggiornaProfilo('AggiornaImpresa')">Salva Modifiche</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECONDA ROW-->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <!-- <div class="card-header ">Lista dei Desideri</div>-->
+                    <div class="card-body gx-3 gx-4">
+                        <a href="#" class="helvetica">Vai alla lista dei desideri
+                            <span class="glyphicon glyphicon-arrow-right"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <!--<div class="card-header ">Storico Ordini</div>-->
+                    <div class="card-body gx-3 gx-4">
+                        <a href="#" class="helvetica">Vai allo storico degli ordini
+                            <span class="glyphicon glyphicon-folder-open"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <!-- <div class="card-header ">Lascia Una Recensione</div>-->
+                    <div class="card-body gx-3 gx-4">
+                        <a href="#" class="helvetica">Lascia una recensione
+                            <span class="glyphicon glyphicon-comment"></span>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane" id="indirizzo">
+        <h2 class="text-center">I Tuoi Indirizzi</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card ">
+                    <div class="card-header text-center">Aggiungi Indirizzo</div>
+                    <a href="#" data-toggle="modal" data-target="#ModalIndirizzoImp">
+                        <div class="card-body card-add-item">
+                            <div class="add-item ">
+                                <i class="glyphicon glyphicon-plus "></i>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="ModalIndirizzoImp" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title text-center">Aggiungi un nuovo indirizzo</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default left">Aggiungi</button>
+
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <h2 class="text-center">Informazioni di contatto</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card ">
+                    <div class="card-header text-center">Aggiungi contatto</div>
+                    <a href="#" data-toggle="modal" data-target="#ModalContattoImp">
+                        <div class="card-body card-add-item">
+                            <div class="add-item ">
+                                <i class="glyphicon glyphicon-plus "></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="ModalContattoImp" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title text-center">Aggiungi un nuovo contatto</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default left">Aggiungi</button>
+
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <?php
+        $indirizzo = " <div class='col-md-4'>
+     <div class='card'>
+         <div class='card-header'>Indirizzo Predefinito</div>
+         <div class='card-body gx-4 '>
+             <div>
+               
+             </div>
+         </div>
+
+     </div>
+    </div>"
+            ?>
+    </div>
+    <div class="tab-pane" id="messages">Contenuto della scheda Messages</div>
+    <div class="tab-pane" id="settings">Contenuto della scheda Settings</div>
+</div>
+</div>
 </form>

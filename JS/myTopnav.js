@@ -90,7 +90,7 @@ myTopnav += "					<li class='dropdown-header'>Profilo</li>";
 
 myTopnav += "					<li><a href='account.html'>Account</a></li>";
 
-myTopnav += "					<li><a href='login.html'>Login</a></li>";
+myTopnav += "					<li><a href='login.php'>Login</a></li>";
 
 myTopnav += "					<li role='separator' class='divider'></li>";
 

@@ -2,7 +2,7 @@
 
 error_reporting(E_ERROR | E_PARSE);
 
-require(__DIR__.'\Config\SQL_command.php');
+require(__DIR__ . '\Config\SQL_command.php');
 
 
 
@@ -17,25 +17,37 @@ echo "Nome: $nome <br/>";
 echo "email: $email <br/>";
 echo "password: $mypassword <br/>";
 
+
+// Pattern da controllare
+$pattern = '/^[a-z0-9_]{6,20}$/';
+
+// Controlla se lo username corrisponde al pattern
+if (preg_match($pattern, $nome)) {
+    echo "Lo username è valido!";
+} else {
+    $errore .= "Lo username deve essere compreso tra 6 e 20 caratteri e non consente caratteri speciali";
+}
+
+
 /*
 Prima di procedere devo verificare che tutti i campi siano valorizzati
 */
-$bStato=true;
+$bStato = true;
 if ($nome == "") {
     echo "<BR>Il nome è un campo obbligatorio in fase di registrazione";
-    $bStato=false;
+    $bStato = false;
 }
 if ($email == "") {
     echo "<BR>La email è un campo obbligatorio in fase di registrazione";
-    $bStato=false;
+    $bStato = false;
 }
 if ($mypassword == "") {
     echo "<BR>La password è un campo obbligatorio in fase di registrazione";
-    $bStato=false;
+    $bStato = false;
 }
 
 if ($bStato) {
-        
+
     //prima di fare l'insert devo verificare
     //1) che il none utente non sia già stato usato
     //2) che alla mail non sia già abbinato un'altro utente
@@ -80,7 +92,7 @@ if ($bStato) {
         echo "<br/>SQL Utente: $sql_ins ";
         ExecuteSQL($sql_ins);
 
-        $NewID=$_SESSION["last_id"];
+        $NewID = $_SESSION["last_id"];
         echo "<br>IDUtente: " . $NewID;
 
         $sql_ins = "INSERT INTO utenti_login (idutente, nome,email,password) values ($NewID,\"$nome\",\"$email\",\"$mypassword \");";

@@ -15,3 +15,14 @@ account/ ordini/ messaggi/ notifiche/ pagamenti/ preferiti/ impostazioni/ esci (
 Carrello
 
 Idea per app (insta BIO generator)
+
+
+<?php
+// Dopo aver processato il modulo con successo...
+echo '<script>
+    var currentUrl = window.location.href; // Ottieni l'URL corrente
+    setTimeout(function() {
+        window.location.href = currentUrl;
+    }, 3000); // Ritardo di 3 secondi prima del reindirizzamento
+</script>';
+?>

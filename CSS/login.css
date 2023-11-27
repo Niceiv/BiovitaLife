@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 }
 
-body {
+.bodyLogin {
 	background: #f6f5f7;
 	display: flex;
 	justify-content: center;
@@ -15,16 +15,18 @@ body {
 	margin: -20px 0 50px;
 }
 
-h1 {
+.h1Login {
 	font-weight: bold;
 	margin: 0;
+	text-align: center;
+
 }
 
-h2 {
+.h2Login {
 	text-align: center;
 }
 
-p {
+.pLogin {
 	font-size: 14px;
 	font-weight: 100;
 	line-height: 20px;
@@ -32,11 +34,11 @@ p {
 	margin: 20px 0 30px;
 }
 
-span {
+.spanLogin {
 	font-size: 12px;
 }
 
-a {
+.aLogin {
 	color: #333;
 	font-size: 14px;
 	text-decoration: none;
@@ -80,7 +82,7 @@ form {
 	text-align: center;
 }
 
-input {
+.inputLogin {
 	background-color: #eee;
 	border: none;
 	padding: 12px 15px;
@@ -226,29 +228,4 @@ input {
 	margin: 0 5px;
 	height: 40px;
 	width: 40px;
-}
-
-footer {
-	background-color: #222;
-	color: #fff;
-	font-size: 14px;
-	bottom: 0;
-	position: fixed;
-	left: 0;
-	right: 0;
-	text-align: center;
-	z-index: 999;
-}
-
-footer p {
-	margin: 10px 0;
-}
-
-footer i {
-	color: red;
-}
-
-footer a {
-	color: #3c97bf;
-	text-decoration: none;
 }

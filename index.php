@@ -39,7 +39,7 @@
   include(__DIR__ . '\Config\SQL_command.php');
 
 
-  include('JS/MyTopNavEss.html');
+  include('JS/MyTopNavEss.php');
 
   $page = 'Home.html';
   $IDGrp = '';
