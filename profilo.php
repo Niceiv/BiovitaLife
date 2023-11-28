@@ -14,7 +14,12 @@ cap citta prov
 -->
 
 <script src="JS/articoli.js"></script>
+<<<<<<< HEAD
 
+=======
+<form name="frmProfilo" method="post" action="#" OnOpenForm="OnOpenForm()">
+    <input type='text' id='act_upd' name='act_upd'>
+>>>>>>> 32d6c1fe513d06d83f2c5282c8fae41442841724
     <script>
         $(document).ready(function () {
             console.log('avvio');
@@ -69,7 +74,11 @@ cap citta prov
     </script>
 
     <?php
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 32d6c1fe513d06d83f2c5282c8fae41442841724
     session_start();
 
     error_reporting(E_ERROR | E_PARSE);
