@@ -14,8 +14,7 @@ cap citta prov
 -->
 
 <script src="JS/articoli.js"></script>
-<form name="frmProfilo" method="post" action="#" OnOpenForm="OnOpenForm()">
-    <input type='text' id='act_upd' name='act_upd'>
+
     <script>
         $(document).ready(function () {
             console.log('avvio');
