@@ -18,15 +18,8 @@ echo "email: $email <br/>";
 echo "password: $mypassword <br/>";
 
 
-// Pattern da controllare
-$pattern = '/^[a-z0-9_]{6,20}$/';
 
-// Controlla se lo username corrisponde al pattern
-if (preg_match($pattern, $nome)) {
-    echo "Lo username è valido!";
-} else {
-    $errore .= "Lo username deve essere compreso tra 6 e 20 caratteri e non consente caratteri speciali";
-}
+
 
 
 /*
@@ -78,6 +71,16 @@ if ($bStato) {
             $errore .= "Email già utilizzato<br>";
         }
     }
+
+    // Lunghezza compresa tra 6 e 20 caratteri
+    $length = strlen($nome);
+    if ($length < 6 || $length > 20) {
+        $errore .= "Lo username deve essere compreso tra 6 e 20 caratteri.<br>";
+        return false;
+
+    }
+
+
 
     if ($errore == '') {
         echo 'REGISTRA';
