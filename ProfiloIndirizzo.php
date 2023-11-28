@@ -33,12 +33,24 @@
                         <div class="form-group">
                             <label for="tipo_indirizzo" class="mb-3">Tipo di indirizzo:</label>
                             <select id="tipo_indirizzo" class="mb-3" required>
-                                <option value="Sede Legale">Sede Legale</option>
-                                <option value="Destinazione merci">Destinazione merci</option>
+                                <?php
 
-                                <option value="Residenza">Residenza</option>
-                                <option value="Domicilio">Domicilio</option>
+                                $sql_tipo_ind = "SELECT * FROM tipo_indirizzo WHERE IDTipoPersona=$IDTipoPersona";
+                                $res_tipo_ind = GetData($sql_tipo_ind);
 
+                                if ($res_tipo_ind->num_rows > 0) {
+                                    while ($rowTipoInd = $res_tipo_ind->fetch_assoc()) {
+
+                                        $IdTipoIndirizzo = $rowTipoInd['idtipo_indirizzo'];
+                                        $TipoIndirizzo = $rowTipoInd['tipo_indirizzo'];
+                                        $options = "<option value='$IdTipoIndirizzo'>" . $TipoIndirizzo . "</option>";
+                                        echo $options;
+
+
+
+                                    }
+                                }
+                                ?>
                             </select>
                         </div>
                     </div>
