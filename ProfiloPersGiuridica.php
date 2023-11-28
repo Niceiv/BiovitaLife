@@ -31,29 +31,29 @@
             <div class="row gx-3 mb-3">
                 <!-- Form Group (first name)-->
                 <div class="col-md-6">
-                    <label class="small mb-1" for="inputNameComm">DENOMINAZIONE
+                    <label class="small mb-1" for="pg_inputNameComm">DENOMINAZIONE
                         COMMERCIALE</label>
-                    <input class="form-control" id="inputNameComm" name="inputNameComm" type="text"
+                    <input class="form-control" id="pg_inputNameComm" name="pg_inputNameComm" type="text"
                         placeholder="Inserisci la ragione sociale" value="<?= $ragione_sociale ?>">
                 </div>
                 <!-- Form Group (last name)-->
                 <div class="col-md-6">
-                    <label class="small mb-1" for="inputPartitaIva">PARTITA IVA</label>
-                    <input class="form-control" id="inputPartitaIva" name="inputPartitaIva" type="text" maxlength="11"
-                        placeholder="Inserisci la partita IVA" value="<?= $partita_iva ?>">
+                    <label class="small mb-1" for="pg_inputPartitaIva">PARTITA IVA</label>
+                    <input class="form-control" id="pg_inputPartitaIva" name="pg_inputPartitaIva" type="text"
+                        maxlength="11" placeholder="Inserisci la partita IVA" value="<?= $partita_iva ?>">
                 </div>
             </div>
 
             <!-- Form Row        -->
             <div class="row gx-3 mb-3">
                 <div class="col-md-6 mb-3 gx-3">
-                    <label class="small mb-1 " for="inputCodFisc">CODICE FISCALE</label>
-                    <input class="form-control" id="inputCodFisc" type="text" name="inputCodFisc" maxlength="16"
+                    <label class="small mb-1 " for="pg_inputCodFisc">CODICE FISCALE</label>
+                    <input class="form-control" id="pg_inputCodFisc" type="text" name="pg_inputCodFisc" maxlength="16"
                         placeholder="Inserisci il tuo Codice Fiscale" value="<?= $codice_fiscale ?>">
                 </div>
                 <div class="col-md-6">
-                    <label class="small mb-1" for="inputCodRea">CODICE REA</label>
-                    <input class="form-control" id="inputCodRea" name="inputCodRea" type="text"
+                    <label class="small mb-1" for="pg_inputCodRea">CODICE REA</label>
+                    <input class="form-control" id="pg_inputCodRea" name="pg_inputCodRea" type="text"
                         placeholder="Inserisci il Codice REA" value="<?= $codice_rea ?>">
                 </div>
 

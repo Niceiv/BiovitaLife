@@ -47,28 +47,28 @@
             <div class="row gx-3 mb-3">
                 <!-- Form Group (first name)-->
                 <div class="col-md-6">
-                    <label class="small mb-1" for="inputName">NOME</label>
-                    <input class="form-control" id="inputName" name="inputName" type="text"
+                    <label class="small mb-1" for="pf_inputName">NOME</label>
+                    <input class="form-control" id="pf_inputName" name="pf_inputName" type="text"
                         placeholder="Inserisci il tuo nome" value="<?= $nome ?>">
                 </div>
                 <!-- Form Group (last name)-->
                 <div class="col-md-6">
-                    <label class="small mb-1" for="inputLastName">COGNOME</label>
-                    <input class="form-control" id="inputLastName" name="inputLastName" type="text"
+                    <label class="small mb-1" for="pf_inputLastName">COGNOME</label>
+                    <input class="form-control" id="pf_inputLastName" name="pf_inputLastName" type="text"
                         placeholder="Inserisci il tuo cognome" value="<?= $cognome ?>">
                 </div>
             </div>
             <div class="mb-3 gx-3">
-                <label class="small mb-1 " for="inputCodFisc">CODICE FISCALE</label>
-                <input class="form-control" id="inputCodFisc" type="text" name="inputCodFisc" maxlength="16"
+                <label class="small mb-1 " for="pf_inputCodFisc">CODICE FISCALE</label>
+                <input class="form-control" id="pf_inputCodFisc" type="text" name="pf_inputCodFisc" maxlength="16"
                     placeholder="Inserisci il tuo Codice Fiscale" value="<?= $codice_fiscale ?>">
             </div>
             <!-- Form Row        -->
             <div class="row gx-3 mb-3">
                 <!-- Form Group (organization name)-->
                 <div class="col-md-6">
-                    <label class="small mb-1" for="inputLuogoNascita">LUOGO DI NASCITA</label>
-                    <input class="form-control" id="inputLuogoNascita" name="inputLuogoNascita" type="text"
+                    <label class="small mb-1" for="pf_inputLuogoNascita">LUOGO DI NASCITA</label>
+                    <input class="form-control" id="pf_inputLuogoNascita" name="pf_inputLuogoNascita" type="text"
                         placeholder="Inserisci il tuo luogo di nascita" value="<?= $luogo_di_nascita ?>">
                 </div>
 
@@ -77,14 +77,14 @@
 
                 <!-- Form Group (birthday)-->
                 <div class="col-md-4">
-                    <label class="small mb-1" for="inputBirthday">DATA DI NASCITA</label>
-                    <input class="form-control" id="inputBirthday" name="inputBirthday" type="date"
+                    <label class="small mb-1" for="pf_inputBirthday">DATA DI NASCITA</label>
+                    <input class="form-control" id="pf_inputBirthday" name="pf_inputBirthday" type="date"
                         data-format="dd/MM/yyyy" placeholder="dd/MM/yyyy" value="<?= $data_di_nascita ?>">
                 </div>
 
                 <div class=" col-md-6 mt-4">
-                    <label class="small mb-3" for="sesso">SESSO</label>
-                    <select id="sesso" class=" mb-3" value="<?= $sesso ?>" name="sesso">
+                    <label class="small mb-3" for="pf_sesso">SESSO</label>
+                    <select id="pf_sesso" class=" mb-3" value="<?= $sesso ?>" name="pf_sesso">
                         <option>M</option>
                         <option>F</option>
                     </select>
