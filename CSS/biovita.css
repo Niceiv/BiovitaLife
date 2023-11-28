@@ -1,3 +1,28 @@
+.grid-item-semi-full {
+	grid-column-start: 1;
+	grid-column-end: 3;
+
+}
+
+.grid-item-full {
+	grid-column-start: 1;
+	grid-column-end: 4;
+
+}
+
+.grid-item {
+	padding: 20px;
+	text-align: center;
+	gap: 10px;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	padding: 10px;
+
+}
+
 #more {
 	display: none;
 }

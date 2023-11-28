@@ -1,17 +1,18 @@
 <?php
 session_start();
 
-$loggedIn = $_SESSION['Token'];
-echo "$loggedIn";
+error_reporting(E_ERROR | E_PARSE);
 
-if (!$loggedIn) {
-	//show login stuff
-} else {
+$loggedIn = $_SESSION['Token'];
+
+if ($loggedIn != "") {
 	//redirect back to an other page:
 	header('location: index.php');
 	exit();
+} else {
 }
 ?>
+<link rel="stylesheet" href="CSS/login.css">
 
 <style>
 	.container {
