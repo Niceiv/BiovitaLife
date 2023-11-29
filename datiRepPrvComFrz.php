@@ -17,74 +17,65 @@ echo "<br>frz_sel: " . $frz_sel;
 require 'Config\SQL_Command.php';
 
 
-
-
-
-if ($tipo == 'REG') {
-    /*
-    echo "<p>Provincia</p>";
-    echo "<select name='cbo_prv' id='cbo_prv'>";
-    echo "    <option value='0'>Scegli...</option>";
-    */
+    $prvData='';
     $pre_sel = $prv_sel;
     $sql = "SELECT * FROM vw_Province WHERE  numrifpad=" . $val_sel . "  ORDER BY DESCRIZIONE";
     $res = GetData($sql);
     if ($res->num_rows > 0) {
         while ($row = $res->fetch_assoc()) {
             if ($pre_sel==$row["NUMRIF"]) {
-                echo "<option value='" . $row["NUMRIF"] ."' selected>" . $row["DESCRIZIONE"] ."</option>";
+                $prvData .= "<option value='" . $row["NUMRIF"] ."' selected>" . $row["DESCRIZIONE"] ."</option>";
             } else {
-                echo "<option value='" . $row["NUMRIF"] ."'>" . $row["DESCRIZIONE"] ."</option>";
+                $prvData .= "<option value='" . $row["NUMRIF"] ."'>" . $row["DESCRIZIONE"] ."</option>";
             }
         }
     }
-    //echo "</select>";
-}
+   
 
-
-
-if ($tipo == 'PRV') {
-    /*
-    echo "<br />";
-    echo "<p>Comune</p>";
-    echo "<select name='cbo_com' id='cbo_com'>";
-    echo "    <option value='0'>Scegli...</option>";
-    */
+    $comData='';
     $pre_sel = $com_sel;
-    $sql = "SELECT * FROM vw_Comuni WHERE  numrifpad=" . $val_sel . "  ORDER BY DESCRIZIONE";
+    $sql = "SELECT * FROM vw_Comuni WHERE  numrifpad=" . $prv_sel . "  ORDER BY DESCRIZIONE";
     $res = GetData($sql);
     if ($res->num_rows > 0) {
         while ($row = $res->fetch_assoc()) {
             if ($pre_sel==$row["NUMRIF"]) {
-                echo "<option value='" . $row["NUMRIF"] ."' selected>" . $row["DESCRIZIONE"] ."</option>";
+                $comData .= "<option value='" . $row["NUMRIF"] ."' selected>" . $row["DESCRIZIONE"] ."</option>";
             } else {
-                echo "<option value='" . $row["NUMRIF"] ."'>" . $row["DESCRIZIONE"] ."</option>";
+                $comData .= "<option value='" . $row["NUMRIF"] ."'>" . $row["DESCRIZIONE"] ."</option>";
             }
         }
     }
-    //echo "</select>";
-}
+   
 
-
-
-if ($tipo == 'COM') {
-    /*
-    echo "<br />";
-    echo "<p>Frazione</p>";
-    echo "<select name='cbo_frz' id='cbo_frz'>";
-    echo "    <option value='0'>Scegli...</option>";
-    */
+    $frzData='';
     $pre_sel = $frz_sel;
-    $sql = "SELECT * FROM vw_Frazioni WHERE  numrifpad=" . $val_sel . "  ORDER BY DESCRIZIONE";
+    $sql = "SELECT * FROM vw_Frazioni WHERE  numrifpad=" . $com_sel . "  ORDER BY DESCRIZIONE";
     $res = GetData($sql);
     if ($res->num_rows > 0) {
         while ($row = $res->fetch_assoc()) {
             if ($pre_sel==$row["NUMRIF"]) {
-                echo "<option value='" . $row["NUMRIF"] ."' selected>" . $row["DESCRIZIONE"] ."</option>";
+                $frzData .= "<option value='" . $row["NUMRIF"] ."' selected>" . $row["DESCRIZIONE"] ."</option>";
             } else {
-                echo "<option value='" . $row["NUMRIF"] ."'>" . $row["DESCRIZIONE"] ."</option>";
+                $frzData .= "<option value='" . $row["NUMRIF"] ."'>" . $row["DESCRIZIONE"] ."</option>";
             }
         }
     }
-    //echo "</select>";
-}
+ 
+
+    
+    if ($tipo == 'ALL') {
+        $arData = array( 'PRV' => $prvData, 'COM'=>$comData, 'FRZ' => $frzData );
+    }
+    if ($tipo == 'REG') {
+        $arData = array( 'PRV' => $prvData );
+    }
+    if ($tipo == 'PRV') {
+        $arData = array( 'COM'=>$comData );
+    }
+    if ($tipo == 'COM') {
+        $arData = array( 'FRZ' => $frzData );
+    }
+    
+ 
+    echo json_encode($arData);
+

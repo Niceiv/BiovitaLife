@@ -8,7 +8,7 @@ if (isset($_GET['logout'])) {
 	session_destroy();
 
 	// Reindirizza alla pagina di login o all'area pubblica
-	header("Location: login.php"); // Cambia 'login.php' con la pagina di destinazione
+	header("Location: index.php"); // Cambia 'login.php' con la pagina di destinazione
 	exit(); // Assicura che lo script si interrompa dopo il reindirizzamento
 }
 ?>
