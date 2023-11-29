@@ -3,6 +3,11 @@ function verificaEmail(emailHelp) {
     return re.test(emailHelp);
 }
 
+function verificaCodiceFiscale(cf) {
+    var re= /^[ A - Za - z]{6}[0-9]{2}[&] A - Za - z]{1}[0-9]{2}[ A - Za - z]{1}[0-9]{3}[ A - Za - z]{1}$/;
+    return re.test(cf);
+}
+
 function controlloForm() {
     var nome = document.forms["formMail"]["nomeCognome"].value;
     var email = document.forms["formMail"]["emailHelp"].value;

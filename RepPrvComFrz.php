@@ -15,7 +15,7 @@
 
 
         //Se IDPRV è valorizzata vuol dire che il dato è stato precedentemente salvato a db
-        if (IDPrv != '') {
+        if (IDReg != '0') {
             //var strEcho = 'Reg: ' + IDReg + '\r\nPrv: ' + IDPrv + '\r\nCom: ' + IDCom + '\r\nFrz: ' + IDFrz;
             //console.log(strEcho);
             AjaxCall('ALL', IDReg, IDPrv, IDCom, IDFrz);
@@ -105,6 +105,9 @@
 
     //Fingo di avere dei valori letti da DBase
     //QUando nel db NON ci sono dati le varibili devono essere instanziate a zero
+
+
+
     $IDReg = 0;
     $IDProv = 0;
     $IDCom = 0;
@@ -114,6 +117,7 @@
     $IDProv = 26;
     $IDCom = 26010;
     $IDFrz = 103641;
+
 
     ?>
     <form>
