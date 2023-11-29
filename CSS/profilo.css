@@ -12,8 +12,20 @@
     max-height: 100%;
 }
 
+.card_ind {
+    box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
+    max-width: 100%;
+    max-height: 20%;
+}
+
+
 .card .card-header {
     font-weight: 500;
+}
+
+.card-header-ind {
+    font-weight: 500;
+    font-weight: bold;
 }
 
 .card-header:first-child {
@@ -309,7 +321,7 @@ select {
 
 .info-ind {
     margin-bottom: 5px;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 .link-ind {

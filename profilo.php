@@ -17,12 +17,12 @@ cap citta prov
 <form name="frmProfilo" method="post" action="#" OnOpenForm="OnOpenForm()">
     <input type='text' id='act_upd' name='act_upd'>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             console.log('avvio');
             OnOpenForm();
 
-            $("#scelta1").click(function () {
-                setTimeout(function () {
+            $("#scelta1").click(function() {
+                setTimeout(function() {
                     $("#PersFisica").css("visibility", "visible");
                     $("#PersGiuridica").css("visibility", "hidden");
                     $("#SceltaPers").hide();
@@ -30,14 +30,14 @@ cap citta prov
 
                 }, 1500); // 1500 millisecondi = 1.5 secondi
             });
-            $("#scelta1").click(function () {
+            $("#scelta1").click(function() {
                 console.log("È stata scelta la persona.");
                 $("#sceltaFatta").css("visibility", "visible").html("<p>È stato scelto persona.</p>");
 
             });
 
-            $("#scelta2").click(function () {
-                setTimeout(function () {
+            $("#scelta2").click(function() {
+                setTimeout(function() {
 
                     $("#PersGiuridica").css("visibility", "visible");
                     $("#PersFisica").css("visibility", "hidden");
@@ -46,12 +46,13 @@ cap citta prov
 
                 }, 1500); // 1500 millisecondi = 1.5 secondi
             });
-            $("#scelta2").click(function () {
+            $("#scelta2").click(function() {
                 console.log("È stata scelta l'azienda.");
                 $("#sceltaFatta").css("visibility", "visible").html("<p>È stato scelto azienda.</p>");
 
             });
         });
+
         function OnOpenForm() {
             console.log('inizio:avOnOpenFormvio');
             var act = document.getElementById('act_upd');
@@ -59,14 +60,13 @@ cap citta prov
             console.log(act.value);
             console.log('fine:avOnOpenFormvio');
         }
+
         function AggiornaProfilo(TipoAct) {
 
             var act = document.getElementById('act_upd');
             act.value = TipoAct;
             document.frmProfilo.submit();
         }
-
-
     </script>
 
     <?php
@@ -106,8 +106,6 @@ cap citta prov
 
             echo "<BR>INIZIO IDTipoPersona: $IDTipoPersona";
         }
-
-
     } else if ($token = '') {
         header('location:login.php');
         die();
@@ -116,7 +114,7 @@ cap citta prov
 
 
     if ($IDTipoPersona == 0) {
-        ?>
+    ?>
         <div class="container-fluid main " id="SceltaPers">
             <div class="text-center main-text">
                 <h3>Seleziona il tipo di account</h3>
@@ -137,7 +135,7 @@ cap citta prov
         <?php
     } else {
         if ($IDTipoPersona == 1) {
-            ?>
+        ?>
             <style type="text/css">
                 #PersFisica {
                     display: block;
@@ -149,9 +147,9 @@ cap citta prov
                     visibility: hidden;
                 }
             </style>
-            <?php
+        <?php
         } else {
-            ?>
+        ?>
             <style type="text/css">
                 #PersGiuridica {
                     display: block;
@@ -163,9 +161,8 @@ cap citta prov
                     visibility: hidden;
                 }
             </style>
-            <?php
+    <?php
         }
-
     }
 
     ?>
@@ -202,7 +199,6 @@ cap citta prov
                 '$nuovoSesso',
                 '$nuovoLuogoDiNascita'); ";
             ExecuteSQL($sql_ins);
-
         } else {
 
             // Query per l'update della persona
@@ -216,11 +212,9 @@ cap citta prov
             WHERE idutente = $idutente";
 
             ExecuteSQL($sql_upd);
-
         }
 
         $actUpd = '-';
-
     }
 
     if ($actUpd == 'AggiornaImpresa') {
@@ -250,7 +244,6 @@ cap citta prov
                 '$nuovoCodiceFiscale',
                 '$nuovoCodiceRea'); ";
             ExecuteSQL($sql_ins);
-
         } else {
 
             // Query per l'update della persona
@@ -262,11 +255,9 @@ cap citta prov
             WHERE idutente=$idutente";
 
             ExecuteSQL($sql_upd);
-
         }
 
         $actUpd = '-';
-
     }
 
     ?>
@@ -308,11 +299,26 @@ cap citta prov
 
             <!-- PANNEL INDIRIZZI -->
             <div class="tab-pane" id="indirizzo">
-                <?php
-                include("ProfiloIndirizzo.php");
-                include("ProfiloContatti.php");
-                ?>
+                <div class="row">
 
+                    <div class="col-md-5">
+                        <?php
+                        include("ProfiloIndirizzo.php");
+                        ?>
+                    </div>
+
+                    <div class="col-md-5">
+                        <?php
+                        include("ProfiloContatti.php");
+                        ?>
+                    </div>
+                </div>
+                <div class="row">
+                    <h2 class="text-center">I Tuoi Indirizzi</h2>
+                    <?php
+                        include("ProfiloMieiIndirizzi.php");
+                        ?>
+                </div>
             </div>
 
 

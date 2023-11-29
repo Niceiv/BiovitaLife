@@ -43,11 +43,8 @@ if ($actUpd == 'AggiungiIndirizzo') {
 }
 
 ?>
-<!--pulsante aggiungi indirizzo -->
-<h2 class="text-center">I Tuoi Indirizzi</h2>
-<div class="row">
-    <div class="col-md-4">
-        <div class="card ">
+
+        <div class="card_ind ">
             <div class="card-header text-center">Aggiungi Indirizzo</div>
             <a href="#" data-toggle="modal" data-target="#ModalIndirizzo">
                 <div class="card-body card-add-item">
@@ -56,10 +53,7 @@ if ($actUpd == 'AggiungiIndirizzo') {
                     </div>
                 </div>
             </a>
-
         </div>
-    </div>
-</div>
 
 <!-- Modal indirizzo-->
 <div id="ModalIndirizzo" class="modal fade" role="dialog">
@@ -163,87 +157,5 @@ if ($actUpd == 'AggiungiIndirizzo') {
 
     </div>
 </div>
-<!--
-    
-<?php
-/*
-$riga = true;
-
-
-$sql_sel_ind = "SELECT * FROM indirizzi WHERE idutente=$idutente";
-$res_sel_ind = GetData($sql_sel_ind);
-
-$info_den_ind = $row["denominazione"];
-$info_den_ind = $row["denominazione"];
-$info_den_ind = $row["denominazione"];
-$info_den_ind = $row["denominazione"];
-$info_den_ind = $row["denominazione"];
-$info_den_ind = $row["denominazione"];
-
-$sql_sel_tipo_ind = "SELECT * FROM tipo_indirizzo WHERE idtipo_indirizzo=$idtipo_indirizzo";
-$res_sel_ind = GetData($sql_sel_tipo_ind);
-
-$info_tipo_ind = $row["tipo_indirizzo"];
-
-
-if ($res_sel_ind->num_rows > 0) {
-    while ($row_ind = $res_sel_ind->fetch_assoc()) {
-
-        if ($riga) {
-            echo "<div class='row'>";
-            $colonna = 1;
-            $riga = false;
-        }
-
-
-        ?>
-        <div class="col-md-4">
-            <div class="card ">
-                <?php
-                if ($row['default'] == 1) {
-
-                    echo "<div class='card-header text-center'>Indirizzo Predefinito</div>";
-
-                } else {
-                    echo "<div class='card-header text-center'>Altro Indirizzo</div>";
-                }
-
-                ?>
-
-                <div class="card-body">
-                    <div class="info-ind">
-                        <p>
-                            <?= $info_den_ind ?>
-                        </p>
-                        <p>
-                            <?= $info_tipo_ind ?>
-                        </p>
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                    </div>
-                    <a class="link-ind">Modifica</a>
-
-                    <a class="link-ind">Imposta come predefinito</a>
-                </div>
-
-                <?php
-                $colonna++;
-
-                if ($colonna == 4) {
-                    $riga = true;
-                }
-
-
-                if ($riga) {
-                    echo "</div>";
-                }
-    }
-}
-*/
-?>
-    </div>
-</div>
-
--->
+ 
+ 
