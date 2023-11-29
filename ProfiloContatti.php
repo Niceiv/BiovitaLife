@@ -7,16 +7,16 @@ if ($actUpd == 'AggiungiRecapito') {
     $Rec_Recapito = $_POST['rec_recapito'];
     $Rec_TipoRecap = $_POST['rec_tipo_recapito'];
     $Rec_PredRecap = $_POST['rec_checkbox_pred'];
-    $Rec_denom_recapito = isset($_POST['rec_denom_recapito']);
+    $Rec_denom_recapito = $_POST['rec_denom_recapito'];
 
 
-
+/*
 
     echo "<BR>Recapito: $Rec_Recapito";
     echo "<BR>Tipo Recapito: $Rec_TipoRecap";
     echo "<BR>IdIndirizzo: $Rec__IdIndirizzo";
     echo "<BR>Default: $Rec_PredRecap";
-
+*/
 
 
     $sql_ins_recap = "INSERT INTO `recapiti` 
