@@ -306,3 +306,12 @@ select {
     box-sizing: border-box;
     /* Assicura che il padding sia incluso nelle dimensioni totali */
 }
+
+.info-ind {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.link-ind {
+    text-decoration: none;
+}
