@@ -48,7 +48,8 @@ if ($res_sel_ind->num_rows > 0) {
                 </div>
                 <hr>
                 <?php
-                $sql_sel_rec = "SELECT * FROM vw_recapiti WHERE idutente=$idutente and idIndirizzo in (0," . $row_ind['idindirizzo'] . ")";
+                $indSel = $row_ind['idindirizzo'];
+                $sql_sel_rec = "SELECT * FROM vw_recapiti WHERE idutente=$idutente and idIndirizzo in (0," . $indSel . ")";
                 $res_sel_rec = GetData($sql_sel_rec);
                 if ($res_sel_rec->num_rows > 0) {
                     while ($row_rec = $res_sel_rec->fetch_assoc()) {
@@ -67,13 +68,13 @@ if ($res_sel_ind->num_rows > 0) {
                 <hr>
 
                 <div class="grid-container">
-                    <a class="link-ind text-center">Modifica</a>
+
+                    <input type='button' onclick=ModificaIndirizzo(<?= $indSel ?>) class='link-ind text-center'
+                        value="Modifica"></input>
+                    <input type='button' onclick=EliminaIndirizzo(<?= $indSel ?>) class='link-ind text-center'
+                        value="Elimina"></input>
+
                     <?php
-
-                    $url = "delete_ind_utente.php?userID=$customerID"; // Genera l'URL con il parametro userID
-                    echo " <a href='$url'> class='link-ind text-center'>Elimina</a>";
-
-
                     if ($row_ind["ind_default"] == 0) {
                         echo "<a class='link-ind text-center'>Imposta come predefinito</a>";
                     }

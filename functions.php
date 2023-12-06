@@ -2,6 +2,9 @@
 function VerificaCodiceFiscale($codice_fiscale, $data_di_nascita, $sesso)
 {
 
+    $ret = true;
+
+
     $mesi = [
         1 => 'A',
         2 => 'B',
@@ -40,7 +43,6 @@ function VerificaCodiceFiscale($codice_fiscale, $data_di_nascita, $sesso)
 
     $errore = '';
 
-    $primiSeiCaratteri = substr($codice_fiscale, 0, 6);
     $anno_nascita = substr($data_di_nascita, 2, 2);
     //echo "<br><br>$anno_nascita";
     $mese_nascita = intval(substr($data_di_nascita, 5, 2));
@@ -54,47 +56,32 @@ function VerificaCodiceFiscale($codice_fiscale, $data_di_nascita, $sesso)
 
     if (preg_match($patternCodFisc, $codice_fiscale, $matches)) {
 
-        echo " <br><br> le occorrenze trovate sono: " . print_r($matches);
+        //echo " <br><br> le occorrenze trovate sono: " . print_r($matches);
 
-        if (ctype_alpha($primiSeiCaratteri)) {
-            echo "<br><br>I primi 6 caratteri sono tutte lettere.";
-        } else {
-            echo $errore .= "<br><br>C'è un errore nei primi 6 caratteri!";
-        }
+
 
 
         $posizione_anno = 7;
         $anno_da_controllare = substr($codice_fiscale, $posizione_anno - 1, 2);
-        echo "<br><br>L'anno da controllare è: $anno_da_controllare";
+        //echo "<br><br>L'anno da controllare è: $anno_da_controllare";
 
-
-        if (is_numeric($anno_da_controllare)) {
-            echo "<br><br>Il carattere nella posizione $posizione_anno è un numero: $anno_da_controllare";
-        } else {
-            echo $errore .= "<br><br>Il codice fiscale inserito deve essere numerico in questa posizione. Controlla qui: (" . $anno_da_controllare . ")";
-        }
-
-        if ($anno_da_controllare == $anno_nascita) {
-            echo "<br><br>L'anno di nascita corrisponde!";
-        } else {
+        if ($anno_da_controllare != $anno_nascita) {
             echo $errore .= "<br><br>Il codice fiscale inserito non è corretto. Controlla qui: (" . $anno_da_controllare . ")";
         }
 
-        $chiave_mese = $mese_nascita;
-        $mese_valore = $mesi[$chiave_mese];
-        echo "<br><br>Il mese da controllare è: " . $mese_valore;
+        $mese_valore = $mesi[$mese_nascita];
+        //echo "<br><br>Il mese da controllare è: " . $mese_valore;
 
         $posizione_mese = 9;
 
-        $mese_da_controllare = $mesi[$chiave_mese];
+
         $mese_da_controllare = substr($codice_fiscale, $posizione_mese - 1, 1);
-        echo "<br><br>Il mese da controllare è: $mese_da_controllare";
+        // echo "<br><br>Il mese da controllare è: $mese_da_controllare";
 
 
 
-        if ($mese_valore == $mese_da_controllare) {
-            echo "<br><br>Il mese di nascita corrisponde!";
-        } else {
+        if ($mese_valore != $mese_da_controllare) {
+
             echo $errore .= "<br><br>Il codice fiscale inserito non è corretto. Controlla qui: (" . $mese_da_controllare . ")";
 
         }
@@ -102,38 +89,25 @@ function VerificaCodiceFiscale($codice_fiscale, $data_di_nascita, $sesso)
         $posizione_giorno = 10;
 
         $giorno_da_controllare = substr($codice_fiscale, $posizione_giorno - 1, 2);
-        echo "<br><br>Il giorno da controllare è: $giorno_da_controllare";
+        //echo "<br><br>Il giorno da controllare è: $giorno_da_controllare";
 
 
         if ($sesso == 'M') {
-            if ($giorno_da_controllare == $giorno_nascita) {
-                echo "<br><br>Il giorno di nascita corrisponde!";
-            } else {
+            if ($giorno_da_controllare != $giorno_nascita) {
+
                 echo $errore .= "<br><br>Il codice fiscale inserito non è corretto. Controlla qui: (" . $giorno_da_controllare . ")";
             }
-        }
+        } else {
+            if ($giorno_da_controllare - 40 != $giorno_nascita) {
 
-
-        if ($sesso == 'F') {
-            if ($giorno_da_controllare - 40 == $giorno_nascita) {
-                echo "<br><br>Il giorno di nascita corrisponde!";
-            } else {
                 echo $errore .= "<br><br>Il codice fiscale inserito non è corretto.";
             }
         }
-        if ($errore == '') {
-            echo "<br><br>Il codice fiscale è corretto: " . strtoupper($codice_fiscale);
-        } else {
-            echo "<br><br> <b>Ritenta, sarai più fortunato!</b>";
-
-        }
-
 
     } else {
-        echo "<br><br> <b>cazzo fai</b>";
-
+        $errore = "codice fiscale non formattato correttamente";
     }
-
+    return $errore;
 }
 
 

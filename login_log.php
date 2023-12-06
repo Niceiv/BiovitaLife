@@ -1,5 +1,8 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
+session_destroy();
+
+session_start();
 
 require(__DIR__ . '\Config\SQL_command.php');
 
@@ -39,12 +42,13 @@ if ($res_nome_psw->num_rows > 0) {
 
     $token = uniq_user_token();
     $_SESSION["Token"] = $token;
+    $_SESSION["MioToken"] = $token;
 
 
     $sql_upd = "UPDATE utenti_login set token=\"$token\" WHERE idutente_login=$id";
     ExecuteSQL($sql_upd);
 
-    header("location: profilo.php");
+    header("location: index.php");
 
 } else {
     //Verifico che il nome non sia giù usato

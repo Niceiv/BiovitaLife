@@ -1,557 +1,557 @@
-.grid-item-semi-full {
-	grid-column-start: 1;
-	grid-column-end: 3;
+        .grid-item-semi-full {
+        	grid-column-start: 1;
+        	grid-column-end: 3;
 
-}
+        }
 
-.grid-item-full {
-	grid-column-start: 1;
-	grid-column-end: 4;
+        .grid-item-full {
+        	grid-column-start: 1;
+        	grid-column-end: 4;
 
-}
+        }
 
-.grid-item {
-	padding: 20px;
-	text-align: center;
-	gap: 10px;
-}
+        .grid-item {
+        	padding: 20px;
+        	text-align: center;
+        	gap: 10px;
+        }
 
-.grid-container {
-	display: grid;
-	grid-template-columns: auto auto auto;
-	padding: 10px;
+        .grid-container {
+        	display: grid;
+        	grid-template-columns: auto auto auto;
+        	padding: 10px;
 
-}
+        }
 
-#more {
-	display: none;
-}
+        #more {
+        	display: none;
+        }
 
-textarea {
-	resize: none;
-}
+        textarea {
+        	resize: none;
+        }
 
-.pointer {
-	cursor: pointer;
+        .pointer {
+        	cursor: pointer;
 
-}
+        }
 
-.right {
-	float: right;
-}
+        .right {
+        	float: right;
+        }
 
-.left {
-	float: left;
-}
+        .left {
+        	float: left;
+        }
 
-.cursive {
-	font-family: "Comic Sans MS", "Comic Sans", cursive;
-	font-size: 1.3em;
-}
+        .cursive {
+        	font-family: "Comic Sans MS", "Comic Sans", cursive;
+        	font-size: 1.3em;
+        }
 
-.helvetica {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: large;
+        .helvetica {
+        	font-family: Arial, Helvetica, sans-serif;
+        	font-size: large;
 
-}
+        }
 
-.brush {
-	font-family: Brush Script MT;
+        .brush {
+        	font-family: Brush Script MT;
 
-}
+        }
 
-.textWhite {
-	color: white;
-}
+        .textWhite {
+        	color: white;
+        }
 
-.textBlack {
-	color: black;
-}
+        .textBlack {
+        	color: black;
+        }
 
 
-.hidden {
-	display: none;
-}
+        .hidden {
+        	display: none;
+        }
 
 
-.bg-grey {
-	background-color: #f6f6f6;
-}
+        .bg-grey {
+        	background-color: #f6f6f6;
+        }
 
-.logo-small {
-	color: #59ed4f;
-	font-size: 50px;
-}
+        .logo-small {
+        	color: #59ed4f;
+        	font-size: 50px;
+        }
 
-.logo {
-	color: #59ed4f;
-	font-size: 200px;
-}
+        .logo {
+        	color: #59ed4f;
+        	font-size: 200px;
+        }
 
-@media screen and (max-width: 768px) {
-	.col-sm-4 {
-		text-align: center;
-		margin: 25px 0;
-	}
-}
+        @media screen and (max-width: 768px) {
+        	.col-sm-4 {
+        		text-align: center;
+        		margin: 25px 0;
+        	}
+        }
 
-.text-right {
-	text-align: right;
-}
+        .text-right {
+        	text-align: right;
+        }
 
-.text-left {
-	text-align: left;
-}
+        .text-left {
+        	text-align: left;
+        }
 
-.inputNum {
-	width: 50%;
-	padding: 5px;
-}
-
-video {
-	width: 100%;
-	height: auto;
-	border: 1px solid gray;
-}
-
-.ombra {
-	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-	border-radius: 5px;
-}
+        .inputNum {
+        	width: 50%;
+        	padding: 5px;
+        }
+
+        video {
+        	width: 100%;
+        	height: auto;
+        	border: 1px solid gray;
+        }
+
+        .ombra {
+        	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        	border-radius: 5px;
+        }
 
-.links {
-	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-	font-size: 1.2em;
-	padding: 5px;
-}
-
-.home {
-	padding: 15px;
-	margin-bottom: 20px;
-
-}
-
-a {
-	text-decoration: none;
-	color: #000;
-}
-
-a:hover {
-	text-decoration: none;
-	color: #00b300;
-}
-
-
-
-.navbar {
-	min-height: 60px;
-}
-
-.navbar-nav>li>a {
-	line-height: 38px;
-}
-
-
-
-.Titolo {
-	margin-top: 90px;
-	margin-left: 100px;
-	padding: 0px 10px;
-	height: 60%;
-	text-align: center;
-
-}
-
-h2.Titolo> {
-	font-family: Brush Script MT;
-
-}
-
-
-/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
-div.content {
-	margin-left: 1%;
-	padding: 1px 16px;
-	height: 1000px;
-}
-
-div.content1 {
-	margin-left: 170px;
-	padding: 1px 16px;
-	height: 3900px;
-}
-
-
-* {
-	margin-bottom: 0;
-	margin-left: 0;
-	margin-right: 0;
-	margin-top: 0;
-}
-
-/*CSS GALLERIA IMMAGINI*/
-div.gallery {
-	position: relative;
-	margin-left: 0px;
-	margin-top: 50px;
-	margin-right: 50px;
-	margin-bottom: 50px;
-	border-radius: 50%;
-}
-
-div.gallery:hover {
-	border: 5.1px solid #333333;
-}
-
-div.gallery img {
-	width: 100%;
-	border-radius: 50%;
-	height: 250px;
-}
-
-div.desc {
-	padding: 15px;
-	text-align: center;
-}
-
-* {
-	box-sizing: border-box;
-}
-
-.responsive {
-	padding: 0 6px;
-	float: left;
-	width: 24.99999%;
-}
-
-@media only screen and (max-width: 700px) {
-	.responsive {
-		width: 49.99999%;
-		margin: 6px 0;
-	}
-}
-
-@media only screen and (max-width: 500px) {
-	.responsive {
-		width: 100%;
-	}
-}
-
-.clearfix:after {
-	content: "";
-	display: table;
-	clear: both;
-}
-
-.image-container {
-	position: relative;
-	/* Needed to position the cutout text in the middle of the image */
-	height: 50px;
-	/* Some height */
-}
-
-.image-containers {
-	position: relative;
-	/* Needed to position the cutout text in the middle of the image */
-	height: 50px;
-	/* Some height */
-}
-
-.text {
-	background-color: gray;
-	color: white;
-	font-size: 3vw;
-	/* Responsive font size */
-	font-weight: bold;
-	padding: 0px;
-	width: 100%;
-	text-align: center;
-	/* Center text */
-	position: relative;
-	/* Position text */
-	height: 100%;
-	top: 49%;
-	/* Position text in the middle */
-	left: 50%;
-	/* Position text in the middle */
-	transform: translate(-50%, -50%);
-	/* Position text in the middle */
-	mix-blend-mode: screen;
-	/* This makes the cutout text possible */
-}
-
-/* Style the table */
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-	width: 70%;
-	border: 1px solid #ddd;
-	position: relative;
-	top: 300px;
-	left: 125px;
-}
-
-/* Style table headers and table data */
-th,
-td {
-	text-align: center;
-	padding: 8px;
-	margin-right: 4px
-}
-
-th:first-child,
-td:first-child {
-	text-align: left;
-}
-
-/* Zebra-striped table rows */
-tr:nth-child(even) {
-	background-color: #f2f2f2
-}
-
-.fa-check {
-	color: green;
-}
-
-.fa-remove {
-	color: red;
-}
-
-.Thumb {
-	width: 100px;
-	height: 100px;
-
-	margin-top: 10px;
-}
-
-
-
-
-
-.Thumb:hover {
-	border: 5px solid #4d4d4d;
-}
-
-
-.ThumbCiocche {
-	width: 80px;
-	height: 80px;
-
-	margin-top: 10px;
-}
-
-
-
-.ThumbCiocche:hover {
-	border: 5px solid #4d4d4d;
-}
-
-
-.Big {
-	width: 370px;
-	height: 400px;
-}
-
-.textDescLeft {
-	text-align: left;
-}
-
-.textDescCenter {
-	text-align: center;
-}
-
-.textDescRight {
-	text-align: right;
-}
-
-h4 {
-	font-size: 1.67em;
-}
-
-h3 {
-	font-size: 2.57em;
-}
-
-.serieTinte {
-	font-size: 3.27em;
-	font-weight: bold;
-	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-	letter-spacing: 1px;
-}
-
-h6 {
-	color: rgb(2, 2, 2);
-	font: 1.2em Candara;
-}
-
-section {
-	position: relative;
-	margin-left: 100px;
-	margin-top: 100px;
-}
-
-aside {
-	float: right;
-	position: relative;
-	right: 10px;
-	top: 100px;
-}
-
-hr {
-	border: 0;
-	height: 2px;
-	background: #333;
-	background-image: linear-gradient(to right, #b3ffb3, #00b300, #b3ffb3);
-}
-
-
-.icon-green {
-	color: green;
-}
-
-.warpper {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-
-.pannelli {
-	background: #fff;
-	box-shadow: 0 2rem 2rem #00000080;
-	min-height: 200px;
-	width: 100%;
-	max-width: 600px;
-	border-radius: 3px;
-	overflow: hidden;
-	padding: 20px;
-}
-
-.pannello {
-	display: none;
-	animation: fadein 0.8s;
-}
-
-@keyframes fadein {
-	from {
-		opacity: 0;
-	}
-
-	to {
-		opacity: 1;
-	}
-}
-
-.radio {
-	display: none;
-}
-
-div.mio {
-	border: solid;
-	border-radius: 5px;
-	transition: transform .2s;
-	/* Animation */
-}
-
-div.mio:hover {
-	transform: scale(1.5);
-	/* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-	cursor: pointer;
-}
-
-
-
-.jumbotron {
-	height: 160px;
-	margin-top: 60px;
-	margin-bottom: 80px;
-}
-
-.BVL_margin-top {
-	margin-top: -20px;
-}
-
-.padding {
-
-	padding: 60px 50px;
-
-}
-
-
-
-.stylish {
-	font-weight: bolder;
-	color: #9d9d9d;
-	position: relative;
-	top: 2vh;
-	border-left: solid 2px #9d9d9d;
-	border-top: solid 2px #9d9d9d;
-	border-bottom: solid 2px #9d9d9d;
-	padding: 5px;
-
-}
-
-.messBenv {
-	position: relative;
-	top: 2vh;
-	border-right: solid 2px #9d9d9d;
-	border-top: solid 2px #9d9d9d;
-	border-bottom: solid 2px #9d9d9d;
-	padding: 5px;
-	color: #00b300;
-	margin-right: 4vh;
-}
-
-
-/* ERROR PAGE CSS*/
-
-
-#handboy {
-	animation: swing ease-in-out 1.3s infinite alternate;
-	transform-origin: 98% 98%;
-	transform-box: fill-box;
-
-}
-
-
-#girllight {
-	animation: swing ease-in-out 1.3s infinite alternate;
-	transform-origin: 0% 97%;
-	transform-box: fill-box;
-}
-
-#hairgirl {
-	animation: swinghair ease-in-out 1.3s infinite alternate;
-	transform-origin: 60% 0%;
-	transform-box: fill-box;
-
-}
-
-#zero {
-	transform-origin: bottom;
-	transform-box: fill-box;
-
-}
-
-/*************swing************/
-@keyframes swing {
-	0% {
-		transform: rotate(10deg);
-	}
-
-	100% {
-		transform: rotate(-10deg);
-	}
-}
-
-
-/*************swing hair************/
-@keyframes swinghair {
-	0% {
-		transform: rotate(6deg);
-	}
-
-	100% {
-		transform: rotate(-6deg);
-	}
-}
+        .links {
+        	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        	font-size: 1.2em;
+        	padding: 5px;
+        }
+
+        .home {
+        	padding: 15px;
+        	margin-bottom: 20px;
+
+        }
+
+        a {
+        	text-decoration: none;
+        	color: #000;
+        }
+
+        a:hover {
+        	text-decoration: none;
+        	color: #00b300;
+        }
+
+
+
+        .navbar {
+        	min-height: 60px;
+        }
+
+        .navbar-nav>li>a {
+        	line-height: 38px;
+        }
+
+
+
+        .Titolo {
+        	margin-top: 90px;
+        	margin-left: 100px;
+        	padding: 0px 10px;
+        	height: 60%;
+        	text-align: center;
+
+        }
+
+        h2.Titolo> {
+        	font-family: Brush Script MT;
+
+        }
+
+
+        /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+        div.content {
+        	margin-left: 1%;
+        	padding: 1px 16px;
+        	height: 1000px;
+        }
+
+        div.content1 {
+        	margin-left: 170px;
+        	padding: 1px 16px;
+        	height: 3900px;
+        }
+
+
+        * {
+        	margin-bottom: 0;
+        	margin-left: 0;
+        	margin-right: 0;
+        	margin-top: 0;
+        }
+
+        /*CSS GALLERIA IMMAGINI*/
+        div.gallery {
+        	position: relative;
+        	margin-left: 0px;
+        	margin-top: 50px;
+        	margin-right: 50px;
+        	margin-bottom: 50px;
+        	border-radius: 50%;
+        }
+
+        div.gallery:hover {
+        	border: 5.1px solid #333333;
+        }
+
+        div.gallery img {
+        	width: 100%;
+        	border-radius: 50%;
+        	height: 250px;
+        }
+
+        div.desc {
+        	padding: 15px;
+        	text-align: center;
+        }
+
+        * {
+        	box-sizing: border-box;
+        }
+
+        .responsive {
+        	padding: 0 6px;
+        	float: left;
+        	width: 24.99999%;
+        }
+
+        @media only screen and (max-width: 700px) {
+        	.responsive {
+        		width: 49.99999%;
+        		margin: 6px 0;
+        	}
+        }
+
+        @media only screen and (max-width: 500px) {
+        	.responsive {
+        		width: 100%;
+        	}
+        }
+
+        .clearfix:after {
+        	content: "";
+        	display: table;
+        	clear: both;
+        }
+
+        .image-container {
+        	position: relative;
+        	/* Needed to position the cutout text in the middle of the image */
+        	height: 50px;
+        	/* Some height */
+        }
+
+        .image-containers {
+        	position: relative;
+        	/* Needed to position the cutout text in the middle of the image */
+        	height: 50px;
+        	/* Some height */
+        }
+
+        .text {
+        	background-color: gray;
+        	color: white;
+        	font-size: 3vw;
+        	/* Responsive font size */
+        	font-weight: bold;
+        	padding: 0px;
+        	width: 100%;
+        	text-align: center;
+        	/* Center text */
+        	position: relative;
+        	/* Position text */
+        	height: 100%;
+        	top: 49%;
+        	/* Position text in the middle */
+        	left: 50%;
+        	/* Position text in the middle */
+        	transform: translate(-50%, -50%);
+        	/* Position text in the middle */
+        	mix-blend-mode: screen;
+        	/* This makes the cutout text possible */
+        }
+
+        /* Style the table */
+        table {
+        	border-collapse: collapse;
+        	border-spacing: 0;
+        	width: 70%;
+        	border: 1px solid #ddd;
+        	position: relative;
+        	top: 300px;
+        	left: 125px;
+        }
+
+        /* Style table headers and table data */
+        th,
+        td {
+        	text-align: center;
+        	padding: 8px;
+        	margin-right: 4px
+        }
+
+        th:first-child,
+        td:first-child {
+        	text-align: left;
+        }
+
+        /* Zebra-striped table rows */
+        tr:nth-child(even) {
+        	background-color: #f2f2f2
+        }
+
+        .fa-check {
+        	color: green;
+        }
+
+        .fa-remove {
+        	color: red;
+        }
+
+        .Thumb {
+        	width: 100px;
+        	height: 100px;
+
+        	margin-top: 10px;
+        }
+
+
+
+
+
+        .Thumb:hover {
+        	border: 5px solid #4d4d4d;
+        }
+
+
+        .ThumbCiocche {
+        	width: 80px;
+        	height: 80px;
+
+        	margin-top: 10px;
+        }
+
+
+
+        .ThumbCiocche:hover {
+        	border: 5px solid #4d4d4d;
+        }
+
+
+        .Big {
+        	width: 370px;
+        	height: 400px;
+        }
+
+        .textDescLeft {
+        	text-align: left;
+        }
+
+        .textDescCenter {
+        	text-align: center;
+        }
+
+        .textDescRight {
+        	text-align: right;
+        }
+
+        h4 {
+        	font-size: 1.67em;
+        }
+
+        h3 {
+        	font-size: 2.57em;
+        }
+
+        .serieTinte {
+        	font-size: 3.27em;
+        	font-weight: bold;
+        	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        	letter-spacing: 1px;
+        }
+
+        h6 {
+        	color: rgb(2, 2, 2);
+        	font: 1.2em Candara;
+        }
+
+        section {
+        	position: relative;
+        	margin-left: 100px;
+        	margin-top: 100px;
+        }
+
+        aside {
+        	float: right;
+        	position: relative;
+        	right: 10px;
+        	top: 100px;
+        }
+
+        hr {
+        	border: 0;
+        	height: 2px;
+        	background: #333;
+        	background-image: linear-gradient(to right, #b3ffb3, #00b300, #b3ffb3);
+        }
+
+
+        .icon-green {
+        	color: green;
+        }
+
+        .warpper {
+        	display: flex;
+        	flex-direction: column;
+        	align-items: center;
+        }
+
+
+        .pannelli {
+        	background: #fff;
+        	box-shadow: 0 2rem 2rem #00000080;
+        	min-height: 200px;
+        	width: 100%;
+        	max-width: 600px;
+        	border-radius: 3px;
+        	overflow: hidden;
+        	padding: 20px;
+        }
+
+        .pannello {
+        	display: none;
+        	animation: fadein 0.8s;
+        }
+
+        @keyframes fadein {
+        	from {
+        		opacity: 0;
+        	}
+
+        	to {
+        		opacity: 1;
+        	}
+        }
+
+        .radio {
+        	display: none;
+        }
+
+        div.mio {
+        	border: solid;
+        	border-radius: 5px;
+        	transition: transform .2s;
+        	/* Animation */
+        }
+
+        div.mio:hover {
+        	transform: scale(1.5);
+        	/* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        	cursor: pointer;
+        }
+
+
+
+        .jumbotron {
+        	height: 160px;
+        	margin-top: 60px;
+        	margin-bottom: 80px;
+        }
+
+        .BVL_margin-top {
+        	margin-top: -20px;
+        }
+
+        .padding {
+
+        	padding: 60px 50px;
+
+        }
+
+
+
+        .stylish {
+        	font-weight: bolder;
+        	color: #9d9d9d;
+        	position: relative;
+        	top: 2vh;
+        	border-left: solid 2px #9d9d9d;
+        	border-top: solid 2px #9d9d9d;
+        	border-bottom: solid 2px #9d9d9d;
+        	padding: 5px;
+
+        }
+
+        .messBenv {
+        	position: relative;
+        	top: 2vh;
+        	border-right: solid 2px #9d9d9d;
+        	border-top: solid 2px #9d9d9d;
+        	border-bottom: solid 2px #9d9d9d;
+        	padding: 5px;
+        	color: #00b300;
+        	margin-right: 4vh;
+        }
+
+
+        /* ERROR PAGE CSS*/
+
+
+        #handboy {
+        	animation: swing ease-in-out 1.3s infinite alternate;
+        	transform-origin: 98% 98%;
+        	transform-box: fill-box;
+
+        }
+
+
+        #girllight {
+        	animation: swing ease-in-out 1.3s infinite alternate;
+        	transform-origin: 0% 97%;
+        	transform-box: fill-box;
+        }
+
+        #hairgirl {
+        	animation: swinghair ease-in-out 1.3s infinite alternate;
+        	transform-origin: 60% 0%;
+        	transform-box: fill-box;
+
+        }
+
+        #zero {
+        	transform-origin: bottom;
+        	transform-box: fill-box;
+
+        }
+
+        /*************swing************/
+        @keyframes swing {
+        	0% {
+        		transform: rotate(10deg);
+        	}
+
+        	100% {
+        		transform: rotate(-10deg);
+        	}
+        }
+
+
+        /*************swing hair************/
+        @keyframes swinghair {
+        	0% {
+        		transform: rotate(6deg);
+        	}
+
+        	100% {
+        		transform: rotate(-6deg);
+        	}
+        }

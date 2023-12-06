@@ -1,4 +1,7 @@
 <?php
+
+echo "<br>DENTRO indSel: [$indSel]";
+
 if ($actUpd == 'AggiungiIndirizzo') {
 
 

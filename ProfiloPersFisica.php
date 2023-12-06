@@ -93,17 +93,7 @@
                 </div>
             </div>
 
-            <?php
 
-            require_once('functions.php');
-
-
-
-            if (VerificaCodiceFiscale($codice_fiscale, $data_di_nascita, $sesso)) {
-                echo "<br><br>Il codice fiscale è valido.";
-            }
-
-            ?>
 
             <!-- Save changes button-->
             <div class="mb-3 gx-3 mt-5">

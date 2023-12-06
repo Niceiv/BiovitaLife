@@ -4,14 +4,14 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="CSS/profilo.css">
 <link rel="stylesheet" href="CSS/biovita.css">
-
-
-
+<link rel="stylesheet" href="CSS/error.css">
 
 <script src="JS/articoli.js"></script>
 <form name="frmProfilo" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"
     OnOpenForm="OnOpenForm()">
     <input type='text' id='act_upd' name='act_upd'>
+    <input type='text' id='nav_act' name='nav_act'>
+    <input type='text' id='IDIndirizzo' name='IDIndirizzo'>
     <script>
         $(document).ready(function () {
             console.log('avvio');
@@ -53,6 +53,11 @@
             console.log('inizio:avOnOpenFormvio');
             var act = document.getElementById('act_upd');
             act.value = 'OPEN';
+
+            var nav_act = document.getElementById('nav_act');
+            nav_act.value = 'Profilo';
+
+
             console.log(act.value);
             console.log('fine:avOnOpenFormvio');
         }
@@ -63,22 +68,90 @@
             act.value = TipoAct;
             document.frmProfilo.submit();
         }
+
+
+        function ModificaIndirizzo(idIndirizzo) {
+            var idind = document.getElementById('IDIndirizzo');
+            idind.value = idIndirizzo;
+            document.frmProfilo.submit();
+        }
+
+
+        function EliminaIndirizzo(idIndirizzo) {
+            var idind = document.getElementById('IDIndirizzo');
+            idind.value = idIndirizzo;
+
+            var nav_act = document.getElementById('nav_act');
+            nav_act.value = 'Indirizzo';
+
+            var act = document.getElementById('act_upd');
+            act.value = 'annulla';
+            var result = confirm("Confermi la cancellazione dell'0'indirizzo ?");
+            if (result) {
+                act.value = 'EliminaIndirizzo';
+            }
+            document.frmProfilo.submit();
+        }
+
+        function ShowErrorMessage() {
+
+            // Get the snackbar DIV
+            var x = document.getElementsByName("snackbar");
+
+            x.className = "show";
+
+            // After 3 seconds, remove the show class from DIV
+            setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+
+        }
+
+        function ShowErrorMessage2(ErrMsg) {
+            alert(ErrMsg);
+        }
     </script>
 
     <?php
+    error_reporting(E_ERROR | E_PARSE);
 
     session_start();
 
-    error_reporting(E_ERROR | E_PARSE);
 
     require(__DIR__ . '\Config\SQL_command.php');
 
     $actUpd = $_POST["act_upd"];
 
-    echo "actUpd: [$actUpd]";
-
+    $navAct = $_POST["nav_act"];
 
     $token = $_SESSION["Token"];
+
+    echo "<br>token: [$token]";
+
+    $miotoken = $_SESSION["MioToken"];
+    echo "<br>miotoken: [$miotoken]";
+
+
+    /*
+    $indSel = $_POST["IDIndirizzo"];
+
+    if ($navAct == '') {
+        $navAct = 'Profilo';
+    }
+
+    echo "<br>1indSel: [$indSel]";
+    if ($indSel == '') {
+        $indSel = 0;
+    }
+    */
+
+
+    echo "<br>actUpd: [$actUpd]";
+    echo "<br>navAct: [$navAct]";
+    echo "<br>2indSel: [$indSel]";
+
+
+
+
+
     //echo "Token: $token<br/>";
     $sql_nome_psw = "SELECT * FROM utenti_login WHERE token=\"$token\";";
     //echo "SQL Nome Email: $sql_nome_psw<br/>";
@@ -161,12 +234,9 @@
         }
     }
 
-    ?>
+    require_once('functions.php');
 
 
-    <?php
-
-    echo "<BR>actUpd: $actUpd";
 
     if ($actUpd == 'AggiornaPersona') {
 
@@ -180,35 +250,48 @@
 
         echo "AGG<br>nuovoCodiceFiscale:[" . $nuovoCodiceFiscale . "]";
 
-        if ($IDTipoPersona == 0) {
 
+        $err = VerificaCodiceFiscale($nuovoCodiceFiscale, $nuovoDataDiNascita, $nuovoSesso);
 
+        if ($err != '') {
+            echo "<br>Errore CF:" . $err;
 
-            $sql_ins = "INSERT INTO `persona`
-                (`idutente`,`cognome`,`nome`,`codice_fiscale`,`data_di_nascita`,`sesso`,`luogo_di_nascita`)
-                VALUES
-                ($idutente,
-                '$nuovoCognome',
-                '$nuovoNome',
-                '$nuovoCodiceFiscale',
-                '$nuovoDataDiNascita',
-                '$nuovoSesso',
-                '$nuovoLuogoDiNascita'); ";
-            ExecuteSQL($sql_ins);
+            echo "<script type='text/javascript'>ShowErrorMessage2('" . $err . "');</script>";
         } else {
+            if ($IDTipoPersona == 0) {
 
-            // Query per l'update della persona
-            $sql_upd = "UPDATE `persona` SET 
-            nome='$nuovoNome',
-            cognome='$nuovoCognome', 
-            codice_fiscale='$nuovoCodiceFiscale', 
-            luogo_di_nascita='$nuovoLuogoDiNascita', 
-            data_di_nascita='$nuovoDataDiNascita', 
-            sesso='$nuovoSesso' 
-            WHERE idutente = $idutente";
 
-            ExecuteSQL($sql_upd);
+
+                $sql_ins = "INSERT INTO `persona`
+                    (`idutente`,`cognome`,`nome`,`codice_fiscale`,`data_di_nascita`,`sesso`,`luogo_di_nascita`)
+                    VALUES
+                    ($idutente,
+                    '$nuovoCognome',
+                    '$nuovoNome',
+                    '$nuovoCodiceFiscale',
+                    '$nuovoDataDiNascita',
+                    '$nuovoSesso',
+                    '$nuovoLuogoDiNascita'); ";
+                ExecuteSQL($sql_ins);
+            } else {
+
+                // Query per l'update della persona
+                $sql_upd = "UPDATE `persona` SET 
+                nome='$nuovoNome',
+                cognome='$nuovoCognome', 
+                codice_fiscale='$nuovoCodiceFiscale', 
+                luogo_di_nascita='$nuovoLuogoDiNascita', 
+                data_di_nascita='$nuovoDataDiNascita', 
+                sesso='$nuovoSesso' 
+                WHERE idutente = $idutente";
+
+                ExecuteSQL($sql_upd);
+            }
+
+
         }
+
+
 
         $actUpd = '-';
     }
@@ -256,20 +339,35 @@
         $actUpd = '-';
     }
 
+    if ($actUpd == 'EliminaIndirizzo') {
+        $sql_del = "DELETE FROM indirizzi WHERE IDIndirizzo=$indSel";
+        echo "<BR>SQL DEL:" . $sql_del;
+        //ExecuteSQL($sql_del);
+        $actUpd = '-';
+    }
+
     ?>
 
     <div class="container-fluid ">
 
 
         <ul class="nav nav-tabs ">
-            <li class="active "><a href="#profile" data-toggle="tab">Profilo</a></li>
-            <li><a href="#indirizzo " data-toggle="tab">Indirizzo</a></li>
+            <li <?php if ($navAct == 'Profilo') {
+                echo "class='active'";
+            } ?>><a href="#profile"
+                    data-toggle="tab">Profilo</a></li>
+            <li <?php if ($navAct == 'Indirizzo') {
+                echo "class='active'";
+            } ?>><a href="#indirizzo "
+                    data-toggle="tab">Indirizzo</a></li>
             <li><a href="#messages " data-toggle="tab">Pagamento</a></li>
             <li><a href="#settings " data-toggle="tab">Sicurezza</a></li>
         </ul>
 
         <div class="tab-content">
-            <div class="tab-pane active" id="profile">
+            <div class="tab-pane <?php if ($navAct == 'Profilo') {
+                echo "active";
+            } ?>" id="profile">
 
                 <div class="row">
 
@@ -292,7 +390,9 @@
 
 
             <!-- PANNEL INDIRIZZI -->
-            <div class="tab-pane" id="indirizzo">
+            <div class="tab-pane<?php if ($navAct == 'Indirizzo') {
+                echo "active";
+            } ?>" id="indirizzo">
                 <div class="row">
 
                     <div class="col-md-5">
@@ -331,3 +431,6 @@
 
 
 </form>
+<div id="snackbar" name="snackbar">
+    <?php echo $err; ?>
+</div>

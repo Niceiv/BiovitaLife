@@ -183,7 +183,7 @@ anime({
   direction: 'alternate'
 });
 
-anime({
+anime1({
   targets: '#zero',
   translateX: 10,
   autoplay: true,
