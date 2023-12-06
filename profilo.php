@@ -5,24 +5,20 @@
 <link rel="stylesheet" href="CSS/profilo.css">
 <link rel="stylesheet" href="CSS/biovita.css">
 
-<!--
-Per la modal dell'indirizzo
-Compo TIpo
-Descrizione
-Indirizzo
-cap citta prov
--->
+
+
 
 <script src="JS/articoli.js"></script>
-<form name="frmProfilo" method="post" action="#" OnOpenForm="OnOpenForm()">
+<form name="frmProfilo" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"
+    OnOpenForm="OnOpenForm()">
     <input type='text' id='act_upd' name='act_upd'>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             console.log('avvio');
             OnOpenForm();
 
-            $("#scelta1").click(function() {
-                setTimeout(function() {
+            $("#scelta1").click(function () {
+                setTimeout(function () {
                     $("#PersFisica").css("visibility", "visible");
                     $("#PersGiuridica").css("visibility", "hidden");
                     $("#SceltaPers").hide();
@@ -30,14 +26,14 @@ cap citta prov
 
                 }, 1500); // 1500 millisecondi = 1.5 secondi
             });
-            $("#scelta1").click(function() {
+            $("#scelta1").click(function () {
                 console.log("È stata scelta la persona.");
                 $("#sceltaFatta").css("visibility", "visible").html("<p>È stato scelto persona.</p>");
 
             });
 
-            $("#scelta2").click(function() {
-                setTimeout(function() {
+            $("#scelta2").click(function () {
+                setTimeout(function () {
 
                     $("#PersGiuridica").css("visibility", "visible");
                     $("#PersFisica").css("visibility", "hidden");
@@ -46,7 +42,7 @@ cap citta prov
 
                 }, 1500); // 1500 millisecondi = 1.5 secondi
             });
-            $("#scelta2").click(function() {
+            $("#scelta2").click(function () {
                 console.log("È stata scelta l'azienda.");
                 $("#sceltaFatta").css("visibility", "visible").html("<p>È stato scelto azienda.</p>");
 
@@ -114,7 +110,7 @@ cap citta prov
 
 
     if ($IDTipoPersona == 0) {
-    ?>
+        ?>
         <div class="container-fluid main " id="SceltaPers">
             <div class="text-center main-text">
                 <h3>Seleziona il tipo di account</h3>
@@ -135,7 +131,7 @@ cap citta prov
         <?php
     } else {
         if ($IDTipoPersona == 1) {
-        ?>
+            ?>
             <style type="text/css">
                 #PersFisica {
                     display: block;
@@ -147,9 +143,9 @@ cap citta prov
                     visibility: hidden;
                 }
             </style>
-        <?php
+            <?php
         } else {
-        ?>
+            ?>
             <style type="text/css">
                 #PersGiuridica {
                     display: block;
@@ -161,7 +157,7 @@ cap citta prov
                     visibility: hidden;
                 }
             </style>
-    <?php
+            <?php
         }
     }
 
@@ -278,7 +274,6 @@ cap citta prov
                 <div class="row">
 
                     <?php
-                    //PERSONA
                     include("ProfiloImage.php");
                     //PERSONA
                     include("ProfiloPersFisica.php");
@@ -290,7 +285,6 @@ cap citta prov
                 <!-- SECONDA ROW-->
                 <div class="row">
                     <?php
-                    //PERSONA
                     include("ProfiloExtraLink.php");
                     ?>
                 </div>
@@ -316,8 +310,8 @@ cap citta prov
                 <div class="row">
                     <h2 class="text-center">I Tuoi Indirizzi</h2>
                     <?php
-                        include("ProfiloMieiIndirizzi.php");
-                        ?>
+                    include("ProfiloMieiIndirizzi.php");
+                    ?>
                 </div>
             </div>
 
@@ -332,15 +326,8 @@ cap citta prov
                 Contenuto della scheda Sicurezza
             </div>
         </div>
+
     </div>
-
-
-
-
-
-
-
-
 
 
 </form>

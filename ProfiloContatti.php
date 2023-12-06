@@ -10,13 +10,13 @@ if ($actUpd == 'AggiungiRecapito') {
     $Rec_denom_recapito = $_POST['rec_denom_recapito'];
 
 
-/*
+    /*
 
-    echo "<BR>Recapito: $Rec_Recapito";
-    echo "<BR>Tipo Recapito: $Rec_TipoRecap";
-    echo "<BR>IdIndirizzo: $Rec__IdIndirizzo";
-    echo "<BR>Default: $Rec_PredRecap";
-*/
+        echo "<BR>Recapito: $Rec_Recapito";
+        echo "<BR>Tipo Recapito: $Rec_TipoRecap";
+        echo "<BR>IdIndirizzo: $Rec__IdIndirizzo";
+        echo "<BR>Default: $Rec_PredRecap";
+    */
 
 
     $sql_ins_recap = "INSERT INTO `recapiti` 
@@ -33,20 +33,23 @@ if ($actUpd == 'AggiungiRecapito') {
     $Rec_PredRecap); ";
 
     ExecuteSQL($sql_ins_recap);
+
+    $actUpd = '-';
+
 }
 
 ?>
 
-        <div class="card_ind ">
-            <div class="card-header text-center">Aggiungi contatto</div>
-            <a href="#" data-toggle="modal" data-target="#ModalContatto">
-                <div class="card-body card-add-item">
-                    <div class="add-item ">
-                        <i class="glyphicon glyphicon-plus "></i>
-                    </div>
-                </div>
-            </a>
+<div class="card_ind ">
+    <div class="card-header text-center">Aggiungi contatto</div>
+    <a href="#" data-toggle="modal" data-target="#ModalContatto">
+        <div class="card-body card-add-item">
+            <div class="add-item ">
+                <i class="glyphicon glyphicon-plus "></i>
+            </div>
         </div>
+    </a>
+</div>
 <!--
 
 <!-- Modal contatto-->

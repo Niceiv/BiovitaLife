@@ -20,7 +20,15 @@ echo "password: $mypassword <br/>";
 
 
 
-
+function validateEmail($email)
+{
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "{$email}: Email valida" . "<br>";
+    } else {
+        echo "{$email}: Email non valida" . "<br>";
+    }
+}
+validateEmail($email);
 
 /*
 Prima di procedere devo verificare che tutti i campi siano valorizzati

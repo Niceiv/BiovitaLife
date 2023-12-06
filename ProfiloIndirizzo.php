@@ -40,20 +40,22 @@ if ($actUpd == 'AggiungiIndirizzo') {
     $nuovoPredInd); ";
 
     ExecuteSQL($sql_ins_ind);
+
+    $actUpd = '-';
 }
 
 ?>
 
-        <div class="card_ind ">
-            <div class="card-header text-center">Aggiungi Indirizzo</div>
-            <a href="#" data-toggle="modal" data-target="#ModalIndirizzo">
-                <div class="card-body card-add-item">
-                    <div class="add-item ">
-                        <i class="glyphicon glyphicon-plus "></i>
-                    </div>
-                </div>
-            </a>
+<div class="card_ind ">
+    <div class="card-header text-center">Aggiungi Indirizzo</div>
+    <a href="#" data-toggle="modal" data-target="#ModalIndirizzo">
+        <div class="card-body card-add-item">
+            <div class="add-item ">
+                <i class="glyphicon glyphicon-plus "></i>
+            </div>
         </div>
+    </a>
+</div>
 
 <!-- Modal indirizzo-->
 <div id="ModalIndirizzo" class="modal fade" role="dialog">
@@ -157,5 +159,3 @@ if ($actUpd == 'AggiungiIndirizzo') {
 
     </div>
 </div>
- 
- 

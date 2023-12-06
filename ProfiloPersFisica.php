@@ -21,15 +21,15 @@
         $sesso = $row_nome['sesso'];
         $codice_fiscale = $row_nome['codice_fiscale'];
         // ...
-    
-        echo "<br>nome: [" . $nome . "]";
-        echo "<br>cognome: [" . $cognome . "]";
-        echo "<br>data di nascita: [" . $data_di_nascita . "]";
-        echo "<br>sesso: [" . $sesso . "]";
-        echo "<br>luogo di nascita: [" . $luogo_di_nascita . "]";
-        echo "<br>codice fiscale: [" . $codice_fiscale . "]";
+        /*  
+              echo "<br>nome: [" . $nome . "]";
+              echo "<br>cognome: [" . $cognome . "]";
+              echo "<br>data di nascita: [" . $data_di_nascita . "]";
+              echo "<br>sesso: [" . $sesso . "]";
+              echo "<br>luogo di nascita: [" . $luogo_di_nascita . "]";
+              echo "<br>codice fiscale: [" . $codice_fiscale . "]";
 
-
+      */
 
 
 
@@ -61,8 +61,10 @@
             <div class="mb-3 gx-3">
                 <label class="small mb-1 " for="pf_inputCodFisc">CODICE FISCALE</label>
                 <input class="form-control" id="pf_inputCodFisc" type="text" name="pf_inputCodFisc" maxlength="16"
-                    placeholder="Inserisci il tuo Codice Fiscale" value="<?= $codice_fiscale ?>">
+                    placeholder="Inserisci il tuo Codice Fiscale" pattern="^[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]$"
+                    title="Inserisci un codice fiscale valido" value="<?= $codice_fiscale ?>">
             </div>
+
             <!-- Form Row        -->
             <div class="row gx-3 mb-3">
                 <!-- Form Group (organization name)-->
@@ -90,13 +92,25 @@
                     </select>
                 </div>
             </div>
-            <!-- Form Row-->
+
+            <?php
+
+            require_once('functions.php');
+
+
+
+            if (VerificaCodiceFiscale($codice_fiscale, $data_di_nascita, $sesso)) {
+                echo "<br><br>Il codice fiscale è valido.";
+            }
+
+            ?>
 
             <!-- Save changes button-->
             <div class="mb-3 gx-3 mt-5">
                 <button class="btn btn-success gx-3" id="btn_persona" onClick="AggiornaProfilo('AggiornaPersona')">Salva
                     Modifiche</button>
             </div>
+
         </div>
     </div>
 </div>
