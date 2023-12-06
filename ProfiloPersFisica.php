@@ -61,8 +61,8 @@
             <div class="mb-3 gx-3">
                 <label class="small mb-1 " for="pf_inputCodFisc">CODICE FISCALE</label>
                 <input class="form-control" id="pf_inputCodFisc" type="text" name="pf_inputCodFisc" maxlength="16"
-                    placeholder="Inserisci il tuo Codice Fiscale" pattern="^[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]$"
-                    title="Inserisci un codice fiscale valido" value="<?= $codice_fiscale ?>">
+                    placeholder="Inserisci il tuo Codice Fiscale" title="Inserisci un codice fiscale valido"
+                    value="<?= $codice_fiscale ?>">
             </div>
 
             <!-- Form Row        -->
