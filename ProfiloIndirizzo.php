@@ -84,19 +84,6 @@ if ($actUpd == 'AggiungiIndirizzo') {
 
 ?>
 
-<div class="card_ind ">
-    <div class="card-header text-center">Aggiungi Indirizzo</div>
-    <!--
-    <a href="#" data-toggle="modal" data-target="#ModalIndirizzo" onclick="AggiungiIndirizzo()">
--->
-    <a href="#" onclick="AggiungiIndirizzo()" id="AddAdr" name="AddAdr">
-        <div class="card-body card-add-item">
-            <div class="add-item ">
-                <i class="glyphicon glyphicon-plus "></i>
-            </div>
-        </div>
-    </a>
-</div>
 
 
 <!-- Modal indirizzo-->
