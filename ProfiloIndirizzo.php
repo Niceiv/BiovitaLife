@@ -103,10 +103,7 @@
 //QUando nel db NON ci sono dati le varibili devono essere instanziate a zero
 
 
-$IDReg = 204;
-$IDProv = 26;
-$IDCom = 26010;
-$IDFrz = 103641;
+
 
 $IDReg = 0;
 $IDProv = 0;
@@ -138,6 +135,11 @@ if (($indSel != '') and ($indSel != '0')) {
         $actProv = $row1['provincia'];
         $actCitta = $row1['citta'];
         $actPredInd = $row1['default'];
+
+        $IDReg = $row1['IDRegione'];
+        $IDProv = $row1['IDProvincia'];
+        $IDCom = $row1['IDComune'];
+        $IDFrz = $row1['IDFrazione'];
     }
 }
 
