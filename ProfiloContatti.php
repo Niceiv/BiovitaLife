@@ -40,17 +40,7 @@ if ($actUpd == 'AggiungiRecapito') {
 
 ?>
 
-<div class="card_ind ">
-    <div class="card-header text-center">Aggiungi contatto</div>
-    <a href="#" data-toggle="modal" data-target="#ModalContatto">
-        <div class="card-body card-add-item">
-            <div class="add-item ">
-                <i class="glyphicon glyphicon-plus "></i>
-            </div>
-        </div>
-    </a>
-</div>
-<!--
+
 
 <!-- Modal contatto-->
 <div id="ModalContatto" class="modal fade" role="dialog">
