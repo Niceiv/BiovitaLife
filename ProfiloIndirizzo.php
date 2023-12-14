@@ -154,10 +154,10 @@ if ($actUpd == 'AggiungiIndirizzo') {
 
     //MM20231214 Gestisco gli ID di Regione, Provincia, Comune e Frazione
 
-    $nuovoIDRegione = $_POST['PreSelReg'] ?? '0';
-    $nuovoIDProvincia = $_POST['PreSelPrv'] ?? '0';
-    $nuovoIDComune = $_POST['PreSelCom'] ?? '0';
-    $nuovoIDFrazione = $_POST['PreSelFrz'] ?? '0';
+    $nuovoIDRegione = $_POST['cbo_reg'] ?? '0';
+    $nuovoIDProvincia = $_POST['cbo_prv'] ?? '0';
+    $nuovoIDComune = $_POST['cbo_com'] ?? '0';
+    $nuovoIDFrazione = $_POST['cbo_frz'] ?? '0';
 
     echo "<BR>Denominazione: $nuovaDenInd";
     echo "<BR>Tipo Indirizzo: $nuovoTipoInd";
@@ -304,7 +304,7 @@ if ($actUpd == 'AggiungiIndirizzo') {
                     <div class="col-md-3 col-sm-3 ml-4">
                         <div class="form-group">
                             <span id="span_prv" name="span_prv">
-                            <label for="cbo_com" class="mb-3">Provincia:</label>
+                            <label for="cbo_prv" class="mb-3">Provincia:</label>
                                 <select name='cbo_prv' id='cbo_prv'>
                                     <option value='0'>Scegli...</option>
                                 </select>
