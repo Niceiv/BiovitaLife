@@ -2,6 +2,35 @@
 
 echo "<br>DENTRO indSel: [$indSel]";
 
+$actDenInd = '';
+$actTipoInd = '';
+$actInd = '';
+$actCap = '';
+$actProv = '';
+$actCitta = '';
+$actPredInd = 0;
+
+if (($indSel != '') and ($indSel != '0')) {
+    $SQL_IND = "SELECT * FROM indirizzi WHERE IDIndirizzo=" . $indSel . ";";
+    echo "<br>$SQL_IND";
+    $res_ind = GetData($SQL_IND);
+    if ($res_ind->num_rows > 0) {
+
+        $row1 = $res_ind->fetch_assoc();
+        $idu = $row1["idutente"];
+        $actDenInd = $row1['denominazione'];
+        $actTipoInd = $row1['idtipo_indirizzo'];
+        $actInd = $row1['indirizzo'];
+        $actCap = $row1['cap'];
+        $actProv = $row1['provincia'];
+        $actCitta = $row1['citta'];
+        $actPredInd = $row1['default'];
+
+
+    }
+
+}
+
 if ($actUpd == 'AggiungiIndirizzo') {
 
 
@@ -22,27 +51,33 @@ if ($actUpd == 'AggiungiIndirizzo') {
     echo "<BR>Default: $nuovoPredInd";
 
 
+    //se IDINdirizzo==0 faccio insert
+//se !=0 faccio update
+    if (($indSel == '') or ($indSel == '0')) {
+        $sql_ins_ind = "INSERT INTO `indirizzi` 
+            (`idutente`,
+            `denominazione`,
+            `idtipo_indirizzo`,
+            `indirizzo`,
+            `cap`,
+            `provincia`,
+            `citta`,
+            `default`
+            ) VALUES
+            ($idutente,
+            '$nuovaDenInd',
+            $nuovoTipoInd,
+            '$nuovoInd',
+            $nuovoCap,
+            '$nuovaProv',
+            '$nuovaCitta',
+            $nuovoPredInd); ";
 
-    $sql_ins_ind = "INSERT INTO `indirizzi` 
-    (`idutente`,
-    `denominazione`,
-    `idtipo_indirizzo`,
-    `indirizzo`,
-    `cap`,
-    `provincia`,
-    `citta`,
-    `default`
-    ) VALUES
-    ($idutente,
-    '$nuovaDenInd',
-    $nuovoTipoInd,
-    '$nuovoInd',
-    $nuovoCap,
-    '$nuovaProv',
-    '$nuovaCitta',
-    $nuovoPredInd); ";
-
-    ExecuteSQL($sql_ins_ind);
+        ExecuteSQL($sql_ins_ind);
+    } else {
+        //UPDATE
+        $SQL = "UPDATE `indirizzi` SET <coppie chiave valore> WHERE IDIndirizzo=" . $indSel . ";";
+    }
 
     $actUpd = '-';
 }
@@ -51,7 +86,10 @@ if ($actUpd == 'AggiungiIndirizzo') {
 
 <div class="card_ind ">
     <div class="card-header text-center">Aggiungi Indirizzo</div>
-    <a href="#" data-toggle="modal" data-target="#ModalIndirizzo">
+    <!--
+    <a href="#" data-toggle="modal" data-target="#ModalIndirizzo" onclick="AggiungiIndirizzo()">
+-->
+    <a href="#" onclick="AggiungiIndirizzo()" id="AddAdr" name="AddAdr">
         <div class="card-body card-add-item">
             <div class="add-item ">
                 <i class="glyphicon glyphicon-plus "></i>
@@ -60,10 +98,14 @@ if ($actUpd == 'AggiungiIndirizzo') {
     </a>
 </div>
 
-<!-- Modal indirizzo-->
-<div id="ModalIndirizzo" class="modal fade" role="dialog">
-    <div class="modal-dialog">
 
+<!-- Modal indirizzo-->
+<div id="ModalIndirizzo" class="modal" role="dialog">
+    <div id="ModalIndirizzoContente" class="modal-dialog">
+        <!-- Modal content 
+<div id="ModalIndirizzo" class="modal fade" role="dialog">
+    <div id="ModalIndirizzoContente" class="modal-dialog">
+-->
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
@@ -86,7 +128,11 @@ if ($actUpd == 'AggiungiIndirizzo') {
 
                                         $IdTipoIndirizzo = $rowTipoInd['idtipo_indirizzo'];
                                         $TipoIndirizzo = $rowTipoInd['tipo_indirizzo'];
-                                        $options = "<option value='$IdTipoIndirizzo'>" . $TipoIndirizzo . "</option>";
+                                        if ($IdTipoIndirizzo == $actTipoInd) {
+                                            $options = "<option value='$IdTipoIndirizzo' selected>" . $TipoIndirizzo . "</option>";
+                                        } else {
+                                            $options = "<option value='$IdTipoIndirizzo'>" . $TipoIndirizzo . "</option>";
+                                        }
                                         echo $options;
                                     }
                                 }
@@ -100,7 +146,7 @@ if ($actUpd == 'AggiungiIndirizzo') {
                         <div class="form-group">
                             <label for="ind_denominazione">Nominativo:</label>
                             <input type="text" class="form-control" id="ind_denominazione" name="ind_denominazione"
-                                placeholder="Inserisci il nominativo" required>
+                                placeholder="Inserisci il nominativo" required value='<?php echo $actDenInd; ?>'>
                         </div>
                     </div>
 
@@ -110,7 +156,7 @@ if ($actUpd == 'AggiungiIndirizzo') {
                         <div class="form-group">
                             <label for="ind_indirizzo">Indirizzo e nr civico:</label>
                             <input type="text" class="form-control" id="ind_indirizzo" name="ind_indirizzo"
-                                placeholder="Inserisci la via" required>
+                                placeholder="Inserisci la via" required value='<?php echo $actInd; ?>'>
                         </div>
                     </div>
                 </div>
@@ -120,7 +166,7 @@ if ($actUpd == 'AggiungiIndirizzo') {
                         <div class="form-group">
                             <label for="ind_cap">CAP:</label>
                             <input type="text" class="form-control" name="ind_cap" id="ind_cap" placeholder="CAP"
-                                required maxlength="5" pattern="[0-9]{5}">
+                                required maxlength="5" pattern="[0-9]{5}" value='<?php echo $actCap; ?>'>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-3 ml-4">
@@ -156,7 +202,7 @@ if ($actUpd == 'AggiungiIndirizzo') {
                 <button type="submit" class="btn btn-default left"
                     onclick="AggiornaProfilo('AggiungiIndirizzo')">Aggiungi</button>
 
-                <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" onClick="ChiudiAdr()">Chiudi</button>
             </div>
         </div>
 

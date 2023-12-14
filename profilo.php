@@ -7,8 +7,15 @@
 <link rel="stylesheet" href="CSS/error.css">
 
 <script src="JS/articoli.js"></script>
-<form name="frmProfilo" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"
-    OnOpenForm="OnOpenForm()">
+<?php
+error_reporting(E_ERROR | E_PARSE);
+
+session_start();
+?>
+<!--
+<form name="frmProfilo" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"  OnOpenForm="OnOpenForm()"
+-->
+<form name="frmProfilo" method="post" action="#">
     <input type='text' id='act_upd' name='act_upd'>
     <input type='text' id='nav_act' name='nav_act'>
     <input type='text' id='IDIndirizzo' name='IDIndirizzo'>
@@ -50,9 +57,12 @@
         });
 
         function OnOpenForm() {
+
+
             console.log('inizio:avOnOpenFormvio');
             var act = document.getElementById('act_upd');
             act.value = 'OPEN';
+
 
             var nav_act = document.getElementById('nav_act');
             nav_act.value = 'Profilo';
@@ -60,6 +70,10 @@
 
             console.log(act.value);
             console.log('fine:avOnOpenFormvio');
+
+
+
+
         }
 
         function AggiornaProfilo(TipoAct) {
@@ -73,8 +87,32 @@
         function ModificaIndirizzo(idIndirizzo) {
             var idind = document.getElementById('IDIndirizzo');
             idind.value = idIndirizzo;
+            var act = document.getElementById('act_upd');
+            act.value = 'ModalIndirizzo';
             document.frmProfilo.submit();
         }
+
+
+        function AggiungiIndirizzo() {
+            var idind = document.getElementById('IDIndirizzo');
+            idind.value = 0;
+            var act = document.getElementById('act_upd');
+            act.value = 'ModalIndirizzo';
+
+            document.frmProfilo.submit();
+        }
+
+        function ChiudiAdr() {
+
+
+            var idind = document.getElementById('IDIndirizzo');
+            idind.value = 0;
+            var act = document.getElementById('act_upd');
+            act.value = 'OPEN';
+
+            document.frmProfilo.submit();
+        }
+
 
 
         function EliminaIndirizzo(idIndirizzo) {
@@ -95,6 +133,8 @@
 
         function ShowErrorMessage() {
 
+
+
             // Get the snackbar DIV
             var x = document.getElementsByName("snackbar");
 
@@ -111,9 +151,6 @@
     </script>
 
     <?php
-    error_reporting(E_ERROR | E_PARSE);
-
-    session_start();
 
 
     require(__DIR__ . '\Config\SQL_command.php');
@@ -126,28 +163,22 @@
 
     echo "<br>token: [$token]";
 
-    $miotoken = $_SESSION["MioToken"];
-    echo "<br>miotoken: [$miotoken]";
-
-
-    /*
+    $indSel = 0;
     $indSel = $_POST["IDIndirizzo"];
 
     if ($navAct == '') {
         $navAct = 'Profilo';
     }
 
-    echo "<br>1indSel: [$indSel]";
+
     if ($indSel == '') {
         $indSel = 0;
     }
-    */
 
 
     echo "<br>actUpd: [$actUpd]";
     echo "<br>navAct: [$navAct]";
-    echo "<br>2indSel: [$indSel]";
-
+    echo "<br>indSel: [$indSel]";
 
 
 
@@ -236,7 +267,7 @@
 
     require_once('functions.php');
 
-
+    $err = '';
 
     if ($actUpd == 'AggiornaPersona') {
 
@@ -429,8 +460,29 @@
 
     </div>
 
+    <?php
+    if ($actUpd == 'ModalIndirizzo') {
+        echo "<script type='text/javascript'>
+        
+        var act = document.getElementById('act_upd');
+        act.value = 'OPEN';
 
+        var modal = document.getElementById('ModalIndirizzo');
+        var modalContent = document.getElementById('ModalIndirizzoContente');
+        var span = document.getElementsByClassName('close')[0];
+
+        modal.style.display = 'block';
+        modalContent.style.display = 'block';
+
+
+
+        </script>";
+
+    }
+    ?>
 </form>
+<!--
 <div id="snackbar" name="snackbar">
     <?php echo $err; ?>
 </div>
+        -->

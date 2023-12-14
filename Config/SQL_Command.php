@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require __DIR__.'\SQL_Connect.php';
+require __DIR__ . '\SQL_Connect.php';
 
 
 
@@ -10,7 +10,7 @@ function GetData($sql)
     global $conn;
 
     OpenCnn();
-    //echo '<BR>SQL:'. $sql;
+    //echo '<BR>SQL:' . $sql;
     $result = $conn->query($sql);
     CloseCnn();
 
@@ -33,12 +33,12 @@ function ExecuteSQL($sql)
     global $SQL_error;
 
 
-    echo "<BR>SQL: $sql";
+    //echo "<BR>SQL: $sql";
     OpenCnn();
     try {
         if ($conn->query($sql) === TRUE) {
-            if (substr($sql,0,6) == "INSERT") {
-                $_SESSION["last_id"]=$conn->insert_id;
+            if (substr($sql, 0, 6) == "INSERT") {
+                $_SESSION["last_id"] = $conn->insert_id;
                 echo '<br>LastID:' . $_SESSION["last_id"];
             }
             $_SESSION['ERR_STATUS'] = 'OK';

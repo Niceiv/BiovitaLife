@@ -9,6 +9,7 @@
     $codice_fiscale = "";
 
     $sql_nome = "SELECT * FROM `persona` WHERE idutente = $idutente";
+    //echo "SQL Nome : $sql_nome<br/>";
     $res_nome = GetData($sql_nome);
     if ($res_nome->num_rows > 0) {
         $row_nome = $res_nome->fetch_assoc();
