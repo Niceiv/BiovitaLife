@@ -19,6 +19,7 @@ session_start();
     <input type='hidden' id='act_upd' name='act_upd'>
     <input type='hidden' id='nav_act' name='nav_act'>
     <input type='hidden' id='IDIndirizzo' name='IDIndirizzo'>
+    <input type='hidden' id='IDRecapito' name='IDRecapito'>
     <script>
         $(document).ready(function() {
             console.log('avvio');
@@ -91,6 +92,15 @@ session_start();
             act.value = 'ModalIndirizzo';
             document.frmProfilo.submit();
         }
+
+        function ModificaRecapito(idRecapito) {
+            var idrec = document.getElementById('IDRecapito');
+            idrec.value = idRecapito;
+            var act = document.getElementById('act_upd');
+            act.value = 'ModalRecapito';
+            document.frmProfilo.submit();
+        }
+
 
 
         function AggiungiIndirizzo() {
@@ -165,17 +175,24 @@ session_start();
 
     //echo "<br>token: [$token]";
 
-    $indSel = 0;
-    $indSel = $_POST["IDIndirizzo"]??0;
-
     if ($navAct == '') {
         $navAct = 'Profilo';
     }
 
+    $indSel = 0;
+    $indSel = $_POST["IDIndirizzo"]??0;
 
     if ($indSel == '') {
         $indSel = 0;
     }
+
+    $recSel = 0;
+    $recSel = $_POST["IDRecapito"]??0;
+
+    if ($recSel == '') {
+        $recSel = 0;
+    }
+
 
     /*
     echo "<br>actUpd: [$actUpd]";
@@ -286,6 +303,9 @@ session_start();
         $nuovoDataDiNascita = $_POST['pf_inputBirthday'];
         $nuovoSesso = $_POST['pf_sesso'];
 
+        $nuovoIdComune = $_POST['pf_com'];
+        $nuovoBelfiore = $_POST['belfiore'];
+
         //echo "AGG<br>nuovoCodiceFiscale:[" . $nuovoCodiceFiscale . "]";
 
 
@@ -301,7 +321,7 @@ session_start();
 
 
                 $sql_ins = "INSERT INTO `persona`
-                    (`idutente`,`cognome`,`nome`,`codice_fiscale`,`data_di_nascita`,`sesso`,`luogo_di_nascita`)
+                    (`idutente`,`cognome`,`nome`,`codice_fiscale`,`data_di_nascita`,`sesso`,`luogo_di_nascita`, `id_comune`,`codice_catastale`)
                     VALUES
                     ($idutente,
                     '$nuovoCognome',
@@ -309,7 +329,9 @@ session_start();
                     '$nuovoCodiceFiscale',
                     '$nuovoDataDiNascita',
                     '$nuovoSesso',
-                    '$nuovoLuogoDiNascita'); ";
+                    '$nuovoLuogoDiNascita',
+                    $nuovoIdComune,
+                    '$nuovoBelfiore'); ";
                 ExecuteSQL($sql_ins);
             } else {
 
@@ -320,7 +342,9 @@ session_start();
                 codice_fiscale='$nuovoCodiceFiscale', 
                 luogo_di_nascita='$nuovoLuogoDiNascita', 
                 data_di_nascita='$nuovoDataDiNascita', 
-                sesso='$nuovoSesso' 
+                sesso='$nuovoSesso' ,
+                `id_comune` = $nuovoIdComune,
+                `codice_catastale` =  '$nuovoBelfiore'
                 WHERE idutente = $idutente";
 
                 ExecuteSQL($sql_upd);
@@ -501,6 +525,23 @@ session_start();
 
         var modal = document.getElementById('ModalIndirizzo');
         var modalContent = document.getElementById('ModalIndirizzoContente');
+        var span = document.getElementsByClassName('close')[0];
+
+        modal.style.display = 'block';
+        modalContent.style.display = 'block';
+
+
+
+        </script>";
+    }
+    if ($actUpd == 'ModalRecapito') {
+        echo "<script type='text/javascript'>
+        
+        var act = document.getElementById('act_upd');
+        act.value = 'OPEN';
+
+        var modal = document.getElementById('ModalContatto');
+        var modalContent = document.getElementById('ModalContattoContente');
         var span = document.getElementsByClassName('close')[0];
 
         modal.style.display = 'block';
