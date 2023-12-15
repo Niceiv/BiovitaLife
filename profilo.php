@@ -15,10 +15,10 @@ session_start();
 <!--
 <form name="frmProfilo" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"  OnOpenForm="OnOpenForm()"
 -->
-<form name="frmProfilo" method="post" action="#">
-    <input type='text' id='act_upd' name='act_upd'>
-    <input type='text' id='nav_act' name='nav_act'>
-    <input type='text' id='IDIndirizzo' name='IDIndirizzo'>
+<form name="frmProfilo" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+    <input type='hidden' id='act_upd' name='act_upd'>
+    <input type='hidden' id='nav_act' name='nav_act'>
+    <input type='hidden' id='IDIndirizzo' name='IDIndirizzo'>
     <script>
         $(document).ready(function() {
             console.log('avvio');
@@ -163,10 +163,10 @@ session_start();
 
     $token = $_SESSION["Token"];
 
-    echo "<br>token: [$token]";
+    //echo "<br>token: [$token]";
 
     $indSel = 0;
-    $indSel = $_POST["IDIndirizzo"];
+    $indSel = $_POST["IDIndirizzo"]??0;
 
     if ($navAct == '') {
         $navAct = 'Profilo';
@@ -177,11 +177,11 @@ session_start();
         $indSel = 0;
     }
 
-
+    /*
     echo "<br>actUpd: [$actUpd]";
     echo "<br>navAct: [$navAct]";
     echo "<br>indSel: [$indSel]";
-
+    */
 
 
 
@@ -206,7 +206,7 @@ session_start();
             $rowUtente = $res_utente->fetch_assoc();
             $IDTipoPersona = $rowUtente["IDTipoPersona"];
 
-            echo "<BR>INIZIO IDTipoPersona: $IDTipoPersona";
+            //echo "<BR>INIZIO IDTipoPersona: $IDTipoPersona";
         }
     } else if ($token = '') {
         header('location:login.php');
@@ -286,13 +286,13 @@ session_start();
         $nuovoDataDiNascita = $_POST['pf_inputBirthday'];
         $nuovoSesso = $_POST['pf_sesso'];
 
-        echo "AGG<br>nuovoCodiceFiscale:[" . $nuovoCodiceFiscale . "]";
+        //echo "AGG<br>nuovoCodiceFiscale:[" . $nuovoCodiceFiscale . "]";
 
 
         $err = VerificaCodiceFiscale($nuovoCodiceFiscale, $nuovoDataDiNascita, $nuovoSesso);
 
         if ($err != '') {
-            echo "<br>Errore CF:" . $err;
+            //echo "<br>Errore CF:" . $err;
 
             echo "<script type='text/javascript'>ShowErrorMessage2('" . $err . "');</script>";
         } else {
@@ -377,8 +377,8 @@ session_start();
 
     if ($actUpd == 'EliminaIndirizzo') {
         $sql_del = "DELETE FROM indirizzi WHERE IDIndirizzo=$indSel";
-        echo "<BR>SQL DEL:" . $sql_del;
-        //ExecuteSQL($sql_del);
+        //echo "<BR>SQL DEL:" . $sql_del;
+        ExecuteSQL($sql_del);
         $actUpd = '-';
     }
 
