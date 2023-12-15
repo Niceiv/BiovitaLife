@@ -8,7 +8,9 @@
         var IDCom = $('#PreSelCom').val();
         var IDFrz = $('#PreSelFrz').val();
 
-        //console.log('start\r\n');
+        var IDInd = $('#PreIDIndirizzo').val();
+
+        // console.log('\r\nReady IDInd[' + IDInd +']');
 
 
 
@@ -16,7 +18,7 @@
         if (IDPrv != '') {
             //var strEcho = 'Reg: ' + IDReg + '\r\nPrv: ' + IDPrv + '\r\nCom: ' + IDCom + '\r\nFrz: ' + IDFrz;
             //console.log(strEcho);
-            AjaxCall('ALL', IDReg, IDPrv, IDCom, IDFrz);
+            AjaxCall('ALL', IDReg, IDPrv, IDCom, IDFrz,IDInd);
         }
 
 
@@ -25,7 +27,7 @@
             //Regione selezionata
             IDReg = $('#cbo_reg').val();
             console.log('Regione selezionata: ' + IDReg);
-            AjaxCall('REG', IDReg, IDPrv, IDCom, IDFrz);
+            AjaxCall('REG', IDReg, IDPrv, IDCom, IDFrz,IDInd);
 
         }); //Fine cbo_reg
 
@@ -35,7 +37,7 @@
 
             IDPrv = $('#cbo_prv').val();
             console.log('Provincia selezionata: ' + IDPrv);
-            AjaxCall('PRV', IDPrv, IDPrv, IDCom, IDFrz);
+            AjaxCall('PRV', IDPrv, IDPrv, IDCom, IDFrz,IDInd);
 
         }); //Fine cbo_prv
 
@@ -45,15 +47,17 @@
             //Regione selezionata
             IDCom = $('#cbo_com').val();
             console.log('Comune selezionata: ' + IDCom);
-            AjaxCall('COM', IDCom, IDPrv, IDCom, IDFrz);
+            AjaxCall('COM', IDCom, IDPrv, IDCom, IDFrz,IDInd);
 
         }); //Fine cbo_prv
 
     }); //Fine document
 
-    function AjaxCall(Tipo, ValSel, PrvSel, ComSel, FrzSel) {
+
+
+    function AjaxCall(Tipo, ValSel, PrvSel, ComSel, FrzSel, IDInd) {
         console.log('\r\nAjaxCall2');
-        var strEcho = '\r\nTipo: ' + Tipo + '\r\nValSel: ' + ValSel + '\r\nPrv: ' + PrvSel + '\r\nCom: ' + ComSel + '\r\nFrz: ' + FrzSel;
+        var strEcho = '\r\nTipo: ' + Tipo + '\r\nValSel: ' + ValSel + '\r\nPrv: ' + PrvSel + '\r\nCom: ' + ComSel + '\r\nFrz: ' + FrzSel + '\r\IDInd: ' + IDInd;
         console.log(strEcho);
 
 
@@ -77,7 +81,7 @@
                 }
 
                 if (data.COM != null) {
-                    //console.log('\r\COM:' + data.COM);
+                    console.log('\r\COM:' + data.COM);
                     $('#cbo_com').html(data.COM);
                 }
 
@@ -86,7 +90,15 @@
                     $('#cbo_frz').html(data.FRZ);
                 }
 
-
+                //MM20231515
+                //Leggo i dati del comune nel caso d'inserimento 
+                //NON li leggo in caso di modifica perchè l'utente potrebbe aver valorizzato un CAP CAPPATO
+                if (IDInd == 0) {
+                    if (data.CAP != null) {
+                        console.log('\r\CAP:' + data.CAP);
+                        $('#ind_cap').val(data.CAP);
+                    }
+                }
             },
 
             error: function() {
@@ -109,6 +121,10 @@ $IDReg = 0;
 $IDProv = 0;
 $IDCom = 0;
 $IDFrz = 0;
+
+if ($indSel == '') {
+    $indSel = 0;
+}
 
 echo "<br>DENTRO indSel: [$indSel]";
 
@@ -218,16 +234,16 @@ if ($actUpd == 'AggiungiIndirizzo') {
 <!-- Modal indirizzo-->
 <div id="ModalIndirizzo" class="modal" role="dialog">
     <div id="ModalIndirizzoContente" class="modal-dialog">
-
-        <input type='text' id='PreSelReg' name='PreSelReg' value='<?= $IDReg ?>'>
-        <input type='text' id='PreSelPrv' name='PreSelPrv' value='<?= $IDProv ?>'>
-        <input type='text' id='PreSelCom' name='PreSelCom' value='<?= $IDCom ?>'>
-        <input type='text' id='PreSelFrz' name='PreSelFrz' value='<?= $IDFrz ?>'>
+        Ind <input type='text' id='PreIDIndirizzo' name='PreIDIndirizzo' value='<?= $indSel ?>'>
+        Reg <input type='text' id='PreSelReg' name='PreSelReg' value='<?= $IDReg ?>'>
+        Prv <input type='text' id='PreSelPrv' name='PreSelPrv' value='<?= $IDProv ?>'>
+        Com <input type='text' id='PreSelCom' name='PreSelCom' value='<?= $IDCom ?>'>
+        Sel <input type='text' id='PreSelFrz' name='PreSelFrz' value='<?= $IDFrz ?>'>
 
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="close" data-dismiss="modal" onClick="ChiudiAdr()">&times;</button>
                 <h4 class="modal-title text-center">Aggiungi un nuovo indirizzo</h4>
             </div>
             <div class="modal-body">
@@ -306,7 +322,7 @@ if ($actUpd == 'AggiungiIndirizzo') {
                     <div class="col-md-3 col-sm-3 ml-4">
                         <div class="form-group">
                             <span id="span_prv" name="span_prv">
-                            <label for="cbo_prv" class="mb-3">Provincia:</label>
+                                <label for="cbo_prv" class="mb-3">Provincia:</label>
                                 <select name='cbo_prv' id='cbo_prv'>
                                     <option value='0'>Scegli...</option>
                                 </select>
@@ -341,6 +357,8 @@ if ($actUpd == 'AggiungiIndirizzo') {
                             </span>
                         </div>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col-md-3 col-sm-3 ml-4">
                         <div class="form-group">
                             <label for="ind_cap">CAP:</label>
