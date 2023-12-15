@@ -126,7 +126,6 @@ if ($indSel == '') {
     $indSel = 0;
 }
 
-echo "<br>DENTRO indSel: [$indSel]";
 
 $actDenInd = '';
 $actTipoInd = '';
@@ -138,7 +137,7 @@ $actPredInd = 0;
 
 if (($indSel != '') and ($indSel != '0')) {
     $SQL_IND = "SELECT * FROM indirizzi WHERE IDIndirizzo=" . $indSel . ";";
-    echo "<br>$SQL_IND";
+    
     $res_ind = GetData($SQL_IND);
     if ($res_ind->num_rows > 0) {
 
@@ -177,6 +176,7 @@ if ($actUpd == 'AggiungiIndirizzo') {
     $nuovoIDComune = $_POST['cbo_com'] ?? '0';
     $nuovoIDFrazione = $_POST['cbo_frz'] ?? '0';
 
+    /*
     echo "<BR>Denominazione: $nuovaDenInd";
     echo "<BR>Tipo Indirizzo: $nuovoTipoInd";
     echo "<BR>Indirizzo $nuovoInd";
@@ -189,7 +189,10 @@ if ($actUpd == 'AggiungiIndirizzo') {
     echo "<BR>nuovoIDProvincia: $nuovoIDProvincia";
     echo "<BR>nuovoIDComune: $nuovoIDComune";
     echo "<BR>nuovoIDFrazione: $nuovoIDFrazione";
+    */
 
+    $indSel = $_POST['PreIDIndirizzo'] ?? '0';
+    echo "<BR>indSel:[ $indSel]";
 
     //se IDINdirizzo==0 faccio insert
     //se !=0 faccio update
@@ -209,7 +212,7 @@ if ($actUpd == 'AggiungiIndirizzo') {
             '$nuovaDenInd',
             $nuovoTipoInd,
             '$nuovoInd',
-            $nuovoCap,
+            '$nuovoCap',
             '$nuovaProv',
             '$nuovaCitta',
             $nuovoPredInd,
@@ -221,7 +224,21 @@ if ($actUpd == 'AggiungiIndirizzo') {
         ExecuteSQL($sql_ins_ind);
     } else {
         //UPDATE
-        $SQL = "UPDATE `indirizzi` SET <coppie chiave valore> WHERE IDIndirizzo=" . $indSel . ";";
+        $SQL_UPD = "UPDATE `biovita`.`indirizzi`
+        SET
+        `idtipo_indirizzo` = $nuovoTipoInd,
+        `cap` = '$nuovoCap',
+        `indirizzo` = '$nuovoInd',
+        `default` = $nuovoPredInd,
+        `denominazione` ='$nuovaDenInd',
+        `IDRegione` =$nuovoIDRegione,
+        `IDProvincia` =$nuovoIDProvincia,
+        `IDComune` = $nuovoIDComune,
+        `IDFrazione` = $nuovoIDFrazione
+        WHERE `idindirizzo` = $indSel;";
+
+
+         ExecuteSQL($SQL_UPD);
     }
 
     $actUpd = '-';
@@ -234,11 +251,11 @@ if ($actUpd == 'AggiungiIndirizzo') {
 <!-- Modal indirizzo-->
 <div id="ModalIndirizzo" class="modal" role="dialog">
     <div id="ModalIndirizzoContente" class="modal-dialog">
-        Ind <input type='text' id='PreIDIndirizzo' name='PreIDIndirizzo' value='<?= $indSel ?>'>
-        Reg <input type='text' id='PreSelReg' name='PreSelReg' value='<?= $IDReg ?>'>
-        Prv <input type='text' id='PreSelPrv' name='PreSelPrv' value='<?= $IDProv ?>'>
-        Com <input type='text' id='PreSelCom' name='PreSelCom' value='<?= $IDCom ?>'>
-        Sel <input type='text' id='PreSelFrz' name='PreSelFrz' value='<?= $IDFrz ?>'>
+        Ind <input type='hidden' id='PreIDIndirizzo' name='PreIDIndirizzo' value='<?= $indSel ?>'>
+        Reg <input type='hidden' id='PreSelReg' name='PreSelReg' value='<?= $IDReg ?>'>
+        Prv <input type='hidden' id='PreSelPrv' name='PreSelPrv' value='<?= $IDProv ?>'>
+        Com <input type='hidden' id='PreSelCom' name='PreSelCom' value='<?= $IDCom ?>'>
+        Sel <input type='hidden' id='PreSelFrz' name='PreSelFrz' value='<?= $IDFrz ?>'>
 
         <!-- Modal content-->
         <div class="modal-content">
