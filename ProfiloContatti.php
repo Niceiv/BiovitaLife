@@ -1,5 +1,27 @@
 <?php
 
+if ($recSel == '') {
+    $recSel = 0;
+}
+
+ 
+if (($recSel != '') and ($recSel != '0')) {
+    $SQL_REC = "SELECT * FROM recapiti WHERE idrecapito=" . $recSel . ";";
+    
+    $RES_REC = GetData($SQL_REC);
+    if ($RES_REC->num_rows > 0) {
+
+        $row1 = $RES_REC->fetch_assoc();
+        $act_idutente = $row1["idutente"];
+        $act_recapito = $row1["recapito"];
+        $act_idtipo_recapito = $row1["idtipo_recapito"];
+        $act_idindirizzo = $row1["idindirizzo"];
+        $act_default = $row1["default"];
+     
+    }
+}
+
+ 
 
 if ($actUpd == 'AggiungiRecapito') {
 
@@ -18,38 +40,45 @@ if ($actUpd == 'AggiungiRecapito') {
         echo "<BR>Default: $Rec_PredRecap";
     */
 
+    if (($recSel == '') or ($recSel == '0')) {
+        $sql_ins_recap = "INSERT INTO `recapiti` 
+            (`idutente`,
+            `recapito`,
+            `idtipo_recapito`,
+            `idindirizzo`,
+            `default`
+            ) VALUES
+            ($idutente,
+            '$Rec_Recapito',
+            $Rec_TipoRecap,
+            $Rec_denom_recapito,
+            $Rec_PredRecap); ";
 
-    $sql_ins_recap = "INSERT INTO `recapiti` 
-    (`idutente`,
-    `recapito`,
-    `idtipo_recapito`,
-    `idindirizzo`,
-    `default`
-    ) VALUES
-    ($idutente,
-    '$Rec_Recapito',
-    $Rec_TipoRecap,
-    $Rec_denom_recapito,
-    $Rec_PredRecap); ";
-
-    ExecuteSQL($sql_ins_recap);
+        ExecuteSQL($sql_ins_recap);
+    } else {
+        $sql_upd = "UPDATE `recapiti` SET
+            `recapito`= '$Rec_Recapito',
+            `idtipo_recapito` = $Rec_TipoRecap,
+            `idindirizzo` =  $Rec_denom_recapito,
+            `default` = $Rec_PredReca
+            WHERE `idrecapito`=$recSel;";
+         ExecuteSQL($sql_upd); 
+    }
 
     $actUpd = '-';
-
 }
 
 ?>
 
 
-
 <!-- Modal contatto-->
-<div id="ModalContatto" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+<div id="ModalContatto" class="modal" role="dialog">
+    <div id="ModalContattoContent" class="modal-dialog">
 
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="close" data-dismiss="modal"  onClick="ChiudiAdr()">&times;</button>
                 <h4 class="modal-title text-center">Aggiungi un nuovo contatto</h4>
             </div>
             <div class="modal-body">
@@ -66,8 +95,13 @@ if ($actUpd == 'AggiungiRecapito') {
                                     while ($rowTipoRec = $res_tipo_rec->fetch_assoc()) {
                                         $IdTipoRecapito = $rowTipoRec["idtipo_recapito"];
                                         $TipoRecapito = $rowTipoRec["tipo_recapito"];
-                                        $options = "<option value='$IdTipoRecapito'>$TipoRecapito</option>
-                                                    ";
+                                        if ($act_idtipo_recapito == $IdTipoRecapito) {
+                                            $options = "<option value='$IdTipoRecapito' selected>$TipoRecapito</option>";
+                                        } else {
+                                            $options = "<option value='$IdTipoRecapito'>$TipoRecapito</option>";
+                                        }
+                                        
+                                        
                                         echo $options;
                                     }
                                 }
@@ -88,8 +122,13 @@ if ($actUpd == 'AggiungiRecapito') {
                                     while ($rowDenom = $res_denom_rec->fetch_assoc()) {
                                         $IdIndirizzo = $rowDenom["idindirizzo"];
                                         $Denom = $rowDenom["denominazione"];
-                                        $options = "<option value='$IdIndirizzo'>$Denom</option>
-                                                    ";
+                                        if ($act_idindirizzo == $IdIndirizzo) {
+                                            $options = "<option value='$IdIndirizzo' selected>$Denom</option>";
+                                        } else {
+                                            $options = "<option value='$IdIndirizzo'>$Denom</option>";
+                                        }
+                                        
+                                        
                                         echo $options;
                                     }
                                 }
@@ -100,24 +139,21 @@ if ($actUpd == 'AggiungiRecapito') {
                     <div class="grid-item-full">
                         <div class="form-group">
                             <label for="rec_recapito">Recapito:</label>
-                            <input type="text" class="form-control" id="rec_recapito" name="rec_recapito"
-                                placeholder="Inserisci il recapito" required>
+                            <input type="text" class="form-control" id="rec_recapito" name="rec_recapito" placeholder="Inserisci il recapito" required  value='<?php echo  $act_recapito; ?>'>
                         </div>
                     </div>
                 </div>
                 <div class="row ml-4">
                     <input type="hidden" id="rec_checkbox_pred" name="rec_checkbox_pred" value="0">
-                    <label for="rec_checkbox_pred" class="checkbox-inline"><input type="checkbox" id="rec_checkbox_pred"
-                            name="rec_checkbox_pred" value="1">Imposta contatto come
+                    <label for="rec_checkbox_pred" class="checkbox-inline"><input type="checkbox" id="rec_checkbox_pred" name="rec_checkbox_pred" value= value='<?php echo  $act_default; ?>'>Imposta contatto come
                         predefinito</label>
 
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-default left"
-                    onclick="AggiornaProfilo('AggiungiRecapito')">Aggiungi</button>
+                <button type="submit" class="btn btn-default left" onclick="AggiornaProfilo('AggiungiRecapito')">Aggiungi</button>
 
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"  onClick="ChiudiAdr()">Close</button>
             </div>
         </div>
 
