@@ -68,6 +68,8 @@
         $luogo_di_nascita = $row_nome['luogo_di_nascita'];
         $sesso = $row_nome['sesso'];
         $codice_fiscale = $row_nome['codice_fiscale'];
+        $id_comune = $row_nome['id_comune'];
+        $belfiore = $row_nome['codice_catastale'];
         // ...
         /*  
               echo "<br>nome: [" . $nome . "]";
@@ -118,7 +120,7 @@
                             $res = GetData($sql);
                             if ($res->num_rows > 0) {
                                 while ($row = $res->fetch_assoc()) {
-                                    if ($IDReg == $row["NUMRIF"]) {
+                                    if ($id_comune == $row["NUMRIF"]) {
                                         echo "<option value='" . $row["NUMRIF"] . "' selected>" . $row["DESCRIZIONE"] . "</option>";
                                     } else {
                                         echo "<option value='" . $row["NUMRIF"] . "'>" . $row["DESCRIZIONE"] . "</option>";
@@ -127,7 +129,7 @@
                             }
                             ?>
                         </select>
-                        <input type='text' name='belfiore' id='belfiore'> 
+                        <input type='text' name='belfiore' id='belfiore'  value="<?= $belfiore ?>"> 
                     </div>
                 </div>
             </div>
