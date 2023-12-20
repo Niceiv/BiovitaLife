@@ -1,8 +1,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
 
-        $('#pf_com').change(function() {
+        $('#pf_com').change(function () {
             //Regione selezionata
             IDCom = $('#pf_com').val();
             console.log('Comune selezionata: ' + IDCom);
@@ -11,10 +11,10 @@
         }); //Fine cbo_prv
 
     }); //Fine document
-    
+
     function CercaBelfiore(Tipo, ValSel) {
         console.log('\r\CercaBelfiore');
-        var strEcho = '\r\nTipo: ' + Tipo + '\r\nValSel: ' + ValSel ;
+        var strEcho = '\r\nTipo: ' + Tipo + '\r\nValSel: ' + ValSel;
         console.log(strEcho);
 
 
@@ -30,21 +30,21 @@
             },
             dataType: "JSON",
 
-            success: function(data) {
+            success: function (data) {
 
-                    if (data.BELFIORE != null) {
-                        console.log('\r\BELFIORE:' + data.BELFIORE);
-                        $('#belfiore').val(data.BELFIORE);
-                    }
-                
+                if (data.BELFIORE != null) {
+                    console.log('\r\BELFIORE:' + data.BELFIORE);
+                    $('#belfiore').val(data.BELFIORE);
+                }
+
             },
 
-            error: function() {
+            error: function () {
                 alert("Chiamata fallita, si prega di riprovare...");
             }
         }); //Fine Ajax Prov
     }
-</script> 
+</script>
 <div class="col-md-8" id="PersFisica">
 
     <?php
@@ -94,17 +94,21 @@
                 <!-- Form Group (first name)-->
                 <div class="col-md-6">
                     <label class="small mb-1" for="pf_inputName">NOME</label>
-                    <input class="form-control" id="pf_inputName" name="pf_inputName" type="text" placeholder="Inserisci il tuo nome" value="<?= $nome ?>">
+                    <input class="form-control" id="pf_inputName" name="pf_inputName" type="text"
+                        placeholder="Inserisci il tuo nome" value="<?= $nome ?>">
                 </div>
                 <!-- Form Group (last name)-->
                 <div class="col-md-6">
                     <label class="small mb-1" for="pf_inputLastName">COGNOME</label>
-                    <input class="form-control" id="pf_inputLastName" name="pf_inputLastName" type="text" placeholder="Inserisci il tuo cognome" value="<?= $cognome ?>">
+                    <input class="form-control" id="pf_inputLastName" name="pf_inputLastName" type="text"
+                        placeholder="Inserisci il tuo cognome" value="<?= $cognome ?>">
                 </div>
             </div>
             <div class="mb-3 gx-3">
                 <label class="small mb-1 " for="pf_inputCodFisc">CODICE FISCALE</label>
-                <input class="form-control" id="pf_inputCodFisc" type="text" name="pf_inputCodFisc" maxlength="16" placeholder="Inserisci il tuo Codice Fiscale" title="Inserisci un codice fiscale valido" value="<?= $codice_fiscale ?>">
+                <input class="form-control" id="pf_inputCodFisc" type="text" name="pf_inputCodFisc" maxlength="16"
+                    placeholder="Inserisci il tuo Codice Fiscale" title="Inserisci un codice fiscale valido"
+                    value="<?= $codice_fiscale ?>">
             </div>
 
             <!-- Form Row        -->
@@ -129,7 +133,7 @@
                             }
                             ?>
                         </select>
-                        <input type='text' name='belfiore' id='belfiore'  value="<?= $belfiore ?>"> 
+                        <input type='text' name='belfiore' id='belfiore' value="<?= $belfiore ?>">
                     </div>
                 </div>
             </div>
@@ -148,7 +152,8 @@
                 <!-- Form Group (birthday)-->
                 <div class="col-md-4">
                     <label class="small mb-1" for="pf_inputBirthday">DATA DI NASCITA</label>
-                    <input class="form-control" id="pf_inputBirthday" name="pf_inputBirthday" type="date" data-format="dd/MM/yyyy" placeholder="dd/MM/yyyy" value="<?= $data_di_nascita ?>">
+                    <input class="form-control" id="pf_inputBirthday" name="pf_inputBirthday" type="date"
+                        data-format="dd/MM/yyyy" placeholder="dd/MM/yyyy" value="<?= $data_di_nascita ?>">
                 </div>
 
                 <div class=" col-md-6 mt-4">

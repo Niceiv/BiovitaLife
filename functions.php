@@ -1,5 +1,5 @@
 <?php
-function VerificaCodiceFiscale($codice_fiscale, $data_di_nascita, $sesso)
+function VerificaCodiceFiscale($codice_fiscale, $data_di_nascita, $sesso, $Belfiore)
 {
 
     $ret = true;
@@ -49,7 +49,7 @@ function VerificaCodiceFiscale($codice_fiscale, $data_di_nascita, $sesso)
     //echo "<br><br>$mese_nascita";
     $giorno_nascita = substr($data_di_nascita, 8, 2);
     // echo "<br><br>$giorno_nascita";
-
+    $codice_catastale = substr($data_di_nascita, 11, 4);
 
     $patternCodFisc = "/^(?:[A-Z][AEIOU][AEIOUX]|[AEIOU]X{2}|[B-DF-HJ-NP-TV-Z]{2}[A-Z]){2}(?:[\dLMNP-V]{2}(?:[A-EHLMPR-T](?:[04LQ][1-9MNP-V]|[15MR][\dLMNP-V]|[26NS][0-8LMNP-U])|[DHPS][37PT][0L]|[ACELMRT][37PT][01LM]|[AC-EHLMPR-T][26NS][9V])|(?:[02468LNQSU][048LQU]|[13579MPRTV][26NS])B[26NS][9V])(?:[A-MZ][1-9MNP-V][\dLMNP-V]{2}|[A-M][0L](?:[1-9MNP-V][\dLMNP-V]|[0L][1-9MNP-V]))[A-Z]$/i";
 
@@ -58,15 +58,12 @@ function VerificaCodiceFiscale($codice_fiscale, $data_di_nascita, $sesso)
 
         //echo " <br><br> le occorrenze trovate sono: " . print_r($matches);
 
-
-
-
         $posizione_anno = 7;
         $anno_da_controllare = substr($codice_fiscale, $posizione_anno - 1, 2);
         //echo "<br><br>L'anno da controllare è: $anno_da_controllare";
 
         if ($anno_da_controllare != $anno_nascita) {
-            echo $errore .= "<br><br>Il codice fiscale inserito non è corretto. Controlla qui: (" . $anno_da_controllare . ")";
+            $errore .= "<br>Verificare l'anno di nascita: (" . $anno_da_controllare . ")";
         }
 
         $mese_valore = $mesi[$mese_nascita];
@@ -82,7 +79,7 @@ function VerificaCodiceFiscale($codice_fiscale, $data_di_nascita, $sesso)
 
         if ($mese_valore != $mese_da_controllare) {
 
-            echo $errore .= "<br><br>Il codice fiscale inserito non è corretto. Controlla qui: (" . $mese_da_controllare . ")";
+            $errore .= "<br><br>Verificare il mese di nascita: (" . $mese_da_controllare . ")";
 
         }
 
@@ -95,15 +92,24 @@ function VerificaCodiceFiscale($codice_fiscale, $data_di_nascita, $sesso)
         if ($sesso == 'M') {
             if ($giorno_da_controllare != $giorno_nascita) {
 
-                echo $errore .= "<br><br>Il codice fiscale inserito non è corretto. Controlla qui: (" . $giorno_da_controllare . ")";
+                $errore .= "<br>Verificare il giorno di nascita: (" . $giorno_da_controllare . ")";
             }
         } else {
             if ($giorno_da_controllare - 40 != $giorno_nascita) {
 
-                echo $errore .= "<br><br>Il codice fiscale inserito non è corretto.";
+                $errore .= "<br>Il codice fiscale inserito non è corretto.";
             }
         }
 
+        if ($codice_catastale != $Belfiore) {
+            $errore .= "<br><br>Verificare il codice catastale.";
+        }
+
+        if ($errore != '') {
+            $err = 'Il codice fiscale inserito non è corretto:' . $errore;
+            $errore = $err;
+
+        }
     } else {
         $errore = "codice fiscale non formattato correttamente";
     }

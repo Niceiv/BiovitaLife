@@ -21,12 +21,12 @@ session_start();
     <input type='hidden' id='IDIndirizzo' name='IDIndirizzo'>
     <input type='hidden' id='IDRecapito' name='IDRecapito'>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             console.log('avvio');
             OnOpenForm();
 
-            $("#scelta1").click(function() {
-                setTimeout(function() {
+            $("#scelta1").click(function () {
+                setTimeout(function () {
                     $("#PersFisica").css("visibility", "visible");
                     $("#PersGiuridica").css("visibility", "hidden");
                     $("#SceltaPers").hide();
@@ -34,14 +34,14 @@ session_start();
 
                 }, 1500); // 1500 millisecondi = 1.5 secondi
             });
-            $("#scelta1").click(function() {
+            $("#scelta1").click(function () {
                 console.log("È stata scelta la persona.");
                 $("#sceltaFatta").css("visibility", "visible").html("<p>È stato scelto persona.</p>");
 
             });
 
-            $("#scelta2").click(function() {
-                setTimeout(function() {
+            $("#scelta2").click(function () {
+                setTimeout(function () {
 
                     $("#PersGiuridica").css("visibility", "visible");
                     $("#PersFisica").css("visibility", "hidden");
@@ -50,7 +50,7 @@ session_start();
 
                 }, 1500); // 1500 millisecondi = 1.5 secondi
             });
-            $("#scelta2").click(function() {
+            $("#scelta2").click(function () {
                 console.log("È stata scelta l'azienda.");
                 $("#sceltaFatta").css("visibility", "visible").html("<p>È stato scelto azienda.</p>");
 
@@ -151,7 +151,7 @@ session_start();
             x.className = "show";
 
             // After 3 seconds, remove the show class from DIV
-            setTimeout(function() {
+            setTimeout(function () {
                 x.className = x.className.replace("show", "");
             }, 3000);
 
@@ -174,20 +174,20 @@ session_start();
     $token = $_SESSION["Token"];
 
     //echo "<br>token: [$token]";
-
+    
     if ($navAct == '') {
         $navAct = 'Profilo';
     }
 
     $indSel = 0;
-    $indSel = $_POST["IDIndirizzo"]??0;
+    $indSel = $_POST["IDIndirizzo"] ?? 0;
 
     if ($indSel == '') {
         $indSel = 0;
     }
 
     $recSel = 0;
-    $recSel = $_POST["IDRecapito"]??0;
+    $recSel = $_POST["IDRecapito"] ?? 0;
 
     if ($recSel == '') {
         $recSel = 0;
@@ -232,13 +232,13 @@ session_start();
 
 
     include("ProfiloIndirizzo.php");
- 
+
     include("ProfiloContatti.php");
- 
+
 
 
     if ($IDTipoPersona == 0) {
-    ?>
+        ?>
         <div class="container-fluid main " id="SceltaPers">
             <div class="text-center main-text">
                 <h3>Seleziona il tipo di account</h3>
@@ -259,7 +259,7 @@ session_start();
         <?php
     } else {
         if ($IDTipoPersona == 1) {
-        ?>
+            ?>
             <style type="text/css">
                 #PersFisica {
                     display: block;
@@ -271,9 +271,9 @@ session_start();
                     visibility: hidden;
                 }
             </style>
-        <?php
+            <?php
         } else {
-        ?>
+            ?>
             <style type="text/css">
                 #PersGiuridica {
                     display: block;
@@ -285,7 +285,7 @@ session_start();
                     visibility: hidden;
                 }
             </style>
-    <?php
+            <?php
         }
     }
 
@@ -307,13 +307,13 @@ session_start();
         $nuovoBelfiore = $_POST['belfiore'];
 
         //echo "AGG<br>nuovoCodiceFiscale:[" . $nuovoCodiceFiscale . "]";
+    
 
-
-        $err = VerificaCodiceFiscale($nuovoCodiceFiscale, $nuovoDataDiNascita, $nuovoSesso);
+        $err = VerificaCodiceFiscale($nuovoCodiceFiscale, $nuovoDataDiNascita, $nuovoSesso, $nuovoBelfiore);
 
         if ($err != '') {
             //echo "<br>Errore CF:" . $err;
-
+    
             echo "<script type='text/javascript'>ShowErrorMessage2('" . $err . "');</script>";
         } else {
             if ($IDTipoPersona == 0) {
@@ -413,19 +413,21 @@ session_start();
 
         <ul class="nav nav-tabs ">
             <li <?php if ($navAct == 'Profilo') {
-                    echo "class='active'";
-                } ?>><a href="#profile" data-toggle="tab">Profilo</a></li>
+                echo "class='active'";
+            } ?>><a href="#profile"
+                    data-toggle="tab">Profilo</a></li>
             <li <?php if ($navAct == 'Indirizzo') {
-                    echo "class='active'";
-                } ?>><a href="#indirizzo " data-toggle="tab">Indirizzo</a></li>
+                echo "class='active'";
+            } ?>><a href="#indirizzo "
+                    data-toggle="tab">Indirizzo</a></li>
             <li><a href="#messages " data-toggle="tab">Pagamento</a></li>
             <li><a href="#settings " data-toggle="tab">Sicurezza</a></li>
         </ul>
 
         <div class="tab-content">
             <div class="tab-pane <?php if ($navAct == 'Profilo') {
-                                        echo "active";
-                                    } ?>" id="profile">
+                echo "active";
+            } ?>" id="profile">
 
                 <div class="row">
 
@@ -449,8 +451,8 @@ session_start();
 
             <!-- PANNEL INDIRIZZI -->
             <div class="tab-pane<?php if ($navAct == 'Indirizzo') {
-                                    echo "active";
-                                } ?>" id="indirizzo">
+                echo "active";
+            } ?>" id="indirizzo">
                 <div class="row">
 
                     <div class="col-md-5">
@@ -459,9 +461,9 @@ session_start();
                                 ==================
                                 AGGIUNGI INDIRIZZO
                                 ==================
-                            --> 
+                            -->
                             <div class="card-header text-center">Aggiungi Indirizzo</div>
- 
+
                             <a href="#" onclick="AggiungiIndirizzo()" id="AddAdr" name="AddAdr">
                                 <div class="card-body card-add-item">
                                     <div class="add-item ">
@@ -481,7 +483,7 @@ session_start();
                                 =================
                                 AGGIUNGI CONTATTO
                                 =================
-                            --> 
+                            -->
                             <div class="card-header text-center">Aggiungi contatto</div>
                             <a href="#" data-toggle="modal" data-target="#ModalContatto">
                                 <div class="card-body card-add-item">

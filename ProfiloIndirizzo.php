@@ -1,6 +1,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
 
         //Leggo eventuali valori inseriti in una sessione precedente
         var IDReg = $('#PreSelReg').val();
@@ -18,36 +18,36 @@
         if (IDPrv != '') {
             //var strEcho = 'Reg: ' + IDReg + '\r\nPrv: ' + IDPrv + '\r\nCom: ' + IDCom + '\r\nFrz: ' + IDFrz;
             //console.log(strEcho);
-            AjaxCall('ALL', IDReg, IDPrv, IDCom, IDFrz,IDInd);
+            AjaxCall('ALL', IDReg, IDPrv, IDCom, IDFrz, IDInd);
         }
 
 
         //Scelta della regione
-        $('#cbo_reg').change(function() {
+        $('#cbo_reg').change(function () {
             //Regione selezionata
             IDReg = $('#cbo_reg').val();
             console.log('Regione selezionata: ' + IDReg);
-            AjaxCall('REG', IDReg, IDPrv, IDCom, IDFrz,IDInd);
+            AjaxCall('REG', IDReg, IDPrv, IDCom, IDFrz, IDInd);
 
         }); //Fine cbo_reg
 
         //Selta della provincia
-        $('#cbo_prv').change(function() {
+        $('#cbo_prv').change(function () {
             //Regione selezionata
 
             IDPrv = $('#cbo_prv').val();
             console.log('Provincia selezionata: ' + IDPrv);
-            AjaxCall('PRV', IDPrv, IDPrv, IDCom, IDFrz,IDInd);
+            AjaxCall('PRV', IDPrv, IDPrv, IDCom, IDFrz, IDInd);
 
         }); //Fine cbo_prv
 
 
         //Selta della comune
-        $('#cbo_com').change(function() {
+        $('#cbo_com').change(function () {
             //Regione selezionata
             IDCom = $('#cbo_com').val();
             console.log('Comune selezionata: ' + IDCom);
-            AjaxCall('COM', IDCom, IDPrv, IDCom, IDFrz,IDInd);
+            AjaxCall('COM', IDCom, IDPrv, IDCom, IDFrz, IDInd);
 
         }); //Fine cbo_prv
 
@@ -73,7 +73,7 @@
             },
             dataType: "JSON",
 
-            success: function(data) {
+            success: function (data) {
 
                 if (data.PRV != null) {
                     //console.log('\r\nPRV:' + data.PRV);
@@ -101,7 +101,7 @@
                 }
             },
 
-            error: function() {
+            error: function () {
                 alert("Chiamata fallita, si prega di riprovare...");
             }
         }); //Fine Ajax Prov
@@ -137,7 +137,7 @@ $actPredInd = 0;
 
 if (($indSel != '') and ($indSel != '0')) {
     $SQL_IND = "SELECT * FROM indirizzi WHERE IDIndirizzo=" . $indSel . ";";
-    
+
     $res_ind = GetData($SQL_IND);
     if ($res_ind->num_rows > 0) {
 
@@ -238,7 +238,7 @@ if ($actUpd == 'AggiungiIndirizzo') {
         WHERE `idindirizzo` = $indSel;";
 
 
-         ExecuteSQL($SQL_UPD);
+        ExecuteSQL($SQL_UPD);
     }
 
     $actUpd = '-';
@@ -296,7 +296,8 @@ if ($actUpd == 'AggiungiIndirizzo') {
                     <div class="grid-item-full">
                         <div class="form-group">
                             <label for="ind_denominazione">Nominativo:</label>
-                            <input type="text" class="form-control" id="ind_denominazione" name="ind_denominazione" placeholder="Inserisci il nominativo" required value='<?php echo $actDenInd; ?>'>
+                            <input type="text" class="form-control" id="ind_denominazione" name="ind_denominazione"
+                                placeholder="Inserisci il nominativo" required value='<?php echo $actDenInd; ?>'>
                         </div>
                     </div>
 
@@ -305,7 +306,8 @@ if ($actUpd == 'AggiungiIndirizzo') {
                     <div class="grid-item-full">
                         <div class="form-group">
                             <label for="ind_indirizzo">Indirizzo e nr civico:</label>
-                            <input type="text" class="form-control" id="ind_indirizzo" name="ind_indirizzo" placeholder="Inserisci la via" required value='<?php echo $actInd; ?>'>
+                            <input type="text" class="form-control" id="ind_indirizzo" name="ind_indirizzo"
+                                placeholder="Inserisci la via" required value='<?php echo $actInd; ?>'>
                         </div>
                     </div>
                 </div>
@@ -379,20 +381,23 @@ if ($actUpd == 'AggiungiIndirizzo') {
                     <div class="col-md-3 col-sm-3 ml-4">
                         <div class="form-group">
                             <label for="ind_cap">CAP:</label>
-                            <input type="text" class="form-control" name="ind_cap" id="ind_cap" placeholder="CAP" required maxlength="5" pattern="[0-9]{5}" value='<?php echo $actCap; ?>'>
+                            <input type="text" class="form-control" name="ind_cap" id="ind_cap" placeholder="CAP"
+                                required maxlength="5" pattern="[0-9]{5}" value='<?php echo $actCap; ?>'>
                         </div>
                     </div>
                 </div>
 
                 <div class="row ml-4">
                     <input type="hidden" id="ind_checkbox_pred" name="ind_checkbox_pred" value="0">
-                    <label for="ind_checkbox_pred" class="checkbox-inline"><input type="checkbox" id="ind_checkbox_pred" name="ind_checkbox_pred" value="1">Imposta indirizzo come
+                    <label for="ind_checkbox_pred" class="checkbox-inline"><input type="checkbox" id="ind_checkbox_pred"
+                            name="ind_checkbox_pred" value="1">Imposta indirizzo come
                         predefinito</label>
                 </div>
             </div>
 
             <div class="modal-footer">
-                <button type="submit" class="btn btn-default left" onclick="AggiornaProfilo('AggiungiIndirizzo')">Aggiungi</button>
+                <button type="submit" class="btn btn-default left"
+                    onclick="AggiornaProfilo('AggiungiIndirizzo')">Aggiungi</button>
 
                 <button type="button" class="btn btn-default" data-dismiss="modal" onClick="ChiudiAdr()">Chiudi</button>
             </div>
