@@ -42,7 +42,8 @@ if ($res_nome_psw->num_rows > 0) {
 
     $token = uniq_user_token();
     $_SESSION["Token"] = $token;
-    $_SESSION["MioToken"] = $token;
+    $_SESSION["IDUtente"] = $idutente;
+  
 
 
     $sql_upd = "UPDATE utenti_login set token=\"$token\" WHERE idutente_login=$id";

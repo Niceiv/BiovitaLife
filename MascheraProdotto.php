@@ -23,7 +23,7 @@
         color: #fff;
         background: #A5BA8D;
         font-size: 13px;
-        font-weight: 600;
+        font-weight: 200;
         line-height: 25px;
         padding: 0 20px;
         position: absolute;
@@ -120,7 +120,7 @@
     .product-grid .price span {
         color: #888;
         font-size: 13px;
-        font-weight: 400;
+        font-weight: 600;
         text-decoration: line-through;
     }
 
@@ -130,51 +130,55 @@
         }
     }
 </style>
+
 <?php
 
-function MostraProdotto($idprodotto, $file_img, $preferito, $nome_prod, $costo_prod, $qta)
+
+
+function MostraProdotto($idutente, $idprodotto, $file_img, $preferito, $nome_prod, $costo_prod, $qta)
 {
 
-    ?>
-    <div class="row">
-        <div class="col-md-3 col-sm-6">
-            <div class="product-grid">
-                <div class="product-image">
-                    <a href="#" class="image">
-                        <!-- <img src="image/prodotti/Henne/henne.JPG"> -->
-                        <img src="<?= $file_img ?>">
+?>
 
-                    </a>
-                    <span class="product-discount-label">-23%</span>
-                    <ul class="product-links">
-                        <!-- <li><a href="#"><i class="fa fa-search"></i></a></li>
+    <div class="product-grid">
+        <div class="product-image">
+            <a href="#" class="image">
+
+                <img src="<?= $file_img ?>">
+
+            </a>
+            <span class="product-discount-label">
+                <?= $qta ?>
+            </span>
+            <ul class="product-links" onclick="AggiungiAPreferiti(<?= $idutente ?>,<?= $preferito ?>,<?= $idprodotto ?>)">
+                <!-- <li><a href="#"><i class="fa fa-search"></i></a></li>
                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
                     <li><a href="#"><i class="fa fa-random"></i></a></li> -->
-                        <?php
-                        if ($preferito == 0) {
-                            //cuore bianco
-                            echo "<li><a href='#'><i class='fa fa-heart'></i></a></li>";
-                        } else {
-                            //cuore rosso
-                            echo "<li><a href='#'><i class='fa fa-heart'></i></a></li>";
-                        }
+                <?php
+                if ($preferito == 0) {
+                    //cuore bianco <i class="fa-light fa-heart"></i>
+                    echo "<li><a href='#'><i class='fa fa-heart-o'  style='font-size:24px'></i></a></li>";
+                } else {
+                    //cuore rosso
+                    echo "<li><a href='#'><i class='fa fa-heart'  style='font-size:24px;color:red;'></i></a></li>";
+                }
 
-                        ?>
-                    </ul>
-                    <a href="" class="add-to-cart">Aggiungi al Carrello</a>
-                </div>
-                <div class="product-content">
-                    <h3 class="title"><a href="#">
-                            <?= $nome_prod ?>
-                        </a></h3>
-                    <div class="price">
-                        <?= $costo_prod ?> <!--<span>$81.11</span>-->
-                    </div>
-                </div>
-            </div>
+                ?>
+            </ul>
+            <input type="button" class="add-to-cart" value="Aggiungi al Carrello" id="btnCar" onclick="AggiungiACarrello(<?= $idutente ?>,<?= $idprodotto ?>, <?= $qta ?>);">
         </div>
 
+        <div class="product-content">
+            <h3 class="title"><a href="#">
+                    <?= $nome_prod ?>
+                </a></h3>
+            <div class="price">
+
+                <?= $costo_prod ?>
+            </div>
+        </div>
     </div>
-    <?php
+
+<?php
 }
 ?>

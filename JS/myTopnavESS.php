@@ -63,10 +63,10 @@ if (isset($_GET['logout'])) {
 					$res_nome_psw = GetData($sql_nome_psw);
 					if ($res_nome_psw->num_rows > 0) {
 						$row = $res_nome_psw->fetch_assoc();
-						$username = $row["nome"];
+						$logusername = $row["nome"];
 
 						echo "	<li class='stylish'>Benvenuto,</li>
-								<li class='messBenv'>$username</li>
+								<li class='messBenv'>$logusername</li>
 								";
 					}
 				} else {
@@ -74,7 +74,7 @@ if (isset($_GET['logout'])) {
 				}
 				?>
 
-				<li><a href='#'><i class='fa fa-shopping-cart'></i></a></li>
+				<li><a href='index.php?page=MascheraCarrello.php'><i class='fa fa-shopping-cart'></i></a></li>
 				<li class='dropdown'>
 					<a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true'
 						aria-expanded='false'><i class='fa fa-user'></i> <span class='caret'></span></a>

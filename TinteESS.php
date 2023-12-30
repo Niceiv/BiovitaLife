@@ -116,6 +116,7 @@
 
                 <hr> <!-- mette una linea -->
                 <?php
+               //  require(__DIR__ . '\Config\SQL_command.php');
                 $sql = "SELECT * FROM vw_prodotti where idgruppo=3 and idtinte=$GrpSel ORDER BY order_view";
  
                 $res = GetData($sql);

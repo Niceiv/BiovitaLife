@@ -100,4 +100,20 @@ function DeleteData($sql)
     CloseCnn();
 }
 
+
+function CalSP($sql)
+{
+    global $conn;
+    OpenCnn();
+    // sql to delete a record
+    //echo '<BR>SP:' .  $sql;
+
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+
+
+    CloseCnn();
+}
+
+
 ?>

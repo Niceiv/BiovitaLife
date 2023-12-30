@@ -73,10 +73,10 @@
     <!-- 
             Nel disegnare lo schema a quadrati devo tenere conto delle dimensioni della griglia
             Potrebbe andare bene 4 colonne per N righe
-        -->
+        -->//
 
     <?php
- 
+ //require(__DIR__ . '\Config\SQL_command.php');
 
     //header('Content-Type: text/html; charset=ISO-8859-1');
 
