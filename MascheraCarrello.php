@@ -18,8 +18,8 @@ include('MascheraProdotto.php');
     }
 </style>
 <script>
-    $(document).ready(function() {
-        $("#flip").click(function() {
+    $(document).ready(function () {
+        $("#flip").click(function () {
             $("#filtroArea").toggle("slide");
         });
     });
@@ -188,8 +188,8 @@ include('MascheraProdotto.php');
                         , ord_d.qta 		qta_ord
                     from vw_prodotti prd
                     left join preferiti prf on prf.idprodotto = prd.idprodotto  and prf.idutente = $idutente
-                    left join ordini_dati ord_d on ord_d.idprodotto = prd.idprodotto
-                    left join ordini ord on ord.idoRdine = ord_d.idordine and ord.idutente = $idutente ";
+                    left join ordini ord on ord.idutente = $idutente 
+                    left join ordini_dati ord_d on ord.idoRdine = ord_d.idordine and ord_d.idprodotto = prd.idprodotto";
 
 
 
@@ -218,7 +218,7 @@ include('MascheraProdotto.php');
 
 
 
-                        $costo_prod = sprintf('%01.2f',  $row["prezzo"]) . ' €';
+                        $costo_prod = sprintf('%01.2f', $row["prezzo"]) . ' €';
                         $qta = $row["qta_ord"] ?? 0;
 
                         if ($row["idgruppo"] == 4) {
