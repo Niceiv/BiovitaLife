@@ -172,6 +172,20 @@ include('MascheraProdotto.php');
             <div class="container">
                 <?php
                 $filtro = $_GET["filtro_prod"];
+                $filtroCar = $_SESSION["FILTRO_CAR"]??"";
+
+                if ($filtro=="" && $filtroCar!="") {
+                    $filtro=$filtroCar;
+                } else {
+                    if ($filtro!="" && $filtroCar=="") {
+                        $_SESSION["FILTRO_CAR"]=$filtro;
+                    }
+                    if ($filtro!="" && $filtroCar!="") {
+                        $_SESSION["FILTRO_CAR"]=$filtro;
+                    }
+                }
+                
+
                 $idutente = $_SESSION["IDUtente"] ?? 0;
 
                 $sql = "select distinct 
