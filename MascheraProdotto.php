@@ -139,7 +139,6 @@ function MostraProdotto($idutente, $idprodotto, $file_img, $preferito, $nome_pro
 {
 
 ?>
-
     <div class="product-grid">
         <div class="product-image">
             <a href="#" class="image">

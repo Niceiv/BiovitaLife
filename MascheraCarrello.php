@@ -244,7 +244,6 @@ include('MascheraProdotto.php');
                         }
 
 
-
                         if ($colonna == 1) {
                             echo "<div  class='row'>";
                             $collonna++;
