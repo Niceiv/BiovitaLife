@@ -10,21 +10,26 @@
   <meta name="description"
     content="Scopri l'eccellenza nei prodotti di Biovita Life. Dal 1990 offriamo tinte per capelli di alta qualità in tonalità naturali di mogano, dorato e rosso, arricchite con ingredienti naturali per una bellezza autentica. Scopri la nostra gamma di henne, cura personale e oli essenziali puri, il tutto con ingredienti più naturali possibili per la sensibilità e longevità del tuo corpo e dei tuoi capelli " />
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="JS/MyFooter.js"></script>
+  <script src="JS/articoli.js"></script>
+  <script src="JS/myContact.js"></script>
+  <script src="JS/index.js"></script>
+
   <link rel="icon" type="image/vnd.icon" href="image/LogoSfondi/Logo.ico">
 
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="CSS/boxservice.css">
   <link rel="stylesheet" href="CSS/biovita.css">
   <link rel="stylesheet" href="CSS/footer.css">
   <link rel="stylesheet" href="CSS/background.css">
   <link rel="stylesheet" href="CSS/login.css">
+  <link rel="stylesheet" href="CSS/faq.css">
 
-  <script src="JS/MyFooter.js"></script>
-  <script src="JS/articoli.js"></script>
-  <script src="JS/myContact.js"></script>
+
 
   <title>Homepage | BiovitaLife</title>
 </head>

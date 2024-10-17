@@ -93,12 +93,12 @@
                 //MM20231515
                 //Leggo i dati del comune nel caso d'inserimento 
                 //NON li leggo in caso di modifica perchè l'utente potrebbe aver valorizzato un CAP CAPPATO
-                if (IDInd == 0) {
-                    if (data.CAP != null) {
-                        console.log('\r\CAP:' + data.CAP);
-                        $('#ind_cap').val(data.CAP);
-                    }
+                //if (IDInd == 0) {
+                if (data.CAP != null) {
+                    console.log('\r\CAP:' + data.CAP);
+                    $('#ind_cap').val(data.CAP);
                 }
+                //}
             },
 
             error: function () {
@@ -164,9 +164,9 @@ if ($actUpd == 'AggiungiIndirizzo') {
     $nuovaDenInd = ucwords($_POST['ind_denominazione']);
     $nuovoTipoInd = $_POST['tipo_indirizzo'];
     $nuovoInd = $_POST['ind_indirizzo'];
-    $nuovoCap = $_POST['ind_cap'];
-    $nuovaProv = $_POST['ind_provincia'];
-    $nuovaCitta = $_POST['ind_citta'];
+    //$nuovoCap = $_POST['ind_cap'];
+    //$nuovaProv = $_POST['ind_provincia'];
+    //$nuovaCitta = $_POST['ind_citta'];
     $nuovoPredInd = $_POST['ind_checkbox_pred'];
 
     //MM20231214 Gestisco gli ID di Regione, Provincia, Comune e Frazione
@@ -176,35 +176,56 @@ if ($actUpd == 'AggiungiIndirizzo') {
     $nuovoIDComune = $_POST['cbo_com'] ?? '0';
     $nuovoIDFrazione = $_POST['cbo_frz'] ?? '0';
 
-    /*
-    echo "<BR>Denominazione: $nuovaDenInd";
-    echo "<BR>Tipo Indirizzo: $nuovoTipoInd";
-    echo "<BR>Indirizzo $nuovoInd";
-    echo "<BR>Cap: $nuovoCap";
-    echo "<BR>Provincia: $nuovaProv";
-    echo "<BR>Città: $nuovaCitta";
-    echo "<BR>Default: $nuovoPredInd";
 
-    echo "<BR>nuovoIDRegione: $nuovoIDRegione";
-    echo "<BR>nuovoIDProvincia: $nuovoIDProvincia";
-    echo "<BR>nuovoIDComune: $nuovoIDComune";
-    echo "<BR>nuovoIDFrazione: $nuovoIDFrazione";
-    */
+    //DG20241017
+    //faccio i controlli di obbligatorietà dei dati
 
-    $indSel = $_POST['PreIDIndirizzo'] ?? '0';
-    echo "<BR>indSel:[ $indSel]";
+    $datiOK = true;
+    $datiKO = '';
 
-    //se IDINdirizzo==0 faccio insert
-    //se !=0 faccio update
-    if (($indSel == '') or ($indSel == '0')) {
-        $sql_ins_ind = "INSERT INTO `indirizzi` 
+    if ($nuovaDenInd == '') {
+        $datiOK = false;
+        $datiKO .= 'La denominazione dell\'indirizzo è obbligatoria.';
+    }
+    if ($nuovoInd == '') {
+        $datiOK = false;
+        $datiKO .= '\r\n L\'indirizzo è obbligatorio. ';
+    }
+    if ($nuovoIDRegione == '0') {
+        $datiOK = false;
+        $datiKO .= '\r\n La Regione è obbligatoria.';
+    }
+    if ($nuovoIDProvincia == '0') {
+        $datiOK = false;
+        $datiKO .= '\r\n La Provincia è obbligatoria.';
+    }
+    if ($nuovoIDComune == '0') {
+        $datiOK = false;
+        $datiKO .= '\r\n Il Comune è obbligatorio.';
+    }
+
+
+
+
+
+    if ($datiOK == false) {
+        echo '<script>alert("' . $datiKO . '")</script>';
+
+    } else {
+
+
+
+        $indSel = $_POST['PreIDIndirizzo'] ?? '0';
+        echo "<BR>indSel:[ $indSel]";
+
+        //se IDINdirizzo==0 faccio insert
+        //se !=0 faccio update
+        if (($indSel == '') or ($indSel == '0')) {
+            $sql_ins_ind = "INSERT INTO `indirizzi` 
             (`idutente`,
             `denominazione`,
             `idtipo_indirizzo`,
             `indirizzo`,
-            `cap`,
-            `provincia`,
-            `citta`,
             `default`,
             `IDRegione`,`IDProvincia`,`IDComune`,`IDFrazione`
             ) VALUES
@@ -212,19 +233,16 @@ if ($actUpd == 'AggiungiIndirizzo') {
             '$nuovaDenInd',
             $nuovoTipoInd,
             '$nuovoInd',
-            '$nuovoCap',
-            '$nuovaProv',
-            '$nuovaCitta',
             $nuovoPredInd,
             $nuovoIDRegione,
             $nuovoIDProvincia,
             $nuovoIDComune,
             $nuovoIDFrazione); ";
 
-        ExecuteSQL($sql_ins_ind);
-    } else {
-        //UPDATE
-        $SQL_UPD = "UPDATE `biovita`.`indirizzi`
+            ExecuteSQL($sql_ins_ind);
+        } else {
+            //UPDATE
+            $SQL_UPD = "UPDATE `biovita`.`indirizzi`
         SET
         `idtipo_indirizzo` = $nuovoTipoInd,
         `cap` = '$nuovoCap',
@@ -238,9 +256,9 @@ if ($actUpd == 'AggiungiIndirizzo') {
         WHERE `idindirizzo` = $indSel;";
 
 
-        ExecuteSQL($SQL_UPD);
+            ExecuteSQL($SQL_UPD);
+        }
     }
-
     $actUpd = '-';
 }
 
