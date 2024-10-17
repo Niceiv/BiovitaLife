@@ -82,7 +82,7 @@
 
     $riga = true;
 
-    $sql_nome = "SELECT * FROM `olii`";
+    $sql_nome = "select distinct idolii,prodotto nome from prodotti where idgruppo=4";
 
     $res_nome = GetData($sql_nome);
     if ($res_nome->num_rows > 0) {
